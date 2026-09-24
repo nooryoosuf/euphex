@@ -1,0 +1,220 @@
+[
+  {
+    "id": "rashu-cup-group-euphex-vs-nova",
+    "tournamentSlug": "rashu-cup",
+    "tournamentName": "RASHU CUP",
+    "stage": "GROUP STAGE",
+    "teamSlug": "euphex",
+    "opponent": "Nova Sentinels",
+    "opponentShort": "NVS",
+    "date": "2026-09-28T19:30:00+03:00",
+    "status": "completed",
+    "venue": "Amman Arena"
+  },
+  {
+    "id": "aurex-open-qf",
+    "tournamentSlug": "open-circuit-5",
+    "tournamentName": "OPEN CIRCUIT #5",
+    "stage": "QUARTERFINAL",
+    "teamSlug": "aurex",
+    "opponent": "Dune Vipers",
+    "opponentShort": "DVP",
+    "date": "2026-10-02T17:00:00+03:00",
+    "status": "upcoming"
+  },
+  {
+    "id": "aurex-clash-sf",
+    "tournamentSlug": "aurex-clash",
+    "tournamentName": "AUREX CLASH",
+    "stage": "SEMIFINAL",
+    "teamSlug": "aurex",
+    "opponent": "Iron Lynx Academy",
+    "opponentShort": "ILX",
+    "date": "2026-10-04T18:00:00+03:00",
+    "status": "upcoming"
+  },
+  {
+    "id": "euphex-vs-apex-final",
+    "tournamentSlug": "midnight-invitational",
+    "tournamentName": "MIDNIGHT INVITATIONAL",
+    "stage": "GRAND FINAL",
+    "teamSlug": "euphex",
+    "opponent": "Apex Falcons",
+    "opponentShort": "APX",
+    "date": "2026-09-12T20:00:00+03:00",
+    "status": "completed",
+    "scoreUs": 3,
+    "scoreThem": 1,
+    "result": "WIN",
+    "games": [
+      {
+        "game": 1,
+        "result": "WIN",
+        "duration": "18:42",
+        "killsUs": 18,
+        "killsThem": 9,
+        "towersUs": 8,
+        "towersThem": 3,
+        "mvp": "nawrrr"
+      },
+      {
+        "game": 2,
+        "result": "LOSS",
+        "duration": "21:07",
+        "killsUs": 11,
+        "killsThem": 16,
+        "towersUs": 4,
+        "towersThem": 8,
+        "mvp": "xxgokgokxx"
+      },
+      {
+        "game": 3,
+        "result": "WIN",
+        "duration": "16:55",
+        "killsUs": 21,
+        "killsThem": 7,
+        "towersUs": 9,
+        "towersThem": 2,
+        "mvp": "zinzinnextdoor"
+      },
+      {
+        "game": 4,
+        "result": "WIN",
+        "duration": "19:31",
+        "killsUs": 17,
+        "killsThem": 10,
+        "towersUs": 8,
+        "towersThem": 4,
+        "mvp": "nawrrr"
+      }
+    ],
+    "statLines": [
+      {
+        "playerSlug": "nawrrr",
+        "kills": 2,
+        "deaths": 3,
+        "assists": 14
+      },
+      {
+        "playerSlug": "xxgokgokxx",
+        "kills": 7,
+        "deaths": 3,
+        "assists": 11
+      },
+      {
+        "playerSlug": "zinzinnextdoor",
+        "kills": 9,
+        "deaths": 2,
+        "assists": 6
+      }
+    ]
+  },
+  {
+    "id": "aurex-vs-lynx-sf",
+    "tournamentSlug": "aurex-clash",
+    "tournamentName": "AUREX CLASH",
+    "stage": "SEMIFINAL",
+    "teamSlug": "aurex",
+    "opponent": "Iron Lynx Academy",
+    "opponentShort": "ILX",
+    "date": "2026-09-06T18:00:00+03:00",
+    "status": "completed",
+    "scoreUs": 2,
+    "scoreThem": 0,
+    "result": "WIN",
+    "games": [
+      {
+        "game": 1,
+        "result": "WIN",
+        "duration": "17:20",
+        "killsUs": 15,
+        "killsThem": 8,
+        "towersUs": 7,
+        "towersThem": 3,
+        "mvp": "kairo"
+      },
+      {
+        "game": 2,
+        "result": "WIN",
+        "duration": "20:02",
+        "killsUs": 14,
+        "killsThem": 11,
+        "towersUs": 6,
+        "towersThem": 5,
+        "mvp": "sable"
+      }
+    ]
+  },
+  {
+    "id": "euphex-vs-orbital-qf",
+    "tournamentSlug": "continental-qualifier",
+    "tournamentName": "CONTINENTAL QUALIFIER",
+    "stage": "QUARTERFINAL",
+    "teamSlug": "euphex",
+    "opponent": "Orbital Nine",
+    "opponentShort": "OB9",
+    "date": "2026-08-29T19:00:00+03:00",
+    "status": "completed",
+    "scoreUs": 1,
+    "scoreThem": 2,
+    "result": "LOSS",
+    "games": [
+      {
+        "game": 1,
+        "result": "WIN",
+        "duration": "19:10",
+        "killsUs": 16,
+        "killsThem": 12,
+        "towersUs": 7,
+        "towersThem": 5,
+        "mvp": "nawrrr"
+      },
+      {
+        "game": 2,
+        "result": "LOSS",
+        "duration": "22:44",
+        "killsUs": 9,
+        "killsThem": 15,
+        "towersUs": 3,
+        "towersThem": 8
+      },
+      {
+        "game": 3,
+        "result": "LOSS",
+        "duration": "24:01",
+        "killsUs": 10,
+        "killsThem": 17,
+        "towersUs": 4,
+        "towersThem": 9
+      }
+    ]
+  },
+  {
+    "id": "aurex-open-r16",
+    "tournamentSlug": "open-circuit-4",
+    "tournamentName": "OPEN CIRCUIT #4",
+    "stage": "ROUND OF 16",
+    "teamSlug": "aurex",
+    "opponent": "Cinder Wolves",
+    "opponentShort": "CDW",
+    "date": "2026-08-22T16:00:00+03:00",
+    "status": "completed",
+    "scoreUs": 2,
+    "scoreThem": 1,
+    "result": "WIN"
+  },
+  {
+    "id": "euphex-vs-halcyon-group",
+    "tournamentSlug": "rashu-cup",
+    "tournamentName": "RASHU CUP",
+    "stage": "GROUP STAGE — MATCHDAY 2",
+    "teamSlug": "euphex",
+    "opponent": "Halcyon Five",
+    "opponentShort": "HLC",
+    "date": "2026-09-18T18:30:00+03:00",
+    "status": "completed",
+    "scoreUs": 2,
+    "scoreThem": 2,
+    "result": "DRAW"
+  }
+]
