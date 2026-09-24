@@ -18,17 +18,113 @@
     "hue": 150,
     "number": 23,
     "heroPool": [
-      { "name": "Minotaur", "slug": "minotaur", "lane": "Roam", "art": { "hue": 150, "label": "MI" }, "games": 817, "winRate": 53, "kda": 4.6, "power": 7226, "category": "signature" },
-      { "name": "Tigreal", "slug": "tigreal", "lane": "Roam", "art": { "hue": 150, "label": "TI" }, "games": 628, "winRate": 49.7, "kda": 4.2, "power": 3349, "category": "comfort" },
-      { "name": "Grock", "slug": "grock", "lane": "Roam", "art": { "hue": 160, "label": "GR" }, "games": 186, "winRate": 57, "kda": 4.4, "category": "comfort" },
-      { "name": "Belerick", "slug": "belerick", "lane": "EXP Lane", "art": { "hue": 140, "label": "BE" }, "games": 142, "winRate": 60, "kda": 4.1, "category": "comfort" },
-      { "name": "Estes", "slug": "estes", "lane": "Roam", "art": { "hue": 140, "label": "ES" }, "games": 118, "winRate": 58, "kda": 4.8, "category": "pocket" },
-      { "name": "Rafaela", "slug": "rafaela", "lane": "Roam", "art": { "hue": 300, "label": "RA" }, "games": 96, "winRate": 55, "kda": 5, "category": "pocket" },
-      { "name": "Angela", "slug": "angela", "lane": "Roam", "art": { "hue": 300, "label": "AN" }, "games": 88, "winRate": 57, "kda": 4.9, "category": "pocket" }
+      {
+        "name": "Minotaur",
+        "slug": "minotaur",
+        "lane": "Roam",
+        "art": {
+          "hue": 150,
+          "label": "MI"
+        },
+        "games": 817,
+        "winRate": 53,
+        "kda": 4.6,
+        "power": 7226,
+        "category": "signature"
+      },
+      {
+        "name": "Tigreal",
+        "slug": "tigreal",
+        "lane": "Roam",
+        "art": {
+          "hue": 150,
+          "label": "TI"
+        },
+        "games": 628,
+        "winRate": 49.7,
+        "kda": 4.2,
+        "power": 3349,
+        "category": "comfort"
+      },
+      {
+        "name": "Grock",
+        "slug": "grock",
+        "lane": "Roam",
+        "art": {
+          "hue": 160,
+          "label": "GR"
+        },
+        "games": 186,
+        "winRate": 57,
+        "kda": 4.4,
+        "category": "comfort"
+      },
+      {
+        "name": "Belerick",
+        "slug": "belerick",
+        "lane": "EXP Lane",
+        "art": {
+          "hue": 140,
+          "label": "BE"
+        },
+        "games": 142,
+        "winRate": 60,
+        "kda": 4.1,
+        "category": "comfort"
+      },
+      {
+        "name": "Estes",
+        "slug": "estes",
+        "lane": "Roam",
+        "art": {
+          "hue": 140,
+          "label": "ES"
+        },
+        "games": 118,
+        "winRate": 58,
+        "kda": 4.8,
+        "category": "pocket"
+      },
+      {
+        "name": "Rafaela",
+        "slug": "rafaela",
+        "lane": "Roam",
+        "art": {
+          "hue": 300,
+          "label": "RA"
+        },
+        "games": 96,
+        "winRate": 55,
+        "kda": 5,
+        "category": "pocket"
+      },
+      {
+        "name": "Angela",
+        "slug": "angela",
+        "lane": "Roam",
+        "art": {
+          "hue": 300,
+          "label": "AN"
+        },
+        "games": 88,
+        "winRate": 57,
+        "kda": 4.9,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Maldives No.1 Minotaur", "event": "Season 40 & 41", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.5 Tigreal", "event": "Season 40", "year": 2025, "kind": "Award" }
+      {
+        "title": "Maldives No.1 Minotaur",
+        "event": "Season 40 & 41",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.5 Tigreal",
+        "event": "Season 40",
+        "year": 2025,
+        "kind": "Award"
+      }
     ]
   },
   {
@@ -50,20 +146,134 @@
     "hue": 40,
     "number": 9,
     "heroPool": [
-      { "name": "Lesley", "slug": "lesley", "lane": "Gold Lane", "art": { "hue": 205, "label": "LE" }, "games": 2675, "winRate": 50.7, "kda": 6.4, "power": 5995, "category": "signature" },
-      { "name": "Layla", "slug": "layla", "lane": "Gold Lane", "art": { "hue": 55, "label": "LA" }, "games": 1471, "winRate": 54.1, "kda": 6.1, "power": 5023, "category": "comfort" },
-      { "name": "Clint", "slug": "clint", "lane": "Gold Lane", "art": { "hue": 30, "label": "CL" }, "games": 533, "winRate": 47.7, "kda": 5.3, "power": 3250, "category": "comfort" },
-      { "name": "Obsidia", "slug": "obsidia", "lane": "Gold Lane", "art": { "hue": 320, "label": "OB" }, "games": 426, "winRate": 47.9, "kda": 5.5, "power": 3781, "category": "comfort" },
-      { "name": "Beatrix", "slug": "beatrix", "lane": "Gold Lane", "art": { "hue": 15, "label": "BE" }, "games": 400, "winRate": 47.8, "kda": 5.6, "power": 3107, "category": "comfort" },
-      { "name": "Miya", "slug": "miya", "lane": "Gold Lane", "art": { "hue": 60, "label": "MI" }, "games": 240, "winRate": 52, "kda": 5.8, "category": "pocket" },
-      { "name": "Hanabi", "slug": "hanabi", "lane": "Gold Lane", "art": { "hue": 280, "label": "HA" }, "games": 180, "winRate": 54, "kda": 5.4, "category": "pocket" }
+      {
+        "name": "Lesley",
+        "slug": "lesley",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 205,
+          "label": "LE"
+        },
+        "games": 2675,
+        "winRate": 50.7,
+        "kda": 6.4,
+        "power": 5995,
+        "category": "signature"
+      },
+      {
+        "name": "Layla",
+        "slug": "layla",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 55,
+          "label": "LA"
+        },
+        "games": 1471,
+        "winRate": 54.1,
+        "kda": 6.1,
+        "power": 5023,
+        "category": "comfort"
+      },
+      {
+        "name": "Clint",
+        "slug": "clint",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 30,
+          "label": "CL"
+        },
+        "games": 533,
+        "winRate": 47.7,
+        "kda": 5.3,
+        "power": 3250,
+        "category": "comfort"
+      },
+      {
+        "name": "Obsidia",
+        "slug": "obsidia",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 320,
+          "label": "OB"
+        },
+        "games": 426,
+        "winRate": 47.9,
+        "kda": 5.5,
+        "power": 3781,
+        "category": "comfort"
+      },
+      {
+        "name": "Beatrix",
+        "slug": "beatrix",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 15,
+          "label": "BE"
+        },
+        "games": 400,
+        "winRate": 47.8,
+        "kda": 5.6,
+        "power": 3107,
+        "category": "comfort"
+      },
+      {
+        "name": "Miya",
+        "slug": "miya",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 60,
+          "label": "MI"
+        },
+        "games": 240,
+        "winRate": 52,
+        "kda": 5.8,
+        "category": "pocket"
+      },
+      {
+        "name": "Hanabi",
+        "slug": "hanabi",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 280,
+          "label": "HA"
+        },
+        "games": 180,
+        "winRate": 54,
+        "kda": 5.4,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Maldives No.1 Lesley", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.1 Layla", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.2 Clint", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.3 Obsidia", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.3 Beatrix", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" }
+      {
+        "title": "Maldives No.1 Lesley",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.1 Layla",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.2 Clint",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.3 Obsidia",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.3 Beatrix",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      }
     ]
   },
   {
@@ -85,32 +295,216 @@
     "hue": 250,
     "number": 19,
     "heroPool": [
-      { "name": "Eudora", "slug": "eudora", "lane": "Mid Lane", "art": { "hue": 190, "label": "EU" }, "games": 569, "winRate": 49.6, "kda": 6.8, "power": 4369, "category": "signature" },
-      { "name": "Xavier", "slug": "xavier", "lane": "Mid Lane", "art": { "hue": 250, "label": "XA" }, "games": 710, "winRate": 49.9, "kda": 6.2, "power": 3597, "category": "comfort" },
-      { "name": "Kadita", "slug": "kadita", "lane": "Mid Lane", "art": { "hue": 175, "label": "KA" }, "games": 661, "winRate": 46.1, "kda": 6.5, "power": 3398, "category": "comfort" },
-      { "name": "Vexana", "slug": "vexana", "lane": "Mid Lane", "art": { "hue": 270, "label": "VE" }, "games": 658, "winRate": 53.2, "kda": 5.9, "power": 3195, "category": "comfort" },
-      { "name": "Odette", "slug": "odette", "lane": "Mid Lane", "art": { "hue": 200, "label": "OD" }, "games": 752, "winRate": 50.8, "kda": 6, "power": 3107, "category": "comfort" },
-      { "name": "Vale", "slug": "vale", "lane": "Mid Lane", "art": { "hue": 180, "label": "VA" }, "games": 300, "winRate": 52, "kda": 5.7, "category": "pocket" },
-      { "name": "Zhuxin", "slug": "zhuxin", "lane": "Mid Lane", "art": { "hue": 290, "label": "ZH" }, "games": 260, "winRate": 53, "kda": 5.5, "category": "pocket" },
-      { "name": "Cecilion", "slug": "cecilion", "lane": "Mid Lane", "art": { "hue": 230, "label": "CE" }, "games": 240, "winRate": 51, "kda": 5.6, "category": "pocket" },
-      { "name": "Pharsa", "slug": "pharsa", "lane": "Mid Lane", "art": { "hue": 200, "label": "PH" }, "games": 210, "winRate": 50, "kda": 5.4, "category": "pocket" },
-      { "name": "Gord", "slug": "gord", "lane": "Mid Lane", "art": { "hue": 210, "label": "GO" }, "games": 150, "winRate": 52, "kda": 5.8, "category": "pocket" },
-      { "name": "Lunox", "slug": "lunox", "lane": "Mid Lane", "art": { "hue": 305, "label": "LU" }, "games": 170, "winRate": 51, "kda": 6.1, "category": "pocket" },
-      { "name": "Zetian", "slug": "zetian", "lane": "Mid Lane", "art": { "hue": 240, "label": "ZE" }, "games": 120, "winRate": 55, "kda": 5.9, "category": "pocket" }
+      {
+        "name": "Eudora",
+        "slug": "eudora",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 190,
+          "label": "EU"
+        },
+        "games": 569,
+        "winRate": 49.6,
+        "kda": 6.8,
+        "power": 4369,
+        "category": "signature"
+      },
+      {
+        "name": "Xavier",
+        "slug": "xavier",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 250,
+          "label": "XA"
+        },
+        "games": 710,
+        "winRate": 49.9,
+        "kda": 6.2,
+        "power": 3597,
+        "category": "comfort"
+      },
+      {
+        "name": "Kadita",
+        "slug": "kadita",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 175,
+          "label": "KA"
+        },
+        "games": 661,
+        "winRate": 46.1,
+        "kda": 6.5,
+        "power": 3398,
+        "category": "comfort"
+      },
+      {
+        "name": "Vexana",
+        "slug": "vexana",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 270,
+          "label": "VE"
+        },
+        "games": 658,
+        "winRate": 53.2,
+        "kda": 5.9,
+        "power": 3195,
+        "category": "comfort"
+      },
+      {
+        "name": "Odette",
+        "slug": "odette",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 200,
+          "label": "OD"
+        },
+        "games": 752,
+        "winRate": 50.8,
+        "kda": 6,
+        "power": 3107,
+        "category": "comfort"
+      },
+      {
+        "name": "Vale",
+        "slug": "vale",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 180,
+          "label": "VA"
+        },
+        "games": 300,
+        "winRate": 52,
+        "kda": 5.7,
+        "category": "pocket"
+      },
+      {
+        "name": "Zhuxin",
+        "slug": "zhuxin",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 290,
+          "label": "ZH"
+        },
+        "games": 260,
+        "winRate": 53,
+        "kda": 5.5,
+        "category": "pocket"
+      },
+      {
+        "name": "Cecilion",
+        "slug": "cecilion",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 230,
+          "label": "CE"
+        },
+        "games": 240,
+        "winRate": 51,
+        "kda": 5.6,
+        "category": "pocket"
+      },
+      {
+        "name": "Pharsa",
+        "slug": "pharsa",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 200,
+          "label": "PH"
+        },
+        "games": 210,
+        "winRate": 50,
+        "kda": 5.4,
+        "category": "pocket"
+      },
+      {
+        "name": "Gord",
+        "slug": "gord",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 210,
+          "label": "GO"
+        },
+        "games": 150,
+        "winRate": 52,
+        "kda": 5.8,
+        "category": "pocket"
+      },
+      {
+        "name": "Lunox",
+        "slug": "lunox",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 305,
+          "label": "LU"
+        },
+        "games": 170,
+        "winRate": 51,
+        "kda": 6.1,
+        "category": "pocket"
+      },
+      {
+        "name": "Zetian",
+        "slug": "zetian",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 240,
+          "label": "ZE"
+        },
+        "games": 120,
+        "winRate": 55,
+        "kda": 5.9,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Maldives No.2 Eudora", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.2 Xavier", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.4 Kadita", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.3 Vale", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.2 Zhuxin", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.9 Odette", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" },
-      { "title": "Maldives No.4 Vexana", "event": "Maldives Leaderboard", "year": 2025, "kind": "Award" }
+      {
+        "title": "Maldives No.2 Eudora",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.2 Xavier",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.4 Kadita",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.3 Vale",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.2 Zhuxin",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.9 Odette",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.4 Vexana",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      }
     ]
   },
   {
     "slug": "kairo",
-    "gamertag": "KAIRO",
+    "gamertag": "BAIRO",
     "realName": "Yusuf Demir",
     "role": "Jungle",
     "teamSlug": "aurex",
@@ -127,13 +521,66 @@
     "hue": 190,
     "number": 9,
     "heroPool": [
-      { "name": "Ling", "slug": "ling", "lane": "Jungle", "art": { "hue": 190, "label": "LI" }, "games": 68, "winRate": 67, "kda": 7.2, "category": "signature" },
-      { "name": "Hayabusa", "slug": "hayabusa", "lane": "Jungle", "art": { "hue": 260, "label": "HA" }, "games": 55, "winRate": 64, "kda": 6.3, "category": "comfort" },
-      { "name": "Lancelot", "slug": "lancelot", "lane": "Jungle", "art": { "hue": 210, "label": "LA" }, "games": 42, "winRate": 62, "kda": 6.8, "category": "comfort" },
-      { "name": "Natalia", "slug": "natalia", "lane": "Roam", "art": { "hue": 350, "label": "NA" }, "games": 21, "winRate": 58, "kda": 5.2, "category": "pocket" }
+      {
+        "name": "Ling",
+        "slug": "ling",
+        "lane": "Jungle",
+        "art": {
+          "hue": 190,
+          "label": "LI"
+        },
+        "games": 68,
+        "winRate": 67,
+        "kda": 7.2,
+        "category": "signature"
+      },
+      {
+        "name": "Hayabusa",
+        "slug": "hayabusa",
+        "lane": "Jungle",
+        "art": {
+          "hue": 260,
+          "label": "HA"
+        },
+        "games": 55,
+        "winRate": 64,
+        "kda": 6.3,
+        "category": "comfort"
+      },
+      {
+        "name": "Lancelot",
+        "slug": "lancelot",
+        "lane": "Jungle",
+        "art": {
+          "hue": 210,
+          "label": "LA"
+        },
+        "games": 42,
+        "winRate": 62,
+        "kda": 6.8,
+        "category": "comfort"
+      },
+      {
+        "name": "Natalia",
+        "slug": "natalia",
+        "lane": "Roam",
+        "art": {
+          "hue": 350,
+          "label": "NA"
+        },
+        "games": 21,
+        "winRate": 58,
+        "kda": 5.2,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Champion", "event": "Rising Stars League", "year": 2025, "kind": "Champion" }
+      {
+        "title": "Champion",
+        "event": "Rising Stars League",
+        "year": 2025,
+        "kind": "Champion"
+      }
     ]
   },
   {
@@ -155,12 +602,53 @@
     "hue": 200,
     "number": 3,
     "heroPool": [
-      { "name": "Pharsa", "slug": "pharsa", "lane": "Mid Lane", "art": { "hue": 200, "label": "PH" }, "games": 61, "winRate": 65, "kda": 5.6, "category": "signature" },
-      { "name": "Yve", "slug": "yve", "lane": "Mid Lane", "art": { "hue": 230, "label": "YV" }, "games": 48, "winRate": 62, "kda": 5.1, "category": "comfort" },
-      { "name": "Nana", "slug": "nana", "lane": "Mid Lane", "art": { "hue": 310, "label": "NA" }, "games": 30, "winRate": 60, "kda": 4.9, "category": "pocket" }
+      {
+        "name": "Pharsa",
+        "slug": "pharsa",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 200,
+          "label": "PH"
+        },
+        "games": 61,
+        "winRate": 65,
+        "kda": 5.6,
+        "category": "signature"
+      },
+      {
+        "name": "Yve",
+        "slug": "yve",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 230,
+          "label": "YV"
+        },
+        "games": 48,
+        "winRate": 62,
+        "kda": 5.1,
+        "category": "comfort"
+      },
+      {
+        "name": "Nana",
+        "slug": "nana",
+        "lane": "Mid Lane",
+        "art": {
+          "hue": 310,
+          "label": "NA"
+        },
+        "games": 30,
+        "winRate": 60,
+        "kda": 4.9,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Champion", "event": "Rising Stars League", "year": 2025, "kind": "Champion" }
+      {
+        "title": "Champion",
+        "event": "Rising Stars League",
+        "year": 2025,
+        "kind": "Champion"
+      }
     ]
   },
   {
@@ -182,12 +670,53 @@
     "hue": 40,
     "number": 8,
     "heroPool": [
-      { "name": "Claude", "slug": "claude", "lane": "Gold Lane", "art": { "hue": 40, "label": "CL" }, "games": 58, "winRate": 64, "kda": 6, "category": "signature" },
-      { "name": "Beatrix", "slug": "beatrix", "lane": "Gold Lane", "art": { "hue": 15, "label": "BE" }, "games": 44, "winRate": 62, "kda": 5.8, "category": "comfort" },
-      { "name": "Layla", "slug": "layla", "lane": "Gold Lane", "art": { "hue": 55, "label": "LA" }, "games": 28, "winRate": 59, "kda": 5, "category": "pocket" }
+      {
+        "name": "Claude",
+        "slug": "claude",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 40,
+          "label": "CL"
+        },
+        "games": 58,
+        "winRate": 64,
+        "kda": 6,
+        "category": "signature"
+      },
+      {
+        "name": "Beatrix",
+        "slug": "beatrix",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 15,
+          "label": "BE"
+        },
+        "games": 44,
+        "winRate": 62,
+        "kda": 5.8,
+        "category": "comfort"
+      },
+      {
+        "name": "Layla",
+        "slug": "layla",
+        "lane": "Gold Lane",
+        "art": {
+          "hue": 55,
+          "label": "LA"
+        },
+        "games": 28,
+        "winRate": 59,
+        "kda": 5,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Runner Up", "event": "Aurex Clash", "year": 2026, "kind": "Runner Up" }
+      {
+        "title": "Runner Up",
+        "event": "Aurex Clash",
+        "year": 2026,
+        "kind": "Runner Up"
+      }
     ]
   },
   {
@@ -209,12 +738,53 @@
     "hue": 20,
     "number": 5,
     "heroPool": [
-      { "name": "Terizla", "slug": "terizla", "lane": "EXP Lane", "art": { "hue": 20, "label": "TE" }, "games": 55, "winRate": 63, "kda": 4.7, "category": "signature" },
-      { "name": "Paquito", "slug": "paquito", "lane": "EXP Lane", "art": { "hue": 60, "label": "PA" }, "games": 40, "winRate": 61, "kda": 5.3, "category": "comfort" },
-      { "name": "Yu Zhong", "slug": "yuzhong", "lane": "EXP Lane", "art": { "hue": 0, "label": "YU" }, "games": 32, "winRate": 60, "kda": 4.9, "category": "pocket" }
+      {
+        "name": "Terizla",
+        "slug": "terizla",
+        "lane": "EXP Lane",
+        "art": {
+          "hue": 20,
+          "label": "TE"
+        },
+        "games": 55,
+        "winRate": 63,
+        "kda": 4.7,
+        "category": "signature"
+      },
+      {
+        "name": "Paquito",
+        "slug": "paquito",
+        "lane": "EXP Lane",
+        "art": {
+          "hue": 60,
+          "label": "PA"
+        },
+        "games": 40,
+        "winRate": 61,
+        "kda": 5.3,
+        "category": "comfort"
+      },
+      {
+        "name": "Yu Zhong",
+        "slug": "yuzhong",
+        "lane": "EXP Lane",
+        "art": {
+          "hue": 0,
+          "label": "YU"
+        },
+        "games": 32,
+        "winRate": 60,
+        "kda": 4.9,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Champion", "event": "Rising Stars League", "year": 2025, "kind": "Champion" }
+      {
+        "title": "Champion",
+        "event": "Rising Stars League",
+        "year": 2025,
+        "kind": "Champion"
+      }
     ]
   },
   {
@@ -236,12 +806,53 @@
     "hue": 300,
     "number": 2,
     "heroPool": [
-      { "name": "Mathilda", "slug": "mathilda", "lane": "Roam", "art": { "hue": 300, "label": "MA" }, "games": 52, "winRate": 66, "kda": 5, "category": "signature" },
-      { "name": "Estes", "slug": "estes", "lane": "Roam", "art": { "hue": 140, "label": "ES" }, "games": 38, "winRate": 64, "kda": 4.4, "category": "comfort" },
-      { "name": "Franco", "slug": "franco", "lane": "Roam", "art": { "hue": 25, "label": "FR" }, "games": 30, "winRate": 60, "kda": 4.1, "category": "pocket" }
+      {
+        "name": "Mathilda",
+        "slug": "mathilda",
+        "lane": "Roam",
+        "art": {
+          "hue": 300,
+          "label": "MA"
+        },
+        "games": 52,
+        "winRate": 66,
+        "kda": 5,
+        "category": "signature"
+      },
+      {
+        "name": "Estes",
+        "slug": "estes",
+        "lane": "Roam",
+        "art": {
+          "hue": 140,
+          "label": "ES"
+        },
+        "games": 38,
+        "winRate": 64,
+        "kda": 4.4,
+        "category": "comfort"
+      },
+      {
+        "name": "Franco",
+        "slug": "franco",
+        "lane": "Roam",
+        "art": {
+          "hue": 25,
+          "label": "FR"
+        },
+        "games": 30,
+        "winRate": 60,
+        "kda": 4.1,
+        "category": "pocket"
+      }
     ],
     "achievements": [
-      { "title": "Runner Up", "event": "Aurex Clash", "year": 2026, "kind": "Runner Up" }
+      {
+        "title": "Runner Up",
+        "event": "Aurex Clash",
+        "year": 2026,
+        "kind": "Runner Up"
+      }
     ]
   }
 ]
