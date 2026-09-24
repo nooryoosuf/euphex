@@ -30,6 +30,25 @@ export const HEROES: Record<string, { lane: HeroEntry["lane"]; hue: number; labe
   paquito: { lane: "EXP Lane", hue: 60, label: "PA" },
   johnson: { lane: "Roam", hue: 205, label: "JO" },
   nana: { lane: "Mid Lane", hue: 310, label: "NA" },
+  minotaur: { lane: "Roam", hue: 150, label: "MI" },
+  grock: { lane: "Roam", hue: 160, label: "GR" },
+  rafaela: { lane: "Roam", hue: 300, label: "RA" },
+  // Euphex pro pools
+  clint: { lane: "Gold Lane", hue: 30, label: "CL" },
+  miya: { lane: "Gold Lane", hue: 60, label: "MI" },
+  hanabi: { lane: "Gold Lane", hue: 280, label: "HA" },
+  obsidia: { lane: "Gold Lane", hue: 320, label: "OB" },
+  odette: { lane: "Mid Lane", hue: 200, label: "OD" },
+  vale: { lane: "Mid Lane", hue: 180, label: "VA" },
+  zhuxin: { lane: "Mid Lane", hue: 290, label: "ZH" },
+  vexana: { lane: "Mid Lane", hue: 270, label: "VE" },
+  gord: { lane: "Mid Lane", hue: 210, label: "GO" },
+  lunox: { lane: "Mid Lane", hue: 305, label: "LU" },
+  zetian: { lane: "Mid Lane", hue: 240, label: "ZE" },
+  cecilion: { lane: "Mid Lane", hue: 230, label: "CE" },
+  xavier: { lane: "Mid Lane", hue: 250, label: "XA" },
+  eudora: { lane: "Mid Lane", hue: 190, label: "EU" },
+  kadita: { lane: "Mid Lane", hue: 175, label: "KA" },
 };
 
 export function makeHero(
@@ -38,10 +57,11 @@ export function makeHero(
   winRate: number,
   category: HeroEntry["category"],
   kda?: number,
+  power?: number,
 ): HeroEntry {
   const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "");
   const reg = HEROES[slug] ?? { lane: "Multi" as const, hue: 220, label: name.slice(0, 2).toUpperCase() };
-  return { name, slug, lane: reg.lane, art: { hue: reg.hue, label: reg.label }, games, winRate, kda, category };
+  return { name, slug, lane: reg.lane, art: { hue: reg.hue, label: reg.label }, games, winRate, kda, power, category };
 }
 
 export const HERO_LIST = Object.keys(HEROES).map(

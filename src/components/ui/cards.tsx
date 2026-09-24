@@ -8,6 +8,7 @@ import { RoleBadge } from "@/components/ui/RoleIcon";
 import { Artwork } from "@/components/ui/Artwork";
 import { TeamLogo } from "@/components/ui/TeamLogos";
 import { TEAM_CARD_ART, NEWS_ART } from "@/data/imagery";
+import { SlidingName } from "@/components/ui/SlidingName";
 import { getTeam } from "@/data/teams";
 import { ArrowUpRight } from "lucide-react";
 
@@ -28,7 +29,7 @@ export function PlayerCard({ player, index = 0 }: { player: Player; index?: numb
         <Artwork hue={player.hue} label={player.gamertag.slice(0, 2)} className="aspect-[3/4] w-full transition-transform duration-500 group-hover:scale-[1.04]" />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-5 pt-14">
           <RoleBadge role={player.role} />
-          <p className="font-display mt-2 text-3xl font-bold tracking-tight">{player.gamertag}</p>
+          <SlidingName text={player.gamertag} className="font-display mt-2 text-3xl font-bold tracking-tight" />
           <p className="mt-1 text-xs tracking-[0.14em] uppercase text-white/50">
             {team?.shortName} — Signature: {player.favoriteHero}
           </p>
@@ -54,7 +55,7 @@ export function TeamCard({ team }: { team: Team }) {
             alt=""
             aria-hidden="true"
             loading="lazy"
-            className="aspect-[16/10] w-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.05]"
+            className="block aspect-[16/10] w-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.05]"
           />
         ) : (
           <Artwork hue={team.hue} label={team.index} className="aspect-[16/10] w-full transition-transform duration-700 group-hover:scale-[1.05]" />
@@ -144,7 +145,7 @@ export function NewsCard({ a }: { a: NewsArticle }) {
             alt=""
             aria-hidden="true"
             loading="lazy"
-            className="aspect-[16/8] w-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-[1.03]"
+            className="block aspect-[16/8] w-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <Artwork hue={a.hue} label={a.category.slice(0, 2)} className="aspect-[16/8] w-full transition-transform duration-500 group-hover:scale-[1.03]" />

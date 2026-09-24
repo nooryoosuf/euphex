@@ -50,7 +50,7 @@ export function CommunityMosaic() {
                 ? undefined
                 : { duration: 8, repeat: Infinity, ease: "easeInOut", delay: i * 2 }
             }
-            className="aspect-square w-full object-cover object-[center_20%]"
+            className="block aspect-square w-full object-cover object-[center_20%]"
           />
           <div
             className="pointer-events-none absolute inset-0"

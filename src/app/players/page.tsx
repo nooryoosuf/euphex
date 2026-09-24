@@ -28,7 +28,7 @@ export default function PlayersPage() {
 
   return (
     <>
-      <PageHero index="02" label="Athletes" title="PLAYERS." sub="Ten athletes. Five roles. Two squads — filter by team or lane." image={SECTION_BG.players} />
+      <PageHero index="02" label="Athletes" title="PLAYERS." sub="Eight athletes. Five roles. Two squads — filter by team or lane." image={SECTION_BG.players} />
       <div className="sticky top-16 md:top-20 z-30 border-b border-white/8 bg-[#07090D]/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-5 md:px-10 py-3 lg:flex-row lg:items-center">
           <div className="flex gap-2 overflow-x-auto" role="tablist" aria-label="Team filter">

@@ -186,7 +186,7 @@ export default function RoastPage() {
               {/* roast reveal */}
               <div className="grain relative overflow-hidden border border-[var(--accent)]/40 bg-[#0C0F16]">
                 {heroArt && (
-                  <img src={heroArt} alt="" aria-hidden="true" className="h-56 md:h-72 w-full object-cover object-[center_15%]" />
+                  <img src={heroArt} alt="" aria-hidden="true" className="block h-56 md:h-72 w-full object-cover object-[center_15%]" />
                 )}
                 {heroArt && (
                   <div className="absolute inset-x-0 top-0 h-56 md:h-72 bg-gradient-to-t from-[#0C0F16] via-transparent to-transparent" aria-hidden="true" />

@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="grid gap-6 border-y border-white/8 py-8 md:grid-cols-4">
           <Stat value={<CountUp to={siteConfig.org.founded} />} label="Founded" />
           <Stat value={<CountUp to={2} />} label="Squads" />
-          <Stat value={<CountUp to={10} />} label="Players" />
+          <Stat value={<CountUp to={8} />} label="Players" />
           <Stat value={<CountUp to={4} />} label="Trophies" />
         </div>
 

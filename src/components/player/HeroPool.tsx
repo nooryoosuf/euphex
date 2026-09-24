@@ -29,7 +29,7 @@ export function HeroPoolBlock({ player }: { player: Player }) {
             <img
               src={stageSrc}
               alt={hero.name}
-              className="aspect-[16/7] w-full object-cover object-[center_20%]"
+              className="block aspect-[16/7] w-full object-cover object-[center_20%]"
             />
           ) : (
             <Artwork hue={hero.art.hue} label={hero.art.label} className="aspect-[16/7] w-full" />
@@ -69,12 +69,14 @@ export function HeroPoolBlock({ player }: { player: Player }) {
             onMouseEnter={() => setActive(h.slug)}
             onFocus={() => setActive(h.slug)}
             className={cn(
-              "shrink-0 cursor-pointer overflow-hidden border transition-all",
+              "w-24 md:w-28 shrink-0 cursor-pointer overflow-hidden border transition-all",
               h.slug === active ? "border-[var(--accent)]" : "border-white/10 opacity-60 hover:opacity-100",
             )}
           >
-            <Artwork hue={h.art.hue} label={h.art.label} className="aspect-square w-full" />
-            <span className="block bg-black/80 px-1 py-1.5 text-[10px] font-bold tracking-[0.1em] text-center">
+            <span className="relative block aspect-square w-full overflow-hidden">
+              <Artwork hue={h.art.hue} label={h.art.label} className="absolute inset-0 h-full w-full" />
+            </span>
+            <span className="flex h-7 items-center justify-center bg-black/80 px-1 text-[10px] font-bold tracking-[0.1em] text-center leading-none truncate">
               {h.name.toUpperCase()}
             </span>
           </button>
@@ -103,7 +105,7 @@ export function HeroPoolBlock({ player }: { player: Player }) {
                     />
                   </div>
                   <p className="mt-1 text-xs text-white/45 tabular-nums">
-                    {h.games} matches · {h.winRate}% win
+                    {h.games} matches · {h.winRate}% win{h.power ? ` · ⚡${h.power.toLocaleString()} power` : ""}
                   </p>
                 </li>
               ))}

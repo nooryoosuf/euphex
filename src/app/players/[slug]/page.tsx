@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { PlayerCard } from "@/components/ui/cards";
 import { HeroPoolBlock } from "@/components/player/HeroPool";
+import { SlidingName } from "@/components/ui/SlidingName";
 import { imageForPlayer } from "@/data/imagery";
 
 export function generateStaticParams() {
@@ -47,7 +48,9 @@ export default async function PlayerPage({ params }: { params: Promise<{ slug: s
               / {team?.shortName}
             </p>
             <RoleBadge role={player.role} className="mt-5" />
-            <h1 className="font-display mt-2 text-6xl md:text-9xl font-bold leading-[0.9] tracking-tight">{player.gamertag}</h1>
+            <h1 className="font-display mt-2 text-6xl md:text-9xl font-bold leading-[0.9] tracking-tight">
+              <SlidingName text={player.gamertag} />
+            </h1>
             <p className="mt-3 text-lg text-white/60">
               {player.realName} — {player.country}
             </p>

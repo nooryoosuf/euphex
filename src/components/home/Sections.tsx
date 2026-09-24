@@ -23,7 +23,7 @@ export function Squads() {
         {[
           { v: <CountUp to={105} />, l: "Matches played" },
           { v: <CountUp to={71} suffix="%" />, l: "Org win rate" },
-          { v: <CountUp to={10} />, l: "Players" },
+          { v: <CountUp to={8} />, l: "Players" },
           { v: <CountUp to={4} />, l: "Trophies" },
         ].map((s, i) => (
           <Reveal key={i} delay={i * 0.06}>

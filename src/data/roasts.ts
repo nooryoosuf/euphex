@@ -712,8 +712,7 @@ const HEROES: Record<string, HeroRoast> = {
   },
   natalia: {
     display: "Natalia",
-    roles: ["Roam", "Jungle"],
-    lines: {
+    roles: ["Roam", "Jungle"],    lines: {
       friendly: [
         "{name}, your stealth fools the minimap and nobody else.",
         "You lurk in the bush so long the bush pays rent, {name}.",
@@ -726,6 +725,176 @@ const HEROES: Record<string, HeroRoast> = {
         "{name}, your stealth has a tell: the defeat screen loading.",
         "Natalia hunts in silence, {name}. Your gameplay screams.",
       ],
+    },
+  },
+  minotaur: {
+    display: "Minotaur",
+    roles: ["Roam"],
+    lines: {
+      friendly: [
+        "{name}, your rage bar fills faster than your team's confidence drains.",
+        "You ult when the rage is full and the team is gone, {name}. Tragic timing.",
+      ],
+      spicy: [
+        "{name}, your Minoan Fury hits everything except the reason you're losing.",
+        "Full rage, full engage, full team wipe — yours, {name}.",
+      ],
+      disrespectful: [
+        "{name}, your rage mode is just anger management with a death timer.",
+        "Minotaur protects the team, {name}. You need protection from yourself.",
+      ],
+    },
+  },
+  grock: {
+    display: "Grock",
+    roles: ["Roam"],
+    lines: {
+      friendly: [
+        "{name}, you hug walls for power and hug defeat for comfort.",
+        "No wall, no Grock, no wins, {name}. Geography diff.",
+      ],
+      spicy: [
+        "{name}, your Grock leaves the wall and leaves the game.",
+        "Guardian's Barrier, {name} — barricading your own escape route.",
+      ],
+      disrespectful: [
+        "{name}, you're a fortress with the gates wide open.",
+        "Grock is immovable, {name}. Your rank moves plenty — downward.",
+      ],
+    },
+  },
+  rafaela: {
+    display: "Rafaela",
+    roles: ["Roam"],    lines: {
+      friendly: [
+        "{name}, your heals tickle and your stun politely suggests stopping.",
+        "You speed-boost the team straight into the wipe, {name}. Efficient.",
+      ],
+      spicy: [
+        "{name}, your Rafaela is a hospital that only treats the enemy's boredom.",
+        "Holy Baptism, {name} — baptizing your team into the loss column.",
+      ],
+      disrespectful: [
+        "{name}, your healing couldn't save a practice bot.",
+        "Rafaela sustains pushes, {name}. You sustain excuses.",
+      ],
+    },
+  },
+  clint: {
+    display: "Clint",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your gun jams every time it matters. Impressive consistency.", "You blind the enemy and still get outplayed, {name}. They fight blind better."],
+      spicy: ["{name}, your Clint ult fires blanks and your laning fires warnings.", "Howitzer, {name} — how about zero damage instead?"],
+      disrespectful: ["{name}, your Blind Smoke couldn't hide your 2–7 scoreline.", "Clint is a sharpshooter, {name}. You're a share-your-loss streamer."],
+    },
+  },
+  miya: {
+    display: "Miya",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your Moonlight Shadow hides you from the fight, not the flame.", "You ult to escape and arrive at the same defeat, {name}."],
+      spicy: ["{name}, your Miya goes invisible and the game improves for everyone else.", "Turbo Stealth, {name} — turbo inting, more like."],
+      disrespectful: ["{name}, your arrows split and so does your team's patience.", "Miya is the beginner's bow, {name}. You're still drawing it wrong."],
+    },
+  },
+  hanabi: {
+    display: "Hanabi",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your petals bounce to everyone except your KDA.", "You immune with the shield and die with the team, {name}. Loyalty!"],
+      spicy: ["{name}, your Hanabi spreads damage thinner than your excuses.", "Petal Barrage, {name} — bombarding the scoreboard with deaths."],
+      disrespectful: ["{name}, your bounces hit five enemies and zero consequences.", "Hanabi blooms late, {name}. You never bloom at all."],
+    },
+  },
+  obsidia: {
+    display: "Obsidia",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your bone shards scatter like your game plan.", "You charge the burst and discharge a whimper, {name}."],
+      spicy: ["{name}, your Obsidia spikes the ground and your team's hopes.", "All fracture, no function, {name}."],
+      disrespectful: ["{name}, your shards couldn't cut queue time.", "Obsidia breaks armor, {name}. You break spirits — your own team's."],
+    },
+  },
+  odette: {
+    display: "Odette",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your Swan Song gets interrupted by a stiff breeze.", "You sing, they silence, you perish. The ballad of {name}."],
+      spicy: ["{name}, your Odette ult is a concert nobody attends — they just CC the singer.", "Swan Song, {name} — more like swan dive onto the defeat screen."],
+      disrespectful: ["{name}, your song needs a backup dancer: your respawn timer.", "Odette enchants crowds, {name}. You enchant the enemy kill feed."],
+    },
+  },
+  vale: {
+    display: "Vale",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your wind blows the enemy gently toward victory.", "You knock up the air and the air knocks you down, {name}."],
+      spicy: ["{name}, your Vale upgrades everything except his pilot.", "Windstorm, {name} — storming straight past every target."],
+      disrespectful: ["{name}, your tornado is a fan. Literally just a fan.", "Vale controls the skies, {name}. You control nothing, not even the wave."],
+    },
+  },
+  zhuxin: {
+    display: "Zhuxin",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your lantern lights the way to your own demise.", "You yoink one enemy and the other four yoink you, {name}."],
+      spicy: ["{name}, your Zhuxin grabs the tank and calls it a pick.", "Beacon toss, {name} — tossing away another teamfight."],
+      disrespectful: ["{name}, your lantern should come with a missing-person report.", "Zhuxin abducts victims, {name}. You're the victim. Every game."],
+    },
+  },
+  vexana: {
+    display: "Vexana",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your knight fights bravely while you hide bravely.", "You curse the enemy and bless them with survival, {name}."],
+      spicy: ["{name}, your Vexana raises the dead and buries the living — your team.", "Eternal Guard, {name} — eternally guarding an empty lane."],
+      disrespectful: ["{name}, your undead knight has a better record than you.", "Vexana commands death, {name}. Death commands you. Regularly."],
+    },
+  },
+  gord: {
+    display: "Gord",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your laser is a flashlight of false hope.", "You channel the beam and the enemy channels around it, {name}."],
+      spicy: ["{name}, your Gord ult paints the ground and misses the canvas.", "Mystic Projectile, {name} — mystically avoiding all value."],
+      disrespectful: ["{name}, your laser pointer couldn't bother a cat.", "Gord melts frontlines, {name}. You melt your team's morale."],
+    },
+  },
+  lunox: {
+    display: "Lunox",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your light and dark cancel out like your impact.", "Order, chaos, and a 4–6–3 statline, {name}. Balance!"],
+      spicy: ["{name}, your Lunox juggles two powers and drops both.", "Brilliance and darkness, {name}, neither of them carrying."],
+      disrespectful: ["{name}, your cosmic fission splits atoms and your team's composure.", "Lunox bends duality, {name}. You bend over for every gank."],
+    },
+  },
+  zetian: {
+    display: "Zetian",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your celestial edict decrees nothing, absolutely nothing.", "The empress commands and the enemy yawns, {name}."],
+      spicy: ["{name}, your Zetian rules the sky and rents the dirt.", "Elysian light, {name}, illuminating only your mistakes."],
+      disrespectful: ["{name}, your dynasty ends at minute eight, every game.", "Zetian ascends the throne, {name}. The throne is in Gold rank."],
+    },
+  },
+  eudora: {
+    display: "Eudora",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your combo deletes one person and your relevance.", "Forked lightning, forked results, {name}."],
+      spicy: ["{name}, your Eudora one-shots the support and gets one-shot by everyone else.", "Thunder's Wrath, {name} — wrath aimed exclusively at squishies and your dignity."],
+      disrespectful: ["{name}, your stun lasts two seconds. Your death lasts longer.", "Eudora is point-and-click, {name}. You still miss the point."],
+    },
+  },
+  kadita: {
+    display: "Kadita",
+    roles: ["Mid Lane"],
+    lines: {
+      friendly: ["{name}, your waves wash over the enemy like spa water.", "You ride the wave in and wipe out on it, {name}. Surfer tragedy."],
+      spicy: ["{name}, your Kadita surfaces, ults the air, and submerges in shame.", "Ocean's Ode, {name} — an ode to missing everything."],
+      disrespectful: ["{name}, your tidal waves couldn't sink a paper boat.", "Kadita rules the seas, {name}. You rule the respawn queue."],
     },
   },
 };

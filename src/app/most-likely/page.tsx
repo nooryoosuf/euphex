@@ -6,6 +6,7 @@ import { getTeam } from "@/data/teams";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { Artwork } from "@/components/ui/Artwork";
+import { SlidingName } from "@/components/ui/SlidingName";
 import { MOST_LIKELY_QUESTIONS } from "@/data/roasts";
 import { cn } from "@/lib/utils";
 
@@ -74,7 +75,7 @@ export default function MostLikelyPage() {
               >
                 <Artwork hue={p.hue} label={p.gamertag.slice(0, 2)} className="aspect-[3/4] w-full" />
                 <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4 pt-10">
-                  <span className="font-display block text-xl font-bold">{p.gamertag}</span>
+                  <SlidingName text={p.gamertag} className="font-display block text-xl font-bold" />
                   <span className="text-[11px] tracking-[0.14em] uppercase text-white/50">{getTeam(p.teamSlug)?.shortName} · {p.role}</span>
                   {total > 0 && (
                     <span className="mt-2 block">

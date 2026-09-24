@@ -16,6 +16,8 @@ export interface HeroEntry {
   games: number;
   winRate: number; // 0-100
   kda?: number;
+  /** in-game hero power, shown when provided */
+  power?: number;
   category: HeroCategory;
 }
 

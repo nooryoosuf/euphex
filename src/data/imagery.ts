@@ -117,6 +117,7 @@ const HERO_ART: Record<string, string> = {
   cecilion: IMAGES.cecilion,
   xavier: IMAGES.xavier,
   hirara: IMAGES.hirara,
+  zetian: IMAGES.zetian,
 };
 
 export function imageForHero(heroName: string): string | null {
