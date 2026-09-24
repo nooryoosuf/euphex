@@ -17,7 +17,7 @@ export default function TeamsPage() {
 
   return (
     <>
-      <PageHero index="01" label="Compete" title="THE SQUADS." sub="Three squads under one organization. Switch between them — the roster, stats, and story transition with you." image={SECTION_BG.teams} />
+      <PageHero index="01" label="Compete" title="THE SQUADS." sub="Two squads under one organization. Switch between them — the roster, stats, and story transition with you." image={SECTION_BG.teams} />
       {/* team switcher */}
       <div className="sticky top-16 md:top-20 z-30 border-b border-white/8 bg-[#07090D]/90 backdrop-blur-md" role="tablist" aria-label="Team switcher">
         <div className="mx-auto flex max-w-[1400px] gap-2 overflow-x-auto px-5 md:px-10 py-3">

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { OrgMark } from "@/components/ui/Artwork";
+import { EuphexLogo } from "@/components/ui/TeamLogos";
 
 const SECRET_KEY = "euphex-logo-taps";
 
@@ -26,12 +26,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <button onClick={onLogoClick} aria-label="Euphex logo (psst… tap 7 times)" className="flex items-center gap-3 cursor-pointer">
-              <OrgMark className="size-10 text-white" />
+              <EuphexLogo className="size-10 text-white" />
               <span className="font-display text-2xl font-bold">EUPHEX</span>
             </button>
             <p className="label mt-5 text-[var(--accent)]">{siteConfig.org.tagline}</p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
-              {siteConfig.org.fullName} — {siteConfig.org.game}. Three squads. One standard.
+              {siteConfig.org.fullName} — {siteConfig.org.game}. Two squads. One standard.
             </p>
           </div>
           <nav aria-label="Compete">

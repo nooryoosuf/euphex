@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "fetch-dex": "node scripts/fetch-dex-art.mjs",
+    "fetch-art": "node scripts/fetch-hero-art.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

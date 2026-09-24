@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export function HeroPoolBlock({ player }: { player: Player }) {
   const [active, setActive] = useState(player.heroPool[0]?.slug);
   const hero = player.heroPool.find((h) => h.slug === active) ?? player.heroPool[0];
-  const heroArt = imageForHero(hero.name);
+  const stageSrc = imageForHero(hero.name);
   const cats = [
     ["SIGNATURE", player.heroPool.filter((h) => h.category === "signature")],
     ["COMFORT", player.heroPool.filter((h) => h.category === "comfort")],
@@ -25,14 +25,14 @@ export function HeroPoolBlock({ player }: { player: Player }) {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <Artwork hue={hero.art.hue} label={hero.art.label} className="aspect-[16/7] w-full" />
-          {heroArt && (
+          {stageSrc ? (
             <img
-              src={heroArt}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
+              src={stageSrc}
+              alt={hero.name}
+              className="aspect-[16/7] w-full object-cover object-[center_20%]"
             />
+          ) : (
+            <Artwork hue={hero.art.hue} label={hero.art.label} className="aspect-[16/7] w-full" />
           )}
           <div
             className="absolute inset-0"
@@ -69,7 +69,7 @@ export function HeroPoolBlock({ player }: { player: Player }) {
             onMouseEnter={() => setActive(h.slug)}
             onFocus={() => setActive(h.slug)}
             className={cn(
-              "w-24 md:w-28 shrink-0 cursor-pointer overflow-hidden border transition-all",
+              "shrink-0 cursor-pointer overflow-hidden border transition-all",
               h.slug === active ? "border-[var(--accent)]" : "border-white/10 opacity-60 hover:opacity-100",
             )}
           >

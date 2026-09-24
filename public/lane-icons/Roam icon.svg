@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.99 47.99">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <path id="_形状_13_拷贝_4" data-name="形状 13 拷贝 4" class="cls-1" d="M47.99,38.99c0,4.97-4.03,9-9,9h-4.73c2.49-1.62,5.82-4.58,6.23-9v-8.99h-13.94l21.44-21v29.99ZM40.38.14l-8.88,8.86H11.99s-1.36-3.7,7.74-9h19.25c.46.01.93.06,1.39.14ZM6.42,47.57l8.58-8.58h21s1.36,3.7-7.74,9H9c-.88-.01-1.75-.15-2.58-.42ZM7.49,9v9h12.33L0,37.49V9C0,4.03,4.03,0,9,0h4.72c-2.49,1.62-5.82,4.58-6.23,9h0Z"/>
+  </g>
+</svg>

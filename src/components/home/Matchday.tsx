@@ -5,6 +5,7 @@ import { completedMatches, nextMatch } from "@/data/matches";
 import { getTeam } from "@/data/teams";
 import { formatDate } from "@/lib/utils";
 import { Countdown } from "@/components/ui/Countdown";
+import { TeamLogo } from "@/components/ui/TeamLogos";
 import { Badge } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -84,9 +85,12 @@ export function Matchday() {
           <div className="relative grid gap-10 p-8 md:p-14 lg:grid-cols-[1.2fr_auto] lg:items-center">
             <div>
               <p className="label text-[var(--accent)]">Next match — {upcoming.tournamentName} · {upcoming.stage}</p>
-              <h2 className="font-display mt-4 text-4xl md:text-6xl font-bold leading-[0.95] tracking-tight">
-                {team?.shortName} <span className="text-white/25">VS</span> {upcoming.opponentShort}
-              </h2>
+              <div className="mt-4 flex items-center gap-4 md:gap-6">
+                <TeamLogo slug={upcoming.teamSlug} className="h-12 md:h-16 w-auto text-white" />
+                <h2 className="font-display text-4xl md:text-6xl font-bold leading-[0.95] tracking-tight">
+                  {team?.shortName} <span className="text-white/25">VS</span> {upcoming.opponentShort}
+                </h2>
+              </div>
               <p className="mt-3 text-sm md:text-base text-white/55">
                 {team?.name} vs {upcoming.opponent} — {formatDate(upcoming.date)}
                 {upcoming.venue ? ` · ${upcoming.venue}` : ""} {isToday ? "· TONIGHT" : ""}

@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/primitives";
 /** Slow looping hero — one statement, one world. */
 const HERO_ROTATE_MS = 20000;
 const HEADLINES: { lines: [string, string]; image: string }[] = [
-  { lines: ["WE PLAY", "TO WIN."], image: IMAGES.beatrix },
+  { lines: ["WE PLAY", "TO WIN."], image: IMAGES.hirara },
   { lines: ["BUILT FOR", "THE FIGHT."], image: IMAGES.badang },
-  { lines: ["THREE SQUADS.", "ONE STANDARD."], image: IMAGES.lesley },
+  { lines: ["TWO SQUADS.", "ONE STANDARD."], image: IMAGES.zetian },
   { lines: ["PLAY HARD.", "PLAY TOGETHER."], image: IMAGES.kagura },
   { lines: ["OWN THE", "LAND OF DAWN."], image: IMAGES.aurora },
 ];
-const POOL = [IMAGES.beatrix, IMAGES.badang, IMAGES.lesley, IMAGES.kagura, IMAGES.aurora];
+const POOL = [IMAGES.hirara, IMAGES.badang, IMAGES.zetian, IMAGES.kagura, IMAGES.aurora];
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -198,7 +198,7 @@ export function Hero() {
           className="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-8"
         >
           <p className="max-w-md text-base md:text-lg leading-relaxed text-white/70 drop-shadow-[0_1px_12px_rgba(0,0,0,0.8)]">
-            Three squads. One standard. {siteConfig.org.description}
+            Two squads. One standard. {siteConfig.org.description}
           </p>
           <div className="flex flex-wrap gap-3">
             <Button href="/teams">Meet the squads</Button>
@@ -211,7 +211,7 @@ export function Hero() {
           <ChevronDown className="size-4 animate-bounce" />
           <span className="label !text-[10px]">Scroll</span>
           <span className="h-px flex-1 bg-white/10" />
-          <span className="label !text-[10px] hidden md:inline">Season 2026 — Three squads</span>
+          <span className="label !text-[10px] hidden md:inline">Season 2026 — Two squads</span>
         </div>
       </motion.div>
     </section>

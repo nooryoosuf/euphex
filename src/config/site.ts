@@ -12,7 +12,7 @@ export const siteConfig = {
     shortGame: "MLBB",
     founded: 2023,
     description:
-      "Euphex is a competitive Mobile Legends: Bang Bang esports organization fielding three squads under one standard — Prime, Academy, and Rising.",
+      "Euphex is a competitive Mobile Legends: Bang Bang esports organization fielding two squads under one standard — Euphex and Aurex.",
     url: "https://euphex.gg",
   },
   theme: {

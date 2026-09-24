@@ -5,6 +5,7 @@ import { getTeamPlayers } from "@/data/players";
 import { MATCHES } from "@/data/matches";
 import { PageHero } from "@/components/ui/PageHero";
 import { TEAM_BG } from "@/data/imagery";
+import { TeamLogo } from "@/components/ui/TeamLogos";
 import { PlayerCard, MatchCard } from "@/components/ui/cards";
 import { Badge, Stat } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
@@ -26,9 +27,13 @@ export default async function TeamPage({ params }: { params: Promise<{ slug: str
 
   return (
     <>
-      <PageHero index={team.index} label={`${team.tier} — ${team.verb}`} title={team.name} sub={team.description} image={TEAM_BG[slug] ?? TEAM_BG.main} />
+      <PageHero index={team.index} label={`${team.tier} — ${team.verb}`} title={team.name} sub={team.description} image={TEAM_BG[slug] ?? TEAM_BG.euphex} />
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="flex items-center gap-5">
+          <TeamLogo slug={team.slug} className="h-16 md:h-20 w-auto text-white" />
+          <p className="max-w-md text-sm md:text-base leading-relaxed text-white/55">{team.tagline}</p>
+        </div>
+        <div className="mt-8 grid gap-8 md:grid-cols-4">
           <Stat value={<CountUp to={team.wins} />} label={`${team.wins}–${team.losses} record`} />
           <Stat value={<CountUp to={winRate} suffix="%" />} label="Win rate" />
           <Stat value={<CountUp to={roster.length} />} label="Players" />

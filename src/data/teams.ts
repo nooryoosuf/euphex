@@ -1,17 +1,18 @@
 import type { Team } from "./types";
 
-// Add / remove teams here — UI renders from this array, no UI changes needed.
+// Two squads under one organization. Add / remove teams here —
+// UI renders from this array, no UI changes needed.
 export const TEAMS: Team[] = [
   {
-    slug: "main",
-    name: "EUPHEX PRIME",
-    shortName: "PRIME",
+    slug: "euphex",
+    name: "EUPHEX",
+    shortName: "EPX",
     tier: "MAIN",
     index: "01",
     verb: "COMPETE",
-    tagline: "The main roster. The standard-bearers.",
+    tagline: "The main team. The standard-bearers.",
     description:
-      "Prime is the flagship MLBB squad — a disciplined, aggressive five built for playoff pressure, Lord dances, and best-of series composure.",
+      "Euphex is the flagship MLBB squad — a disciplined, aggressive five built for playoff pressure, Lord dances, and best-of series composure.",
     playstyle: ["AGGRESSIVE.", "DISCIPLINED.", "UNPREDICTABLE."],
     hue: 225,
     founded: 2024,
@@ -25,15 +26,15 @@ export const TEAMS: Team[] = [
     ],
   },
   {
-    slug: "academy",
-    name: "EUPHEX ACADEMY",
-    shortName: "ACADEMY",
-    tier: "ACADEMY",
+    slug: "aurex",
+    name: "AUREX",
+    shortName: "ARX",
+    tier: "SECOND",
     index: "02",
-    verb: "DEVELOP",
-    tagline: "The proving ground. Next-up talent.",
+    verb: "PROVE",
+    tagline: "Same standard, new bite.",
     description:
-      "Academy is where mechanics meet system — young talent drilled in rotation, draft discipline, and pro habits until they are Prime-ready.",
+      "Aurex is the organization's second MLBB squad — hungry talent drilled in rotation, draft discipline, and pro habits until they take the main stage.",
     playstyle: ["HUNGRY.", "MECHANICAL.", "FEARLESS."],
     hue: 190,
     founded: 2025,
@@ -42,26 +43,8 @@ export const TEAMS: Team[] = [
     championships: 1,
     achievements: [
       { title: "Champion", event: "Rising Stars League", year: 2025, kind: "Champion" },
-      { title: "Runner Up", event: "Academy Clash", year: 2026, kind: "Runner Up" },
+      { title: "Runner Up", event: "Aurex Clash", year: 2026, kind: "Runner Up" },
     ],
-  },
-  {
-    slug: "rising",
-    name: "EUPHEX RISING",
-    shortName: "RISING",
-    tier: "DEVELOPMENT",
-    index: "03",
-    verb: "DISCOVER",
-    tagline: "The development squad. Raw and relentless.",
-    description:
-      "Rising scouts ladder standouts and molds them — fundamentals first, flash second. The future of the organization starts here.",
-    playstyle: ["RAW.", "RELENTLESS.", "UNFILTERED."],
-    hue: 265,
-    founded: 2026,
-    wins: 15,
-    losses: 9,
-    championships: 0,
-    achievements: [{ title: "Top 4", event: "Open Circuit #4", year: 2026, kind: "Top 4" }],
   },
 ];
 

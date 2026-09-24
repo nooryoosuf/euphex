@@ -3,16 +3,16 @@ import { Matchday } from "@/components/home/Matchday";
 import { CompetingNext, Results, Squads, History } from "@/components/home/Sections";
 import { SectionHeader, Button } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
-import { NEWS, MEDIA } from "@/data/content";
+import { NEWS } from "@/data/content";
 import { NewsCard } from "@/components/ui/cards";
-import { Artwork } from "@/components/ui/Artwork";
+import { CommunityMosaic } from "@/components/home/CommunityMosaic";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Ticker items={["RASHU CUP — GROUP STAGE", "SEP 28 — PRIME VS NOVA", "THREE SQUADS", "ONE STANDARD", "PLAY HARD. PLAY TOGETHER."]} />
+      <Ticker items={["RASHU CUP — GROUP STAGE", "SEP 28 — EUPHEX VS NOVA", "TWO SQUADS", "ONE STANDARD", "PLAY HARD. PLAY TOGETHER."]} />
       <div className="pt-14 md:pt-20">
         <Matchday />
       </div>
@@ -40,11 +40,7 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="grid grid-cols-2 gap-4">
-              {MEDIA.slice(0, 4).map((m) => (
-                <Artwork key={m.id} hue={m.hue} label={m.title.slice(0, 2).toUpperCase()} className="aspect-square w-full" />
-              ))}
-            </div>
+            <CommunityMosaic />
           </Reveal>
         </div>
       </section>

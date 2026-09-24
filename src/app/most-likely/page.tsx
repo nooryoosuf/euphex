@@ -57,7 +57,7 @@ export default function MostLikelyPage() {
         </p>
 
         <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-          {PLAYERS.filter((p) => p.teamSlug === "main").map((p) => {
+          {PLAYERS.filter((p) => p.teamSlug === "euphex").map((p) => {
             const pct = total ? Math.round(((tally[p.slug] ?? 0) / total) * 100) : 0;
             const mine = voted[qi] === p.slug;
             return (

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { OrgMark } from "@/components/ui/Artwork";
+import { EuphexLogo } from "@/components/ui/TeamLogos";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -45,7 +45,7 @@ export function Navbar() {
       >
         <nav aria-label="Primary" className="mx-auto flex h-16 md:h-20 max-w-[1400px] items-center justify-between px-5 md:px-10">
           <Link href="/" className="flex items-center gap-3" aria-label="Euphex home">
-            <OrgMark className="size-8 text-white" />
+            <EuphexLogo className="size-8 text-white" />
             <span className="font-display text-lg font-bold tracking-tight">
               EUPHEX
               <span className="ml-2 hidden sm:inline text-[10px] font-semibold tracking-[0.28em] text-white/40">ESPORTS</span>

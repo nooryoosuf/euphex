@@ -12,8 +12,8 @@ import { CountUp } from "@/components/ui/CountUp";
 export function Squads() {
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-32" aria-label="Squads">
-      <SectionHeader index="02" label="The organization" title="THREE SQUADS. ONE STANDARD." href="/teams" linkLabel="All teams" />
-      <div className="grid gap-5 md:grid-cols-3">
+      <SectionHeader index="02" label="The organization" title="TWO SQUADS. ONE STANDARD." href="/teams" linkLabel="All teams" />
+      <div className="grid gap-5 md:grid-cols-2">
         {TEAMS.map((t) => (
           <TeamCard key={t.slug} team={t} />
         ))}
@@ -21,9 +21,9 @@ export function Squads() {
       {/* org totals strip */}
       <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 border-y border-white/8 py-8">
         {[
-          { v: <CountUp to={90} />, l: "Matches played" },
-          { v: <CountUp to={68} suffix="%" />, l: "Org win rate" },
-          { v: <CountUp to={15} />, l: "Players" },
+          { v: <CountUp to={105} />, l: "Matches played" },
+          { v: <CountUp to={71} suffix="%" />, l: "Org win rate" },
+          { v: <CountUp to={10} />, l: "Players" },
           { v: <CountUp to={4} />, l: "Trophies" },
         ].map((s, i) => (
           <Reveal key={i} delay={i * 0.06}>

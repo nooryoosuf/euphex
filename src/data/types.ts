@@ -54,7 +54,7 @@ export interface Team {
   slug: string;
   name: string;
   shortName: string;
-  tier: "MAIN" | "ACADEMY" | "DEVELOPMENT";
+  tier: "MAIN" | "SECOND" | "ACADEMY" | "DEVELOPMENT";
   index: string; // "01"
   verb: string; // COMPETE / DEVELOP / DISCOVER
   tagline: string;

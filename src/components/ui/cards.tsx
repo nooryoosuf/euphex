@@ -6,6 +6,8 @@ import { formatDate, formatTime, cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/primitives";
 import { RoleBadge } from "@/components/ui/RoleIcon";
 import { Artwork } from "@/components/ui/Artwork";
+import { TeamLogo } from "@/components/ui/TeamLogos";
+import { TEAM_CARD_ART, NEWS_ART } from "@/data/imagery";
 import { getTeam } from "@/data/teams";
 import { ArrowUpRight } from "lucide-react";
 
@@ -45,7 +47,25 @@ export function TeamCard({ team }: { team: Team }) {
       href={`/teams/${team.slug}`}
       className="group relative block overflow-hidden border border-white/8 bg-[#0C0F16] hover:border-[var(--accent)]/50 transition-all duration-500"
     >
-      <Artwork hue={team.hue} label={team.index} className="aspect-[16/10] w-full transition-transform duration-700 group-hover:scale-[1.05]" />
+      <div className="relative overflow-hidden">
+        {TEAM_CARD_ART[team.slug] ? (
+          <img
+            src={TEAM_CARD_ART[team.slug]}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            className="aspect-[16/10] w-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.05]"
+          />
+        ) : (
+          <Artwork hue={team.hue} label={team.index} className="aspect-[16/10] w-full transition-transform duration-700 group-hover:scale-[1.05]" />
+        )}
+        <div
+          className="absolute inset-0"
+          aria-hidden="true"
+          style={{ background: "linear-gradient(180deg, rgba(7,9,13,0.15) 0%, rgba(7,9,13,0.55) 100%)" }}
+        />
+        <TeamLogo slug={team.slug} className="absolute bottom-4 right-5 h-12 w-auto text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]" />
+      </div>
       <div className="p-6 md:p-8">
         <p className="label text-[var(--accent)]">
           {team.index} — {team.tier} · {team.verb}
@@ -114,9 +134,27 @@ export function TournamentCard({ t, index = 0 }: { t: Tournament; index?: number
 }
 
 export function NewsCard({ a }: { a: NewsArticle }) {
+  const art = NEWS_ART[a.slug];
   return (
     <Link href={`/news/${a.slug}`} className="group block border border-white/8 bg-[#0C0F16] hover:border-[var(--accent)]/50 transition-colors overflow-hidden">
-      <Artwork hue={a.hue} label={a.category.slice(0, 2)} className="aspect-[16/8] w-full transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div className="relative overflow-hidden">
+        {art ? (
+          <img
+            src={art}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            className="aspect-[16/8] w-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <Artwork hue={a.hue} label={a.category.slice(0, 2)} className="aspect-[16/8] w-full transition-transform duration-500 group-hover:scale-[1.03]" />
+        )}
+        <div
+          className="absolute inset-0"
+          aria-hidden="true"
+          style={{ background: "linear-gradient(180deg, rgba(7,9,13,0.1) 0%, rgba(7,9,13,0.5) 100%)" }}
+        />
+      </div>
       <div className="p-5 md:p-6">
         <div className="flex items-center gap-3">
           <Badge tone="accent">{a.category}</Badge>
