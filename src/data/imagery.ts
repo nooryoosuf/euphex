@@ -54,6 +54,10 @@ export const IMAGES = {
   xavier: img("xavier-sunborn-monarch-collector-skin-mobile-legends-4k-wallpaper-uhdpaper.com-619@5@i.jpg"),
   zetian: img("zetian-mlbb-elysian-luminance-starlight-skin-splash-art-4k-wallpaper-uhdpaper.com-527@5@q.jpg"),
   tigreal: img("tigreal-gold-baron-mlbb-skin-4k-wallpaper-3840x2160-uhdpaper.com-1031.0_b.jpg"),
+  minotaur: img("minotaur-orbiter-skin-mobile-legends-uhdpaper.com-4K-13.jpg"),
+  tigrealRevamped: img("tigreal-revamped-mobile-legends-project-next-uhdpaper.com-4K-5.2874.jpg"),
+  yisunshin: img("yi-sun-shin-mlbb-lone-destructor-revamped-collector-skin-splash-art-4k-wallpaper-uhdpaper.com-523@5@q.jpg"),
+  eudora: img("eudora-emerald-enchantress-mobile-legends-skin-uhdpaper.com-4K-8.1042.jpg"),
 } as const;
 
 /** Homepage hero — layered parallax stack (back → front). */
@@ -118,6 +122,9 @@ const HERO_ART: Record<string, string> = {
   xavier: IMAGES.xavier,
   hirara: IMAGES.hirara,
   zetian: IMAGES.zetian,
+  minotaur: IMAGES.minotaur,
+  tigreal: IMAGES.tigrealRevamped,
+  eudora: IMAGES.eudora,
 };
 
 export function imageForHero(heroName: string): string | null {
