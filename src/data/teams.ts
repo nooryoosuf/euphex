@@ -1,51 +1,7 @@
 import type { Team } from "./types";
+import data from "./teams.json";
 
-// Two squads under one organization. Add / remove teams here —
-// UI renders from this array, no UI changes needed.
-export const TEAMS: Team[] = [
-  {
-    slug: "euphex",
-    name: "EUPHEX",
-    shortName: "EPX",
-    tier: "MAIN",
-    index: "01",
-    verb: "COMPETE",
-    tagline: "The main team. The standard-bearers.",
-    description:
-      "Euphex is the flagship MLBB squad — a disciplined, aggressive five built for playoff pressure, Lord dances, and best-of series composure.",
-    playstyle: ["AGGRESSIVE.", "DISCIPLINED.", "UNPREDICTABLE."],
-    hue: 225,
-    founded: 2024,
-    wins: 47,
-    losses: 16,
-    championships: 3,
-    achievements: [
-      { title: "Champion", event: "Rashu Cup", year: 2025, kind: "Champion" },
-      { title: "Champion", event: "Midnight Invitational", year: 2025, kind: "Champion" },
-      { title: "Top 4", event: "Continental Qualifier", year: 2026, kind: "Top 4" },
-    ],
-  },
-  {
-    slug: "aurex",
-    name: "AUREX",
-    shortName: "ARX",
-    tier: "SECOND",
-    index: "02",
-    verb: "PROVE",
-    tagline: "Same standard, new bite.",
-    description:
-      "Aurex is the organization's second MLBB squad — hungry talent drilled in rotation, draft discipline, and pro habits until they take the main stage.",
-    playstyle: ["HUNGRY.", "MECHANICAL.", "FEARLESS."],
-    hue: 190,
-    founded: 2025,
-    wins: 28,
-    losses: 14,
-    championships: 1,
-    achievements: [
-      { title: "Champion", event: "Rising Stars League", year: 2025, kind: "Champion" },
-      { title: "Runner Up", event: "Aurex Clash", year: 2026, kind: "Runner Up" },
-    ],
-  },
-];
+// Add / remove teams in teams.json — UI renders from this array, no UI changes needed.
+export const TEAMS = data as Team[];
 
 export const getTeam = (slug: string) => TEAMS.find((t) => t.slug === slug);

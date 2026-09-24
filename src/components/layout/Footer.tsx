@@ -1,11 +1,14 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { EuphexLogo } from "@/components/ui/TeamLogos";
 
 const SECRET_KEY = "euphex-logo-taps";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) return null;
   const onLogoClick = () => {
     try {
       const n = Number(sessionStorage.getItem(SECRET_KEY) ?? "0") + 1;

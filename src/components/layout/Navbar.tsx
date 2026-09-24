@@ -35,6 +35,8 @@ export function Navbar() {
     };
   }, [open ]);
 
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <>
       <header

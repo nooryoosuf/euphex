@@ -8,7 +8,7 @@
     "opponent": "Nova Sentinels",
     "opponentShort": "NVS",
     "date": "2026-09-28T19:30:00+03:00",
-    "status": "completed",
+    "status": "upcoming",
     "venue": "Amman Arena"
   },
   {
@@ -47,66 +47,15 @@
     "scoreThem": 1,
     "result": "WIN",
     "games": [
-      {
-        "game": 1,
-        "result": "WIN",
-        "duration": "18:42",
-        "killsUs": 18,
-        "killsThem": 9,
-        "towersUs": 8,
-        "towersThem": 3,
-        "mvp": "nawrrr"
-      },
-      {
-        "game": 2,
-        "result": "LOSS",
-        "duration": "21:07",
-        "killsUs": 11,
-        "killsThem": 16,
-        "towersUs": 4,
-        "towersThem": 8,
-        "mvp": "xxgokgokxx"
-      },
-      {
-        "game": 3,
-        "result": "WIN",
-        "duration": "16:55",
-        "killsUs": 21,
-        "killsThem": 7,
-        "towersUs": 9,
-        "towersThem": 2,
-        "mvp": "zinzinnextdoor"
-      },
-      {
-        "game": 4,
-        "result": "WIN",
-        "duration": "19:31",
-        "killsUs": 17,
-        "killsThem": 10,
-        "towersUs": 8,
-        "towersThem": 4,
-        "mvp": "nawrrr"
-      }
+      { "game": 1, "result": "WIN", "duration": "18:42", "killsUs": 18, "killsThem": 9, "towersUs": 8, "towersThem": 3, "mvp": "nawrrr" },
+      { "game": 2, "result": "LOSS", "duration": "21:07", "killsUs": 11, "killsThem": 16, "towersUs": 4, "towersThem": 8, "mvp": "xxgokgokxx" },
+      { "game": 3, "result": "WIN", "duration": "16:55", "killsUs": 21, "killsThem": 7, "towersUs": 9, "towersThem": 2, "mvp": "zinzinnextdoor" },
+      { "game": 4, "result": "WIN", "duration": "19:31", "killsUs": 17, "killsThem": 10, "towersUs": 8, "towersThem": 4, "mvp": "nawrrr" }
     ],
     "statLines": [
-      {
-        "playerSlug": "nawrrr",
-        "kills": 2,
-        "deaths": 3,
-        "assists": 14
-      },
-      {
-        "playerSlug": "xxgokgokxx",
-        "kills": 7,
-        "deaths": 3,
-        "assists": 11
-      },
-      {
-        "playerSlug": "zinzinnextdoor",
-        "kills": 9,
-        "deaths": 2,
-        "assists": 6
-      }
+      { "playerSlug": "nawrrr", "kills": 2, "deaths": 3, "assists": 14 },
+      { "playerSlug": "xxgokgokxx", "kills": 7, "deaths": 3, "assists": 11 },
+      { "playerSlug": "zinzinnextdoor", "kills": 9, "deaths": 2, "assists": 6 }
     ]
   },
   {
@@ -123,26 +72,8 @@
     "scoreThem": 0,
     "result": "WIN",
     "games": [
-      {
-        "game": 1,
-        "result": "WIN",
-        "duration": "17:20",
-        "killsUs": 15,
-        "killsThem": 8,
-        "towersUs": 7,
-        "towersThem": 3,
-        "mvp": "kairo"
-      },
-      {
-        "game": 2,
-        "result": "WIN",
-        "duration": "20:02",
-        "killsUs": 14,
-        "killsThem": 11,
-        "towersUs": 6,
-        "towersThem": 5,
-        "mvp": "sable"
-      }
+      { "game": 1, "result": "WIN", "duration": "17:20", "killsUs": 15, "killsThem": 8, "towersUs": 7, "towersThem": 3, "mvp": "kairo" },
+      { "game": 2, "result": "WIN", "duration": "20:02", "killsUs": 14, "killsThem": 11, "towersUs": 6, "towersThem": 5, "mvp": "sable" }
     ]
   },
   {
@@ -159,34 +90,9 @@
     "scoreThem": 2,
     "result": "LOSS",
     "games": [
-      {
-        "game": 1,
-        "result": "WIN",
-        "duration": "19:10",
-        "killsUs": 16,
-        "killsThem": 12,
-        "towersUs": 7,
-        "towersThem": 5,
-        "mvp": "nawrrr"
-      },
-      {
-        "game": 2,
-        "result": "LOSS",
-        "duration": "22:44",
-        "killsUs": 9,
-        "killsThem": 15,
-        "towersUs": 3,
-        "towersThem": 8
-      },
-      {
-        "game": 3,
-        "result": "LOSS",
-        "duration": "24:01",
-        "killsUs": 10,
-        "killsThem": 17,
-        "towersUs": 4,
-        "towersThem": 9
-      }
+      { "game": 1, "result": "WIN", "duration": "19:10", "killsUs": 16, "killsThem": 12, "towersUs": 7, "towersThem": 5, "mvp": "nawrrr" },
+      { "game": 2, "result": "LOSS", "duration": "22:44", "killsUs": 9, "killsThem": 15, "towersUs": 3, "towersThem": 8 },
+      { "game": 3, "result": "LOSS", "duration": "24:01", "killsUs": 10, "killsThem": 17, "towersUs": 4, "towersThem": 9 }
     ]
   },
   {
