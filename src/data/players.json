@@ -130,7 +130,7 @@
   {
     "slug": "zinzinnextdoor",
     "gamertag": "ZINZINNEXTDOOR",
-    "realName": "Zinzinnextdoor",
+    "realName": "zinzinnextdoor",
     "role": "Gold Lane",
     "teamSlug": "euphex",
     "country": "Maldives",
@@ -182,8 +182,8 @@
           "hue": 30,
           "label": "CL"
         },
-        "games": 533,
-        "winRate": 47.7,
+        "games": 542,
+        "winRate": 47,
         "kda": 5.3,
         "power": 3250,
         "category": "comfort"
@@ -196,7 +196,7 @@
           "hue": 320,
           "label": "OB"
         },
-        "games": 426,
+        "games": 431,
         "winRate": 47.9,
         "kda": 5.5,
         "power": 3781,
@@ -210,8 +210,8 @@
           "hue": 15,
           "label": "BE"
         },
-        "games": 400,
-        "winRate": 47.8,
+        "games": 406,
+        "winRate": 47.5,
         "kda": 5.6,
         "power": 3107,
         "category": "comfort"
@@ -224,23 +224,11 @@
           "hue": 60,
           "label": "MI"
         },
-        "games": 240,
-        "winRate": 52,
+        "games": 373,
+        "winRate": 55.5,
         "kda": 5.8,
-        "category": "pocket"
-      },
-      {
-        "name": "Hanabi",
-        "slug": "hanabi",
-        "lane": "Gold Lane",
-        "art": {
-          "hue": 280,
-          "label": "HA"
-        },
-        "games": 180,
-        "winRate": 54,
-        "kda": 5.4,
-        "category": "pocket"
+        "category": "pocket",
+        "power": 3701
       }
     ],
     "achievements": [
@@ -273,12 +261,18 @@
         "event": "Maldives Leaderboard",
         "year": 2025,
         "kind": "Award"
+      },
+      {
+        "title": "Maldives No.10 Miya",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Champion"
       }
     ]
   },
   {
     "slug": "xxgokgokxx",
-    "gamertag": "xxGOKGOKxx",
+    "gamertag": "XXGOKGOKXX",
     "realName": "xxGokgokxx",
     "role": "Mid Lane",
     "teamSlug": "euphex",
