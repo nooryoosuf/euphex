@@ -9,18 +9,42 @@
     "prizePool": "$25,000",
     "venue": "Amman Arena",
     "format": "Groups → Single-elim playoffs, BO5 finals",
-    "teamSlugs": ["euphex"],
+    "teamSlugs": [
+      "euphex"
+    ],
     "hue": 225,
     "description": "The region's premier MLBB cup. Euphex entered as defending champions and opened the group with a statement draft phase.",
     "journey": [
-      { "title": "Matchday 1", "text": "Draft masterclass — 2–0 control series, zero Lords conceded." },
-      { "title": "Matchday 2", "text": "2–2 draw vs Halcyon Five after a 24-minute Lord throw. Lessons logged." }
+      {
+        "title": "Matchday 1",
+        "text": "Draft masterclass — 2–0 control series, zero Lords conceded."
+      },
+      {
+        "title": "Matchday 2",
+        "text": "2–2 draw vs Halcyon Five after a 24-minute Lord throw. Lessons logged."
+      }
     ],
     "standings": [
-      { "team": "EUPHEX", "w": 1, "l": 0 },
-      { "team": "Halcyon Five", "w": 1, "l": 0 },
-      { "team": "Nova Sentinels", "w": 0, "l": 1 },
-      { "team": "Cinder Wolves", "w": 0, "l": 1 }
+      {
+        "team": "EUPHEX",
+        "w": 1,
+        "l": 0
+      },
+      {
+        "team": "Halcyon Five",
+        "w": 1,
+        "l": 0
+      },
+      {
+        "team": "Nova Sentinels",
+        "w": 0,
+        "l": 1
+      },
+      {
+        "team": "Cinder Wolves",
+        "w": 0,
+        "l": 1
+      }
     ]
   },
   {
@@ -32,62 +56,10 @@
     "prizePool": "$5,000",
     "venue": "Online",
     "format": "Single elimination, BO3",
-    "teamSlugs": ["aurex"],
+    "teamSlugs": [
+      "aurex"
+    ],
     "hue": 265,
     "description": "Aurex's first bracket test against seasoned open-circuit grinders."
-  },
-  {
-    "slug": "aurex-clash",
-    "name": "AUREX CLASH",
-    "stage": "SEMIFINAL",
-    "status": "UPCOMING",
-    "date": "2026-10-04",
-    "prizePool": "$8,000",
-    "venue": "Online",
-    "format": "Double elimination, BO3",
-    "teamSlugs": ["aurex"],
-    "hue": 190,
-    "description": "Aurex's revenge run — semifinal rematch vs Iron Lynx Academy."
-  },
-  {
-    "slug": "midnight-invitational",
-    "name": "MIDNIGHT INVITATIONAL",
-    "stage": "CHAMPIONS",
-    "status": "COMPLETED",
-    "date": "2026-09-12",
-    "prizePool": "$15,000",
-    "venue": "Riyadh Studio",
-    "format": "Invitational, BO5 final",
-    "teamSlugs": ["euphex"],
-    "placement": "1st — Champions",
-    "mvp": "NAWRRR",
-    "hue": 275,
-    "description": "Euphex lifted the trophy 3–1 over Apex Falcons. Nawrrr's engages closed the door in Game 4."
-  },
-  {
-    "slug": "continental-qualifier",
-    "name": "CONTINENTAL QUALIFIER",
-    "stage": "TOP 4",
-    "status": "COMPLETED",
-    "date": "2026-08-29",
-    "venue": "Online",
-    "format": "GSL groups → BO3 playoffs",
-    "teamSlugs": ["euphex"],
-    "placement": "Top 4",
-    "hue": 210,
-    "description": "Quarterfinal exit to Orbital Nine. The loss that rebuilt the draft book."
-  },
-  {
-    "slug": "open-circuit-4",
-    "name": "OPEN CIRCUIT #4",
-    "stage": "TOP 4",
-    "status": "COMPLETED",
-    "date": "2026-08-22",
-    "venue": "Online",
-    "format": "Single elimination",
-    "teamSlugs": ["aurex"],
-    "placement": "Top 4",
-    "hue": 320,
-    "description": "Aurex announced themselves with a 2–1 upset over Cinder Wolves."
   }
 ]
