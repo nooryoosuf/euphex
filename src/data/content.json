@@ -86,23 +86,97 @@
     }
   ],
   "media": [
-    { "id": "m1", "category": "MATCHDAY", "title": "Grand final walkout", "hue": 225, "tall": true },
-    { "id": "m2", "category": "TEAM", "title": "Euphex bootcamp", "hue": 230 },
-    { "id": "m3", "category": "COMMUNITY", "title": "Fan meet — Amman", "hue": 265 },
-    { "id": "m4", "category": "BEHIND THE SCENES", "title": "Draft room audio", "hue": 190, "tall": true },
-    { "id": "m5", "category": "MATCHDAY", "title": "Lord steal freeze-frame", "hue": 210 },
-    { "id": "m6", "category": "TEAM", "title": "Aurex scrims", "hue": 190 },
-    { "id": "m7", "category": "BEHIND THE SCENES", "title": "Jersey shoot", "hue": 275 },
-    { "id": "m8", "category": "COMMUNITY", "title": "Watch party chaos", "hue": 320, "tall": true },
-    { "id": "m9", "category": "MATCHDAY", "title": "Trophy lift", "hue": 45 },
-    { "id": "m10", "category": "TEAM", "title": "Aurex trials", "hue": 150 },
-    { "id": "m11", "category": "BEHIND THE SCENES", "title": "Comm check", "hue": 25 },
-    { "id": "m12", "category": "COMMUNITY", "title": "Discord night", "hue": 205 }
+    {
+      "id": "m1",
+      "category": "MATCHDAY",
+      "title": "Grand final walkout",
+      "hue": 225,
+      "tall": true
+    },
+    {
+      "id": "m2",
+      "category": "TEAM",
+      "title": "Euphex bootcamp",
+      "hue": 230
+    },
+    {
+      "id": "m3",
+      "category": "COMMUNITY",
+      "title": "Fan meet — Amman",
+      "hue": 265
+    },
+    {
+      "id": "m4",
+      "category": "BEHIND THE SCENES",
+      "title": "Draft room audio",
+      "hue": 190,
+      "tall": true
+    },
+    {
+      "id": "m5",
+      "category": "MATCHDAY",
+      "title": "Lord steal freeze-frame",
+      "hue": 210
+    },
+    {
+      "id": "m6",
+      "category": "TEAM",
+      "title": "Aurex scrims",
+      "hue": 190
+    },
+    {
+      "id": "m7",
+      "category": "BEHIND THE SCENES",
+      "title": "Jersey shoot",
+      "hue": 275
+    },
+    {
+      "id": "m8",
+      "category": "COMMUNITY",
+      "title": "Watch party chaos",
+      "hue": 320,
+      "tall": true
+    },
+    {
+      "id": "m9",
+      "category": "MATCHDAY",
+      "title": "Trophy lift",
+      "hue": 45
+    },
+    {
+      "id": "m10",
+      "category": "TEAM",
+      "title": "Aurex trials",
+      "hue": 150
+    },
+    {
+      "id": "m11",
+      "category": "BEHIND THE SCENES",
+      "title": "Comm check",
+      "hue": 25
+    },
+    {
+      "id": "m12",
+      "category": "COMMUNITY",
+      "title": "Discord night",
+      "hue": 205
+    }
   ],
   "timeline": [
-    { "year": "2023", "title": "ORGANIZATION FOUNDED", "text": "Five friends, one laptop per player, and a borrowed scrim room." },
-    { "year": "2024", "title": "FIRST TOURNAMENT", "text": "Euphex debuts. Nobody knows the name. Everybody remembers the Fanny." },
-    { "year": "2025", "title": "FIRST CHAMPIONSHIP", "text": "Rashu Cup lifted. Midnight Invitational follows. The standard is set." },
-    { "year": "2026", "title": "TWO SQUADS", "text": "Aurex joins as second squad — one standard, two bites." }
+    {
+      "year": "2024",
+      "title": "ORGANIZATION FOUNDED",
+      "text": "Five friends, one laptop per player, and a borrowed scrim room."
+    },
+    {
+      "year": "2024",
+      "title": "FIRST TOURNAMENT",
+      "text": "Euphex debuts. Nobody knows the name. Everybody remembers the Fanny."
+    },
+    {
+      "year": "2026",
+      "title": "TWO SQUADS",
+      "text": "Aurex joins as second squad — one standard, two bites."
+    }
   ]
 }
