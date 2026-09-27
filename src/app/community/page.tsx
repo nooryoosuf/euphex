@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const CARDS = [
   { href: "/retri-test", title: "RETRIBUTION TEST", sub: "Tap Retri on the line. Get ranked. Get roasted.", tag: "01 — Skill game" },
-  { href: "/kit-check", title: "WHO'S THAT HERO?", sub: "Riddles + stat tiles. Daily hero mystery.", tag: "02 — Daily" },
+  { href: "/whos-that-hero", title: "WHO'S THAT HERO?", sub: "Riddles + stat tiles. Daily hero mystery.", tag: "02 — Daily" },
   { href: "/roast", title: "ROAST THE ROSTER", sub: "Think you can survive our players?", tag: "03 — Interactive" },
 ];
 

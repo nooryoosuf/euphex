@@ -45,7 +45,7 @@ export const siteConfig = {
     ],
     community: [
       { label: "Retribution Test", href: "/retri-test" },
-      { label: "Who's That Hero", href: "/kit-check" },
+      { label: "Who's That Hero", href: "/whos-that-hero" },
       { label: "Roast the Roster", href: "/roast" },
     ],
   },

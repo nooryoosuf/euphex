@@ -174,7 +174,7 @@ export default function KitCheckPage() {
     if (!done) return;
     const grid = done.guesses.map((g) => (g === target ? "🟩" : "🟥")).join("");
     const pad = Array.from({ length: MAX_GUESSES - done.guesses.length }).map(() => "⬛").join("");
-    const text = `EUPHEX WHO'S THAT HERO #${puzzleNo} — ${done.won ? `${done.guesses.length}/5` : "X/5"} ${grid}${pad} (${done.points} pts) euphex.gg/kit-check`;
+    const text = `EUPHEX WHO'S THAT HERO #${puzzleNo} — ${done.won ? `${done.guesses.length}/5` : "X/5"} ${grid}${pad} (${done.points} pts) euphex.gg/whos-that-hero`;
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
