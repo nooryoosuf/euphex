@@ -48,7 +48,7 @@ export default function Home() {
       <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-28" aria-label="Latest news">
         <SectionHeader index="06" label="Wire" title="LATEST." href="/news" linkLabel="All news" />
         <div className="grid gap-5 md:grid-cols-3">
-          {NEWS.slice(0, 3).map((a) => (
+          {[...NEWS].sort((a, b) => +new Date(b.date) - +new Date(a.date)).slice(0, 3).map((a) => (
             <NewsCard key={a.slug} a={a} />
           ))}
         </div>

@@ -96,12 +96,9 @@ export const COMMUNITY_ART = [IMAGES.lesleyAngelic, IMAGES.cecilion, IMAGES.bele
 
 /** News card covers, keyed by article slug. */
 export const NEWS_ART: Record<string, string> = {
-  "prime-rashu-groups": IMAGES.badangZen,
-  "main-roster-announced": IMAGES.beatrix,
-  "new-players-join": IMAGES.xavier,
-  "midnight-champions": IMAGES.lesleyFalcon,
-  "aurex-revenge-run": IMAGES.hirara,
-  "open-trials-recap": IMAGES.cecilion,
+  "ooredoo-contender-recap": IMAGES.aurora,
+  "on-flash-series-recap": IMAGES.atlas,
+  "dmgc-2026-recap": IMAGES.badangZen,
 };
 
 /** MLBB hero name → artwork (where available). */
