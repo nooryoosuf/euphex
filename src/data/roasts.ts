@@ -897,6 +897,177 @@ const HEROES: Record<string, HeroRoast> = {
       disrespectful: ["{name}, your tidal waves couldn't sink a paper boat.", "Kadita rules the seas, {name}. You rule the respawn queue."],
     },
   },
+  tigreal: {
+    display: "Tigreal",
+    roles: ["Roam"],
+    lines: {
+      friendly: ["{name}, your implosion pulls everyone in — mostly your own team.", "You flicker-ult the air and call it pressure, {name}."],
+      spicy: ["{name}, your Sacred Hammer knocks up the minions. Bold target selection.", "You engage like a fire alarm — loud, sudden, and everyone ignores it, {name}."],
+      disrespectful: ["{name}, your Implosion should come with an apology letter attached.", "Tigreal sets up teamfights, {name}. You set up funerals — yours."],
+    },
+  },
+  granger: {
+    display: "Granger",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, six bullets and you spend all of them on the tank.", "Your ult plays music while the enemy walks away, {name}."],
+      spicy: ["{name}, your Granger bursts like a balloon — loudly and briefly.", "Death Sonata, {name} — more like a lullaby for your team."],
+      disrespectful: ["{name}, your bullets have travel time and your career has an expiry date.", "Granger is a gunslinger, {name}. You're a gun-misser."],
+    },
+  },
+  harith: {
+    display: "Harith",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your dashes have cooldowns. Your mistakes don't.", "You chrono-dash in circles and end up back at 0–4, {name}."],
+      spicy: ["{name}, your Harith zigs when he should zag — straight into the loss.", "Zaman Force, {name} — forcing your team to watch you die in style."],
+      disrespectful: ["{name}, your dash has more range than your game sense. Both run out fast.", "Harith is slippery, {name}. So is your grip on the win."],
+    },
+  },
+  karrie: {
+    display: "Karrie",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your true damage is truly disappointing.", "You spin the wheel and land on bankruptcy, {name}."],
+      spicy: ["{name}, your Karrie melts tanks the way you melt leads — wait, no.", "Spinning Lightwheel, {name} — spinning into the enemy fountain."],
+      disrespectful: ["{name}, your true damage can't penetrate your own bad habits.", "Karrie shreds frontlines, {name}. You shred your team's patience."],
+    },
+  },
+  wanwan: {
+    display: "Wanwan",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your weaknesses are easier to find than your strengths.", "You ult after exposing weaknesses — all of them yours, {name}."],
+      spicy: ["{name}, your Wanwan needs her passive like you need a new hobby.", "Crossbow of Tang, {name} — tangled in your own positioning."],
+      disrespectful: ["{name}, even with every weakness exposed, you still can't finish.", "Wanwan gets banned for a reason, {name}. You're why people want refunds."],
+    },
+  },
+  irithel: {
+    display: "Irithel",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your lion does the aiming. You do the missing.", "You ult and ride straight past the fight, {name}. Majestic."],
+      spicy: ["{name}, your Irithel shoots while moving — mostly moving away from objectives.", "Heavy Crossbow, {name} — heavily missing the point."],
+      disrespectful: ["{name}, your lion filed for a new rider.", "Irithel kites forever, {name}. You kite straight into defeat."],
+    },
+  },
+  roger: {
+    display: "Roger",
+    roles: ["Gold Lane", "Jungle"],
+    lines: {
+      friendly: ["{name}, your wolf form howls at your own KDA.", "Human by day, wolf by night, liability around the clock, {name}."],
+      spicy: ["{name}, your Roger transforms more than your scoreline does.", "Lycan Pounce, {name} — pouncing the wrong target since draft."],
+      disrespectful: ["{name}, your wolf form should stay hidden. Forever.", "Roger hunts in two forms, {name}. Both go 2–9."],
+    },
+  },
+  popol: {
+    display: "Popol",
+    roles: ["Gold Lane"],
+    lines: {
+      friendly: ["{name}, your dog does everything. You're just the leash.", "You set traps the enemy uses as decoration, {name}."],
+      spicy: ["{name}, your Popol hides in bushes while Kupa does all the work.", "Bite them, Kupa — carry {name} even harder."],
+      disrespectful: ["{name}, your trap damage is the only thing more useless than your map awareness.", "Popol and Kupa, {name} — a duo where you're the third wheel."],
+    },
+  },
+  martis: {
+    display: "Martis",
+    roles: ["EXP Lane", "Jungle"],
+    lines: {
+      friendly: ["{name}, your immune frames dodge damage, not accountability.", "You ult the kill-steal and call it timing, {name}."],
+      spicy: ["{name}, your Martis decapitates low HP bars and your team's morale.", "Decimate, {name} — decimating your own win rate."],
+      disrespectful: ["{name}, your Ashura Aura spins for an audience of corpses — yours.", "Martis executes, {name}. You get executed. Different thing."],
+    },
+  },
+  thamuz: {
+    display: "Thamuz",
+    roles: ["EXP Lane"],
+    lines: {
+      friendly: ["{name}, your fire patches warm the enemy's feet as they walk past.", "You throw scythes and catch feelings, {name}."],
+      spicy: ["{name}, your Thamuz burns bright and dies brighter.", "Lord Lava, {name} — lava-level takes on macro."],
+      disrespectful: ["{name}, your true damage is the truest thing about your 3–10.", "Thamuz never cools down, {name}. Neither does your inting."],
+    },
+  },
+  aldous: {
+    display: "Aldous",
+    roles: ["EXP Lane", "Jungle"],
+    lines: {
+      friendly: ["{name}, your stacks are a retirement plan that never pays out.", "500 stacks, zero game sense. The Aldous economy, {name}."],
+      spicy: ["{name}, your Aldous ults across the map to arrive at the surrender vote.", "Contract: Chase Fate, {name} — fate being another loss."],
+      disrespectful: ["{name}, your stacks took 20 minutes. The defeat took 2.", "Aldous one-punches late, {name}. You throw early. Perfect imbalance."],
+    },
+  },
+  alucard: {
+    display: "Alucard",
+    roles: ["EXP Lane", "Jungle"],
+    lines: {
+      friendly: ["{name}, your lifesteal keeps you alive long enough to die twice.", "10–0 or 0–10, and we all know which one, {name}."],
+      spicy: ["{name}, your Alucard dives 1v5 chasing the montage.", "Fission Wave, {name} — splitting your team apart."],
+      disrespectful: ["{name}, your lifesteal outheals nothing, least of all the scoreboard.", "Alucard is feast or famine, {name}. You're a famine speedrunner."],
+    },
+  },
+  zilong: {
+    display: "Zilong",
+    roles: ["EXP Lane"],
+    lines: {
+      friendly: ["{name}, your ult is a sprint away from the fight.", "Retreat is never an option, says {name}, sprinting away."],
+      spicy: ["{name}, your Zilong backdoors while the nexus falls. Priorities.", "Spear Flip, {name} — flipping your team's chances upside down."],
+      disrespectful: ["{name}, your sprint spell has more kills than you. It runs over minions.", "Zilong drags enemies to the team, {name}. Usually it's you being dragged — to defeat."],
+    },
+  },
+  sun: {
+    display: "Sun",
+    roles: ["EXP Lane"],
+    lines: {
+      friendly: ["{name}, your clones outnumber your kills. All three of them.", "You ult and triple the disappointment, {name}."],
+      spicy: ["{name}, your Sun sends clones to fight while you hide.", "Which one's real? Doesn't matter, {name} — both are feeding."],
+      disrespectful: ["{name}, your clones have a combined KDA higher than yours.", "Sun multiplies, {name}. So do your deaths."],
+    },
+  },
+  ruby: {
+    display: "Ruby",
+    roles: ["EXP Lane", "Roam"],
+    lines: {
+      friendly: ["{name}, your hooks pull enemies and your team pulls away.", "Don't focus the Ruby, they said. Nobody was focusing you anyway, {name}."],
+      spicy: ["{name}, your Ruby lifesteals through fights and still loses them.", "I'm Offended, {name} — and so is everyone watching."],
+      disrespectful: ["{name}, your scythe spins a web of 2–8.", "Ruby never dies, {name}. She just loses slowly. Like you."],
+    },
+  },
+  esmeralda: {
+    display: "Esmeralda",
+    roles: ["EXP Lane"],
+    lines: {
+      friendly: ["{name}, your shields stack higher than your kill count.", "You steal shields and donate deaths, {name}. Generous."],
+      spicy: ["{name}, your Esmeralda ignores shields the way you ignore pings.", "Frostmoon Shield, {name} — shielding no one from this roast."],
+      disrespectful: ["{name}, your shields absorb damage, not criticism.", "Esmeralda is unkillable, {name}. Your rank disagrees."],
+    },
+  },
+  hylos: {
+    display: "Hylos",
+    roles: ["Roam"],
+    lines: {
+      friendly: ["{name}, your horse body blocks the team from winning.", "Big horse, bigger target, biggest feeder, {name}."],
+      spicy: ["{name}, your Hylos spends HP like you spend your team's patience.", "Glorious Pathway, {name} — a pathway to the loss screen."],
+      disrespectful: ["{name}, your ult heals the team through another one of your engages.", "Hylos is a wall, {name}. Walls don't rotate. Neither do you."],
+    },
+  },
+  akai: {
+    display: "Akai",
+    roles: ["Roam", "Jungle"],
+    lines: {
+      friendly: ["{name}, your pin misses the wall and pins your team's hopes instead.", "You spin like a blender with no blades, {name}."],
+      spicy: ["{name}, your Akai ults one person in the wrong direction.", "Heavy Spin, {name} — spinning the game away."],
+      disrespectful: ["{name}, your Thousand Pounder pounds nothing but dirt.", "Akai controls crowds, {name}. You can't even control yourself."],
+    },
+  },
+  floryn: {
+    display: "Floryn",
+    roles: ["Roam"],
+    lines: {
+      friendly: ["{name}, your lantern keeps everyone alive except your credibility.", "You plant seeds and harvest excuses, {name}."],
+      spicy: ["{name}, your Floryn heals through fights your team still loses.", "Bloom timing perfect, {name} — shame the team died during the animation."],
+      disrespectful: ["{name}, your healing output exceeds your damage, your deaths, and your rank combined.", "Floryn supports from the backline, {name}. Way back. In base."],
+    },
+  },
 };
 
 // ── MLBB PUNCHLINES (Retri / Lord / Turtle / bush / recall lore) ──
@@ -908,33 +1079,33 @@ const PUNCHLINES: Record<RoastLevel, string[]> = {
     "You recall in front of the enemy like you're signing autographs.",
     "Your rotations arrive with a " + "“sorry I'm late” " + "attached.",
     "You farm your buff while the Lord takes your inhibitor.",
-    "Your ping is fine. Your decisions are the lag, {name}.",
+    "Your ping is fine. Your decisions are the lag.",
     "You save your flicker for the post-game lobby.",
     "Your KDA has more deaths than your kill participation has meaning.",
     "You push the lane nobody's in and miss the fight everybody's at.",
   ],
   spicy: [
-    "Your Retribution timing is sponsored by missed alarms, {name}.",
+    "Your Retribution timing is sponsored by missed alarms.",
     "The Lord has seen your smite attempts and feels safer than ever.",
-    "You ward the bush you're standing in. Visionary, {name}.",
+    "You ward the bush you're standing in. Visionary.",
     "Your recall game is elite. Your return game doesn't exist.",
-    "You rotate like a revolving door — lots of motion, nobody gets anywhere, {name}.",
+    "You rotate like a revolving door — lots of motion, nobody gets anywhere.",
     "The Turtle filed a noise complaint about your farming patterns.",
-    "You blame lag with 20ms ping, {name}. Bold strategy.",
+    "Blaming lag with 20ms ping. Bold strategy.",
     "Your flicker is on cooldown from the last game. Still.",
-    "Your KDA is a cry for help written in numbers, {name}.",
+    "Your KDA is a cry for help written in numbers.",
     "You split-push while your team gets wiped, then type “?” like a detective.",
   ],
   disrespectful: [
-    "The Lord has specifically requested you keep contesting, {name}. Free kills.",
+    "The Lord has specifically requested you keep contesting. Free kills.",
     "Your Retribution could miss a stationary creep. It has. The clip exists.",
-    "You face-check bushes the way crash-test dummies face-check walls, {name}.",
+    "You face-check bushes the way crash-test dummies face-check walls.",
     "Your recall key is worn out. Your win key was never installed.",
-    "Your rotations need a GPS, a map, and a search party, {name}.",
+    "Your rotations need a GPS, a map, and a search party.",
     "The Turtle out-farmed you. The TURTLE. It walks in a circle.",
-    "Lag doesn't explain it, {name}. We've seen the replay. Twice.",
+    "Lag doesn't explain it. We've seen the replay. Twice.",
     "Your flicker button is decorative at this point. Museum piece.",
-    "Your KDA should be studied as a warning label, {name}.",
+    "Your KDA should be studied as a warning label.",
     "You push side lanes like you're avoiding your team — mutual feeling.",
   ],
 };
@@ -943,28 +1114,28 @@ const PUNCHLINES: Record<RoastLevel, string[]> = {
 const ROLE_CLOSERS: Record<RoleKey, Record<RoastLevel, string[]>> = {
   Jungle: {
     friendly: ["Jungle diff? More like jungle nap — the Turtle left without you.", "You farm like the buffs pay rent. They don't. Gank something."],
-    spicy: ["You farm like the buffs pay rent and gank like the lanes owe YOU money. Backwards, {name}.", "Three lanes are losing and you're doing krugs. Priorities, {name}."],
-    disrespectful: ["{name}, your Retribution timing is so bad the Lord filed for custody of the pit.", "The enemy jungler sends your laners postcards from their jungle, {name}. You're never home."],
+    spicy: ["You farm like the buffs pay rent and gank like the lanes owe YOU money. Backwards.", "Three lanes are losing and you're doing krugs. Priorities."],
+    disrespectful: ["Your Retribution timing is so bad the Lord filed for custody of the pit.", "The enemy jungler sends your laners postcards from their jungle. You're never home."],
   },
   "Mid Lane": {
     friendly: ["You rotate slower than patch notes download.", "Mid priority means YOU move first. The memo is three seasons old."],
-    spicy: ["{name}, mid priority means YOU rotate first — not after both sidelanes are gray.", "Your roams arrive with flowers for the corpses, {name}."],
-    disrespectful: ["Your lane opponent roams, ganks, recalls, orders food — and still out-farms you, {name}.", "Mid is the map's heart, {name}. You're cardiac arrest."],
+    spicy: ["Mid priority means YOU rotate first — not after both sidelanes are gray.", "Your roams arrive with flowers for the corpses."],
+    disrespectful: ["Your lane opponent roams, ganks, recalls, orders food — and still out-farms you.", "Mid is the map's heart. You're cardiac arrest."],
   },
   "Gold Lane": {
-    friendly: ["You scale like a savings account with 0.1% interest.", "Greed is good until minute two, {name}. Then it's just feeding."],
-    spicy: ["{name}, you're 0–3 in lane and still typing “trust me I scale”. Nobody trusts you.", "Your tower fell so early it counts as a speedrun, {name}."],
-    disrespectful: ["The enemy Gold laner took your tower, your farm, and your dignity — and left you the minion.", "You scale into irrelevance with remarkable consistency, {name}."],
+    friendly: ["You scale like a savings account with 0.1% interest.", "Greed is good until minute two. Then it's just feeding."],
+    spicy: ["0–3 in lane and still typing “trust me I scale”. Nobody trusts you.", "Your tower fell so early it counts as a speedrun."],
+    disrespectful: ["The enemy Gold laner took your tower, your farm, and your dignity — and left you the minion.", "You scale into irrelevance with remarkable consistency."],
   },
   "EXP Lane": {
-    friendly: ["You lose the turtle fight and blame the weather in the Land of Dawn.", "Trade? You donate, {name}."],
-    spicy: ["{name}, EXP stands for experience — so how are you the least experienced player in the lobby?", "You win lane and lose game. Somehow the worse combo, {name}."],
-    disrespectful: ["You got solo-killed by a support, {name}. A SUPPORT. Log off and touch the nexus.", "Your lane is a charity and the enemy is the sole beneficiary, {name}."],
+    friendly: ["You lose the turtle fight and blame the weather in the Land of Dawn.", "Trade? You donate."],
+    spicy: ["EXP stands for experience — so how are you the least experienced player in the lobby?", "You win lane and lose game. Somehow the worse combo."],
+    disrespectful: ["You got solo-killed by a support. A SUPPORT. Log off and touch the nexus.", "Your lane is a charity and the enemy is the sole beneficiary."],
   },
   Roam: {
-    friendly: ["Your wards expire from loneliness before anyone ganks.", "Roaming means helping lanes — the lanes, {name}. Not the scenery."],
-    spicy: ["{name}, roaming means helping LANES — not sightseeing the enemy jungle at 10% HP.", "Your engages need a permission slip signed by all four teammates, {name}."],
-    disrespectful: ["You set vision like a horror director, {name} — every bush is a jumpscare for YOUR OWN team.", "Your roams are just scenic tours ending in team wipes, {name}."],
+    friendly: ["Your wards expire from loneliness before anyone ganks.", "Roaming means helping lanes — the lanes. Not the scenery."],
+    spicy: ["Roaming means helping LANES — not sightseeing the enemy jungle at 10% HP.", "Your engages need a permission slip signed by all four teammates."],
+    disrespectful: ["You set vision like a horror director — every bush is a jumpscare for YOUR OWN team.", "Your roams are just scenic tours ending in team wipes."],
   },
 };
 
@@ -1015,7 +1186,7 @@ export function generateRoast(opts: { name: string; role: RoleKey; level: RoastL
   while (recentLines.length > 18) recentLines.shift();
 
   return {
-    roast: `${fill(opener, name)}\n\n${fill(punch, name)}\n\n${fill(closer, name)}`,
+    roast: `${fill(opener, name)}\n\n${punch}\n\n${closer}`,
     title: pick(TITLES[opts.level]),
     hero: hero.display,
     level: opts.level,

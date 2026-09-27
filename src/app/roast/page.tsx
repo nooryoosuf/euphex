@@ -200,7 +200,6 @@ export default function RoastPage() {
                     {result.hero.toUpperCase()}
                   </p>
                   <p className="label mt-2 text-[var(--accent)]">{role.toUpperCase()} DIFF, CERTIFIED</p>
-                  <p className="font-display mt-6 text-3xl font-bold text-red-400">{result.title} 💀</p>
                   <p className="mt-4 max-w-xl text-lg leading-relaxed whitespace-pre-line">{result.roast}</p>
                   <p className="label mt-6 text-white/40">
                     {(name.trim() || "Rookie").toUpperCase()} · {role.toUpperCase()} · {result.hero.toUpperCase()}

@@ -49,6 +49,28 @@ export const HEROES: Record<string, { lane: HeroEntry["lane"]; hue: number; labe
   xavier: { lane: "Mid Lane", hue: 250, label: "XA" },
   eudora: { lane: "Mid Lane", hue: 190, label: "EU" },
   kadita: { lane: "Mid Lane", hue: 175, label: "KA" },
+  // roast pool expansion
+  tigreal: { lane: "Roam", hue: 25, label: "TI" },
+  belerick: { lane: "Roam", hue: 140, label: "BE" },
+  benedetta: { lane: "EXP Lane", hue: 265, label: "BE" },
+  granger: { lane: "Gold Lane", hue: 10, label: "GR" },
+  harith: { lane: "Gold Lane", hue: 270, label: "HA" },
+  karrie: { lane: "Gold Lane", hue: 180, label: "KA" },
+  wanwan: { lane: "Gold Lane", hue: 45, label: "WA" },
+  irithel: { lane: "Gold Lane", hue: 120, label: "IR" },
+  roger: { lane: "Jungle", hue: 35, label: "RO" },
+  popol: { lane: "Gold Lane", hue: 100, label: "PO" },
+  martis: { lane: "EXP Lane", hue: 0, label: "MA" },
+  thamuz: { lane: "EXP Lane", hue: 15, label: "TH" },
+  aldous: { lane: "EXP Lane", hue: 50, label: "AL" },
+  alucard: { lane: "EXP Lane", hue: 340, label: "AL" },
+  zilong: { lane: "EXP Lane", hue: 110, label: "ZI" },
+  sun: { lane: "EXP Lane", hue: 70, label: "SU" },
+  ruby: { lane: "EXP Lane", hue: 330, label: "RU" },
+  esmeralda: { lane: "EXP Lane", hue: 195, label: "ES" },
+  hylos: { lane: "Roam", hue: 155, label: "HY" },
+  akai: { lane: "Roam", hue: 85, label: "AK" },
+  floryn: { lane: "Roam", hue: 320, label: "FL" },
 };
 
 export function makeHero(

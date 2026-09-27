@@ -135,6 +135,12 @@ export function roastHeroArt(heroName: string): string | null {
   return dexHero(key)?.splash ?? dexHero(key)?.portrait ?? HERO_ART[key] ?? null;
 }
 
+/** Share-card art: crisp fan wallpaper first (1080px canvas), dex as backup. */
+export function cardHeroArt(heroName: string): string | null {
+  const key = heroKey(heroName);
+  return HERO_ART[key] ?? dexHero(key)?.splash ?? dexHero(key)?.portrait ?? null;
+}
+
 /** All official skin splashes for a hero (default first). */
 export function heroSkins(heroName: string): { name: string; img: string }[] {
   return dexHero(heroKey(heroName))?.skins ?? [];
