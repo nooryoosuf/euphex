@@ -4,10 +4,9 @@ import { SECTION_BG } from "@/data/imagery";
 import { Reveal } from "@/components/ui/Reveal";
 
 const CARDS = [
-  { href: "/roast", title: "ROAST THE ROSTER", sub: "Think you can survive our players?", tag: "01 — Interactive" },
-  { href: "/find-your-hero", title: "FIND YOUR HERO", sub: "Answer honestly. Get judged accurately.", tag: "02 — Quiz" },
-  { href: "/rate-my-main", title: "RATE MY MAIN", sub: "Fake analysts. Real damage.", tag: "03 — Verdict" },
-  { href: "/most-likely", title: "WHO'S MOST LIKELY TO…", sub: "Vote. Expose your favorite player.", tag: "04 — Voting" },
+  { href: "/retri-test", title: "RETRIBUTION TEST", sub: "Tap Retri on the line. Get ranked. Get roasted.", tag: "01 — Skill game" },
+  { href: "/kit-check", title: "WHO'S THAT HERO?", sub: "Riddles + stat tiles. Daily hero mystery.", tag: "02 — Daily" },
+  { href: "/roast", title: "ROAST THE ROSTER", sub: "Think you can survive our players?", tag: "03 — Interactive" },
 ];
 
 export default function CommunityPage() {

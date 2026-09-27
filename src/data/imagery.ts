@@ -11,7 +11,22 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const dexImg = (p: string) => `${BASE}/${p}`;
 
 export { DEX_META_AT } from "./dex.generated";
-import { DEX_HEROES } from "./dex.generated";
+import { DEX_HEROES, ALL_HEROES } from "./dex.generated";
+
+/** Full 134-hero roster (portrait + icon + lanes + difficulty for everyone). */
+export const ALL_HERO_SLUGS = Object.keys(ALL_HEROES);
+export function allHero(slug: string) {
+  const e = ALL_HEROES[slug];
+  if (!e) return null;
+  return {
+    name: e.name,
+    portrait: dexImg(e.portrait),
+    icon: dexImg(e.icon),
+    lanes: e.lanes,
+    difficulty: e.difficulty,
+    meta: e.meta,
+  };
+}
 
 /** MLBBDex entry (portrait, icon, skin splashes, difficulty, live meta). */
 export function dexHero(slug: string) {
@@ -58,6 +73,7 @@ export const IMAGES = {
   tigrealRevamped: img("tigreal-revamped-mobile-legends-project-next-uhdpaper.com-4K-5.2874.jpg"),
   yisunshin: img("yi-sun-shin-mlbb-lone-destructor-revamped-collector-skin-splash-art-4k-wallpaper-uhdpaper.com-523@5@q.jpg"),
   eudora: img("eudora-emerald-enchantress-mobile-legends-skin-uhdpaper.com-4K-8.1042.jpg"),
+  retri: img("retri-icon.png"),
 } as const;
 
 /** Homepage hero — layered parallax stack (back → front). */

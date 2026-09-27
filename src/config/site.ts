@@ -44,10 +44,9 @@ export const siteConfig = {
       { label: "News", href: "/news" },
     ],
     community: [
+      { label: "Retribution Test", href: "/retri-test" },
+      { label: "Who's That Hero", href: "/kit-check" },
       { label: "Roast the Roster", href: "/roast" },
-      { label: "Find Your Hero", href: "/find-your-hero" },
-      { label: "Rate My Main", href: "/rate-my-main" },
-      { label: "Most Likely To", href: "/most-likely" },
     ],
   },
 } as const;
