@@ -6,7 +6,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { NEWS } from "@/data/content";
 import { NewsCard } from "@/components/ui/cards";
 import { CommunityMosaic } from "@/components/home/CommunityMosaic";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -52,11 +51,6 @@ export default function Home() {
             <NewsCard key={a.slug} a={a} />
           ))}
         </div>
-        <p className="mt-8 text-center">
-          <Link href="/media" className="text-sm font-bold tracking-[0.16em] uppercase text-white/60 hover:text-white border-b border-white/20 pb-1">
-            Browse media gallery
-          </Link>
-        </p>
       </section>
       <History />
     </>
