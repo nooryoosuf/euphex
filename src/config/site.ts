@@ -28,11 +28,8 @@ export const siteConfig = {
     muted: "#9AA3B2",
   },
   socials: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
-    tiktok: "https://tiktok.com",
-    youtube: "https://youtube.com",
-    discord: "https://discord.com",
+    instagram: "https://www.instagram.com/euphex.official",
+    tiktok: "https://www.tiktok.com/@euphex.official",
   },
   nav: {
     compete: [
