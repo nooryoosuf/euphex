@@ -1,65 +1,119 @@
 [
   {
-    "slug": "rashu-cup",
-    "name": "RASHU CUP",
-    "stage": "GROUP STAGE",
-    "status": "ONGOING",
-    "date": "2026-09-28",
-    "endDate": "2026-10-12",
-    "prizePool": "$25,000",
-    "venue": "Amman Arena",
-    "format": "Groups → Single-elim playoffs, BO5 finals",
-    "teamSlugs": [
-      "euphex"
-    ],
+    "slug": "mlbb-mini-series-iv-2025",
+    "name": "MLBB MINI SERIES IV 2025",
+    "stage": "ROUND 3",
+    "status": "COMPLETED",
+    "date": "2025-12-07",
+    "venue": "Maldives",
+    "format": "Single elimination",
+    "teamSlugs": ["euphex"],
     "hue": 225,
-    "description": "The region's premier MLBB cup. Euphex entered as defending champions and opened the group with a statement draft phase.",
+    "description": "Euphex took down Blood Ravens II 2–1 before falling 0–2 to Kalhu Oh Fummi II in Round 3.",
     "journey": [
-      {
-        "title": "Matchday 1",
-        "text": "Draft masterclass — 2–0 control series, zero Lords conceded."
-      },
-      {
-        "title": "Matchday 2",
-        "text": "2–2 draw vs Halcyon Five after a 24-minute Lord throw. Lessons logged."
-      }
-    ],
-    "standings": [
-      {
-        "team": "EUPHEX",
-        "w": 1,
-        "l": 0
-      },
-      {
-        "team": "Halcyon Five",
-        "w": 1,
-        "l": 0
-      },
-      {
-        "team": "Nova Sentinels",
-        "w": 0,
-        "l": 1
-      },
-      {
-        "team": "Cinder Wolves",
-        "w": 0,
-        "l": 1
-      }
+      { "title": "Round 2", "text": "Euphex 2 – 1 Blood Ravens II." },
+      { "title": "Round 3", "text": "Euphex 0 – 2 Kalhu Oh Fummi II." }
     ]
   },
   {
-    "slug": "open-circuit-5",
-    "name": "OPEN CIRCUIT #5",
-    "stage": "QUARTERFINAL",
-    "status": "UPCOMING",
-    "date": "2026-10-02",
-    "prizePool": "$5,000",
-    "venue": "Online",
-    "format": "Single elimination, BO3",
-    "teamSlugs": [
-      "aurex"
-    ],
+    "slug": "on-flash-series-2025",
+    "name": "ON - FLASH SERIES 2025",
+    "stage": "ROUND 3",
+    "status": "COMPLETED",
+    "date": "2025-12-07",
+    "venue": "Maldives",
+    "format": "Single elimination",
+    "teamSlugs": ["euphex"],
+    "hue": 190,
+    "description": "A clean 2–0 over Blood Ravens, ended 0–2 by Last Insanity in Round 3.",
+    "journey": [
+      { "title": "Round 2", "text": "Euphex 2 – 0 Blood Ravens." },
+      { "title": "Round 3", "text": "Euphex 0 – 2 Last Insanity." }
+    ]
+  },
+  {
+    "slug": "ramadan-esports-festival-2026",
+    "name": "RAMADAN ESPORTS FESTIVAL 2K26",
+    "stage": "ROUND 3",
+    "status": "COMPLETED",
+    "date": "2026-02-25",
+    "venue": "Maldives",
+    "format": "Single elimination",
+    "teamSlugs": ["euphex"],
     "hue": 265,
-    "description": "Aurex's first bracket test against seasoned open-circuit grinders."
+    "description": "Edged Redhan Void 2–1, then stopped 0–2 by KOF Suzuran in Round 3.",
+    "journey": [
+      { "title": "Round 2", "text": "Euphex 2 – 1 Redhan Void." },
+      { "title": "Round 3", "text": "Euphex 0 – 2 KOF Suzuran." }
+    ]
+  },
+  {
+    "slug": "ramadan-cup-ruzo-card-2026",
+    "name": "MLBB RAMADAN CUP - RUZO CARD 2026",
+    "stage": "SEMI FINAL",
+    "status": "COMPLETED",
+    "date": "2026-02-27",
+    "venue": "Maldives",
+    "format": "Single elimination",
+    "teamSlugs": ["euphex"],
+    "hue": 275,
+    "description": "Three straight wins — EchO ForcE, Kumar 2.0, Tenjiku — before a 0–2 semi-final exit to LNN Sleeping Forest.",
+    "journey": [
+      { "title": "Round 1", "text": "Euphex 1 – 0 EchO ForcE." },
+      { "title": "Round 2", "text": "Kumar 2.0 0 – 1 Euphex." },
+      { "title": "Round 3", "text": "Tenjiku 0 – 1 Euphex." },
+      { "title": "Semi Final", "text": "Euphex 0 – 2 LNN Sleeping Forest." }
+    ]
+  },
+  {
+    "slug": "ooredoo-contender-series-3-2026",
+    "name": "OOREDOO NATION - ESPORTS CONTENDER SERIES 3 2026",
+    "stage": "ROUND 9",
+    "status": "COMPLETED",
+    "date": "2026-06-18",
+    "venue": "Maldives",
+    "format": "Swiss / bracket rounds",
+    "teamSlugs": ["euphex"],
+    "hue": 210,
+    "description": "A nine-round grind: wins over EchO AlphA, Hi!_Ping and MVK FC across a brutal Contender Series.",
+    "journey": [
+      { "title": "Round 1", "text": "Euphex 1 – 0 EchO AlphA." },
+      { "title": "Round 2", "text": "BNS XEROW 1 – 0 Euphex." },
+      { "title": "Round 4", "text": "Euphex 1 – 0 Hi!_Ping." },
+      { "title": "Round 5", "text": "KUIS Vanguards 1 – 0 Euphex." },
+      { "title": "Round 6", "text": "Euphex 0 – 1 LF Esports." },
+      { "title": "Round 7", "text": "LNN SLFO RELI FAMILIA 1 – 0 Euphex." },
+      { "title": "Round 8", "text": "Euphex 1 – 0 MVK FC." },
+      { "title": "Round 9", "text": "EchO ForcE 1 – 0 Euphex." }
+    ]
+  },
+  {
+    "slug": "on-flash-series-2026",
+    "name": "ON - ESPORTS FLASH SERIES - MLBB 2026",
+    "stage": "ROUND 1",
+    "status": "COMPLETED",
+    "date": "2026-07-24",
+    "venue": "Maldives",
+    "format": "Single elimination",
+    "teamSlugs": ["euphex"],
+    "hue": 320,
+    "description": "Knocked out 0–2 by LF Esports in the opening round."
+  },
+  {
+    "slug": "dmgc-2026",
+    "name": "MOBILE LEGENDS DMGC 2026",
+    "stage": "ROUND 3",
+    "status": "COMPLETED",
+    "date": "2026-08-14",
+    "venue": "Maldives",
+    "format": "Single elimination",
+    "teamSlugs": ["euphex"],
+    "hue": 150,
+    "description": "Back-to-back 2–0s over BOTS United and KOF Suzuran before LNN SLFO RELI FAMILIA ended the run 2–0 in Round 3.",
+    "journey": [
+      { "title": "Round 1", "text": "Euphex 2 – 0 BOTS United." },
+      { "title": "Round 2", "text": "KOF Suzuran 0 – 2 Euphex." },
+      { "title": "Round 3", "text": "LNN SLFO RELI FAMILIA 2 – 0 Euphex." }
+    ]
   }
 ]

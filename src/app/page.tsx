@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Ticker items={["RASHU CUP — GROUP STAGE", "SEP 28 — EUPHEX VS NOVA", "TWO SQUADS", "ONE STANDARD", "PLAY HARD. PLAY TOGETHER."]} />
+      <Ticker items={["SEASON 2026", "7 CAMPAIGNS PLAYED", "TWO SQUADS", "ONE STANDARD", "PLAY HARD. PLAY TOGETHER."]} />
       <div className="pt-14 md:pt-20">
         <Matchday />
       </div>

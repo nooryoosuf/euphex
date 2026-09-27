@@ -44,10 +44,15 @@ export function Squads() {
 }
 
 export function CompetingNext() {
-  const list = TOURNAMENTS.filter((t) => t.status !== "COMPLETED").slice(0, 3);
+  const upcoming = TOURNAMENTS.filter((t) => t.status !== "COMPLETED");
+  const recent = [...TOURNAMENTS].filter((t) => t.status === "COMPLETED").sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  const list = (upcoming.length ? upcoming : recent).slice(0, 3);
+  const title = upcoming.length ? "COMPETING NEXT." : "RECENT CAMPAIGNS.";
+  const label = upcoming.length ? "Calendars" : "History";
+  if (!list.length) return null;
   return (
-    <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-28" aria-label="Upcoming tournaments">
-      <SectionHeader index="01" label="Calendars" title="COMPETING NEXT." href="/tournaments" linkLabel="All tournaments" />
+    <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-28" aria-label="Tournaments">
+      <SectionHeader index="01" label={label} title={title} href="/tournaments" linkLabel="All tournaments" />
       <div className="grid gap-5 lg:grid-cols-2">
         {list[0] && <TournamentCard t={list[0]} index={0} />}
         <div className="grid gap-5">
