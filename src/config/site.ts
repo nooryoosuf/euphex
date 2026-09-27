@@ -37,7 +37,6 @@ export const siteConfig = {
       { label: "Players", href: "/players" },
       { label: "Matches", href: "/matches" },
       { label: "Tournaments", href: "/tournaments" },
-      { label: "Media", href: "/media" },
       { label: "News", href: "/news" },
     ],
     community: [
