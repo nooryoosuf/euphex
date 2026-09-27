@@ -23,7 +23,7 @@ export default function AboutPage() {
           <Stat value={<CountUp to={siteConfig.org.founded} />} label="Founded" />
           <Stat value={<CountUp to={2} />} label="Squads" />
           <Stat value={<CountUp to={8} />} label="Players" />
-          <Stat value={<CountUp to={4} />} label="Trophies" />
+          <Stat value={<CountUp to={0} />} label="Trophies" />
         </div>
 
         <section className="mt-16 grid gap-10 lg:grid-cols-2" aria-label="Structure">

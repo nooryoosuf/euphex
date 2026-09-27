@@ -49,22 +49,29 @@ export default function TeamsPage() {
             {shown.map((t) => {
               const roster = getTeamPlayers(t.slug);
               const winRate = Math.round((t.wins / Math.max(1, t.wins + t.losses)) * 100);
+              const hasRecord = t.wins + t.losses > 0;
               return (
                 <section key={t.slug} className="mb-16 last:mb-0" aria-label={t.name}>
                   <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr] lg:items-start">
                     <TeamCard team={t} />
-                    <div className="grid grid-cols-3 gap-4 border border-white/8 bg-[#0C0F16] p-6">
-                      {[
-                        [String(t.wins) + "–" + String(t.losses), "Record"],
-                        [winRate + "%", "Win rate"],
-                        [String(t.championships), "Titles"],
-                      ].map(([v, l]) => (
-                        <div key={l}>
-                          <p className="font-display text-3xl md:text-4xl font-bold tabular-nums">{v}</p>
-                          <p className="label mt-1 text-white/40">{l}</p>
+                    <div className="border border-white/8 bg-[#0C0F16] p-6">
+                      {hasRecord ? (
+                        <div className="grid grid-cols-3 gap-4">
+                          {[
+                            [String(t.wins) + "–" + String(t.losses), "Record"],
+                            [winRate + "%", "Win rate"],
+                            [String(t.championships), "Titles"],
+                          ].map(([v, l]) => (
+                            <div key={l}>
+                              <p className="font-display text-3xl md:text-4xl font-bold tabular-nums">{v}</p>
+                              <p className="label mt-1 text-white/40">{l}</p>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                      <div className="col-span-3 flex flex-wrap gap-2 pt-2">
+                      ) : (
+                        <p className="text-sm leading-relaxed text-white/50">{t.tagline}</p>
+                      )}
+                      <div className="flex flex-wrap gap-2 pt-4">
                         <Badge tone="accent">{t.tier}</Badge>
                         {t.playstyle.map((p) => (
                           <Badge key={p}>{p}</Badge>

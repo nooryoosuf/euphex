@@ -11,14 +11,10 @@
     "playstyle": ["AGGRESSIVE.", "DISCIPLINED.", "UNPREDICTABLE."],
     "hue": 225,
     "founded": 2024,
-    "wins": 47,
-    "losses": 16,
-    "championships": 3,
-    "achievements": [
-      { "title": "Champion", "event": "Rashu Cup", "year": 2025, "kind": "Champion" },
-      { "title": "Champion", "event": "Midnight Invitational", "year": 2025, "kind": "Champion" },
-      { "title": "Top 4", "event": "Continental Qualifier", "year": 2026, "kind": "Top 4" }
-    ]
+    "wins": 11,
+    "losses": 11,
+    "championships": 0,
+    "achievements": []
   },
   {
     "slug": "aurex",
@@ -32,12 +28,9 @@
     "playstyle": ["HUNGRY.", "MECHANICAL.", "FEARLESS."],
     "hue": 190,
     "founded": 2025,
-    "wins": 28,
-    "losses": 14,
-    "championships": 1,
-    "achievements": [
-      { "title": "Champion", "event": "Rising Stars League", "year": 2025, "kind": "Champion" },
-      { "title": "Runner Up", "event": "Aurex Clash", "year": 2026, "kind": "Runner Up" }
-    ]
+    "wins": 0,
+    "losses": 0,
+    "championships": 0,
+    "achievements": []
   }
 ]

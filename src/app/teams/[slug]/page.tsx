@@ -7,6 +7,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { TEAM_BG } from "@/data/imagery";
 import { TeamLogo } from "@/components/ui/TeamLogos";
 import { PlayerCard, MatchCard } from "@/components/ui/cards";
+import { TeamResults } from "@/components/team/TeamResults";
 import { Badge, Stat } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
@@ -23,7 +24,12 @@ export default async function TeamPage({ params }: { params: Promise<{ slug: str
   const teamMatches = MATCHES.filter((m) => m.teamSlug === slug);
   const upcoming = teamMatches.filter((m) => m.status === "upcoming");
   const results = teamMatches.filter((m) => m.status === "completed");
-  const winRate = Math.round((team.wins / Math.max(1, team.wins + team.losses)) * 100);
+  // stats computed live from real results — no stats shown without a record
+  const w = results.filter((m) => m.result === "WIN").length;
+  const l = results.filter((m) => m.result === "LOSS").length;
+  const d = results.filter((m) => m.result === "DRAW").length;
+  const showStats = results.length > 0;
+  const winRate = results.length ? Math.round((w / results.length) * 100) : 0;
 
   return (
     <>
@@ -33,12 +39,14 @@ export default async function TeamPage({ params }: { params: Promise<{ slug: str
           <TeamLogo slug={team.slug} className="h-16 md:h-20 w-auto text-white" />
           <p className="max-w-md text-sm md:text-base leading-relaxed text-white/55">{team.tagline}</p>
         </div>
-        <div className="mt-8 grid gap-8 md:grid-cols-4">
-          <Stat value={<CountUp to={team.wins} />} label={`${team.wins}–${team.losses} record`} />
-          <Stat value={<CountUp to={winRate} suffix="%" />} label="Win rate" />
-          <Stat value={<CountUp to={roster.length} />} label="Players" />
-          <Stat value={<CountUp to={team.championships} />} label="Championships" />
-        </div>
+        {showStats && (
+          <div className="mt-8 grid gap-8 md:grid-cols-4">
+            <Stat value={<CountUp to={w} />} label={`${w}–${l}${d ? `–${d}` : ""} record`} />
+            <Stat value={<CountUp to={winRate} suffix="%" />} label="Win rate" />
+            <Stat value={<CountUp to={roster.length} />} label="Players" />
+            <Stat value={<CountUp to={team.championships} />} label="Championships" />
+          </div>
+        )}
 
         {/* playstyle */}
         <section className="mt-16 md:mt-24" aria-label="Playstyle">
@@ -80,8 +88,8 @@ export default async function TeamPage({ params }: { params: Promise<{ slug: str
           </section>
           <section aria-label="Results">
             <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight">RESULTS.</h2>
-            <div className="mt-4 border-t border-white/8">
-              {results.length ? results.map((m) => <MatchCard key={m.id} match={m} />) : <p className="py-6 text-white/45">No results yet.</p>}
+            <div className="mt-4">
+              <TeamResults results={results} />
             </div>
           </section>
         </div>
@@ -89,7 +97,8 @@ export default async function TeamPage({ params }: { params: Promise<{ slug: str
         {/* achievements */}
         <section className="mt-16 md:mt-24" aria-label="Achievements">
           <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight">ACHIEVEMENTS.</h2>
-          <ol className="mt-6 grid gap-4 md:grid-cols-3">
+          {team.achievements.length ? (
+            <ol className="mt-6 grid gap-4 md:grid-cols-3">
             {team.achievements.map((a, i) => (
               <Reveal key={i} delay={i * 0.06}>
                 <li className="border border-white/8 bg-[#0C0F16] p-6">
@@ -99,7 +108,12 @@ export default async function TeamPage({ params }: { params: Promise<{ slug: str
                 </li>
               </Reveal>
             ))}
-          </ol>
+            </ol>
+          ) : (
+            <p className="mt-6 border border-dashed border-white/12 bg-white/[0.02] p-8 text-center text-white/45">
+              No achievements yet — the story is still being written.
+            </p>
+          )}
         </section>
       </div>
     </>
