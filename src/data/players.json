@@ -798,70 +798,59 @@
     ]
   },
   {
-    "slug": "wisp",
-    "gamertag": "WISP",
-    "realName": "Lina Haddad",
+    "slug": "kurozen",
+    "gamertag": "KUROZEN",
+    "realName": "KUROZEN",
     "role": "Roam",
     "teamSlug": "aurex",
-    "country": "UAE",
-    "countryCode": "AE",
-    "joined": "May 2025",
-    "matches": 62,
-    "winRate": 65,
-    "mvps": 5,
+    "country": "Maldives",
+    "countryCode": "MDV",
+    "joined": "2026",
+    "matches": 3104,
+    "winRate": 50.64,
+    "mvps": 364,
     "quote": "I roam. You follow. We win.",
     "playstyle": "Enabler",
     "signatureMove": "Early gank paths",
-    "favoriteHero": "Mathilda",
+    "favoriteHero": "Johnson",
     "hue": 300,
     "number": 2,
     "heroPool": [
       {
-        "name": "Mathilda",
-        "slug": "mathilda",
+        "name": "Johnson",
+        "slug": "johnson",
         "lane": "Roam",
         "art": {
           "hue": 300,
           "label": "MA"
         },
-        "games": 52,
-        "winRate": 66,
+        "games": 820,
+        "winRate": 55,
         "kda": 5,
-        "category": "signature"
+        "category": "signature",
+        "power": 5131
       },
       {
-        "name": "Estes",
-        "slug": "estes",
+        "name": "Belerick",
+        "slug": "belerick",
         "lane": "Roam",
         "art": {
           "hue": 140,
           "label": "ES"
         },
-        "games": 38,
-        "winRate": 64,
+        "games": 99,
+        "winRate": 38.5,
         "kda": 4.4,
-        "category": "comfort"
-      },
-      {
-        "name": "Franco",
-        "slug": "franco",
-        "lane": "Roam",
-        "art": {
-          "hue": 25,
-          "label": "FR"
-        },
-        "games": 30,
-        "winRate": 60,
-        "kda": 4.1,
-        "category": "pocket"
+        "category": "comfort",
+        "power": 2450
       }
     ],
     "achievements": [
       {
-        "title": "Runner Up",
-        "event": "Aurex Clash",
+        "title": "Maldives No.2 Johnson",
+        "event": "Maldives Leaderboard",
         "year": 2026,
-        "kind": "Runner Up"
+        "kind": "Award"
       }
     ]
   },
