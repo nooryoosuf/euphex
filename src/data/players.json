@@ -497,82 +497,98 @@
     ]
   },
   {
-    "slug": "kairo",
-    "gamertag": "BAIRO",
-    "realName": "Yusuf Demir",
+    "slug": "zyrex",
+    "gamertag": "ZYREX",
+    "realName": "ZYREX",
     "role": "Jungle",
     "teamSlug": "aurex",
-    "country": "Turkey",
-    "countryCode": "TR",
-    "joined": "Feb 2025",
-    "matches": 74,
-    "winRate": 66,
-    "mvps": 7,
+    "country": "Maldives",
+    "countryCode": "MDV",
+    "joined": "2026",
+    "matches": 2617,
+    "winRate": 50.82,
+    "mvps": 292,
     "quote": "Retri is a promise, not a gamble.",
     "playstyle": "Calculated",
     "signatureMove": "Objective steals",
-    "favoriteHero": "Ling",
+    "favoriteHero": "Fredrinn",
     "hue": 190,
-    "number": 9,
+    "number": 7,
     "heroPool": [
       {
-        "name": "Ling",
-        "slug": "ling",
+        "name": "Alucard",
+        "slug": "alucard",
         "lane": "Jungle",
         "art": {
           "hue": 190,
           "label": "LI"
         },
-        "games": 68,
-        "winRate": 67,
+        "games": 610,
+        "winRate": 59.2,
         "kda": 7.2,
-        "category": "signature"
+        "category": "signature",
+        "power": 4361
       },
       {
-        "name": "Hayabusa",
-        "slug": "hayabusa",
+        "name": "Fredrinn",
+        "slug": "fredrinn",
         "lane": "Jungle",
         "art": {
           "hue": 260,
           "label": "HA"
         },
-        "games": 55,
-        "winRate": 64,
+        "games": 337,
+        "winRate": 54,
         "kda": 6.3,
-        "category": "comfort"
+        "category": "comfort",
+        "power": 3994
       },
       {
-        "name": "Lancelot",
-        "slug": "lancelot",
+        "name": "Leomard",
+        "slug": "leomard",
         "lane": "Jungle",
         "art": {
           "hue": 210,
           "label": "LA"
         },
-        "games": 42,
-        "winRate": 62,
+        "games": 133,
+        "winRate": 51.1,
         "kda": 6.8,
-        "category": "comfort"
+        "category": "comfort",
+        "power": 2734
       },
       {
-        "name": "Natalia",
-        "slug": "natalia",
-        "lane": "Roam",
+        "name": "Nolan",
+        "slug": "nolan",
+        "lane": "Jungle",
         "art": {
           "hue": 350,
           "label": "NA"
         },
-        "games": 21,
-        "winRate": 58,
+        "games": 118,
+        "winRate": 41.5,
         "kda": 5.2,
-        "category": "pocket"
+        "category": "pocket",
+        "power": 2268
       }
     ],
     "achievements": [
       {
-        "title": "Champion",
-        "event": "Rising Stars League",
-        "year": 2025,
+        "title": "Maldives No.2 Alucard",
+        "event": "Maldives Leaderboard ",
+        "year": 2026,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.1 Fredrinn",
+        "event": "Maldives Leaderboard ",
+        "year": 2026,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.5 Leomard",
+        "event": "Maldives Leaderboard ",
+        "year": 2026,
         "kind": "Champion"
       }
     ]
@@ -848,5 +864,40 @@
         "kind": "Runner Up"
       }
     ]
+  },
+  {
+    "slug": "tiboo",
+    "gamertag": "TIBOO",
+    "realName": "TIBOO",
+    "role": "Jungle",
+    "teamSlug": "euphex",
+    "country": "Maldives",
+    "countryCode": "MDV",
+    "joined": "2025",
+    "matches": 2496,
+    "winRate": 53.29,
+    "mvps": 142,
+    "quote": "",
+    "playstyle": "",
+    "signatureMove": "",
+    "favoriteHero": "Paquito",
+    "hue": 220,
+    "number": 17,
+    "heroPool": [
+      {
+        "name": "Paquito",
+        "slug": "paquito",
+        "lane": "Jungle",
+        "art": {
+          "hue": 220,
+          "label": "FA"
+        },
+        "games": 258,
+        "winRate": 52.3,
+        "category": "signature",
+        "power": 2004
+      }
+    ],
+    "achievements": []
   }
 ]
