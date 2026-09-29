@@ -690,56 +690,59 @@
     "quote": "Gold lane is a bank. I collect.",
     "playstyle": "Greedy",
     "signatureMove": "Split-push timing",
-    "favoriteHero": "Claude",
+    "favoriteHero": "Moskov",
     "hue": 40,
     "number": 10,
     "heroPool": [
       {
-        "name": "Claude",
-        "slug": "claude",
+        "name": "Moskov",
+        "slug": "moskov",
         "lane": "Gold Lane",
         "art": {
           "hue": 40,
           "label": "CL"
         },
-        "games": 58,
-        "winRate": 64,
+        "games": 183,
+        "winRate": 56.8,
         "kda": 6,
-        "category": "signature"
+        "category": "signature",
+        "power": 2990
       },
       {
-        "name": "Beatrix",
-        "slug": "beatrix",
+        "name": "Granger",
+        "slug": "granger",
         "lane": "Gold Lane",
         "art": {
           "hue": 15,
           "label": "BE"
         },
-        "games": 44,
-        "winRate": 62,
+        "games": 230,
+        "winRate": 53.9,
         "kda": 5.8,
-        "category": "comfort"
+        "category": "comfort",
+        "power": 1712
       },
       {
-        "name": "Layla",
-        "slug": "layla",
+        "name": "Yi Sun-shin",
+        "slug": "yisunshin",
         "lane": "Gold Lane",
         "art": {
           "hue": 55,
           "label": "LA"
         },
-        "games": 28,
-        "winRate": 59,
+        "games": 99,
+        "winRate": 51.5,
         "kda": 5,
-        "category": "pocket"
+        "category": "pocket",
+        "power": 2916
       }
     ],
     "achievements": [
       {
-        "title": "Runner Up",
-        "event": "Aurex Clash",
-        "year": 2026,
-        "kind": "Runner Up"
+        "title": "Maldives No.8 Moskov",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
       }
     ],
     "secondaryRole": "Jungle"
