@@ -594,60 +594,62 @@
     ]
   },
   {
-    "slug": "fe",
-    "gamertag": "Fenrir",
-    "realName": "Amara Diallo",
+    "slug": "ryn",
+    "gamertag": "RYN",
+    "realName": "RAYAN",
     "role": "Mid Lane",
     "teamSlug": "aurex",
-    "country": "Senegal",
-    "countryCode": "SN",
-    "joined": "Feb 2025",
-    "matches": 71,
-    "winRate": 64,
-    "mvps": 5,
+    "country": "Maldives",
+    "countryCode": "MV",
+    "joined": "2026",
+    "matches": 2346,
+    "winRate": 53.15,
+    "mvps": 273,
     "quote": "I scale. You regret.",
     "playstyle": "Patient",
     "signatureMove": "Late-game positioning",
-    "favoriteHero": "Pharsa",
+    "favoriteHero": "Xavier",
     "hue": 200,
-    "number": 3,
+    "number": 11,
     "heroPool": [
       {
-        "name": "Pharsa",
-        "slug": "pharsa",
+        "name": "Xavier",
+        "slug": "xavier",
         "lane": "Mid Lane",
         "art": {
           "hue": 200,
           "label": "PH"
         },
-        "games": 61,
-        "winRate": 65,
+        "games": 759,
+        "winRate": 60.9,
         "kda": 5.6,
-        "category": "signature"
+        "category": "signature",
+        "power": 4089
       },
       {
-        "name": "Yve",
-        "slug": "yve",
+        "name": "Zhuxin",
+        "slug": "zhuxin",
         "lane": "Mid Lane",
         "art": {
           "hue": 230,
           "label": "YV"
         },
-        "games": 48,
-        "winRate": 62,
+        "games": 397,
+        "winRate": 49.1,
         "kda": 5.1,
-        "category": "comfort"
+        "category": "comfort",
+        "power": 2758
       },
       {
-        "name": "Nana",
-        "slug": "nana",
+        "name": "Cecilion",
+        "slug": "cecilion",
         "lane": "Mid Lane",
         "art": {
           "hue": 310,
           "label": "NA"
         },
-        "games": 30,
-        "winRate": 60,
+        "games": 288,
+        "winRate": 53.8,
         "kda": 4.9,
         "category": "pocket"
       }
