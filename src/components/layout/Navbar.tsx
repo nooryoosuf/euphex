@@ -105,7 +105,7 @@ export function Navbar() {
             <div className="mx-auto flex h-full max-w-[1400px] flex-col justify-center px-6 md:px-10 pt-20">
               <p className="label text-white/35 mb-6">Menu</p>
               <ul className="space-y-1">
-                {[...siteConfig.nav.compete, ...siteConfig.nav.community, { label: "About", href: "/about" }].map((l, i) => (
+                {[...siteConfig.nav.compete, { label: "Community", href: "/community" }, { label: "About", href: "/about" }].map((l, i) => (
                   <motion.li
                     key={l.href + l.label}
                     initial={{ opacity: 0, x: -24 }}

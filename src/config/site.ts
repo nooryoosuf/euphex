@@ -31,6 +31,12 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/euphex.official",
     tiktok: "https://www.tiktok.com/@euphex.official",
   },
+  contact: {
+    /** Scrim request inbox. Empty = local-only mode (requests save on the
+     *  visitor's device). Set an org email to also deliver every request
+     *  there instantly — no signup, first delivery needs one activation click. */
+    scrimInboxEmail: "",
+  },
   nav: {
     compete: [
       { label: "Teams", href: "/teams" },
@@ -38,6 +44,7 @@ export const siteConfig = {
       { label: "Matches", href: "/matches" },
       { label: "Tournaments", href: "/tournaments" },
       { label: "News", href: "/news" },
+      { label: "Request Scrim", href: "/scrim" },
     ],
     community: [
       { label: "Retribution Test", href: "/retri-test" },

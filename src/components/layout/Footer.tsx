@@ -57,13 +57,11 @@ export function Footer() {
           <nav aria-label="Community and socials">
             <p className="label text-white/35 mb-5">Community</p>
             <ul className="space-y-3 text-sm text-white/60">
-              {siteConfig.nav.community.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="hover:text-white transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/community" className="hover:text-white transition-colors">
+                  Community Hub
+                </Link>
+              </li>
             </ul>
             <div className="mt-6 flex flex-wrap gap-2">
               {Object.entries(siteConfig.socials).map(([k, href]) => (

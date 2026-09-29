@@ -10,6 +10,7 @@ import matchesSeed from "@/data/matches.json";
 import tournamentsSeed from "@/data/tournaments.json";
 import contentSeed from "@/data/content.json";
 import { Sheet, useConfirm } from "./ui";
+import { ScrimsInbox } from "./ScrimsInbox";
 import {
   PlayerEditor, TeamEditor, MatchEditor, TournamentEditor,
   NewsEditor, MediaEditor, TimelineEditor,
@@ -17,7 +18,7 @@ import {
 import { EuphexLogo } from "@/components/ui/TeamLogos";
 import { cn } from "@/lib/utils";
 
-type Tab = "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "publish";
+type Tab = "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "scrims" | "publish";
 
 const TABS: { id: Tab; label: string }[] = [
   { id: "players", label: "Players" },
@@ -27,6 +28,7 @@ const TABS: { id: Tab; label: string }[] = [
   { id: "news", label: "News" },
   { id: "media", label: "Media" },
   { id: "timeline", label: "Timeline" },
+  { id: "scrims", label: "Scrims" },
   { id: "publish", label: "Publish" },
 ];
 
@@ -321,7 +323,11 @@ export function AdminApp() {
         </div>
       </div>
 
-      {tab === "publish" ? (
+      {tab === "scrims" ? (
+        <section className="mt-6" aria-label="Scrim requests">
+          <ScrimsInbox />
+        </section>
+      ) : tab === "publish" ? (
         <section className="mt-8 space-y-5" aria-label="Publish">
           <div className="border border-white/10 bg-[#0C0F16] p-5 md:p-7">
             <h2 className="font-display text-2xl font-bold">PUBLISH CHANGES.</h2>
