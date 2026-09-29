@@ -656,22 +656,34 @@
     ],
     "achievements": [
       {
-        "title": "Champion",
-        "event": "Rising Stars League",
+        "title": "Maldives No.2 Xavier",
+        "event": "Maldives Leaderboard",
         "year": 2025,
-        "kind": "Champion"
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.1 Zhuxin",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.1 Cecilion",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
       }
     ]
   },
   {
-    "slug": "drift",
-    "gamertag": "DRIFT",
-    "realName": "Leo Martins",
+    "slug": "layah",
+    "gamertag": "FENRIR",
+    "realName": "FENRIR",
     "role": "Gold Lane",
     "teamSlug": "aurex",
-    "country": "Brazil",
-    "countryCode": "BR",
-    "joined": "Apr 2025",
+    "country": "Maldives",
+    "countryCode": "MV",
+    "joined": "2026",
     "matches": 66,
     "winRate": 63,
     "mvps": 6,
@@ -680,7 +692,7 @@
     "signatureMove": "Split-push timing",
     "favoriteHero": "Claude",
     "hue": 40,
-    "number": 8,
+    "number": 10,
     "heroPool": [
       {
         "name": "Claude",
@@ -729,75 +741,8 @@
         "year": 2026,
         "kind": "Runner Up"
       }
-    ]
-  },
-  {
-    "slug": "onyx",
-    "gamertag": "ONYX",
-    "realName": "Petar Novak",
-    "role": "EXP Lane",
-    "teamSlug": "aurex",
-    "country": "Serbia",
-    "countryCode": "RS",
-    "joined": "Feb 2025",
-    "matches": 70,
-    "winRate": 62,
-    "mvps": 4,
-    "quote": "Trade? Only if I win it.",
-    "playstyle": "Brawler",
-    "signatureMove": "Cut-wave dives",
-    "favoriteHero": "Terizla",
-    "hue": 20,
-    "number": 5,
-    "heroPool": [
-      {
-        "name": "Terizla",
-        "slug": "terizla",
-        "lane": "EXP Lane",
-        "art": {
-          "hue": 20,
-          "label": "TE"
-        },
-        "games": 55,
-        "winRate": 63,
-        "kda": 4.7,
-        "category": "signature"
-      },
-      {
-        "name": "Paquito",
-        "slug": "paquito",
-        "lane": "EXP Lane",
-        "art": {
-          "hue": 60,
-          "label": "PA"
-        },
-        "games": 40,
-        "winRate": 61,
-        "kda": 5.3,
-        "category": "comfort"
-      },
-      {
-        "name": "Yu Zhong",
-        "slug": "yuzhong",
-        "lane": "EXP Lane",
-        "art": {
-          "hue": 0,
-          "label": "YU"
-        },
-        "games": 32,
-        "winRate": 60,
-        "kda": 4.9,
-        "category": "pocket"
-      }
     ],
-    "achievements": [
-      {
-        "title": "Champion",
-        "event": "Rising Stars League",
-        "year": 2025,
-        "kind": "Champion"
-      }
-    ]
+    "secondaryRole": "Jungle"
   },
   {
     "slug": "kurozen",
