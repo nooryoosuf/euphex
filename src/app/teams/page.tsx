@@ -3,17 +3,16 @@ import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { TEAMS } from "@/data/teams";
-import { getTeamPlayers } from "@/data/players";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { PlayerCard, TeamCard } from "@/components/ui/cards";
 import { Badge } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
 
-const FILTERS = [{ id: "all", label: "All" }, ...TEAMS.map((t) => ({ id: t.slug, label: t.shortName }))];
-
 export default function TeamsPage() {
+  const { teams: TEAMS, getTeamPlayers } = useContent();
+  const FILTERS = [{ id: "all", label: "All" }, ...TEAMS.map((t) => ({ id: t.slug, label: t.shortName }))];
   const [filter, setFilter] = useState("all");
   const shown = filter === "all" ? TEAMS : TEAMS.filter((t) => t.slug === filter);
 

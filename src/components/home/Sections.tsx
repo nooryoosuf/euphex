@@ -1,15 +1,13 @@
-import { TEAMS } from "@/data/teams";
-import { getTeamPlayers } from "@/data/players";
+"use client";
+import { useContent } from "@/components/content";
 import { TeamCard } from "@/components/ui/cards";
 import { SectionHeader } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
-import { TOURNAMENTS } from "@/data/tournaments";
 import { TournamentCard, MatchCard } from "@/components/ui/cards";
-import { completedMatches } from "@/data/matches";
-import { TIMELINE } from "@/data/content";
 import { CountUp } from "@/components/ui/CountUp";
 
 export function Squads() {
+  const { teams: TEAMS, getTeamPlayers } = useContent();
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-32" aria-label="Squads">
       <SectionHeader index="02" label="The organization" title="TWO SQUADS. ONE STANDARD." href="/teams" linkLabel="All teams" />
@@ -44,6 +42,7 @@ export function Squads() {
 }
 
 export function CompetingNext() {
+  const { tournaments: TOURNAMENTS } = useContent();
   const upcoming = TOURNAMENTS.filter((t) => t.status !== "COMPLETED");
   const recent = [...TOURNAMENTS].filter((t) => t.status === "COMPLETED").sort((a, b) => +new Date(b.date) - +new Date(a.date));
   const list = (upcoming.length ? upcoming : recent).slice(0, 3);
@@ -66,6 +65,7 @@ export function CompetingNext() {
 }
 
 export function Results() {
+  const { completedMatches } = useContent();
   const recent = completedMatches().slice(0, 4);
   return (
     <section className="border-y border-white/8 bg-[#090C12]" aria-label="Recent results">
@@ -82,6 +82,7 @@ export function Results() {
 }
 
 export function History() {
+  const { timeline: TIMELINE } = useContent();
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-32" aria-label="Organization history">
       <SectionHeader index="04" label="Since 2025" title="THE STORY SO FAR." href="/about" linkLabel="About us" />

@@ -9,10 +9,11 @@ import { Artwork } from "@/components/ui/Artwork";
 import { TeamLogo } from "@/components/ui/TeamLogos";
 import { TEAM_CARD_ART, NEWS_ART } from "@/data/imagery";
 import { SlidingName } from "@/components/ui/SlidingName";
-import { getTeam } from "@/data/teams";
+import { useContent } from "@/components/content";
 import { ArrowUpRight } from "lucide-react";
 
 export function PlayerCard({ player, index = 0 }: { player: Player; index?: number }) {
+  const { getTeam } = useContent();
   const team = getTeam(player.teamSlug);
   return (
     <motion.div
@@ -84,6 +85,7 @@ export function TeamCard({ team }: { team: Team }) {
 }
 
 export function MatchCard({ match }: { match: Match }) {
+  const { getTeam } = useContent();
   const team = getTeam(match.teamSlug);
   const tone = match.result === "WIN" ? "win" : match.result === "LOSS" ? "loss" : match.result === "DRAW" ? "draw" : "default";
   return (

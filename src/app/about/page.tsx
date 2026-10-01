@@ -1,14 +1,16 @@
+"use client";
 import Link from "next/link";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { Stat } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { StoryTimeline } from "@/components/about/StoryTimeline";
-import { TEAMS } from "@/data/teams";
 import { siteConfig } from "@/config/site";
 
 export default function AboutPage() {
+  const { teams: TEAMS } = useContent();
   return (
     <>
       <PageHero

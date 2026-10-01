@@ -1,7 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
-import { PLAYERS } from "@/data/players";
-import { TEAMS } from "@/data/teams";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { PlayerCard } from "@/components/ui/cards";
@@ -11,6 +10,7 @@ import { cn } from "@/lib/utils";
 const ROLES: ("All" | LaneRole)[] = ["All", "Jungle", "Mid Lane", "Gold Lane", "EXP Lane", "Roam"];
 
 export default function PlayersPage() {
+  const { players: PLAYERS, teams: TEAMS } = useContent();
   const [team, setTeam] = useState("all");
   const [role, setRole] = useState<(typeof ROLES)[number]>("All");
   const [q, setQ] = useState("");
@@ -23,7 +23,7 @@ export default function PlayersPage() {
           (role === "All" || p.role === role) &&
           (q === "" || p.gamertag.toLowerCase().includes(q.toLowerCase()) || p.realName.toLowerCase().includes(q.toLowerCase())),
       ),
-    [team, role, q],
+    [PLAYERS, team, role, q],
   );
 
   return (

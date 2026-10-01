@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { MEDIA } from "@/data/content";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { Artwork } from "@/components/ui/Artwork";
@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 const FILTERS: ("ALL" | MediaCategory)[] = ["ALL", "MATCHDAY", "TEAM", "COMMUNITY", "BEHIND THE SCENES"];
 
 export default function MediaPage() {
+  const { media: MEDIA } = useContent();
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("ALL");
   const [lightbox, setLightbox] = useState<string | null>(null);
   const list = MEDIA.filter((m) => filter === "ALL" || m.category === filter);

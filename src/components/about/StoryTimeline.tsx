@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll, useMotionValueEvent, useReducedMotion } from "framer-motion";
-import { TIMELINE } from "@/data/content";
+import { useContent } from "@/components/content";
 import { IMAGES } from "@/data/imagery";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +14,7 @@ const ERA_ART = [IMAGES.aamon, IMAGES.badang, IMAGES.beatrix, IMAGES.zetian];
  * and jumps to any year.
  */
 export function StoryTimeline() {
+  const { timeline: TIMELINE } = useContent();
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });

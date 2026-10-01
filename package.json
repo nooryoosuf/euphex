@@ -12,6 +12,7 @@
     "fetch-mlbb": "node scripts/fetch-mlbb-assets.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
     "clsx": "^2.1.1",
     "framer-motion": "^13.4.1",
     "lucide-react": "^1.47.0",

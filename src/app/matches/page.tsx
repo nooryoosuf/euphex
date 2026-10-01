@@ -1,9 +1,11 @@
-import { MATCHES, completedMatches, upcomingMatches } from "@/data/matches";
+"use client";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { MatchCard } from "@/components/ui/cards";
 
 export default function MatchesPage() {
+  const { matches: MATCHES, completedMatches, upcomingMatches } = useContent();
   const upcoming = upcomingMatches();
   const results = completedMatches();
   return (

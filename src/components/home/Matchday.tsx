@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { completedMatches, nextMatch } from "@/data/matches";
-import { getTeam } from "@/data/teams";
+import { useContent } from "@/components/content";
 import { formatDate } from "@/lib/utils";
 import { Countdown } from "@/components/ui/Countdown";
 import { TeamLogo } from "@/components/ui/TeamLogos";
@@ -12,6 +11,7 @@ import { Reveal } from "@/components/ui/Reveal";
 /** MATCHDAY MODE — driven by match data: shows countdown pre-match,
  *  and auto-flips to FINAL RESULT once the latest completed match is newer. */
 export function Matchday() {
+  const { completedMatches, nextMatch, getTeam } = useContent();
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 30000);

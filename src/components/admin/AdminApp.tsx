@@ -1,14 +1,14 @@
 "use client";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Check, Download, Plus, Search, Upload } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Plus, Search, Download, Upload, LogOut, RefreshCw } from "lucide-react";
 import type {
   Match, MediaItem, NewsArticle, Player, Team, TimelineEvent, Tournament,
 } from "@/data/types";
-import playersSeed from "@/data/players.json";
-import teamsSeed from "@/data/teams.json";
-import matchesSeed from "@/data/matches.json";
-import tournamentsSeed from "@/data/tournaments.json";
-import contentSeed from "@/data/content.json";
+import {
+  supabase, fetchLiveContent, seedBundle,
+  playerToRow, teamToRow, matchToRow, tournamentToRow,
+  newsToRow, mediaToRow, timelineToRow,
+} from "@/lib/supabase";
 import { Sheet, useConfirm } from "./ui";
 import { ScrimsInbox } from "./ScrimsInbox";
 import { RecruitsInbox } from "./RecruitsInbox";
@@ -19,7 +19,7 @@ import {
 import { EuphexLogo } from "@/components/ui/TeamLogos";
 import { cn } from "@/lib/utils";
 
-type Tab = "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "scrims" | "recruits" | "publish";
+type Tab = "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "scrims" | "recruits";
 
 const TABS: { id: Tab; label: string }[] = [
   { id: "players", label: "Players" },
@@ -31,8 +31,9 @@ const TABS: { id: Tab; label: string }[] = [
   { id: "timeline", label: "Timeline" },
   { id: "scrims", label: "Scrims" },
   { id: "recruits", label: "Recruits" },
-  { id: "publish", label: "Publish" },
 ];
+
+type TLRow = TimelineEvent & { id?: number };
 
 interface Working {
   players: Player[];
@@ -41,213 +42,113 @@ interface Working {
   tournaments: Tournament[];
   news: NewsArticle[];
   media: MediaItem[];
-  timeline: TimelineEvent[];
+  timeline: TLRow[];
 }
 
-const seedOf = (): Working => ({
-  players: structuredClone(playersSeed) as Player[],
-  teams: structuredClone(teamsSeed) as Team[],
-  matches: structuredClone(matchesSeed) as Match[],
-  tournaments: structuredClone(tournamentsSeed) as Tournament[],
-  news: structuredClone((contentSeed as { news: NewsArticle[] }).news),
-  media: structuredClone((contentSeed as { media: MediaItem[] }).media),
-  timeline: structuredClone((contentSeed as { timeline: TimelineEvent[] }).timeline),
-});
-
-const FILES: { key: keyof Working; path: string; label: string }[] = [
-  { key: "players", path: "src/data/players.json", label: "Players" },
-  { key: "teams", path: "src/data/teams.json", label: "Teams" },
-  { key: "matches", path: "src/data/matches.json", label: "Matches" },
-  { key: "tournaments", path: "src/data/tournaments.json", label: "Tournaments" },
-  { key: "news", path: "src/data/content.json", label: "News / Media / Timeline" },
-];
-
-const canon = (v: unknown) => JSON.stringify(v);
-// fingerprint of the bundled seed data — drafts saved against an older
-// fingerprint are treated as stale and never auto-applied
-const hashStr = (s: string) => {
-  let h = 5381;
-  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
-  return h.toString(36);
+const TABLE_OF: Record<string, string> = {
+  players: "players", teams: "teams", matches: "matches",
+  tournaments: "tournaments", news: "news", media: "media", timeline: "timeline",
 };
-
-const PASSKEY = "euphex-admin-auth";
-const DRAFTKEY = "euphex-admin-drafts";
-const WORKERKEY = "euphex-admin-worker";
-const ADMIN_CODE = process.env.NEXT_PUBLIC_ADMIN_CODE ?? "euphex2026";
-const DEFAULT_WORKER_URL =
-  process.env.NEXT_PUBLIC_PUBLISH_WORKER_URL || "https://euphex-publish.nooor-yoosuf.workers.dev";
+const PK_OF: Record<string, string> = {
+  players: "slug", teams: "slug", matches: "id",
+  tournaments: "slug", news: "slug", media: "id", timeline: "id",
+};
 
 const asRecs = (v: unknown): Record<string, unknown>[] => v as unknown as Record<string, unknown>[];
 
-function contentPayload(w: Working) {
-  return { news: w.news, media: w.media, timeline: w.timeline };
-}
-
-function fileBody(key: keyof Working, w: Working): string {
-  const data = key === "news" || key === "media" || key === "timeline" ? contentPayload(w) : w[key];
-  return `${JSON.stringify(data, null, 2)}\n`;
-}
-
 export function AdminApp() {
-  const [authed, setAuthed] = useState(false);
-  const [code, setCode] = useState("");
-  const [codeErr, setCodeErr] = useState(false);
+  const [user, setUser] = useState<string | null>(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [authErr, setAuthErr] = useState("");
   const [tab, setTab] = useState<Tab>("players");
-  const [work, setWork] = useState<Working>(seedOf);
-  const [restored, setRestored] = useState(false);
+  const [work, setWork] = useState<Working | null>(null);
+  const [loading, setLoading] = useState(false);
   const [q, setQ] = useState("");
-  const [staleDraft, setStaleDraft] = useState<string | null>(null);
   const [editing, setEditing] = useState<{ tab: Tab; id: string | null } | null>(null);
   const [draft, setDraft] = useState<Record<string, unknown> | null>(null);
+  const [log, setLog] = useState<string[]>([]);
+  const [busy, setBusy] = useState(false);
   const { ask, node: confirmNode } = useConfirm();
   const fileRef = useRef<HTMLInputElement>(null);
 
-  // publish config — no secrets in the browser. The Worker
-  // (worker/publish.js) holds the GitHub token server-side.
-  // Edits are diffed against LIVE site data (fetched from main),
-  // falling back to bundled data when offline.
-  const [workerUrl, setWorkerUrl] = useState(DEFAULT_WORKER_URL);
-  const [branch, setBranch] = useState("main");
-  const [live, setLive] = useState<Working | null>(null);
-  const [liveState, setLiveState] = useState<"loading" | "ready" | "offline">("loading");
-  const [message, setMessage] = useState("Update site content via admin");
-  const [log, setLog] = useState<string[]>([]);
-  const [busy, setBusy] = useState(false);
-
+  // session
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem(PASSKEY) === "1") setAuthed(true);
-      const w = sessionStorage.getItem(WORKERKEY);
-      if (w) setWorkerUrl(w);
-      const d = localStorage.getItem(DRAFTKEY);
-      if (d) {
-        const box = JSON.parse(d) as {
-          v?: number; savedAt?: string; seedHash?: string; work?: Working;
-        } & Partial<Working>;
-        const work: Working | undefined = box.work ?? (box as unknown as Working);
-        if (work && work.players && work.teams) {
-          if (box.seedHash === hashStr(canon(seedOf()))) {
-            setWork(work);
-            setRestored(true);
-          } else {
-            // stale draft from an older site version — never auto-apply it
-            setStaleDraft(box.savedAt ? box.savedAt.slice(0, 10) : "an earlier version");
-          }
-        }
-      }
-    } catch { /* private mode */ }
+    supabase()?.auth.getSession().then(({ data }) => {
+      setUser(data.session?.user?.email ?? null);
+    });
+    const { data: sub } = supabase()?.auth.onAuthStateChange((_e, s) => {
+      setUser(s?.user?.email ?? null);
+    }) ?? { data: null };
+    return () => { sub?.subscription.unsubscribe(); };
   }, []);
 
-  useEffect(() => {
-    if (!authed) return;
+  const load = async () => {
+    setLoading(true);
+    const live = await fetchLiveContent();
+    const base = live ?? seedBundle();
+    // keep timeline ids for updates/deletes
+    let timeline: TLRow[] = base.timeline;
     try {
-      localStorage.setItem(
-        DRAFTKEY,
-        JSON.stringify({ v: 2, savedAt: new Date().toISOString(), seedHash: hashStr(canon(seedOf())), work }),
-      );
-    } catch { /* ignore */ }
-  }, [work, authed]);
-
-  // Live baseline: diff edits against what's actually on main,
-  // not the data bundled at build time.
-  useEffect(() => {
-    if (!authed) return;
-    let dead = false;
-    (async () => {
-      try {
-        const get = async (f: string) => {
-          const r = await fetch(`https://raw.githubusercontent.com/nooryoosuf/euphex/main/src/data/${f}?t=${Date.now()}`);
-          if (!r.ok) throw new Error(f);
-          return r.json() as Promise<unknown>;
-        };
-        const [players, teams, matches, tournaments, content] = await Promise.all([
-          get("players.json"), get("teams.json"), get("matches.json"),
-          get("tournaments.json"), get("content.json"),
-        ]);
-        if (dead) return;
-        const c = content as { news: NewsArticle[]; media: MediaItem[]; timeline: TimelineEvent[] };
-        setLive({
-          players: players as Player[], teams: teams as Team[], matches: matches as Match[],
-          tournaments: tournaments as Tournament[], news: c.news, media: c.media, timeline: c.timeline,
-        });
-        setLiveState("ready");
-      } catch {
-        if (!dead) setLiveState("offline");
+      const sb = supabase();
+      if (sb) {
+        const { data } = await sb.from("timeline").select("*").order("id");
+        if (data) timeline = data.map((r) => ({ ...(r as TLRow) }));
       }
-    })();
-    return () => { dead = true; };
-  }, [authed]);
-
-  const refreshFromLive = () => {
-    if (!live) return;
-    setWork(structuredClone(live));
-    try {
-      localStorage.removeItem(DRAFTKEY);
-    } catch { /* ignore */ }
-    setRestored(false);
-    setLog(["Loaded live data from main — editor now matches the site."]);
+    } catch { /* keep seed */ }
+    setWork({ ...base, timeline });
+    setLoading(false);
   };
 
-  const changed = useMemo(() => {
-    const seed = seedOf();
-    const base: Working = live ?? seed;
-    const baseContent = live
-      ? { news: live.news, media: live.media, timeline: live.timeline }
-      : { news: (contentSeed as { news: unknown }).news, media: (contentSeed as { media: unknown }).media, timeline: (contentSeed as { timeline: unknown }).timeline };
-    const out: typeof FILES = [];
-    if (canon(work.players) !== canon(base.players)) out.push(FILES[0]);
-    if (canon(work.teams) !== canon(base.teams)) out.push(FILES[1]);
-    if (canon(work.matches) !== canon(base.matches)) out.push(FILES[2]);
-    if (canon(work.tournaments) !== canon(base.tournaments)) out.push(FILES[3]);
-    if (canon(contentPayload(work)) !== canon(baseContent)) out.push(FILES[4]);
-    return out;
-  }, [work, live]);
+  useEffect(() => {
+    if (user) load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
-  if (!authed) {
+  const signIn = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setAuthErr("");
+    const sb = supabase();
+    if (!sb) {
+      setAuthErr("Supabase is not configured (missing env).");
+      return;
+    }
+    const { error } = await sb.auth.signInWithPassword({ email, password });
+    if (error) setAuthErr(error.message);
+  };
+
+  const signOut = async () => {
+    await supabase()?.auth.signOut();
+    setWork(null);
+  };
+
+  if (!user) {
     return (
       <div className="mx-auto flex min-h-[80vh] max-w-md flex-col items-center justify-center px-5 text-center">
         <EuphexLogo className="h-14 w-auto text-white" />
         <h1 className="font-display mt-6 text-4xl font-bold tracking-tight">DASHBOARD.</h1>
-        <p className="mt-2 text-sm text-white/50">Restricted area. Enter the passcode.</p>
-        <form
-          className="mt-8 w-full space-y-3"
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (code === ADMIN_CODE) {
-              setAuthed(true);
-              try {
-                sessionStorage.setItem(PASSKEY, "1");
-              } catch { /* ignore */ }
-            } else setCodeErr(true);
-          }}
-        >
+        <p className="mt-2 text-sm text-white/50">Sign in to manage the site. Saving goes live instantly.</p>
+        <form className="mt-8 w-full space-y-3" onSubmit={signIn}>
           <input
-            type="password"
-            value={code}
-            onChange={(e) => {
-              setCode(e.target.value);
-              setCodeErr(false);
-            }}
-            placeholder="Passcode"
-            aria-label="Dashboard passcode"
-            className="w-full border border-white/15 bg-black/40 px-4 py-3.5 text-center text-lg tracking-[0.3em] placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]"
+            type="email" value={email} onChange={(e) => { setEmail(e.target.value); setAuthErr(""); }}
+            placeholder="Email" aria-label="Email" autoComplete="username"
+            className="w-full border border-white/15 bg-black/40 px-4 py-3.5 text-center placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]"
           />
-          {codeErr && <p className="text-sm text-red-300">Wrong code. Try again.</p>}
+          <input
+            type="password" value={password} onChange={(e) => { setPassword(e.target.value); setAuthErr(""); }}
+            placeholder="Password" aria-label="Password" autoComplete="current-password"
+            className="w-full border border-white/15 bg-black/40 px-4 py-3.5 text-center placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]"
+          />
+          {authErr && <p className="text-sm text-red-300">{authErr}</p>}
           <button className="w-full bg-[var(--accent)] py-3.5 text-xs font-bold tracking-[0.2em] uppercase hover:brightness-110 cursor-pointer">
-            Unlock
+            Sign in
           </button>
         </form>
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">
-          Default code is <span className="text-white/60">euphex2026</span> — change it with
-          NEXT_PUBLIC_ADMIN_CODE. Publishing needs nothing extra —
-          no second password, no GitHub token.
-        </p>
       </div>
     );
   }
 
-  const teamSlugs = work.teams.map((t) => t.slug);
+  const teamSlugs = (work?.teams ?? []).map((t) => t.slug);
 
   const openNew = (t: Tab) => {
     const blanks: Record<string, Record<string, unknown>> = {
@@ -264,83 +165,113 @@ export function AdminApp() {
   };
 
   const openEdit = (t: Tab, id: string) => {
+    if (!work) return;
     const item = asRecs(work[t as keyof Working]).find((x) =>
-      t === "matches" ? x.id === id : t === "media" ? x.id === id : t === "timeline" ? `${x.year}-${x.title}` === id : (x as { slug?: string }).slug === id,
+      t === "matches" ? x.id === id : t === "media" ? x.id === id
+      : t === "timeline" ? String((x as { id?: number }).id ?? `${x.year}-${x.title}`) === id
+      : (x as { slug?: string }).slug === id,
     );
     if (!item) return;
     setDraft(structuredClone(item));
     setEditing({ tab: t, id });
   };
 
-  const saveDraft = () => {
-    if (!editing || !draft) return;
-    const key = editing.tab as keyof Working;
-    setWork((w) => {
-      const list = [...asRecs(w[key])];
-      if (editing.id === null) {
-        list.push(draft);
-      } else {
-        const i = list.findIndex((x) =>
-          editing.tab === "matches" ? x.id === editing.id : editing.tab === "media" ? x.id === editing.id : editing.tab === "timeline" ? `${x.year}-${x.title}` === editing.id : (x as { slug?: string }).slug === editing.id,
-        );
-        if (i >= 0) list[i] = draft;
-      }
-      return { ...w, [key]: list };
-    });
-    setEditing(null);
-    setDraft(null);
+  const rowOf = (t: Tab, d: Record<string, unknown>) => {
+    switch (t) {
+      case "players": return playerToRow(d as unknown as Player);
+      case "teams": return teamToRow(d as unknown as Team);
+      case "matches": return matchToRow(d as unknown as Match);
+      case "tournaments": return tournamentToRow(d as unknown as Tournament);
+      case "news": return newsToRow(d as unknown as NewsArticle);
+      case "media": return mediaToRow(d as unknown as MediaItem);
+      case "timeline": return timelineToRow(d as unknown as TLRow);
+      default: throw new Error("bad tab");
+    }
   };
 
-  const removeItem = (t: Tab, id: string) => {
+  const saveDraft = async () => {
+    if (!editing || !draft || !work) return;
+    const t = editing.tab;
     const key = t as keyof Working;
-    setWork((w) => ({
-      ...w,
-      [key]: asRecs(w[key]).filter((x) =>
-        t === "matches" ? x.id !== id : t === "media" ? x.id !== id : t === "timeline" ? `${x.year}-${x.title}` !== id : (x as { slug?: string }).slug !== id,
-      ),
-    }));
-  };
-
-  const publish = async () => {
-    if (!workerUrl || changed.length === 0) return;
     setBusy(true);
-    setLog([`Publishing ${changed.length} file(s) via worker…`]);
     try {
-      sessionStorage.setItem(WORKERKEY, workerUrl);
-    } catch { /* ignore */ }
-    try {
-      const res = await fetch(`${workerUrl.replace(/\/$/, "")}/publish`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          branch,
-          message,
-          files: changed.map((f) => ({ path: f.path, content: fileBody(f.key, work) })),
-        }),
-      });
-      const out = (await res.json()) as { ok: boolean; results?: { path: string; ok: boolean; error?: string }[]; error?: string };
-      if (!res.ok) throw new Error(out.error || `worker ${res.status}`);
-      for (const r of out.results ?? []) {
-        setLog((l) => [...l, r.ok ? `✓ ${r.path}` : `✗ ${r.path}: ${r.error ?? "failed"}`]);
+      const sb = supabase();
+      if (!sb) throw new Error("Supabase is not configured.");
+      const row = rowOf(t, draft);
+      if (t === "timeline" && editing.id === null) {
+        // insert new (id assigned by db)
+        const { data, error } = await sb.from("timeline").insert(row).select().single();
+        if (error) throw error;
+        const withId = { ...(draft as unknown as TLRow), id: (data as { id: number }).id };
+        setWork((w) => (w ? { ...w, timeline: [...w.timeline, withId] } : w));
+      } else if (t === "timeline") {
+        const id = Number(editing.id);
+        const { error } = await sb.from("timeline").update(row).eq("id", id);
+        if (error) throw error;
+        setWork((w) => (w ? { ...w, timeline: w.timeline.map((x) => (x.id === id ? { ...(draft as unknown as TLRow), id } : x)) } : w));
+      } else {
+        const pk = PK_OF[t];
+        const { error } = await sb.from(TABLE_OF[t]).upsert(row, { onConflict: pk });
+        if (error) throw error;
+        setWork((w) => {
+          if (!w) return w;
+          const list = [...asRecs(w[key])];
+          const finder = (x: Record<string, unknown>) =>
+            t === "matches" || t === "media" ? x.id === editing.id || (editing.id === null && (x.slug ?? x.id) === (draft.slug ?? draft.id)) : (x as { slug?: string }).slug === (editing.id ?? (draft.slug as string));
+          const i = editing.id === null ? -1 : list.findIndex(finder);
+          if (i >= 0) list[i] = draft;
+          else list.push(draft);
+          return { ...w, [key]: list };
+        });
       }
-      if (!out.ok) {
-        setBusy(false);
-        return;
-      }
-      // editor now matches live — clear the diff without a reload
-      setLive(structuredClone(work));
-      setLiveState("ready");
+      setLog((l) => [`✓ saved ${t} → live now`, ...l].slice(0, 8));
     } catch (e) {
-      setLog((l) => [...l, `✗ publish: ${e instanceof Error ? e.message : "failed"}`]);
+      setLog((l) => [`✗ save failed: ${e instanceof Error ? e.message : "failed"}`, ...l].slice(0, 8));
       setBusy(false);
       return;
     }
-    setLog((l) => [...l, "Done — site rebuilds in ~1 min.", "Watch: https://github.com/nooryoosuf/euphex/actions"]);
-    try {
-      localStorage.removeItem(DRAFTKEY);
-    } catch { /* ignore */ }
-    setRestored(false);
+    setEditing(null);
+    setDraft(null);
     setBusy(false);
+  };
+
+  const removeItem = (t: Tab, id: string) => {
+    const sb = supabase();
+    if (!sb || !work) return;
+    const key = t as keyof Working;
+    const apply = () => {
+      setWork((w) => {
+        if (!w) return w;
+        const filtered = asRecs(w[key]).filter((x) =>
+          t === "matches" || t === "media" ? x.id !== id
+          : t === "timeline" ? String((x as { id?: number }).id ?? `${x.year}-${x.title}`) !== id
+          : (x as { slug?: string }).slug !== id,
+        );
+        return { ...w, [key]: filtered };
+      });
+    };
+    (async () => {
+      try {
+        if (t === "timeline") {
+          const num = Number(id);
+          if (Number.isFinite(num)) {
+            const { error } = await sb.from("timeline").delete().eq("id", num);
+            if (error) throw error;
+          } else {
+            const [year, ...rest] = id.split("-");
+            const { error } = await sb.from("timeline").delete().eq("year", year).eq("title", rest.join("-"));
+            if (error) throw error;
+          }
+        } else {
+          const { error } = await sb.from(TABLE_OF[t]).delete().eq(PK_OF[t], id);
+          if (error) throw error;
+        }
+        apply();
+        setLog((l) => [`✓ deleted ${t}/${id} → live now`, ...l].slice(0, 8));
+      } catch (e) {
+        setLog((l) => [`✗ delete failed: ${e instanceof Error ? e.message : "failed"}`, ...l].slice(0, 8));
+      }
+    })();
   };
 
   const ql = q.toLowerCase();
@@ -353,42 +284,28 @@ export function AdminApp() {
           <EuphexLogo className="h-9 w-auto text-white" />
           <div>
             <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight">DASHBOARD.</h1>
-            <p className="text-xs text-white/40">Manage the site. Publish goes live in ~1 min.</p>
+            <p className="text-xs text-white/40">Saving goes live instantly · {user}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {restored && <span className="border border-amber-300/30 bg-amber-300/10 px-2.5 py-1 text-[11px] font-bold text-amber-200">DRAFT RESTORED</span>}
           <button
-            onClick={() => setTab("publish")}
-            className={cn(
-              "relative px-5 py-2.5 text-[12px] font-bold tracking-[0.16em] uppercase cursor-pointer transition-all",
-              changed.length ? "bg-[var(--accent)] text-white" : "border border-white/15 text-white/60",
-            )}
+            onClick={load}
+            className="inline-flex items-center gap-2 border border-white/15 px-4 py-2.5 text-[12px] font-bold tracking-[0.16em] uppercase text-white/60 hover:text-white cursor-pointer"
           >
-            Publish{changed.length > 0 && ` (${changed.length})`}
+            <RefreshCw className="size-4" /> Reload live
+          </button>
+          <button
+            onClick={signOut}
+            className="inline-flex items-center gap-2 border border-white/15 px-4 py-2.5 text-[12px] font-bold tracking-[0.16em] uppercase text-white/60 hover:text-white cursor-pointer"
+          >
+            <LogOut className="size-4" /> Sign out
           </button>
         </div>
       </header>
 
-      {staleDraft && (
-        <div role="alert" className="mt-6 border border-red-400/40 bg-red-400/5 p-5 md:p-6">
-          <p className="font-display text-xl md:text-2xl font-bold text-red-200">STALE DRAFT BLOCKED.</p>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/65">
-            This browser holds unsent changes saved {staleDraft} — from an older version of the site data
-            (it may still contain deleted placeholder names). It was <strong className="text-white">not loaded</strong>,
-            so it cannot be published over the live site. You are looking at the current live data.
-          </p>
-          <button
-            onClick={() => {
-              try {
-                localStorage.removeItem(DRAFTKEY);
-              } catch { /* ignore */ }
-              setStaleDraft(null);
-            }}
-            className="mt-4 border border-red-400/50 px-5 py-2.5 text-xs font-bold tracking-[0.18em] uppercase text-red-200 hover:bg-red-400/10 cursor-pointer transition-colors"
-          >
-            Discard stale draft →
-          </button>
+      {log.length > 0 && (
+        <div className="mt-4 border border-white/10 bg-black/50 p-4 font-mono text-xs leading-relaxed whitespace-pre-wrap" role="status">
+          {log.join("\n")}
         </div>
       )}
 
@@ -410,137 +327,20 @@ export function AdminApp() {
               )}
             >
               {t.label}
-              {t.id !== "publish" && changed.some((f) => f.key === t.id || (["news", "media", "timeline"].includes(t.id) && f.key === "news")) && (
-                <span className="ml-1.5 inline-block size-1.5 rounded-full bg-[var(--accent)]" />
-              )}
             </button>
           ))}
         </div>
       </div>
 
-      {tab === "scrims" ? (
+      {loading || !work ? (
+        <p className="py-20 text-center text-sm text-white/40">Loading live data…</p>
+      ) : tab === "scrims" ? (
         <section className="mt-6" aria-label="Scrim requests">
           <ScrimsInbox />
         </section>
       ) : tab === "recruits" ? (
         <section className="mt-6" aria-label="Recruitment applications">
           <RecruitsInbox />
-        </section>
-      ) : tab === "publish" ? (
-        <section className="mt-8 space-y-5" aria-label="Publish">
-          <div className="border border-white/10 bg-[#0C0F16] p-5 md:p-7">
-            <h2 className="font-display text-2xl font-bold">PUBLISH CHANGES.</h2>
-            <p className="mt-2 text-sm text-white/55">
-              Publishing sends the edited JSON files to the publish Worker, which commits
-              them to GitHub. Pages rebuilds and the live site updates in about a minute.
-              Uses your login — no extra password.
-            </p>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <label className="block"><span className="label !text-[10px] text-white/40">Publish Worker URL</span>
-                <input value={workerUrl} onChange={(e) => setWorkerUrl(e.target.value)} placeholder="https://euphex-publish.<you>.workers.dev" className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]" /></label>
-              <label className="block"><span className="label !text-[10px] text-white/40">Branch</span>
-                <input value={branch} onChange={(e) => setBranch(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
-            </div>
-            <label className="mt-4 block"><span className="label !text-[10px] text-white/40">Commit message</span>
-              <input value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
-            <div className="mt-5">
-              <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                <p className="label !text-[10px] text-white/40">Changed files ({changed.length})</p>
-                <p className="text-[11px] text-white/40">
-                  {liveState === "loading" ? "Comparing against live site…" : liveState === "ready" ? (
-                    <>vs live <span className="text-emerald-300">main ✓</span> · <button onClick={refreshFromLive} className="underline hover:text-white cursor-pointer">reload live</button></>
-                  ) : (
-                    <>offline — vs bundled data</>
-                  )}
-                </p>
-              </div>
-              {changed.length === 0 ? (
-                <p className="text-sm text-white/45">Nothing to publish — everything matches the live site.</p>
-              ) : (
-                <ul className="space-y-1.5">
-                  {changed.map((f) => (
-                    <li key={f.path} className="flex items-center gap-2 text-sm text-white/75">
-                      <Check className="size-4 text-[var(--accent)]" /> {f.path}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-            <button
-              onClick={publish}
-              disabled={busy || !workerUrl || changed.length === 0}
-              className="mt-6 w-full bg-[var(--accent)] py-4 text-sm font-bold tracking-[0.2em] uppercase hover:brightness-110 disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
-            >
-              {busy ? "Publishing…" : "Publish to live site →"}
-            </button>
-            {!busy && (!workerUrl || changed.length === 0) && (
-              <p className="mt-3 text-xs leading-relaxed text-amber-200/80" role="status">
-                {!workerUrl
-                  ? "Publish is off: paste the Worker URL above (deploy worker/publish.js once, then paste its workers.dev URL)."
-                  : "Publish is off: no differences vs the live site yet — edit something first."}
-              </p>
-            )}
-            {log.length > 0 && (
-              <div className="mt-4 border border-white/10 bg-black/50 p-4 font-mono text-xs leading-relaxed whitespace-pre-wrap" role="status">
-                {log.join("\n")}
-              </div>
-            )}
-          </div>
-          <div className="grid gap-3 sm:grid-cols-3">
-            <button
-              onClick={() => {
-                const blob = new Blob([JSON.stringify({ players: work.players, teams: work.teams, matches: work.matches, tournaments: work.tournaments, ...contentPayload(work) }, null, 2)], { type: "application/json" });
-                const a = document.createElement("a");
-                a.href = URL.createObjectURL(blob);
-                a.download = "euphex-backup.json";
-                a.click();
-              }}
-              className="inline-flex items-center justify-center gap-2 border border-white/15 px-4 py-3 text-xs font-bold tracking-[0.16em] uppercase text-white/70 hover:text-white cursor-pointer"
-            >
-              <Download className="size-4" /> Backup JSON
-            </button>
-            <button onClick={() => fileRef.current?.click()} className="inline-flex items-center justify-center gap-2 border border-white/15 px-4 py-3 text-xs font-bold tracking-[0.16em] uppercase text-white/70 hover:text-white cursor-pointer">
-              <Upload className="size-4" /> Restore backup
-            </button>
-            <input
-              ref={fileRef}
-              type="file"
-              accept="application/json"
-              className="hidden"
-              onChange={async (e) => {
-                const f = e.target.files?.[0];
-                if (!f) return;
-                try {
-                  const j = JSON.parse(await f.text()) as Partial<Working> & { news?: NewsArticle[]; media?: MediaItem[]; timeline?: TimelineEvent[] };
-                  setWork((w) => ({
-                    players: (j.players as Player[]) ?? w.players,
-                    teams: (j.teams as Team[]) ?? w.teams,
-                    matches: (j.matches as Match[]) ?? w.matches,
-                    tournaments: (j.tournaments as Tournament[]) ?? w.tournaments,
-                    news: (j.news as NewsArticle[]) ?? w.news,
-                    media: (j.media as MediaItem[]) ?? w.media,
-                    timeline: (j.timeline as TimelineEvent[]) ?? w.timeline,
-                  }));
-                  setLog([`Restored backup ${f.name} into the editor. Review, then Publish.`]);
-                } catch {
-                  setLog(["Could not read that file."]);
-                }
-                e.target.value = "";
-              }}
-            />
-            <button
-              onClick={() => {
-                try {
-                  localStorage.removeItem(DRAFTKEY);
-                } catch { /* ignore */ }
-                setWork(seedOf());
-                setRestored(false);
-              }}
-              className="border border-white/15 px-4 py-3 text-xs font-bold tracking-[0.16em] uppercase text-white/70 hover:text-white cursor-pointer"
-            >
-              Discard drafts
-            </button>
-          </div>
         </section>
       ) : (
         <section className="mt-6" aria-label={tab}>
@@ -556,6 +356,24 @@ export function AdminApp() {
           </div>
           <div className="mt-4 space-y-3">
             <ListBody tab={tab} work={work} ql={ql} matchQ={matchQ} openEdit={openEdit} ask={ask} removeItem={removeItem} />
+          </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <button
+              onClick={() => {
+                const blob = new Blob([JSON.stringify(work, null, 2)], { type: "application/json" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "euphex-backup.json";
+                a.click();
+              }}
+              className="inline-flex items-center justify-center gap-2 border border-white/15 px-4 py-3 text-xs font-bold tracking-[0.16em] uppercase text-white/70 hover:text-white cursor-pointer"
+            >
+              <Download className="size-4" /> Backup JSON
+            </button>
+            <button onClick={() => fileRef.current?.click()} className="inline-flex items-center justify-center gap-2 border border-white/15 px-4 py-3 text-xs font-bold tracking-[0.16em] uppercase text-white/70 hover:text-white cursor-pointer">
+              <Upload className="size-4" /> View backup <span className="normal-case tracking-normal opacity-60">(reference only)</span>
+            </button>
+            <input ref={fileRef} type="file" accept="application/json" className="hidden" onChange={(e) => { e.target.value = ""; setLog((l) => ["Backups are reference-only — edit above to change the live site.", ...l].slice(0, 8)); }} />
           </div>
         </section>
       )}
@@ -573,12 +391,17 @@ export function AdminApp() {
         </Sheet>
       )}
       {confirmNode}
+      {busy && <p className="mt-4 text-center text-xs text-white/40" role="status">Saving…</p>}
     </div>
   );
 }
 
 function rowCls() {
   return "flex items-center justify-between gap-3 border border-white/8 bg-[#0C0F16] p-4 hover:border-[var(--accent)]/40 cursor-pointer transition-colors text-left w-full";
+}
+
+function tid(x: Record<string, unknown>): string {
+  return String((x as { id?: number }).id ?? `${x.year}-${x.title}`);
 }
 
 function ListBody({ tab, work, ql, matchQ, openEdit, ask, removeItem }: {
@@ -667,13 +490,13 @@ function ListBody({ tab, work, ql, matchQ, openEdit, ask, removeItem }: {
   }
   const list = work.timeline.filter((t) => !ql || matchQ(`${t.year} ${t.title}`));
   return <>{list.map((t, i) => (
-    <div key={`${t.year}-${t.title}-${i}`} className="flex items-stretch gap-2">
-      <button onClick={() => openEdit("timeline", `${t.year}-${t.title}`)} className={rowCls()}>
+    <div key={`${t.id ?? i}`} className="flex items-stretch gap-2">
+      <button onClick={() => openEdit("timeline", tid(t as unknown as Record<string, unknown>))} className={rowCls()}>
         <span><span className="font-display text-xl font-bold">{t.year} — {t.title}</span>
           <span className="block text-xs text-white/45">{t.text}</span></span>
         <span className="text-xs text-white/30">Edit →</span>
       </button>
-      <button onClick={() => ask(`Delete timeline entry?`, () => removeItem("timeline", `${t.year}-${t.title}`))} aria-label="Delete entry" className="shrink-0 border border-white/10 px-3.5 text-white/40 hover:text-red-300 hover:border-red-400/50 cursor-pointer">✕</button>
+      <button onClick={() => ask(`Delete timeline entry?`, () => removeItem("timeline", tid(t as unknown as Record<string, unknown>)))} aria-label="Delete entry" className="shrink-0 border border-white/10 px-3.5 text-white/40 hover:text-red-300 hover:border-red-400/50 cursor-pointer">✕</button>
     </div>
   ))}{list.length === 0 && <Empty />}</>;
 }

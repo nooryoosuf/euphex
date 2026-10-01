@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
-import { getTournament } from "@/data/tournaments";
+import { useContent } from "@/components/content";
 import { imageForSlug } from "@/data/imagery";
-import { MATCHES } from "@/data/matches";
 import { Badge } from "@/components/ui/primitives";
 import { MatchCard } from "@/components/ui/cards";
 import { formatDate } from "@/lib/utils";
@@ -12,6 +11,7 @@ import Link from "next/link";
 const TABS = ["OVERVIEW", "SCHEDULE", "STANDINGS", "RESULTS"] as const;
 
 export function TournamentDetail({ slug }: { slug: string }) {
+  const { getTournament, matches: MATCHES } = useContent();
   const t = getTournament(slug);
   const [tab, setTab] = useState<(typeof TABS)[number]>("OVERVIEW");
   if (!t) return <div className="mx-auto max-w-[1400px] px-5 py-40 text-center text-white/50">Tournament not found.</div>;

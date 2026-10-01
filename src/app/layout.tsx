@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ContentProvider } from "@/components/content";
 import { CloudflareAnalytics } from "@/components/CloudflareAnalytics";
 import { siteConfig } from "@/config/site";
 
@@ -69,9 +70,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Navbar />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
+        <ContentProvider>
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+        </ContentProvider>
         <Footer />
         <script
           type="application/ld+json"

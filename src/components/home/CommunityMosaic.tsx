@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { MEDIA } from "@/data/content";
+import { useContent } from "@/components/content";
 import { COMMUNITY_ART } from "@/data/imagery";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
  * and lets the others recede.
  */
 export function CommunityMosaic() {
+  const { media: MEDIA } = useContent();
   const reduce = useReducedMotion();
   const [hot, setHot] = useState<number | null>(null);
 

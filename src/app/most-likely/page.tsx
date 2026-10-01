@@ -1,8 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { PLAYERS } from "@/data/players";
-import { getTeam } from "@/data/teams";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { Artwork } from "@/components/ui/Artwork";
@@ -11,6 +10,7 @@ import { MOST_LIKELY_QUESTIONS } from "@/data/roasts";
 import { cn } from "@/lib/utils";
 
 export default function MostLikelyPage() {
+  const { players: PLAYERS, getTeam } = useContent();
   const [qi, setQi] = useState(0);
   const [votes, setVotes] = useState<Record<number, Record<string, number>>>({});
   const [voted, setVoted] = useState<Record<number, string>>({});

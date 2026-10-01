@@ -1,9 +1,11 @@
-import { NEWS } from "@/data/content";
+"use client";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { NewsCard } from "@/components/ui/cards";
 
 export default function NewsPage() {
+  const { news: NEWS } = useContent();
   // latest article always first
   const list = [...NEWS].sort((a, b) => +new Date(b.date) - +new Date(a.date));
   return (

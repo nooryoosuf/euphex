@@ -1,9 +1,11 @@
-import { TOURNAMENTS } from "@/data/tournaments";
+"use client";
+import { useContent } from "@/components/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { SECTION_BG } from "@/data/imagery";
 import { TournamentCard } from "@/components/ui/cards";
 
 export default function TournamentsPage() {
+  const { tournaments: TOURNAMENTS } = useContent();
   // latest completed campaign always on top
   const list = [...TOURNAMENTS].sort((a, b) => +new Date(b.date) - +new Date(a.date));
   return (

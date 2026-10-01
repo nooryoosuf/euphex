@@ -1,13 +1,15 @@
+"use client";
 import { Hero, Ticker } from "@/components/home/Hero";
 import { Matchday } from "@/components/home/Matchday";
 import { CompetingNext, Results, Squads, History } from "@/components/home/Sections";
 import { SectionHeader, Button } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
-import { NEWS } from "@/data/content";
+import { useContent } from "@/components/content";
 import { NewsCard } from "@/components/ui/cards";
 import { CommunityMosaic } from "@/components/home/CommunityMosaic";
 
 export default function Home() {
+  const { news: NEWS } = useContent();
   return (
     <>
       <Hero />
