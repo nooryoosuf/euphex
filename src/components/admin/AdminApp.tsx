@@ -172,8 +172,10 @@ export function AdminApp() {
             e.preventDefault();
             if (code === ADMIN_CODE) {
               setAuthed(true);
+              setPasscode(code);
               try {
                 sessionStorage.setItem(PASSKEY, "1");
+                sessionStorage.setItem(CODEKEY, code);
               } catch { /* ignore */ }
             } else setCodeErr(true);
           }}
@@ -196,8 +198,8 @@ export function AdminApp() {
         </form>
         <p className="mt-6 text-[11px] leading-relaxed text-white/35">
           Default code is <span className="text-white/60">euphex2026</span> — change it with
-          NEXT_PUBLIC_ADMIN_CODE. Publishing goes through the publish Worker
-          (same passcode, checked server-side) — no GitHub token in the browser.
+          NEXT_PUBLIC_ADMIN_CODE. Publishing uses this same login —
+          no second password, no GitHub token in the browser.
         </p>
       </div>
     );
@@ -388,15 +390,13 @@ export function AdminApp() {
             <p className="mt-2 text-sm text-white/55">
               Publishing sends the edited JSON files to the publish Worker, which commits
               them to GitHub. Pages rebuilds and the live site updates in about a minute.
-              No GitHub token needed — just the passcode.
+              Uses your login — no extra password.
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <label className="block sm:col-span-2"><span className="label !text-[10px] text-white/40">Publish Worker URL</span>
+              <label className="block"><span className="label !text-[10px] text-white/40">Publish Worker URL</span>
                 <input value={workerUrl} onChange={(e) => setWorkerUrl(e.target.value)} placeholder="https://euphex-publish.<you>.workers.dev" className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]" /></label>
               <label className="block"><span className="label !text-[10px] text-white/40">Branch</span>
                 <input value={branch} onChange={(e) => setBranch(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
-              <label className="block"><span className="label !text-[10px] text-white/40">Passcode</span>
-                <input type="password" value={passcode} onChange={(e) => setPasscode(e.target.value)} placeholder="••••••" className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]" /></label>
             </div>
             <label className="mt-4 block"><span className="label !text-[10px] text-white/40">Commit message</span>
               <input value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
