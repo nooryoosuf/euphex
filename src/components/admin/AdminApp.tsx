@@ -75,7 +75,8 @@ const PASSKEY = "euphex-admin-auth";
 const DRAFTKEY = "euphex-admin-drafts";
 const WORKERKEY = "euphex-admin-worker";
 const ADMIN_CODE = process.env.NEXT_PUBLIC_ADMIN_CODE ?? "euphex2026";
-const DEFAULT_WORKER_URL = process.env.NEXT_PUBLIC_PUBLISH_WORKER_URL ?? "";
+const DEFAULT_WORKER_URL =
+  process.env.NEXT_PUBLIC_PUBLISH_WORKER_URL || "https://euphex-publish.nooor-yoosuf.workers.dev";
 
 const asRecs = (v: unknown): Record<string, unknown>[] => v as unknown as Record<string, unknown>[];
 
