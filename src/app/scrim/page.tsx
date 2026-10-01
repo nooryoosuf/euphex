@@ -114,7 +114,19 @@ export default function ScrimPage() {
               <p className="mx-auto mt-4 max-w-md text-white/60">
                 {sent.teamName} ({sent.teamTag}) — {sent.matchType} on {sent.date} at {sent.time}.
                 {emailed === true && " A copy was also sent straight to our inbox."}
-                {emailed === false && " Saved on this device — our team will confirm by email."}
+                {emailed === false && (
+                  <>
+                    {" "}
+                    Saved on this device — our team will confirm by email. Prefer direct mail? Write to{" "}
+                    <a
+                      href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(`Scrim request: ${sent.teamName} (${sent.teamTag}) — ${sent.date} ${sent.time}`)}`}
+                      className="font-semibold text-white underline underline-offset-4 hover:text-[var(--accent)]"
+                    >
+                      {siteConfig.contact.email}
+                    </a>
+                    .
+                  </>
+                )}
               </p>
               <p className="mt-4 inline-block border border-white/12 bg-black/40 px-4 py-2 font-mono text-xs tracking-[0.14em] text-white/60">
                 REF: {sent.id.toUpperCase()}

@@ -32,12 +32,14 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@euphex.official",
   },
   contact: {
+    /** Public org email — shown in the footer, used for recruit + scrim mailto fallbacks. */
+    email: "euphex.official@gmail.com",
     /** Scrim request inbox. Empty = local-only mode (requests save on the
      *  visitor's device). Set an org email to also deliver every request
      *  there instantly — no signup, first delivery needs one activation click. */
-    scrimInboxEmail: "",
+    scrimInboxEmail: "euphex.official@gmail.com",
     /** Same deal for recruitment applications. Falls back to scrimInboxEmail. */
-    recruitInboxEmail: "",
+    recruitInboxEmail: "euphex.official@gmail.com",
   },
   nav: {
     compete: [

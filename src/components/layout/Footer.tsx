@@ -36,6 +36,15 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
               {siteConfig.org.fullName} — {siteConfig.org.game}. Two squads. One standard.
             </p>
+            <div className="mt-5">
+              <p className="label text-white/35 mb-2">Contact</p>
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="text-sm font-semibold text-white/70 hover:text-white transition-colors break-all"
+              >
+                {siteConfig.contact.email}
+              </a>
+            </div>
           </div>
           <nav aria-label="Compete">
             <p className="label text-white/35 mb-5">Compete</p>
