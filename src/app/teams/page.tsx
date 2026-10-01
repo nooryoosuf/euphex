@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { TEAMS } from "@/data/teams";
 import { getTeamPlayers } from "@/data/players";
 import { PageHero } from "@/components/ui/PageHero";
@@ -91,6 +93,26 @@ export default function TeamsPage() {
           </motion.div>
         </AnimatePresence>
       </div>
+      <section className="border-t border-white/8 bg-[#090C12]" aria-label="Recruitment">
+        <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-6 px-5 md:px-10 py-14 md:py-20 lg:flex-row lg:items-center">
+          <div>
+            <p className="label text-[var(--accent)]">Open trials</p>
+            <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight">
+              GOT WHAT IT TAKES?
+            </h2>
+            <p className="mt-3 max-w-xl text-white/60">
+              Think you can compete with EUPHEX? Submit your details and our recruitment team will review your application.
+            </p>
+          </div>
+          <Link
+            href="/recruit"
+            className="group inline-flex shrink-0 items-center gap-2 bg-[var(--accent)] px-8 py-4 text-[13px] font-bold tracking-[0.14em] uppercase clip-slant hover:brightness-110 transition-all"
+          >
+            Join the squad
+            <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

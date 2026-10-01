@@ -11,6 +11,7 @@ import tournamentsSeed from "@/data/tournaments.json";
 import contentSeed from "@/data/content.json";
 import { Sheet, useConfirm } from "./ui";
 import { ScrimsInbox } from "./ScrimsInbox";
+import { RecruitsInbox } from "./RecruitsInbox";
 import {
   PlayerEditor, TeamEditor, MatchEditor, TournamentEditor,
   NewsEditor, MediaEditor, TimelineEditor,
@@ -18,7 +19,7 @@ import {
 import { EuphexLogo } from "@/components/ui/TeamLogos";
 import { cn } from "@/lib/utils";
 
-type Tab = "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "scrims" | "publish";
+type Tab = "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "scrims" | "recruits" | "publish";
 
 const TABS: { id: Tab; label: string }[] = [
   { id: "players", label: "Players" },
@@ -29,6 +30,7 @@ const TABS: { id: Tab; label: string }[] = [
   { id: "media", label: "Media" },
   { id: "timeline", label: "Timeline" },
   { id: "scrims", label: "Scrims" },
+  { id: "recruits", label: "Recruits" },
   { id: "publish", label: "Publish" },
 ];
 
@@ -326,6 +328,10 @@ export function AdminApp() {
       {tab === "scrims" ? (
         <section className="mt-6" aria-label="Scrim requests">
           <ScrimsInbox />
+        </section>
+      ) : tab === "recruits" ? (
+        <section className="mt-6" aria-label="Recruitment applications">
+          <RecruitsInbox />
         </section>
       ) : tab === "publish" ? (
         <section className="mt-8 space-y-5" aria-label="Publish">

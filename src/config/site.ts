@@ -36,6 +36,8 @@ export const siteConfig = {
      *  visitor's device). Set an org email to also deliver every request
      *  there instantly — no signup, first delivery needs one activation click. */
     scrimInboxEmail: "",
+    /** Same deal for recruitment applications. Falls back to scrimInboxEmail. */
+    recruitInboxEmail: "",
   },
   nav: {
     compete: [
@@ -45,6 +47,7 @@ export const siteConfig = {
       { label: "Tournaments", href: "/tournaments" },
       { label: "News", href: "/news" },
       { label: "Request Scrim", href: "/scrim" },
+      { label: "Recruitment", href: "/recruit" },
     ],
     community: [
       { label: "Retribution Test", href: "/retri-test" },

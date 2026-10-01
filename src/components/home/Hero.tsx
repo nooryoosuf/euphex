@@ -201,9 +201,9 @@ export function Hero() {
             Two squads. One standard. {siteConfig.org.description}
           </p>
           <div className="flex flex-wrap gap-3">
-            <Button href="/teams">Meet the squads</Button>
-            <Button href="/matches" variant="ghost">
-              Next match
+            <Button href="/scrim">Request for scrims</Button>
+            <Button href="/recruit" variant="ghost">
+              Join squad
             </Button>
           </div>
         </motion.div>
