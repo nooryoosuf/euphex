@@ -281,6 +281,7 @@ function migratePools() {
     p.heroPool = (p.heroPool ?? []).map((h) => {
       const hero = (h.hero ?? h.slug ?? "").toLowerCase();
       const next = { hero, games: h.games, winRate: h.winRate, category: h.category };
+      if (h.skin !== undefined) next.skin = h.skin;
       if (h.kda !== undefined) next.kda = h.kda;
       if (h.power !== undefined) next.power = h.power;
       return next;

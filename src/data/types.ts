@@ -8,6 +8,8 @@ export type HeroCategory = "signature" | "comfort" | "pocket";
 export interface HeroEntry {
   /** Canonical MLBB hero id — artwork resolves automatically via src/data/mlbb.ts */
   hero: string;
+  /** Optional skin id — splash/thumbnail variant. Omit = default splash. */
+  skin?: string;
   games: number;
   winRate: number; // 0-100
   kda?: number;

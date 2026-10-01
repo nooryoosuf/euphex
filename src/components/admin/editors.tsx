@@ -5,7 +5,7 @@ import type {
   Player, PlayerStatLine, Team, TimelineEvent, Tournament,
 } from "@/data/types";
 import { F, T, N, Sel, TA, ListEditor } from "./ui";
-import { getMlbbHero, mlbbHeroIds } from "@/data/mlbb";
+import { getMlbbHero, mlbbHeroIds, mlbbHeroSkins } from "@/data/mlbb";
 import { HeroImage } from "@/components/ui/HeroImage";
 
 const ROLES: LaneRole[] = ["EXP Lane", "Gold Lane", "Mid Lane", "Jungle", "Roam"];
@@ -34,7 +34,7 @@ function resolveHeroId(raw: string): string {
   return byName ?? slugifyId(raw);
 }
 
-function HeroSelect({ value, onChange }: { value: string; onChange: (id: string) => void }) {
+function HeroSelect({ value, skin, onChange }: { value: string; skin?: string; onChange: (id: string) => void }) {
   const [q, setQ] = useState(value);
   const query = q.toLowerCase();
   const options = mlbbHeroIds()
@@ -46,7 +46,7 @@ function HeroSelect({ value, onChange }: { value: string; onChange: (id: string)
     <div>
       <div className="flex items-center gap-3">
         <span className="block size-12 shrink-0 overflow-hidden border border-white/10">
-          <HeroImage hero={value} className="h-full w-full object-cover" />
+          <HeroImage hero={value} skin={skin} className="h-full w-full object-cover" />
         </span>
         <input
           value={q}
@@ -132,20 +132,51 @@ export function PlayerEditor({ value: v, onChange: c, teamSlugs }: { value: Play
           onChange={(heroPool) => c({ heroPool })}
           onAdd={() => ({ hero: mlbbHeroIds()[0] ?? "fanny", games: 0, winRate: 50, category: "comfort" as const })}
           addLabel="Add hero"
-          render={(h, u) => (
-            <div className="grid grid-cols-2 gap-3 sm:col-span-2">
-              <div className="col-span-2">
-                <F label="Hero (search the registry — artwork resolves automatically)">
-                  <HeroSelect value={h.hero} onChange={(hero) => u({ hero })} />
-                </F>
+          render={(h, u) => {
+            const skins = mlbbHeroSkins(h.hero);
+            return (
+              <div className="grid grid-cols-2 gap-3 sm:col-span-2">
+                <div className="col-span-2">
+                  <F label="Hero (search the registry — artwork resolves automatically)">
+                    <HeroSelect
+                      value={h.hero}
+                      skin={h.skin}
+                      onChange={(hero) =>
+                        u(hero === h.hero ? { hero } : { hero, skin: undefined })
+                      }
+                    />
+                  </F>
+                </div>
+                <div className="col-span-2">
+                  <F
+                    label="Splash / skin (thumbnail variant)"
+                    hint={
+                      skins.length
+                        ? `${skins.length} downloaded — pick a splash for card + thumbnails`
+                        : "No skins downloaded yet — run fetch-mlbb --with-skins, default splash used"
+                    }
+                  >
+                    <Sel
+                      value={h.skin ?? ""}
+                      onChange={(e) => u({ skin: e.target.value || undefined })}
+                    >
+                      <option value="">Default splash</option>
+                      {skins.map((s) => (
+                        <option key={s.id} value={s.id}>
+                          {s.name}
+                        </option>
+                      ))}
+                    </Sel>
+                  </F>
+                </div>
+                <F label="Category"><Sel value={h.category} onChange={(e) => u({ category: e.target.value as "signature" | "comfort" | "pocket" })}>{CATS.map((x) => <option key={x}>{x}</option>)}</Sel></F>
+                <F label="Games"><N value={h.games} onChange={(e) => u({ games: Number(e.target.value) })} /></F>
+                <F label="Win %"><N value={h.winRate} onChange={(e) => u({ winRate: Number(e.target.value) })} /></F>
+                <F label="KDA (opt)"><N value={h.kda ?? ""} placeholder="—" onChange={(e) => u({ kda: e.target.value === "" ? undefined : Number(e.target.value) })} /></F>
+                <F label="Power (opt)"><N value={h.power ?? ""} placeholder="—" onChange={(e) => u({ power: e.target.value === "" ? undefined : Number(e.target.value) })} /></F>
               </div>
-              <F label="Category"><Sel value={h.category} onChange={(e) => u({ category: e.target.value as "signature" | "comfort" | "pocket" })}>{CATS.map((x) => <option key={x}>{x}</option>)}</Sel></F>
-              <F label="Games"><N value={h.games} onChange={(e) => u({ games: Number(e.target.value) })} /></F>
-              <F label="Win %"><N value={h.winRate} onChange={(e) => u({ winRate: Number(e.target.value) })} /></F>
-              <F label="KDA (opt)"><N value={h.kda ?? ""} placeholder="—" onChange={(e) => u({ kda: e.target.value === "" ? undefined : Number(e.target.value) })} /></F>
-              <F label="Power (opt)"><N value={h.power ?? ""} placeholder="—" onChange={(e) => u({ power: e.target.value === "" ? undefined : Number(e.target.value) })} /></F>
-            </div>
-          )}
+            );
+          }}
         />
       </div>
       <div>

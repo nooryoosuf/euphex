@@ -11,8 +11,10 @@ const heroName = (id: string) => getMlbbHero(id)?.name ?? id;
 const heroLane = (id: string) => HEROES[id]?.lane ?? "Multi";
 
 export function HeroPoolBlock({ player }: { player: Player }) {
-  const [active, setActive] = useState(player.heroPool[0]?.hero);
-  const hero = player.heroPool.find((h) => h.hero === active) ?? player.heroPool[0];
+  const keyOf = (h: { hero: string; skin?: string }) => `${h.hero}:${h.skin ?? "default"}`;
+  const [active, setActive] = useState(player.heroPool[0] ? keyOf(player.heroPool[0]) : "");
+  const hero = player.heroPool.find((h) => keyOf(h) === active) ?? player.heroPool[0];
+  if (!hero) return null;
   const name = heroName(hero.hero);
   const cats = [
     ["SIGNATURE", player.heroPool.filter((h) => h.category === "signature")],
@@ -23,7 +25,7 @@ export function HeroPoolBlock({ player }: { player: Player }) {
     <div>
       <div className="grain relative overflow-hidden border border-white/8">
         <motion.div
-          key={hero.hero}
+          key={keyOf(hero)}
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
@@ -31,6 +33,7 @@ export function HeroPoolBlock({ player }: { player: Player }) {
         >
           <HeroImage
             hero={hero.hero}
+            skin={hero.skin}
             alt={name}
             eager
             className="aspect-[16/7] w-full object-cover object-[center_20%]"
@@ -63,19 +66,19 @@ export function HeroPoolBlock({ player }: { player: Player }) {
       <div className="mt-4 flex gap-3 overflow-x-auto pb-1" role="tablist" aria-label="Hero pool">
         {player.heroPool.map((h) => (
           <button
-            key={h.hero}
+            key={keyOf(h)}
             role="tab"
-            aria-selected={h.hero === active}
-            onClick={() => setActive(h.hero)}
-            onMouseEnter={() => setActive(h.hero)}
-            onFocus={() => setActive(h.hero)}
+            aria-selected={keyOf(h) === active}
+            onClick={() => setActive(keyOf(h))}
+            onMouseEnter={() => setActive(keyOf(h))}
+            onFocus={() => setActive(keyOf(h))}
             className={cn(
               "w-24 md:w-28 shrink-0 cursor-pointer overflow-hidden border transition-all",
-              h.hero === active ? "border-[var(--accent)]" : "border-white/10 opacity-60 hover:opacity-100",
+              keyOf(h) === active ? "border-[var(--accent)]" : "border-white/10 opacity-60 hover:opacity-100",
             )}
           >
             <span className="relative block aspect-square w-full overflow-hidden">
-              <HeroImage hero={h.hero} className="absolute inset-0 h-full w-full object-cover" />
+              <HeroImage hero={h.hero} skin={h.skin} className="absolute inset-0 h-full w-full object-cover" />
             </span>
             <span className="flex h-7 items-center justify-center bg-black/80 px-1 text-[10px] font-bold tracking-[0.1em] text-center leading-none truncate">
               {heroName(h.hero).toUpperCase()}
@@ -89,9 +92,9 @@ export function HeroPoolBlock({ player }: { player: Player }) {
             <p className="label text-[var(--accent)]">{label}</p>
             <ul className="mt-3 space-y-4">
               {list.map((h) => (
-                <li key={h.hero}>
+                <li key={keyOf(h)}>
                   <button
-                    onClick={() => setActive(h.hero)}
+                    onClick={() => setActive(keyOf(h))}
                     className="font-display text-xl font-bold hover:text-[var(--accent)] transition-colors cursor-pointer"
                   >
                     {heroName(h.hero).toUpperCase()}
