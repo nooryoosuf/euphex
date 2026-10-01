@@ -63,12 +63,6 @@ const FILES: { key: keyof Working; path: string; label: string }[] = [
 ];
 
 const canon = (v: unknown) => JSON.stringify(v);
-const b64 = (s: string) => {
-  const b = new TextEncoder().encode(s);
-  let r = "";
-  b.forEach((x) => (r += String.fromCharCode(x)));
-  return btoa(r);
-};
 // fingerprint of the bundled seed data — drafts saved against an older
 // fingerprint are treated as stale and never auto-applied
 const hashStr = (s: string) => {
@@ -79,8 +73,10 @@ const hashStr = (s: string) => {
 
 const PASSKEY = "euphex-admin-auth";
 const DRAFTKEY = "euphex-admin-drafts";
-const TOKENKEY = "euphex-admin-token";
+const WORKERKEY = "euphex-admin-worker";
+const CODEKEY = "euphex-admin-passcode";
 const ADMIN_CODE = process.env.NEXT_PUBLIC_ADMIN_CODE ?? "euphex2026";
+const DEFAULT_WORKER_URL = process.env.NEXT_PUBLIC_PUBLISH_WORKER_URL ?? "";
 
 const asRecs = (v: unknown): Record<string, unknown>[] => v as unknown as Record<string, unknown>[];
 
@@ -107,11 +103,12 @@ export function AdminApp() {
   const { ask, node: confirmNode } = useConfirm();
   const fileRef = useRef<HTMLInputElement>(null);
 
-  // publish config
-  const [owner, setOwner] = useState("nooryoosuf");
-  const [repo, setRepo] = useState("euphex");
+  // publish config — no GitHub token in the browser. The Worker
+  // (worker/publish.js) holds the token server-side; the admin proves
+  // identity with the passcode only.
+  const [workerUrl, setWorkerUrl] = useState(DEFAULT_WORKER_URL);
+  const [passcode, setPasscode] = useState("");
   const [branch, setBranch] = useState("main");
-  const [token, setToken] = useState("");
   const [message, setMessage] = useState("Update site content via admin");
   const [log, setLog] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
@@ -119,8 +116,10 @@ export function AdminApp() {
   useEffect(() => {
     try {
       if (sessionStorage.getItem(PASSKEY) === "1") setAuthed(true);
-      const t = sessionStorage.getItem(TOKENKEY);
-      if (t) setToken(t);
+      const w = sessionStorage.getItem(WORKERKEY);
+      if (w) setWorkerUrl(w);
+      const p = sessionStorage.getItem(CODEKEY);
+      if (p) setPasscode(p);
       const d = localStorage.getItem(DRAFTKEY);
       if (d) {
         const box = JSON.parse(d) as {
@@ -197,8 +196,8 @@ export function AdminApp() {
         </form>
         <p className="mt-6 text-[11px] leading-relaxed text-white/35">
           Default code is <span className="text-white/60">euphex2026</span> — change it with
-          NEXT_PUBLIC_ADMIN_CODE. The code is a screen door; real protection is your GitHub
-          token, which never leaves this browser tab.
+          NEXT_PUBLIC_ADMIN_CODE. Publishing goes through the publish Worker
+          (same passcode, checked server-side) — no GitHub token in the browser.
         </p>
       </div>
     );
@@ -259,31 +258,39 @@ export function AdminApp() {
   };
 
   const publish = async () => {
-    if (!token || changed.length === 0) return;
+    if (!workerUrl || !passcode || changed.length === 0) return;
     setBusy(true);
-    setLog([`Publishing ${changed.length} file(s) to ${owner}/${repo}@${branch}…`]);
+    setLog([`Publishing ${changed.length} file(s) via worker…`]);
     try {
-      sessionStorage.setItem(TOKENKEY, token);
+      sessionStorage.setItem(WORKERKEY, workerUrl);
+      sessionStorage.setItem(CODEKEY, passcode);
     } catch { /* ignore */ }
-    for (const f of changed) {
-      const api = `https://api.github.com/repos/${owner}/${repo}/contents/${f.path}`;
-      try {
-        const cur = await fetch(`${api}?ref=${branch}`, { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } });
-        const sha = cur.ok ? ((await cur.json()).sha as string) : undefined;
-        const res = await fetch(api, {
-          method: "PUT",
-          headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
-          body: JSON.stringify({ message: `${message} (${f.label})`, content: b64(fileBody(f.key, work)), ...(sha ? { sha } : {}), branch }),
-        });
-        if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
-        setLog((l) => [...l, `✓ ${f.path}`]);
-      } catch (e) {
-        setLog((l) => [...l, `✗ ${f.path}: ${e instanceof Error ? e.message : "failed"}`]);
+    try {
+      const res = await fetch(`${workerUrl.replace(/\/$/, "")}/publish`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          passcode,
+          branch,
+          message,
+          files: changed.map((f) => ({ path: f.path, content: fileBody(f.key, work) })),
+        }),
+      });
+      const out = (await res.json()) as { ok: boolean; results?: { path: string; ok: boolean; error?: string }[]; error?: string };
+      if (!res.ok) throw new Error(out.error || `worker ${res.status}`);
+      for (const r of out.results ?? []) {
+        setLog((l) => [...l, r.ok ? `✓ ${r.path}` : `✗ ${r.path}: ${r.error ?? "failed"}`]);
+      }
+      if (!out.ok) {
         setBusy(false);
         return;
       }
+    } catch (e) {
+      setLog((l) => [...l, `✗ publish: ${e instanceof Error ? e.message : "failed"}`]);
+      setBusy(false);
+      return;
     }
-    setLog((l) => [...l, "Done — site rebuilds in ~1 min.", `Watch: https://github.com/${owner}/${repo}/actions`]);
+    setLog((l) => [...l, "Done — site rebuilds in ~1 min.", "Watch: https://github.com/nooryoosuf/euphex/actions"]);
     try {
       localStorage.removeItem(DRAFTKEY);
     } catch { /* ignore */ }
@@ -379,18 +386,17 @@ export function AdminApp() {
           <div className="border border-white/10 bg-[#0C0F16] p-5 md:p-7">
             <h2 className="font-display text-2xl font-bold">PUBLISH CHANGES.</h2>
             <p className="mt-2 text-sm text-white/55">
-              Publishing commits the edited JSON files to GitHub. The Pages workflow rebuilds
-              and the live site updates in about a minute. Your token stays in this tab only.
+              Publishing sends the edited JSON files to the publish Worker, which commits
+              them to GitHub. Pages rebuilds and the live site updates in about a minute.
+              No GitHub token needed — just the passcode.
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <label className="block"><span className="label !text-[10px] text-white/40">Owner</span>
-                <input value={owner} onChange={(e) => setOwner(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
-              <label className="block"><span className="label !text-[10px] text-white/40">Repo</span>
-                <input value={repo} onChange={(e) => setRepo(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
+              <label className="block sm:col-span-2"><span className="label !text-[10px] text-white/40">Publish Worker URL</span>
+                <input value={workerUrl} onChange={(e) => setWorkerUrl(e.target.value)} placeholder="https://euphex-publish.<you>.workers.dev" className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]" /></label>
               <label className="block"><span className="label !text-[10px] text-white/40">Branch</span>
                 <input value={branch} onChange={(e) => setBranch(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
-              <label className="block"><span className="label !text-[10px] text-white/40">GitHub token (classic, repo scope)</span>
-                <input type="password" value={token} onChange={(e) => setToken(e.target.value)} placeholder="ghp_…" className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]" /></label>
+              <label className="block"><span className="label !text-[10px] text-white/40">Passcode</span>
+                <input type="password" value={passcode} onChange={(e) => setPasscode(e.target.value)} placeholder="••••••" className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]" /></label>
             </div>
             <label className="mt-4 block"><span className="label !text-[10px] text-white/40">Commit message</span>
               <input value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
@@ -410,7 +416,7 @@ export function AdminApp() {
             </div>
             <button
               onClick={publish}
-              disabled={busy || !token || changed.length === 0}
+              disabled={busy || !workerUrl || !passcode || changed.length === 0}
               className="mt-6 w-full bg-[var(--accent)] py-4 text-sm font-bold tracking-[0.2em] uppercase hover:brightness-110 disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
             >
               {busy ? "Publishing…" : "Publish to live site →"}
