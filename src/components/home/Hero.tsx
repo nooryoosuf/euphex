@@ -30,10 +30,29 @@ export function Hero() {
 
   // looping headline — alternate reveal direction so it never feels robotic
   const [hi, setHi] = useState(0);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches,
+  );
   useEffect(() => {
     if (reduce) return;
     const t = setInterval(() => setHi((i) => (i + 1) % HEADLINES.length), HERO_ROTATE_MS);
     return () => clearInterval(t);
+  }, [reduce]);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const fn = () => setIsMobile(mq.matches);
+    mq.addEventListener("change", fn);
+    return () => mq.removeEventListener("change", fn);
+  }, []);
+  // decode-ahead cache: display:none <img> tags fetch but never decode,
+  // which caused a pop-in jank on first rotation — real Image objects fix it
+  useEffect(() => {
+    if (reduce) return;
+    POOL.forEach((src) => {
+      const im = new Image();
+      im.decoding = "async";
+      im.src = src;
+    });
   }, [reduce]);
   const { lines, image: main } = HEADLINES[hi];
   const dir = hi % 2 === 0 ? 1 : -1;
@@ -47,12 +66,6 @@ export function Hero() {
     <section ref={ref} className="relative flex min-h-[100svh] items-end overflow-hidden" aria-label="Intro">
       {/* ── parallax artwork stack — backdrop swaps with each statement ── */}
       <div className="absolute inset-0" aria-hidden="true">
-        {/* warm the cache so every rotation dissolves in, never pops */}
-        <div className="hidden">
-          {POOL.map((src) => (
-            <img key={src} src={src} alt="" loading="eager" />
-          ))}
-        </div>
         {/* main backdrop */}
         <motion.div style={reduce ? undefined : { y: parallax[0] }} className="absolute inset-[-12%_0]">
           <AnimatePresence mode="sync">
@@ -70,8 +83,11 @@ export function Hero() {
             />
           </AnimatePresence>
         </motion.div>
-        {/* flanking layers */}
-        {flanks.map((src, i) => (
+        {/* flanking layers — desktop only: masked multi-layer crossfades
+            thrash mobile GPUs and read as a layout jump, so phones get
+            the single cinematic backdrop instead */}
+        {!isMobile &&
+          flanks.map((src, i) => (
           <motion.div
             key={`flank-${i}`}
             style={reduce ? undefined : { y: parallax[i + 1] }}

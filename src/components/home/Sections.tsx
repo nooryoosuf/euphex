@@ -84,7 +84,7 @@ export function Results() {
 export function History() {
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-32" aria-label="Organization history">
-      <SectionHeader index="04" label="Since 2023" title="THE STORY SO FAR." href="/about" linkLabel="About us" />
+      <SectionHeader index="04" label="Since 2025" title="THE STORY SO FAR." href="/about" linkLabel="About us" />
       <ol className="grid gap-px overflow-hidden border border-white/8 bg-white/8 md:grid-cols-4">
         {TIMELINE.map((e, i) => (
           <Reveal key={e.year} delay={i * 0.07} className="bg-[#0C0F16]">

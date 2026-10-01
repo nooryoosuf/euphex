@@ -74,25 +74,34 @@ export const IMAGES = {
   yisunshin: img("yi-sun-shin-mlbb-lone-destructor-revamped-collector-skin-splash-art-4k-wallpaper-uhdpaper.com-523@5@q.jpg"),
   eudora: img("eudora-emerald-enchantress-mobile-legends-skin-uhdpaper.com-4K-8.1042.jpg"),
   retri: img("retri-icon.png"),
+  alice: img("alice-mlbb-dreaming-monarch-collector-skin-splash-art-hd-wallpaper-uhdpaper.com-531@5@q.jpg"),
+  granger: img("granger-cosmic-finality-mobile-legends-m7-prime-hd-wallpaper-uhdpaper.com-70@5@k.jpg"),
+  hanzo: img("hanzo-mlbb-soul-fire-splash-art-hd-wallpaper-uhdpaper.com-472@5@q.jpg"),
+  kimmy: img("kimmy-mlbb-starbound-sentry-splash-art-hd-wallpaper-uhdpaper.com-488@5@q.jpg"),
+  ling: img("ling-serene-mlbb-plume-revamped-collector-skin-splash-art-hd-wallpaper-uhdpaper.com-492@5@q.jpg"),
+  miya: img("miya-mlbb-arrow-of-spring-skin-splash-art-hd-wallpaper-uhdpaper.com-496@5@q.jpg"),
+  selena: img("selena-mlbb-hannyas-vengeance-skin-splash-art-hd-wallpaper-uhdpaper.com-515@5@q.jpg"),
+  sun: img("sun-queller-of-chaos-mobile-legends-hd-wallpaper-uhdpaper.com-735@5@i.jpg"),
+  valir: img("valir-mlbb-demonlord-collector-skin-splash-art-hd-wallpaper-uhdpaper.com-518@5@q.jpg"),
 } as const;
 
 /** Homepage hero — layered parallax stack (back → front). */
 export const HERO_STACK = [IMAGES.hirara, IMAGES.kagura, IMAGES.zetian] as const;
 
-/** Section heading backgrounds, one per page. */
+/** Section heading backgrounds — every page gets its own artwork, no repeats. */
 export const SECTION_BG: Record<string, string> = {
   teams: IMAGES.badang,
-  players: IMAGES.benedetta,
-  matches: IMAGES.atlas,
+  players: IMAGES.granger,
+  matches: IMAGES.hanzo,
   tournaments: IMAGES.aurora,
   news: IMAGES.luoyi,
   media: IMAGES.lesley,
   about: IMAGES.aamon,
   community: IMAGES.kagura,
   roast: IMAGES.angela,
-  "find-your-hero": IMAGES.aurora,
-  "rate-my-main": IMAGES.beatrix,
-  "most-likely": IMAGES.benedetta,
+  "find-your-hero": IMAGES.alice,
+  "rate-my-main": IMAGES.ling,
+  "most-likely": IMAGES.selena,
 };
 
 /** Team page heading backgrounds. */
@@ -112,8 +121,8 @@ export const COMMUNITY_ART = [IMAGES.lesleyAngelic, IMAGES.cecilion, IMAGES.bele
 
 /** News card covers, keyed by article slug. */
 export const NEWS_ART: Record<string, string> = {
-  "ooredoo-contender-recap": IMAGES.aurora,
-  "on-flash-series-recap": IMAGES.atlas,
+  "ooredoo-contender-recap": IMAGES.kimmy,
+  "on-flash-series-recap": IMAGES.valir,
   "dmgc-2026-recap": IMAGES.badangZen,
 };
 
@@ -138,6 +147,8 @@ const HERO_ART: Record<string, string> = {
   minotaur: IMAGES.minotaur,
   tigreal: IMAGES.tigrealRevamped,
   eudora: IMAGES.eudora,
+  ling: IMAGES.ling,
+  miya: IMAGES.miya,
 };
 
 export function imageForHero(heroName: string): string | null {
@@ -182,12 +193,12 @@ export function imageForPlayer(favoriteHero: string, role: string): string {
   if (role === "Jungle") return IMAGES.aamon;
   if (role === "Mid Lane") return IMAGES.kagura;
   if (role === "Gold Lane") return IMAGES.lesley;
-  if (role === "EXP Lane") return IMAGES.badang;
+  if (role === "EXP Lane") return IMAGES.sun;
   return IMAGES.atlas;
 }
 
-/** Deterministic pick for tournaments / news (stable per slug). */
-const POOL = [IMAGES.aurora, IMAGES.luoyi, IMAGES.kagura, IMAGES.atlas, IMAGES.beatrix, IMAGES.lesley];
+/** Deterministic pick for tournaments / news (stable per slug) — fresh pool, no section repeats. */
+const POOL = [IMAGES.alice, IMAGES.selena, IMAGES.kimmy, IMAGES.sun, IMAGES.valir, IMAGES.hanzo];
 export function imageForSlug(slug: string): string {
   let h = 0;
   for (const c of slug) h = (h * 31 + c.charCodeAt(0)) % 997;
