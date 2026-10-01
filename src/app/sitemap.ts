@@ -8,6 +8,8 @@ import { MATCHES } from "@/data/matches";
 
 const BASE = siteConfig.org.url.replace(/\/$/, "");
 
+export const dynamic = "force-static";
+
 const STATIC_ROUTES = [
   "/",
   "/about",
