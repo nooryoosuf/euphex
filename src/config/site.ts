@@ -13,7 +13,7 @@ export const siteConfig = {
     founded: 2023,
     description:
       "Euphex is a competitive Mobile Legends: Bang Bang esports organization fielding two squads under one standard — Euphex and Aurex.",
-    url: "https://euphex.gg",
+    url: "https://euphex.mv",
   },
   theme: {
     /** Single recognizable organization accent. Change once, everywhere updates. */
