@@ -82,8 +82,10 @@ export function makeHero(
   power?: number,
 ): HeroEntry {
   const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "");
-  const reg = HEROES[slug] ?? { lane: "Multi" as const, hue: 220, label: name.slice(0, 2).toUpperCase() };
-  return { name, slug, lane: reg.lane, art: { hue: reg.hue, label: reg.label }, games, winRate, kda, power, category };
+  const entry: HeroEntry = { hero: slug, games, winRate, category };
+  if (kda !== undefined) entry.kda = kda;
+  if (power !== undefined) entry.power = power;
+  return entry;
 }
 
 export const HERO_LIST = Object.keys(HEROES).map(

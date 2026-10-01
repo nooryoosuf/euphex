@@ -6,19 +6,23 @@ export type LaneRole = "EXP Lane" | "Gold Lane" | "Mid Lane" | "Jungle" | "Roam"
 export type HeroCategory = "signature" | "comfort" | "pocket";
 
 export interface HeroEntry {
-  name: string;
-  slug: string;
-  /** Lane the hero is usually played in */
-  lane: LaneRole | "Multi";
-  /** Placeholder art descriptor — replace `art` with a real URL/CDN path later.
-   *  `hue` drives the generated gradient placeholder so no external URLs are needed. */
-  art: { hue: number; label: string };
+  /** Canonical MLBB hero id — artwork resolves automatically via src/data/mlbb.ts */
+  hero: string;
   games: number;
   winRate: number; // 0-100
   kda?: number;
   /** in-game hero power, shown when provided */
   power?: number;
   category: HeroCategory;
+  /** Legacy presentation fields (pre-registry). Safe to omit for new entries:
+   *  display name, lane and placeholder art are derived automatically. */
+  name?: string;
+  slug?: string;
+  /** Lane the hero is usually played in */
+  lane?: LaneRole | "Multi";
+  /** Placeholder art descriptor — replace `art` with a real URL/CDN path later.
+   *  `hue` drives the generated gradient placeholder so no external URLs are needed. */
+  art?: { hue: number; label: string };
 }
 
 export interface Achievement {

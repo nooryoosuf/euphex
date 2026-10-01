@@ -12,6 +12,7 @@ const dexImg = (p: string) => `${BASE}/${p}`;
 
 export { DEX_META_AT } from "./dex.generated";
 import { DEX_HEROES, ALL_HEROES } from "./dex.generated";
+import { mlbbHeroImage } from "./mlbb";
 
 /** Full 134-hero roster (portrait + icon + lanes + difficulty for everyone). */
 export const ALL_HERO_SLUGS = Object.keys(ALL_HEROES);
@@ -153,7 +154,8 @@ const HERO_ART: Record<string, string> = {
 
 export function imageForHero(heroName: string): string | null {
   const key = heroKey(heroName);
-  return HERO_ART[key] ?? null;
+  // registry artwork first, fan wallpaper second
+  return mlbbHeroImage(key) ?? HERO_ART[key] ?? null;
 }
 
 /** Dex art is reserved for the roast section only (story cards + reveal). */

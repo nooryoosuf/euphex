@@ -1,9 +1,12 @@
 "use client";
+import { useState } from "react";
 import type {
   Achievement, GameDetail, LaneRole, Match, MediaItem, NewsArticle,
   Player, PlayerStatLine, Team, TimelineEvent, Tournament,
 } from "@/data/types";
 import { F, T, N, Sel, TA, ListEditor } from "./ui";
+import { getMlbbHero, mlbbHeroIds } from "@/data/mlbb";
+import { HeroImage } from "@/components/ui/HeroImage";
 
 const ROLES: LaneRole[] = ["EXP Lane", "Gold Lane", "Mid Lane", "Jungle", "Roam"];
 const CATS = ["signature", "comfort", "pocket"];
@@ -16,6 +19,79 @@ const NCATS = ["TEAM", "TOURNAMENT", "COMMUNITY", "MATCHDAY"];
 const MCATS = ["MATCHDAY", "TEAM", "COMMUNITY", "BEHIND THE SCENES"];
 
 type Patch<T> = (p: Partial<T>) => void;
+
+/* ── hero selector: searchable registry picker, stores the hero ID only ── */
+
+const slugifyId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "").replace(/^-+|-+$/g, "");
+
+function resolveHeroId(raw: string): string {
+  const ids = mlbbHeroIds();
+  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const target = norm(raw);
+  const byId = ids.find((id) => norm(id) === target);
+  if (byId) return byId;
+  const byName = ids.find((id) => norm(getMlbbHero(id)?.name ?? "") === target);
+  return byName ?? slugifyId(raw);
+}
+
+function HeroSelect({ value, onChange }: { value: string; onChange: (id: string) => void }) {
+  const [q, setQ] = useState(value);
+  const query = q.toLowerCase();
+  const options = mlbbHeroIds()
+    .map((id) => ({ id, name: getMlbbHero(id)?.name ?? id }))
+    .filter(({ id, name }) => !query || name.toLowerCase().includes(query) || id.includes(query.replace(/[^a-z0-9]/g, "")))
+    .slice(0, 12);
+  const resolved = getMlbbHero(value);
+  return (
+    <div>
+      <div className="flex items-center gap-3">
+        <span className="block size-12 shrink-0 overflow-hidden border border-white/10">
+          <HeroImage hero={value} className="h-full w-full object-cover" />
+        </span>
+        <input
+          value={q}
+          onChange={(e) => {
+            setQ(e.target.value);
+            onChange(resolveHeroId(e.target.value));
+          }}
+          onFocus={(e) => e.target.select()}
+          placeholder="Search heroes…"
+          aria-label="Search heroes"
+          className="w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[var(--accent)]"
+        />
+      </div>
+      {q.trim() && (
+        <ul className="mt-1 max-h-52 overflow-y-auto border border-white/12 bg-black" role="listbox" aria-label="Hero matches">
+          {options.length === 0 && <li className="px-3.5 py-2.5 text-sm text-white/40">No registry match — will save as “{slugifyId(q)}” (artwork fetched later).</li>}
+          {options.map(({ id, name }) => (
+            <li key={id}>
+              <button
+                type="button"
+                role="option"
+                aria-selected={id === value}
+                onClick={() => {
+                  onChange(id);
+                  setQ(name);
+                }}
+                className="flex w-full items-center gap-3 px-3.5 py-2 text-left text-sm hover:bg-[var(--accent)]/15 cursor-pointer"
+              >
+                <span className="block size-8 shrink-0 overflow-hidden border border-white/10">
+                  <HeroImage hero={id} className="h-full w-full object-cover" />
+                </span>
+                <span className="font-bold">{name}</span>
+                <span className="ml-auto font-mono text-[11px] text-white/35">{id}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p className="mt-1.5 text-[11px] text-white/35">
+        Stored as <span className="font-mono text-white/60">{value || "—"}</span>
+        {resolved ? ` · artwork: ${resolved.name}` : " · no artwork yet — fetch it with the asset script"}
+      </p>
+    </div>
+  );
+}
 
 /* ── players ── */
 
@@ -54,18 +130,20 @@ export function PlayerEditor({ value: v, onChange: c, teamSlugs }: { value: Play
         <ListEditor
           items={v.heroPool}
           onChange={(heroPool) => c({ heroPool })}
-          onAdd={() => ({ name: "Fanny", slug: "fanny", lane: "Jungle" as LaneRole, art: { hue: 220, label: "FA" }, games: 0, winRate: 50, category: "comfort" as const })}
+          onAdd={() => ({ hero: mlbbHeroIds()[0] ?? "fanny", games: 0, winRate: 50, category: "comfort" as const })}
           addLabel="Add hero"
           render={(h, u) => (
-            <div className="grid grid-cols-2 gap-3">
-              <F label="Hero"><T value={h.name} onChange={(e) => u({ name: e.target.value, slug: e.target.value.toLowerCase().replace(/[^a-z0-9]/g, "") })} /></F>
+            <div className="grid grid-cols-2 gap-3 sm:col-span-2">
+              <div className="col-span-2">
+                <F label="Hero (search the registry — artwork resolves automatically)">
+                  <HeroSelect value={h.hero} onChange={(hero) => u({ hero })} />
+                </F>
+              </div>
               <F label="Category"><Sel value={h.category} onChange={(e) => u({ category: e.target.value as "signature" | "comfort" | "pocket" })}>{CATS.map((x) => <option key={x}>{x}</option>)}</Sel></F>
-              <F label="Lane"><Sel value={h.lane} onChange={(e) => u({ lane: e.target.value as LaneRole & "Multi" })}>{[...ROLES, "Multi"].map((x) => <option key={x}>{x}</option>)}</Sel></F>
               <F label="Games"><N value={h.games} onChange={(e) => u({ games: Number(e.target.value) })} /></F>
               <F label="Win %"><N value={h.winRate} onChange={(e) => u({ winRate: Number(e.target.value) })} /></F>
               <F label="KDA (opt)"><N value={h.kda ?? ""} placeholder="—" onChange={(e) => u({ kda: e.target.value === "" ? undefined : Number(e.target.value) })} /></F>
               <F label="Power (opt)"><N value={h.power ?? ""} placeholder="—" onChange={(e) => u({ power: e.target.value === "" ? undefined : Number(e.target.value) })} /></F>
-              <F label="Card hue"><N value={h.art.hue} onChange={(e) => u({ art: { ...h.art, hue: Number(e.target.value) } })} /></F>
             </div>
           )}
         />

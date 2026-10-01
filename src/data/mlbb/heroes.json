@@ -1,0 +1,2967 @@
+{
+  "minotaur": {
+    "id": "minotaur",
+    "name": "Minotaur",
+    "image": "assets/mlbb/heroes/minotaur/default.webp",
+    "width": 3840,
+    "height": 2160,
+    "skins": [
+      {
+        "id": "bursting-yama",
+        "name": "Bursting Yama",
+        "image": "assets/mlbb/skins/minotaur/bursting-yama.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dreadnought",
+        "name": "Dreadnought",
+        "image": "assets/mlbb/skins/minotaur/dreadnought.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "nether-overseer",
+        "name": "Nether Overseer",
+        "image": "assets/mlbb/skins/minotaur/nether-overseer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "orbiter",
+        "name": "Orbiter",
+        "image": "assets/mlbb/skins/minotaur/orbiter.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sacred-hammer",
+        "name": "Sacred Hammer",
+        "image": "assets/mlbb/skins/minotaur/sacred-hammer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "son-of-minos",
+        "name": "Son of Minos",
+        "image": "assets/mlbb/skins/minotaur/son-of-minos.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "taurus",
+        "name": "Taurus",
+        "image": "assets/mlbb/skins/minotaur/taurus.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "angela": {
+    "id": "angela",
+    "name": "Angela",
+    "image": "assets/mlbb/heroes/angela/default.webp",
+    "width": 1780,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "avatar-of-time",
+        "name": "Avatar of Time",
+        "image": "assets/mlbb/skins/angela/avatar-of-time.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "bunnylove",
+        "name": "Bunnylove",
+        "image": "assets/mlbb/skins/angela/bunnylove.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cyber-cherubin",
+        "name": "Cyber Cherubin",
+        "image": "assets/mlbb/skins/angela/cyber-cherubin.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dove-love",
+        "name": "Dove&Love",
+        "image": "assets/mlbb/skins/angela/dove-love.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "floral-elf",
+        "name": "Floral Elf",
+        "image": "assets/mlbb/skins/angela/floral-elf.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "heartstring",
+        "name": "Heartstring",
+        "image": "assets/mlbb/skins/angela/heartstring.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "scream-doll",
+        "name": "Scream Doll",
+        "image": "assets/mlbb/skins/angela/scream-doll.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "strings-of-fate",
+        "name": "Strings of Fate",
+        "image": "assets/mlbb/skins/angela/strings-of-fate.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "summer-vibes",
+        "name": "Summer Vibes",
+        "image": "assets/mlbb/skins/angela/summer-vibes.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "v-e-n-o-m-vespid",
+        "name": "V.E.N.O.M. Vespid",
+        "image": "assets/mlbb/skins/angela/v-e-n-o-m-vespid.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "beatrix": {
+    "id": "beatrix",
+    "name": "Beatrix",
+    "image": "assets/mlbb/heroes/beatrix/default.webp",
+    "width": 1080,
+    "height": 612,
+    "skins": [
+      {
+        "id": "blitz-attack",
+        "name": "Blitz Attack",
+        "image": "assets/mlbb/skins/beatrix/blitz-attack.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dawnbreak-soldier",
+        "name": "Dawnbreak Soldier",
+        "image": "assets/mlbb/skins/beatrix/dawnbreak-soldier.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "light-chaser",
+        "name": "Light Chaser",
+        "image": "assets/mlbb/skins/beatrix/light-chaser.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sky-force-maverick",
+        "name": "Sky Force Maverick",
+        "image": "assets/mlbb/skins/beatrix/sky-force-maverick.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "space-agent",
+        "name": "Space Agent",
+        "image": "assets/mlbb/skins/beatrix/space-agent.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "vibrant-fiesta",
+        "name": "Vibrant Fiesta",
+        "image": "assets/mlbb/skins/beatrix/vibrant-fiesta.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "x-factor",
+        "name": "X Factor",
+        "image": "assets/mlbb/skins/beatrix/x-factor.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "belerick": {
+    "id": "belerick",
+    "name": "Belerick",
+    "image": "assets/mlbb/heroes/belerick/default.webp",
+    "width": 1780,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "arbiter-of-stars",
+        "name": "Arbiter of Stars",
+        "image": "assets/mlbb/skins/belerick/arbiter-of-stars.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "emerald-guardian",
+        "name": "Emerald Guardian",
+        "image": "assets/mlbb/skins/belerick/emerald-guardian.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "guard-of-nature",
+        "name": "Guard of Nature",
+        "image": "assets/mlbb/skins/belerick/guard-of-nature.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "the-deep-one",
+        "name": "The Deep One",
+        "image": "assets/mlbb/skins/belerick/the-deep-one.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "tiger-s-claw",
+        "name": "Tiger's Claw",
+        "image": "assets/mlbb/skins/belerick/tiger-s-claw.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "torch-guardian",
+        "name": "Torch Guardian",
+        "image": "assets/mlbb/skins/belerick/torch-guardian.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "cecilion": {
+    "id": "cecilion",
+    "name": "Cecilion",
+    "image": "assets/mlbb/heroes/cecilion/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "crimson-wings",
+        "name": "Crimson Wings",
+        "image": "assets/mlbb/skins/cecilion/crimson-wings.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "embrace-of-night",
+        "name": "Embrace of Night",
+        "image": "assets/mlbb/skins/cecilion/embrace-of-night.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "hisoka",
+        "name": "Hisoka",
+        "image": "assets/mlbb/skins/cecilion/hisoka.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "phantom-count",
+        "name": "Phantom Count",
+        "image": "assets/mlbb/skins/cecilion/phantom-count.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "stargazer",
+        "name": "Stargazer",
+        "image": "assets/mlbb/skins/cecilion/stargazer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "the-illusionist",
+        "name": "The Illusionist",
+        "image": "assets/mlbb/skins/cecilion/the-illusionist.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "vessel-of-gluttony",
+        "name": "Vessel of Gluttony",
+        "image": "assets/mlbb/skins/cecilion/vessel-of-gluttony.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wisteria-count",
+        "name": "Wisteria Count",
+        "image": "assets/mlbb/skins/cecilion/wisteria-count.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "claude": {
+    "id": "claude",
+    "name": "Claude",
+    "image": "assets/mlbb/heroes/claude/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "bad-bro",
+        "name": "Bad Bro",
+        "image": "assets/mlbb/skins/claude/bad-bro.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "blazing-trace",
+        "name": "Blazing Trace",
+        "image": "assets/mlbb/skins/claude/blazing-trace.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "challenger-s-flare",
+        "name": "Challenger's Flare",
+        "image": "assets/mlbb/skins/claude/challenger-s-flare.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "challenger-s-spark",
+        "name": "Challenger's Spark",
+        "image": "assets/mlbb/skins/claude/challenger-s-spark.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "christmas-carnival",
+        "name": "Christmas Carnival",
+        "image": "assets/mlbb/skins/claude/christmas-carnival.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cosmic-blaze",
+        "name": "Cosmic Blaze",
+        "image": "assets/mlbb/skins/claude/cosmic-blaze.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "earth-s-mightiest",
+        "name": "Earth's Mightiest",
+        "image": "assets/mlbb/skins/claude/earth-s-mightiest.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "golden-bullet",
+        "name": "Golden Bullet",
+        "image": "assets/mlbb/skins/claude/golden-bullet.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "heart-aflame",
+        "name": "Heart Aflame",
+        "image": "assets/mlbb/skins/claude/heart-aflame.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "master-thief",
+        "name": "Master Thief",
+        "image": "assets/mlbb/skins/claude/master-thief.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "mecha-dragon",
+        "name": "Mecha Dragon",
+        "image": "assets/mlbb/skins/claude/mecha-dragon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "plunderous-pirate",
+        "name": "Plunderous Pirate",
+        "image": "assets/mlbb/skins/claude/plunderous-pirate.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "summer-chill",
+        "name": "Summer Chill",
+        "image": "assets/mlbb/skins/claude/summer-chill.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "clint": {
+    "id": "clint",
+    "name": "Clint",
+    "image": "assets/mlbb/heroes/clint/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "badminton-champion",
+        "name": "Badminton Champion",
+        "image": "assets/mlbb/skins/clint/badminton-champion.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "captain-of-the-reefs",
+        "name": "Captain of the Reefs",
+        "image": "assets/mlbb/skins/clint/captain-of-the-reefs.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "crimson-blast",
+        "name": "Crimson Blast",
+        "image": "assets/mlbb/skins/clint/crimson-blast.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dragon-s-maw",
+        "name": "Dragon's Maw",
+        "image": "assets/mlbb/skins/clint/dragon-s-maw.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "guns-and-roses",
+        "name": "Guns and Roses",
+        "image": "assets/mlbb/skins/clint/guns-and-roses.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "operator-cl",
+        "name": "Operator CL",
+        "image": "assets/mlbb/skins/clint/operator-cl.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "rock-and-roll",
+        "name": "Rock and Roll",
+        "image": "assets/mlbb/skins/clint/rock-and-roll.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "shadow-omen",
+        "name": "Shadow Omen",
+        "image": "assets/mlbb/skins/clint/shadow-omen.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "summer-blast",
+        "name": "Summer Blast",
+        "image": "assets/mlbb/skins/clint/summer-blast.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "vessel-of-ruin",
+        "name": "Vessel of Ruin",
+        "image": "assets/mlbb/skins/clint/vessel-of-ruin.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "west-justice",
+        "name": "West Justice",
+        "image": "assets/mlbb/skins/clint/west-justice.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "witch-hunter",
+        "name": "Witch Hunter",
+        "image": "assets/mlbb/skins/clint/witch-hunter.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "estes": {
+    "id": "estes",
+    "name": "Estes",
+    "image": "assets/mlbb/heroes/estes/default.webp",
+    "width": 4000,
+    "height": 2250,
+    "skins": [
+      {
+        "id": "arcane-magistrate",
+        "name": "Arcane Magistrate",
+        "image": "assets/mlbb/skins/estes/arcane-magistrate.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "blacklist-international",
+        "name": "Blacklist International",
+        "image": "assets/mlbb/skins/estes/blacklist-international.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "crow-bishop",
+        "name": "Crow Bishop",
+        "image": "assets/mlbb/skins/estes/crow-bishop.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "galaxy-dominator",
+        "name": "Galaxy Dominator",
+        "image": "assets/mlbb/skins/estes/galaxy-dominator.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "holy-priest",
+        "name": "Holy Priest",
+        "image": "assets/mlbb/skins/estes/holy-priest.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "moon-elf-king",
+        "name": "Moon Elf King",
+        "image": "assets/mlbb/skins/estes/moon-elf-king.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "rattan-dragon",
+        "name": "Rattan Dragon",
+        "image": "assets/mlbb/skins/estes/rattan-dragon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sparkle-estes",
+        "name": "SPARKLE Estes",
+        "image": "assets/mlbb/skins/estes/sparkle-estes.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "white-crane",
+        "name": "White Crane",
+        "image": "assets/mlbb/skins/estes/white-crane.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "eudora": {
+    "id": "eudora",
+    "name": "Eudora",
+    "image": "assets/mlbb/heroes/eudora/default.webp",
+    "width": 1778,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "atomic-pop-eudora",
+        "name": "Atomic Pop Eudora",
+        "image": "assets/mlbb/skins/eudora/atomic-pop-eudora.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "christmas-carnival",
+        "name": "Christmas Carnival",
+        "image": "assets/mlbb/skins/eudora/christmas-carnival.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cosmic-voyage",
+        "name": "Cosmic Voyage",
+        "image": "assets/mlbb/skins/eudora/cosmic-voyage.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "countess-scarlet",
+        "name": "Countess Scarlet",
+        "image": "assets/mlbb/skins/eudora/countess-scarlet.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "emerald-enchantress",
+        "name": "Emerald Enchantress",
+        "image": "assets/mlbb/skins/eudora/emerald-enchantress.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "flame-red-lips",
+        "name": "Flame Red Lips",
+        "image": "assets/mlbb/skins/eudora/flame-red-lips.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "lightning-weaver",
+        "name": "Lightning Weaver",
+        "image": "assets/mlbb/skins/eudora/lightning-weaver.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "midnight-s-allure",
+        "name": "Midnight's Allure",
+        "image": "assets/mlbb/skins/eudora/midnight-s-allure.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "vivo-selfie-goddess",
+        "name": "Vivo Selfie Goddess",
+        "image": "assets/mlbb/skins/eudora/vivo-selfie-goddess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "franco": {
+    "id": "franco",
+    "name": "Franco",
+    "image": "assets/mlbb/heroes/franco/default.webp",
+    "width": 2560,
+    "height": 1439,
+    "skins": [
+      {
+        "id": "apocalypse",
+        "name": "Apocalypse",
+        "image": "assets/mlbb/skins/franco/apocalypse.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "blazing-axe",
+        "name": "Blazing Axe",
+        "image": "assets/mlbb/skins/franco/blazing-axe.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "bone-crusher",
+        "name": "Bone Crusher",
+        "image": "assets/mlbb/skins/franco/bone-crusher.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "captain-of-the-lost",
+        "name": "Captain of the Lost",
+        "image": "assets/mlbb/skins/franco/captain-of-the-lost.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "frozen-warrior",
+        "name": "Frozen Warrior",
+        "image": "assets/mlbb/skins/franco/frozen-warrior.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "king-of-hell",
+        "name": "King of Hell",
+        "image": "assets/mlbb/skins/franco/king-of-hell.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "locomotive",
+        "name": "Locomotive",
+        "image": "assets/mlbb/skins/franco/locomotive.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "quantum-vanguard",
+        "name": "Quantum Vanguard",
+        "image": "assets/mlbb/skins/franco/quantum-vanguard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "valhalla-ruler",
+        "name": "Valhalla Ruler",
+        "image": "assets/mlbb/skins/franco/valhalla-ruler.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wheatfield-nightmare",
+        "name": "Wheatfield Nightmare",
+        "image": "assets/mlbb/skins/franco/wheatfield-nightmare.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "gord": {
+    "id": "gord",
+    "name": "Gord",
+    "image": "assets/mlbb/heroes/gord/default.webp",
+    "width": 1648,
+    "height": 928,
+    "skins": [
+      {
+        "id": "christmas-carnival",
+        "name": "Christmas Carnival",
+        "image": "assets/mlbb/skins/gord/christmas-carnival.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "conqueror",
+        "name": "Conqueror",
+        "image": "assets/mlbb/skins/gord/conqueror.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cyber-hacker",
+        "name": "Cyber Hacker",
+        "image": "assets/mlbb/skins/gord/cyber-hacker.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "imperator-vitalis",
+        "name": "Imperator Vitalis",
+        "image": "assets/mlbb/skins/gord/imperator-vitalis.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "new-baron",
+        "name": "New Baron",
+        "image": "assets/mlbb/skins/gord/new-baron.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "no-1-controller",
+        "name": "No.1 Controller",
+        "image": "assets/mlbb/skins/gord/no-1-controller.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "professor-of-hell",
+        "name": "Professor of Hell",
+        "image": "assets/mlbb/skins/gord/professor-of-hell.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "professor-of-the-mystics",
+        "name": "Professor of the Mystics",
+        "image": "assets/mlbb/skins/gord/professor-of-the-mystics.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "techno-hazard",
+        "name": "Techno Hazard",
+        "image": "assets/mlbb/skins/gord/techno-hazard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "grock": {
+    "id": "grock",
+    "name": "Grock",
+    "image": "assets/mlbb/heroes/grock/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "ancient-golem",
+        "name": "Ancient Golem",
+        "image": "assets/mlbb/skins/grock/ancient-golem.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "castle-guard",
+        "name": "Castle Guard",
+        "image": "assets/mlbb/skins/grock/castle-guard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "codename-rhino",
+        "name": "Codename: Rhino",
+        "image": "assets/mlbb/skins/grock/codename-rhino.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "fortress-titan",
+        "name": "Fortress Titan",
+        "image": "assets/mlbb/skins/grock/fortress-titan.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "grave-guardian",
+        "name": "Grave Guardian",
+        "image": "assets/mlbb/skins/grock/grave-guardian.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "iceland-golem",
+        "name": "Iceland Golem",
+        "image": "assets/mlbb/skins/grock/iceland-golem.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "tremor-of-the-deep",
+        "name": "Tremor of the Deep",
+        "image": "assets/mlbb/skins/grock/tremor-of-the-deep.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "v-e-n-o-m-monitor-lizard",
+        "name": "V.E.N.O.M. Monitor Lizard",
+        "image": "assets/mlbb/skins/grock/v-e-n-o-m-monitor-lizard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wasteland-psycho",
+        "name": "Wasteland Psycho",
+        "image": "assets/mlbb/skins/grock/wasteland-psycho.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "hayabusa": {
+    "id": "hayabusa",
+    "name": "Hayabusa",
+    "image": "assets/mlbb/heroes/hayabusa/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "biological-weapon",
+        "name": "Biological Weapon",
+        "image": "assets/mlbb/skins/hayabusa/biological-weapon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "crimson-shadow",
+        "name": "Crimson Shadow",
+        "image": "assets/mlbb/skins/hayabusa/crimson-shadow.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "exorcist-hayabusa",
+        "name": "Exorcist Hayabusa",
+        "image": "assets/mlbb/skins/hayabusa/exorcist-hayabusa.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "experiment-21",
+        "name": "Experiment 21",
+        "image": "assets/mlbb/skins/hayabusa/experiment-21.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "future-enforcer",
+        "name": "Future Enforcer",
+        "image": "assets/mlbb/skins/hayabusa/future-enforcer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "kakashi-hatake",
+        "name": "Kakashi Hatake",
+        "image": "assets/mlbb/skins/hayabusa/kakashi-hatake.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "shadow-of-obscurity",
+        "name": "Shadow of Obscurity",
+        "image": "assets/mlbb/skins/hayabusa/shadow-of-obscurity.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "shura",
+        "name": "Shura",
+        "image": "assets/mlbb/skins/hayabusa/shura.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "spacetime-shadow",
+        "name": "Spacetime Shadow",
+        "image": "assets/mlbb/skins/hayabusa/spacetime-shadow.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sushi-master",
+        "name": "Sushi Master",
+        "image": "assets/mlbb/skins/hayabusa/sushi-master.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "techie-ninja",
+        "name": "Techie Ninja",
+        "image": "assets/mlbb/skins/hayabusa/techie-ninja.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "kadita": {
+    "id": "kadita",
+    "name": "Kadita",
+    "image": "assets/mlbb/heroes/kadita/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "atlantean-princess",
+        "name": "Atlantean Princess",
+        "image": "assets/mlbb/skins/kadita/atlantean-princess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "heart-of-the-sea",
+        "name": "Heart of the Sea",
+        "image": "assets/mlbb/skins/kadita/heart-of-the-sea.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "hydromancer",
+        "name": "Hydromancer",
+        "image": "assets/mlbb/skins/kadita/hydromancer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "maiden-of-the-tide",
+        "name": "Maiden of the Tide",
+        "image": "assets/mlbb/skins/kadita/maiden-of-the-tide.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "ocean-goddess",
+        "name": "Ocean Goddess",
+        "image": "assets/mlbb/skins/kadita/ocean-goddess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "white-robin",
+        "name": "White Robin",
+        "image": "assets/mlbb/skins/kadita/white-robin.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "lancelot": {
+    "id": "lancelot",
+    "name": "Lancelot",
+    "image": "assets/mlbb/heroes/lancelot/default.webp",
+    "width": 1024,
+    "height": 576,
+    "skins": [
+      {
+        "id": "blade-of-devotion",
+        "name": "Blade of Devotion",
+        "image": "assets/mlbb/skins/lancelot/blade-of-devotion.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "blade-of-roses",
+        "name": "Blade of Roses",
+        "image": "assets/mlbb/skins/lancelot/blade-of-roses.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "bren-esports",
+        "name": "Bren Esports",
+        "image": "assets/mlbb/skins/lancelot/bren-esports.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "christmas-carnival",
+        "name": "Christmas Carnival",
+        "image": "assets/mlbb/skins/lancelot/christmas-carnival.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dark-earl",
+        "name": "Dark Earl",
+        "image": "assets/mlbb/skins/lancelot/dark-earl.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "empyrean-flame",
+        "name": "Empyrean Flame",
+        "image": "assets/mlbb/skins/lancelot/empyrean-flame.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "floral-knight",
+        "name": "Floral Knight",
+        "image": "assets/mlbb/skins/lancelot/floral-knight.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "guardian-of-the-shrine",
+        "name": "Guardian of the Shrine",
+        "image": "assets/mlbb/skins/lancelot/guardian-of-the-shrine.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "marques-of-blades",
+        "name": "Marques of Blades",
+        "image": "assets/mlbb/skins/lancelot/marques-of-blades.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "masked-knight",
+        "name": "Masked Knight",
+        "image": "assets/mlbb/skins/lancelot/masked-knight.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "pisces",
+        "name": "Pisces",
+        "image": "assets/mlbb/skins/lancelot/pisces.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "royal-matador",
+        "name": "Royal Matador",
+        "image": "assets/mlbb/skins/lancelot/royal-matador.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "swordmaster",
+        "name": "Swordmaster",
+        "image": "assets/mlbb/skins/lancelot/swordmaster.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "layla": {
+    "id": "layla",
+    "name": "Layla",
+    "image": "assets/mlbb/heroes/layla/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "blazing-gun",
+        "name": "Blazing Gun",
+        "image": "assets/mlbb/skins/layla/blazing-gun.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "blue-spectre",
+        "name": "Blue Spectre",
+        "image": "assets/mlbb/skins/layla/blue-spectre.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "bunny-babe",
+        "name": "Bunny Babe",
+        "image": "assets/mlbb/skins/layla/bunny-babe.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cannon-and-roses",
+        "name": "Cannon and Roses",
+        "image": "assets/mlbb/skins/layla/cannon-and-roses.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "classic-malefic-gunner",
+        "name": "Classic Malefic Gunner",
+        "image": "assets/mlbb/skins/layla/classic-malefic-gunner.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "energy-gunner",
+        "name": "Energy Gunner",
+        "image": "assets/mlbb/skins/layla/energy-gunner.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "green-flash",
+        "name": "Green Flash",
+        "image": "assets/mlbb/skins/layla/green-flash.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "miss-hikari",
+        "name": "Miss Hikari",
+        "image": "assets/mlbb/skins/layla/miss-hikari.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "paranormal-operative",
+        "name": "Paranormal Operative",
+        "image": "assets/mlbb/skins/layla/paranormal-operative.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "s-a-b-e-r-breacher",
+        "name": "S.A.B.E.R. Breacher",
+        "image": "assets/mlbb/skins/layla/s-a-b-e-r-breacher.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sunset-waltz",
+        "name": "Sunset Waltz",
+        "image": "assets/mlbb/skins/layla/sunset-waltz.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "the-beacon",
+        "name": "The Beacon",
+        "image": "assets/mlbb/skins/layla/the-beacon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "twilight-waltz",
+        "name": "Twilight Waltz",
+        "image": "assets/mlbb/skins/layla/twilight-waltz.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "lesley": {
+    "id": "lesley",
+    "name": "Lesley",
+    "image": "assets/mlbb/heroes/lesley/default.webp",
+    "width": 1780,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "angelic-agent",
+        "name": "Angelic Agent",
+        "image": "assets/mlbb/skins/lesley/angelic-agent.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cheergunner",
+        "name": "Cheergunner",
+        "image": "assets/mlbb/skins/lesley/cheergunner.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dangerous-love",
+        "name": "Dangerous Love",
+        "image": "assets/mlbb/skins/lesley/dangerous-love.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "deadeye-spectre",
+        "name": "Deadeye Spectre",
+        "image": "assets/mlbb/skins/lesley/deadeye-spectre.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "deadly-sniper",
+        "name": "Deadly Sniper",
+        "image": "assets/mlbb/skins/lesley/deadly-sniper.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "duchess-of-tides",
+        "name": "Duchess of Tides",
+        "image": "assets/mlbb/skins/lesley/duchess-of-tides.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "falcon-mistress",
+        "name": "Falcon Mistress",
+        "image": "assets/mlbb/skins/lesley/falcon-mistress.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "general-rosa",
+        "name": "General Rosa",
+        "image": "assets/mlbb/skins/lesley/general-rosa.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "hawk-eyed-sniper",
+        "name": "Hawk-eyed Sniper",
+        "image": "assets/mlbb/skins/lesley/hawk-eyed-sniper.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "lethal-lady",
+        "name": "Lethal Lady",
+        "image": "assets/mlbb/skins/lesley/lethal-lady.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "meowkin-hunter",
+        "name": "Meowkin Hunter",
+        "image": "assets/mlbb/skins/lesley/meowkin-hunter.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "royal-musketeer",
+        "name": "Royal Musketeer",
+        "image": "assets/mlbb/skins/lesley/royal-musketeer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "stellaris-ghost",
+        "name": "Stellaris Ghost",
+        "image": "assets/mlbb/skins/lesley/stellaris-ghost.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "ling": {
+    "id": "ling",
+    "name": "Ling",
+    "image": "assets/mlbb/heroes/ling/default.webp",
+    "width": 2048,
+    "height": 1147,
+    "skins": [
+      {
+        "id": "cosmo-guard",
+        "name": "Cosmo Guard",
+        "image": "assets/mlbb/skins/ling/cosmo-guard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cyan-finch",
+        "name": "Cyan Finch",
+        "image": "assets/mlbb/skins/ling/cyan-finch.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "fiery-dance",
+        "name": "Fiery Dance",
+        "image": "assets/mlbb/skins/ling/fiery-dance.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "lord-shen",
+        "name": "Lord Shen",
+        "image": "assets/mlbb/skins/ling/lord-shen.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "m-world-ling",
+        "name": "M-World Ling",
+        "image": "assets/mlbb/skins/ling/m-world-ling.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "neobeast-ling",
+        "name": "Neobeast Ling",
+        "image": "assets/mlbb/skins/ling/neobeast-ling.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "night-shade",
+        "name": "Night Shade",
+        "image": "assets/mlbb/skins/ling/night-shade.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "phantom-current",
+        "name": "Phantom Current",
+        "image": "assets/mlbb/skins/ling/phantom-current.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "serene-plume",
+        "name": "Serene Plume",
+        "image": "assets/mlbb/skins/ling/serene-plume.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "street-punk",
+        "name": "Street Punk",
+        "image": "assets/mlbb/skins/ling/street-punk.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "lunox": {
+    "id": "lunox",
+    "name": "Lunox",
+    "image": "assets/mlbb/heroes/lunox/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "ash-blossom",
+        "name": "Ash Blossom",
+        "image": "assets/mlbb/skins/lunox/ash-blossom.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "bloody-mary",
+        "name": "Bloody Mary",
+        "image": "assets/mlbb/skins/lunox/bloody-mary.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "butterfly-seraphim",
+        "name": "Butterfly Seraphim",
+        "image": "assets/mlbb/skins/lunox/butterfly-seraphim.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cosmic-harmony",
+        "name": "Cosmic Harmony",
+        "image": "assets/mlbb/skins/lunox/cosmic-harmony.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dawn-revelation",
+        "name": "Dawn Revelation",
+        "image": "assets/mlbb/skins/lunox/dawn-revelation.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "divine-goddess",
+        "name": "Divine Goddess",
+        "image": "assets/mlbb/skins/lunox/divine-goddess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "eyes-of-eternity",
+        "name": "Eyes of Eternity",
+        "image": "assets/mlbb/skins/lunox/eyes-of-eternity.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "libra",
+        "name": "Libra",
+        "image": "assets/mlbb/skins/lunox/libra.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "nature-s-harmony",
+        "name": "Nature's Harmony",
+        "image": "assets/mlbb/skins/lunox/nature-s-harmony.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "quantum-polarity",
+        "name": "Quantum Polarity",
+        "image": "assets/mlbb/skins/lunox/quantum-polarity.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "twilight-goddess",
+        "name": "Twilight Goddess",
+        "image": "assets/mlbb/skins/lunox/twilight-goddess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "mathilda": {
+    "id": "mathilda",
+    "name": "Mathilda",
+    "image": "assets/mlbb/heroes/mathilda/default.webp",
+    "width": 4000,
+    "height": 2250,
+    "skins": [
+      {
+        "id": "dream-groove",
+        "name": "Dream Groove",
+        "image": "assets/mlbb/skins/mathilda/dream-groove.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dreambound-pixie",
+        "name": "Dreambound Pixie",
+        "image": "assets/mlbb/skins/mathilda/dreambound-pixie.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "floral-crown",
+        "name": "Floral Crown",
+        "image": "assets/mlbb/skins/mathilda/floral-crown.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "swift-plume",
+        "name": "Swift Plume",
+        "image": "assets/mlbb/skins/mathilda/swift-plume.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "unrestrained-delight",
+        "name": "Unrestrained Delight",
+        "image": "assets/mlbb/skins/mathilda/unrestrained-delight.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "miya": {
+    "id": "miya",
+    "name": "Miya",
+    "image": "assets/mlbb/heroes/miya/default.webp",
+    "width": 1780,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "arrow-of-spring",
+        "name": "Arrow of Spring",
+        "image": "assets/mlbb/skins/miya/arrow-of-spring.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "atomic-pop-miya",
+        "name": "Atomic Pop Miya",
+        "image": "assets/mlbb/skins/miya/atomic-pop-miya.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "burning-bow",
+        "name": "Burning Bow",
+        "image": "assets/mlbb/skins/miya/burning-bow.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "captain-thorns",
+        "name": "Captain Thorns",
+        "image": "assets/mlbb/skins/miya/captain-thorns.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "christmas-carnival",
+        "name": "Christmas Carnival",
+        "image": "assets/mlbb/skins/miya/christmas-carnival.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "doom-catalyst",
+        "name": "Doom Catalyst",
+        "image": "assets/mlbb/skins/miya/doom-catalyst.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "honor",
+        "name": "Honor",
+        "image": "assets/mlbb/skins/miya/honor.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "jungle-ranger",
+        "name": "Jungle Ranger",
+        "image": "assets/mlbb/skins/miya/jungle-ranger.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "modena-butterfly",
+        "name": "Modena Butterfly",
+        "image": "assets/mlbb/skins/miya/modena-butterfly.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "moon-priestess",
+        "name": "Moon Priestess",
+        "image": "assets/mlbb/skins/miya/moon-priestess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "moonlight-archer",
+        "name": "Moonlight Archer",
+        "image": "assets/mlbb/skins/miya/moonlight-archer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "nightowl-huntress",
+        "name": "Nightowl Huntress",
+        "image": "assets/mlbb/skins/miya/nightowl-huntress.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "suzuhime",
+        "name": "Suzuhime",
+        "image": "assets/mlbb/skins/miya/suzuhime.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sweet-fantasy",
+        "name": "Sweet Fantasy",
+        "image": "assets/mlbb/skins/miya/sweet-fantasy.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "nana": {
+    "id": "nana",
+    "name": "Nana",
+    "image": "assets/mlbb/heroes/nana/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "aqua-pura",
+        "name": "Aqua Pura",
+        "image": "assets/mlbb/skins/nana/aqua-pura.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "clockwork-maid",
+        "name": "Clockwork Maid",
+        "image": "assets/mlbb/skins/nana/clockwork-maid.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cyclone-clash",
+        "name": "Cyclone Clash",
+        "image": "assets/mlbb/skins/nana/cyclone-clash.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "graveyard-party",
+        "name": "Graveyard Party",
+        "image": "assets/mlbb/skins/nana/graveyard-party.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "mecha-baby",
+        "name": "Mecha Baby",
+        "image": "assets/mlbb/skins/nana/mecha-baby.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "mistbender-nana",
+        "name": "Mistbender Nana",
+        "image": "assets/mlbb/skins/nana/mistbender-nana.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "slumber-party",
+        "name": "Slumber Party",
+        "image": "assets/mlbb/skins/nana/slumber-party.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "summer-fun",
+        "name": "Summer Fun",
+        "image": "assets/mlbb/skins/nana/summer-fun.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sweet-leonin",
+        "name": "Sweet Leonin",
+        "image": "assets/mlbb/skins/nana/sweet-leonin.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wind-fairy",
+        "name": "Wind Fairy",
+        "image": "assets/mlbb/skins/nana/wind-fairy.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "natalia": {
+    "id": "natalia",
+    "name": "Natalia",
+    "image": "assets/mlbb/heroes/natalia/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "bright-claw",
+        "name": "Bright Claw",
+        "image": "assets/mlbb/skins/natalia/bright-claw.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cyber-spectre",
+        "name": "Cyber Spectre",
+        "image": "assets/mlbb/skins/natalia/cyber-spectre.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "deadly-mamba",
+        "name": "Deadly Mamba",
+        "image": "assets/mlbb/skins/natalia/deadly-mamba.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "glass-blade",
+        "name": "Glass Blade",
+        "image": "assets/mlbb/skins/natalia/glass-blade.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "grim-strangler",
+        "name": "Grim Strangler",
+        "image": "assets/mlbb/skins/natalia/grim-strangler.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "midnight-raven",
+        "name": "Midnight Raven",
+        "image": "assets/mlbb/skins/natalia/midnight-raven.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "phantom-dancer",
+        "name": "Phantom Dancer",
+        "image": "assets/mlbb/skins/natalia/phantom-dancer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "soul-huntress",
+        "name": "Soul Huntress",
+        "image": "assets/mlbb/skins/natalia/soul-huntress.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "warrioress-paragon",
+        "name": "Warrioress Paragon",
+        "image": "assets/mlbb/skins/natalia/warrioress-paragon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "obsidia": {
+    "id": "obsidia",
+    "name": "Obsidia",
+    "image": "assets/mlbb/heroes/obsidia/default.webp",
+    "width": 1780,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "magitech-wraith",
+        "name": "Magitech Wraith",
+        "image": "assets/mlbb/skins/obsidia/magitech-wraith.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sovereign-of-dark-s-end",
+        "name": "Sovereign of Dark's End",
+        "image": "assets/mlbb/skins/obsidia/sovereign-of-dark-s-end.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "undying-remnants",
+        "name": "Undying Remnants",
+        "image": "assets/mlbb/skins/obsidia/undying-remnants.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "odette": {
+    "id": "odette",
+    "name": "Odette",
+    "image": "assets/mlbb/heroes/odette/default.webp",
+    "width": 5000,
+    "height": 2821,
+    "skins": [
+      {
+        "id": "auspicious-charm",
+        "name": "Auspicious Charm",
+        "image": "assets/mlbb/skins/odette/auspicious-charm.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "black-swan",
+        "name": "Black Swan",
+        "image": "assets/mlbb/skins/odette/black-swan.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "butterfly-faerie",
+        "name": "Butterfly Faerie",
+        "image": "assets/mlbb/skins/odette/butterfly-faerie.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "butterfly-goddess",
+        "name": "Butterfly Goddess",
+        "image": "assets/mlbb/skins/odette/butterfly-goddess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "christmas-carnival",
+        "name": "Christmas Carnival",
+        "image": "assets/mlbb/skins/odette/christmas-carnival.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "mermaid-princess",
+        "name": "Mermaid Princess",
+        "image": "assets/mlbb/skins/odette/mermaid-princess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sage-of-the-currents",
+        "name": "Sage of the Currents",
+        "image": "assets/mlbb/skins/odette/sage-of-the-currents.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "song-of-devotion",
+        "name": "Song of Devotion",
+        "image": "assets/mlbb/skins/odette/song-of-devotion.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "swan-princess",
+        "name": "Swan Princess",
+        "image": "assets/mlbb/skins/odette/swan-princess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "virgo",
+        "name": "Virgo",
+        "image": "assets/mlbb/skins/odette/virgo.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wisdom-of-devotion",
+        "name": "Wisdom of Devotion",
+        "image": "assets/mlbb/skins/odette/wisdom-of-devotion.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wisdom-of-the-stars",
+        "name": "Wisdom of the Stars",
+        "image": "assets/mlbb/skins/odette/wisdom-of-the-stars.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "paquito": {
+    "id": "paquito",
+    "name": "Paquito",
+    "image": "assets/mlbb/heroes/paquito/default.webp",
+    "width": 1780,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "blazing-tiger",
+        "name": "Blazing Tiger",
+        "image": "assets/mlbb/skins/paquito/blazing-tiger.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "death-blow",
+        "name": "Death Blow",
+        "image": "assets/mlbb/skins/paquito/death-blow.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "fist-of-glory",
+        "name": "Fist of Glory",
+        "image": "assets/mlbb/skins/paquito/fist-of-glory.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "fist-of-light",
+        "name": "Fist of Light",
+        "image": "assets/mlbb/skins/paquito/fist-of-light.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "fulgent-punch",
+        "name": "Fulgent Punch",
+        "image": "assets/mlbb/skins/paquito/fulgent-punch.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "manny-pacquiao",
+        "name": "Manny Pacquiao",
+        "image": "assets/mlbb/skins/paquito/manny-pacquiao.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "terry-bogard",
+        "name": "Terry Bogard",
+        "image": "assets/mlbb/skins/paquito/terry-bogard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "the-heavenly-fist",
+        "name": "The Heavenly Fist",
+        "image": "assets/mlbb/skins/paquito/the-heavenly-fist.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "underground-boxer",
+        "name": "Underground Boxer",
+        "image": "assets/mlbb/skins/paquito/underground-boxer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "pharsa": {
+    "id": "pharsa",
+    "name": "Pharsa",
+    "image": "assets/mlbb/heroes/pharsa/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "empress-phoenix",
+        "name": "Empress Phoenix",
+        "image": "assets/mlbb/skins/pharsa/empress-phoenix.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "enchanting-witch",
+        "name": "Enchanting Witch",
+        "image": "assets/mlbb/skins/pharsa/enchanting-witch.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "hierophant",
+        "name": "Hierophant",
+        "image": "assets/mlbb/skins/pharsa/hierophant.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "indigo-aviatrix",
+        "name": "Indigo Aviatrix",
+        "image": "assets/mlbb/skins/pharsa/indigo-aviatrix.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "neobeast-pharsa",
+        "name": "Neobeast Pharsa",
+        "image": "assets/mlbb/skins/pharsa/neobeast-pharsa.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "neon-shingetsu",
+        "name": "Neon Shingetsu",
+        "image": "assets/mlbb/skins/pharsa/neon-shingetsu.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "peafowl-s-dance",
+        "name": "Peafowl's Dance",
+        "image": "assets/mlbb/skins/pharsa/peafowl-s-dance.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "peony-bloom",
+        "name": "Peony Bloom",
+        "image": "assets/mlbb/skins/pharsa/peony-bloom.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "samba-muse",
+        "name": "Samba Muse",
+        "image": "assets/mlbb/skins/pharsa/samba-muse.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "seasworn-oracle",
+        "name": "Seasworn Oracle",
+        "image": "assets/mlbb/skins/pharsa/seasworn-oracle.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wings-of-heaven",
+        "name": "Wings of Heaven",
+        "image": "assets/mlbb/skins/pharsa/wings-of-heaven.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wings-of-vengeance",
+        "name": "Wings of Vengeance",
+        "image": "assets/mlbb/skins/pharsa/wings-of-vengeance.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "rafaela": {
+    "id": "rafaela",
+    "name": "Rafaela",
+    "image": "assets/mlbb/heroes/rafaela/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "angelic-sonata",
+        "name": "Angelic Sonata",
+        "image": "assets/mlbb/skins/rafaela/angelic-sonata.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "biomedic",
+        "name": "Biomedic",
+        "image": "assets/mlbb/skins/rafaela/biomedic.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "bloom-of-abundance",
+        "name": "Bloom of Abundance",
+        "image": "assets/mlbb/skins/rafaela/bloom-of-abundance.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "fertility-goddess",
+        "name": "Fertility Goddess",
+        "image": "assets/mlbb/skins/rafaela/fertility-goddess.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "flower-fairy",
+        "name": "Flower Fairy",
+        "image": "assets/mlbb/skins/rafaela/flower-fairy.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "s-a-b-e-r-savior",
+        "name": "S.A.B.E.R. Savior",
+        "image": "assets/mlbb/skins/rafaela/s-a-b-e-r-savior.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "seraphic-selfie",
+        "name": "Seraphic Selfie",
+        "image": "assets/mlbb/skins/rafaela/seraphic-selfie.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "star-chaser",
+        "name": "Star Chaser",
+        "image": "assets/mlbb/skins/rafaela/star-chaser.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wings-of-holiness",
+        "name": "Wings of Holiness",
+        "image": "assets/mlbb/skins/rafaela/wings-of-holiness.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "terizla": {
+    "id": "terizla",
+    "name": "Terizla",
+    "image": "assets/mlbb/heroes/terizla/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "abyss-guard",
+        "name": "Abyss Guard",
+        "image": "assets/mlbb/skins/terizla/abyss-guard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "executioner",
+        "name": "Executioner",
+        "image": "assets/mlbb/skins/terizla/executioner.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "flames-of-judgement",
+        "name": "Flames of Judgement",
+        "image": "assets/mlbb/skins/terizla/flames-of-judgement.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "flare",
+        "name": "Flare",
+        "image": "assets/mlbb/skins/terizla/flare.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "hammer-giant",
+        "name": "Hammer Giant",
+        "image": "assets/mlbb/skins/terizla/hammer-giant.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "rustwreck",
+        "name": "Rustwreck",
+        "image": "assets/mlbb/skins/terizla/rustwreck.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "soulblight-tyrant",
+        "name": "Soulblight Tyrant",
+        "image": "assets/mlbb/skins/terizla/soulblight-tyrant.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "tigreal": {
+    "id": "tigreal",
+    "name": "Tigreal",
+    "image": "assets/mlbb/heroes/tigreal/default.webp",
+    "width": 1780,
+    "height": 1000,
+    "skins": [
+      {
+        "id": "celestial-general",
+        "name": "Celestial General",
+        "image": "assets/mlbb/skins/tigreal/celestial-general.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dark-guardian",
+        "name": "Dark Guardian",
+        "image": "assets/mlbb/skins/tigreal/dark-guardian.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "fallen-guard",
+        "name": "Fallen Guard",
+        "image": "assets/mlbb/skins/tigreal/fallen-guard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "galactic-marshal",
+        "name": "Galactic Marshal",
+        "image": "assets/mlbb/skins/tigreal/galactic-marshal.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "gold-baron",
+        "name": "Gold Baron",
+        "image": "assets/mlbb/skins/tigreal/gold-baron.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "lightborn-defender",
+        "name": "Lightborn - Defender",
+        "image": "assets/mlbb/skins/tigreal/lightborn-defender.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "pasha-of-justice",
+        "name": "Pasha of Justice",
+        "image": "assets/mlbb/skins/tigreal/pasha-of-justice.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "steel-guardian",
+        "name": "Steel Guardian",
+        "image": "assets/mlbb/skins/tigreal/steel-guardian.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "warrior-of-dawn",
+        "name": "Warrior of Dawn",
+        "image": "assets/mlbb/skins/tigreal/warrior-of-dawn.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "wyrmslayer",
+        "name": "Wyrmslayer",
+        "image": "assets/mlbb/skins/tigreal/wyrmslayer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "vale": {
+    "id": "vale",
+    "name": "Vale",
+    "image": "assets/mlbb/heroes/vale/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "blizzard-storm",
+        "name": "Blizzard Storm",
+        "image": "assets/mlbb/skins/vale/blizzard-storm.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cerulean-winds",
+        "name": "Cerulean Winds",
+        "image": "assets/mlbb/skins/vale/cerulean-winds.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "concerto-of-light",
+        "name": "Concerto of Light",
+        "image": "assets/mlbb/skins/vale/concerto-of-light.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "gaara",
+        "name": "Gaara",
+        "image": "assets/mlbb/skins/vale/gaara.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "kannagi",
+        "name": "Kannagi",
+        "image": "assets/mlbb/skins/vale/kannagi.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "keeper-of-the-winds",
+        "name": "Keeper of the Winds",
+        "image": "assets/mlbb/skins/vale/keeper-of-the-winds.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "soaring-devata",
+        "name": "Soaring Devata",
+        "image": "assets/mlbb/skins/vale/soaring-devata.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "supernal-tempest",
+        "name": "Supernal Tempest",
+        "image": "assets/mlbb/skins/vale/supernal-tempest.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "windtalker",
+        "name": "Windtalker",
+        "image": "assets/mlbb/skins/vale/windtalker.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "vexana": {
+    "id": "vexana",
+    "name": "Vexana",
+    "image": "assets/mlbb/heroes/vexana/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "circus-magician",
+        "name": "Circus Magician",
+        "image": "assets/mlbb/skins/vexana/circus-magician.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cursed-shackle",
+        "name": "Cursed Shackle",
+        "image": "assets/mlbb/skins/vexana/cursed-shackle.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "eternal-vows",
+        "name": "Eternal Vows",
+        "image": "assets/mlbb/skins/vexana/eternal-vows.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "lucent-beacon",
+        "name": "Lucent Beacon",
+        "image": "assets/mlbb/skins/vexana/lucent-beacon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sanguine-rose",
+        "name": "Sanguine Rose",
+        "image": "assets/mlbb/skins/vexana/sanguine-rose.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "shimmer-of-hope",
+        "name": "Shimmer of Hope",
+        "image": "assets/mlbb/skins/vexana/shimmer-of-hope.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "the-sun-empress",
+        "name": "The Sun Empress",
+        "image": "assets/mlbb/skins/vexana/the-sun-empress.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "twilight-star",
+        "name": "Twilight Star",
+        "image": "assets/mlbb/skins/vexana/twilight-star.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "twisted-fairytale",
+        "name": "Twisted Fairytale",
+        "image": "assets/mlbb/skins/vexana/twisted-fairytale.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "xavier": {
+    "id": "xavier",
+    "name": "Xavier",
+    "image": "assets/mlbb/heroes/xavier/default.webp",
+    "width": 3022,
+    "height": 1700,
+    "skins": [
+      {
+        "id": "beyond-the-clouds-xavier",
+        "name": "Beyond the Clouds Xavier",
+        "image": "assets/mlbb/skins/xavier/beyond-the-clouds-xavier.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "defier-of-light",
+        "name": "Defier of Light",
+        "image": "assets/mlbb/skins/xavier/defier-of-light.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "hardlight-artificer",
+        "name": "Hardlight Artificer",
+        "image": "assets/mlbb/skins/xavier/hardlight-artificer.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "satoru-gojo",
+        "name": "Satoru Gojo",
+        "image": "assets/mlbb/skins/xavier/satoru-gojo.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sunborn-monarch",
+        "name": "Sunborn Monarch",
+        "image": "assets/mlbb/skins/xavier/sunborn-monarch.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "verdict-of-light",
+        "name": "Verdict of Light",
+        "image": "assets/mlbb/skins/xavier/verdict-of-light.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "yuzhong": {
+    "id": "yuzhong",
+    "name": "Yu Zhong",
+    "image": "assets/mlbb/heroes/yuzhong/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "biohazard",
+        "name": "Biohazard",
+        "image": "assets/mlbb/skins/yuzhong/biohazard.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "black-dragon",
+        "name": "Black Dragon",
+        "image": "assets/mlbb/skins/yuzhong/black-dragon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "blood-serpent",
+        "name": "Blood Serpent",
+        "image": "assets/mlbb/skins/yuzhong/blood-serpent.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "cosmic-dragon",
+        "name": "Cosmic Dragon",
+        "image": "assets/mlbb/skins/yuzhong/cosmic-dragon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dragon-s-shade",
+        "name": "Dragon's Shade",
+        "image": "assets/mlbb/skins/yuzhong/dragon-s-shade.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "emerald-dragon",
+        "name": "Emerald Dragon",
+        "image": "assets/mlbb/skins/yuzhong/emerald-dragon.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "exorcist-yu-zhong",
+        "name": "Exorcist Yu Zhong",
+        "image": "assets/mlbb/skins/yuzhong/exorcist-yu-zhong.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "tidescale-sealord",
+        "name": "Tidescale Sealord",
+        "image": "assets/mlbb/skins/yuzhong/tidescale-sealord.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "yve": {
+    "id": "yve",
+    "name": "Yve",
+    "image": "assets/mlbb/heroes/yve/default.webp",
+    "width": 1640,
+    "height": 923,
+    "skins": [
+      {
+        "id": "astrowarden",
+        "name": "Astrowarden",
+        "image": "assets/mlbb/skins/yve/astrowarden.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "flame-lotus",
+        "name": "Flame Lotus",
+        "image": "assets/mlbb/skins/yve/flame-lotus.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "forest-hymn",
+        "name": "Forest Hymn",
+        "image": "assets/mlbb/skins/yve/forest-hymn.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "ruin-protectress",
+        "name": "Ruin Protectress",
+        "image": "assets/mlbb/skins/yve/ruin-protectress.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "zetian": {
+    "id": "zetian",
+    "name": "Zetian",
+    "image": "assets/mlbb/heroes/zetian/default.webp",
+    "width": 1920,
+    "height": 1080,
+    "skins": [
+      {
+        "id": "celestial-empress",
+        "name": "Celestial Empress",
+        "image": "assets/mlbb/skins/zetian/celestial-empress.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "heavenly-splendor",
+        "name": "Heavenly Splendor",
+        "image": "assets/mlbb/skins/zetian/heavenly-splendor.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "sunset-luminance",
+        "name": "Sunset Luminance",
+        "image": "assets/mlbb/skins/zetian/sunset-luminance.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  },
+  "zhuxin": {
+    "id": "zhuxin",
+    "name": "Zhuxin",
+    "image": "assets/mlbb/heroes/zhuxin/default.webp",
+    "width": 1752,
+    "height": 986,
+    "skins": [
+      {
+        "id": "beacon-of-spirits",
+        "name": "Beacon of Spirits",
+        "image": "assets/mlbb/skins/zhuxin/beacon-of-spirits.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "emberwisp-mystic",
+        "name": "Emberwisp Mystic",
+        "image": "assets/mlbb/skins/zhuxin/emberwisp-mystic.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "ethereal-serenity",
+        "name": "Ethereal Serenity",
+        "image": "assets/mlbb/skins/zhuxin/ethereal-serenity.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "p-ace-zhuxin",
+        "name": "P.ACE Zhuxin",
+        "image": "assets/mlbb/skins/zhuxin/p-ace-zhuxin.webp",
+        "width": 0,
+        "height": 0,
+        "downloaded": false
+      }
+    ]
+  }
+}

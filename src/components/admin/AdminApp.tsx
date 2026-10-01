@@ -69,6 +69,13 @@ const b64 = (s: string) => {
   b.forEach((x) => (r += String.fromCharCode(x)));
   return btoa(r);
 };
+// fingerprint of the bundled seed data — drafts saved against an older
+// fingerprint are treated as stale and never auto-applied
+const hashStr = (s: string) => {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+  return h.toString(36);
+};
 
 const PASSKEY = "euphex-admin-auth";
 const DRAFTKEY = "euphex-admin-drafts";
@@ -94,6 +101,7 @@ export function AdminApp() {
   const [work, setWork] = useState<Working>(seedOf);
   const [restored, setRestored] = useState(false);
   const [q, setQ] = useState("");
+  const [staleDraft, setStaleDraft] = useState<string | null>(null);
   const [editing, setEditing] = useState<{ tab: Tab; id: string | null } | null>(null);
   const [draft, setDraft] = useState<Record<string, unknown> | null>(null);
   const { ask, node: confirmNode } = useConfirm();
@@ -115,10 +123,18 @@ export function AdminApp() {
       if (t) setToken(t);
       const d = localStorage.getItem(DRAFTKEY);
       if (d) {
-        const parsed = JSON.parse(d) as Working;
-        if (parsed.players && parsed.teams) {
-          setWork(parsed);
-          setRestored(true);
+        const box = JSON.parse(d) as {
+          v?: number; savedAt?: string; seedHash?: string; work?: Working;
+        } & Partial<Working>;
+        const work: Working | undefined = box.work ?? (box as unknown as Working);
+        if (work && work.players && work.teams) {
+          if (box.seedHash === hashStr(canon(seedOf()))) {
+            setWork(work);
+            setRestored(true);
+          } else {
+            // stale draft from an older site version — never auto-apply it
+            setStaleDraft(box.savedAt ? box.savedAt.slice(0, 10) : "an earlier version");
+          }
         }
       }
     } catch { /* private mode */ }
@@ -127,7 +143,10 @@ export function AdminApp() {
   useEffect(() => {
     if (!authed) return;
     try {
-      localStorage.setItem(DRAFTKEY, JSON.stringify(work));
+      localStorage.setItem(
+        DRAFTKEY,
+        JSON.stringify({ v: 2, savedAt: new Date().toISOString(), seedHash: hashStr(canon(seedOf())), work }),
+      );
     } catch { /* ignore */ }
   }, [work, authed]);
 
@@ -298,6 +317,28 @@ export function AdminApp() {
           </button>
         </div>
       </header>
+
+      {staleDraft && (
+        <div role="alert" className="mt-6 border border-red-400/40 bg-red-400/5 p-5 md:p-6">
+          <p className="font-display text-xl md:text-2xl font-bold text-red-200">STALE DRAFT BLOCKED.</p>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/65">
+            This browser holds unsent changes saved {staleDraft} — from an older version of the site data
+            (it may still contain deleted placeholder names). It was <strong className="text-white">not loaded</strong>,
+            so it cannot be published over the live site. You are looking at the current live data.
+          </p>
+          <button
+            onClick={() => {
+              try {
+                localStorage.removeItem(DRAFTKEY);
+              } catch { /* ignore */ }
+              setStaleDraft(null);
+            }}
+            className="mt-4 border border-red-400/50 px-5 py-2.5 text-xs font-bold tracking-[0.18em] uppercase text-red-200 hover:bg-red-400/10 cursor-pointer transition-colors"
+          >
+            Discard stale draft →
+          </button>
+        </div>
+      )}
 
       {/* tabs */}
       <div className="sticky top-16 md:top-20 z-30 -mx-4 md:mx-0 mt-6 border-y border-white/8 bg-[#07090D]/95 backdrop-blur-md" role="tablist" aria-label="Collections">
