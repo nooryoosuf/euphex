@@ -117,7 +117,7 @@ create table if not exists media (
 
 -- TIMELINE
 create table if not exists timeline (
-  id generated always as identity primary key,
+  id serial primary key,
   year text not null,
   title text not null,
   text text not null default '',
