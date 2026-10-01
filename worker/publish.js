@@ -1,9 +1,13 @@
 // ─────────────────────────────────────────────────────────────
 // EUPHEX publish proxy — Cloudflare Worker.
 //
-// Browser admin (euphex.mv/admin) POSTs edited JSON here with the
-// passcode. The Worker holds the GitHub token as an encrypted secret
-// and commits to the repo. The token never reaches any browser.
+// Browser admin (euphex.mv/admin) POSTs edited JSON here.
+// No login, no token in the browser: the Worker holds the GitHub token
+// as an encrypted secret and commits to the repo.
+//
+// AUTH: open by default (owner's choice — anyone with the Worker URL can
+// publish). To lock it down later, set the ADMIN_PASSCODE secret AND make
+// the admin send { passcode } again — the check below activates.
 //
 // Deploy once via dashboard (no CLI needed):
 //   Workers & Pages → Create → New Worker → paste this file → Deploy,
@@ -73,7 +77,8 @@ export default {
       return json({ error: "bad json" }, 400, cors);
     }
 
-    if (!safeEqual(body.passcode, env.ADMIN_PASSCODE)) {
+    // Open mode: passcode only enforced when ADMIN_PASSCODE is set.
+    if (env.ADMIN_PASSCODE && !safeEqual(body.passcode, env.ADMIN_PASSCODE)) {
       return json({ error: "unauthorized" }, 401, cors);
     }
 

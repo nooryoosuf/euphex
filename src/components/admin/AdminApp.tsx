@@ -74,7 +74,6 @@ const hashStr = (s: string) => {
 const PASSKEY = "euphex-admin-auth";
 const DRAFTKEY = "euphex-admin-drafts";
 const WORKERKEY = "euphex-admin-worker";
-const CODEKEY = "euphex-admin-passcode";
 const ADMIN_CODE = process.env.NEXT_PUBLIC_ADMIN_CODE ?? "euphex2026";
 const DEFAULT_WORKER_URL = process.env.NEXT_PUBLIC_PUBLISH_WORKER_URL ?? "";
 
@@ -103,12 +102,14 @@ export function AdminApp() {
   const { ask, node: confirmNode } = useConfirm();
   const fileRef = useRef<HTMLInputElement>(null);
 
-  // publish config — no GitHub token in the browser. The Worker
-  // (worker/publish.js) holds the token server-side; the admin proves
-  // identity with the passcode only.
+  // publish config — no secrets in the browser. The Worker
+  // (worker/publish.js) holds the GitHub token server-side.
+  // Edits are diffed against LIVE site data (fetched from main),
+  // falling back to bundled data when offline.
   const [workerUrl, setWorkerUrl] = useState(DEFAULT_WORKER_URL);
-  const [passcode, setPasscode] = useState("");
   const [branch, setBranch] = useState("main");
+  const [live, setLive] = useState<Working | null>(null);
+  const [liveState, setLiveState] = useState<"loading" | "ready" | "offline">("loading");
   const [message, setMessage] = useState("Update site content via admin");
   const [log, setLog] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
@@ -118,8 +119,6 @@ export function AdminApp() {
       if (sessionStorage.getItem(PASSKEY) === "1") setAuthed(true);
       const w = sessionStorage.getItem(WORKERKEY);
       if (w) setWorkerUrl(w);
-      const p = sessionStorage.getItem(CODEKEY);
-      if (p) setPasscode(p);
       const d = localStorage.getItem(DRAFTKEY);
       if (d) {
         const box = JSON.parse(d) as {
@@ -149,16 +148,60 @@ export function AdminApp() {
     } catch { /* ignore */ }
   }, [work, authed]);
 
+  // Live baseline: diff edits against what's actually on main,
+  // not the data bundled at build time.
+  useEffect(() => {
+    if (!authed) return;
+    let dead = false;
+    (async () => {
+      try {
+        const get = async (f: string) => {
+          const r = await fetch(`https://raw.githubusercontent.com/nooryoosuf/euphex/main/src/data/${f}?t=${Date.now()}`);
+          if (!r.ok) throw new Error(f);
+          return r.json() as Promise<unknown>;
+        };
+        const [players, teams, matches, tournaments, content] = await Promise.all([
+          get("players.json"), get("teams.json"), get("matches.json"),
+          get("tournaments.json"), get("content.json"),
+        ]);
+        if (dead) return;
+        const c = content as { news: NewsArticle[]; media: MediaItem[]; timeline: TimelineEvent[] };
+        setLive({
+          players: players as Player[], teams: teams as Team[], matches: matches as Match[],
+          tournaments: tournaments as Tournament[], news: c.news, media: c.media, timeline: c.timeline,
+        });
+        setLiveState("ready");
+      } catch {
+        if (!dead) setLiveState("offline");
+      }
+    })();
+    return () => { dead = true; };
+  }, [authed]);
+
+  const refreshFromLive = () => {
+    if (!live) return;
+    setWork(structuredClone(live));
+    try {
+      localStorage.removeItem(DRAFTKEY);
+    } catch { /* ignore */ }
+    setRestored(false);
+    setLog(["Loaded live data from main — editor now matches the site."]);
+  };
+
   const changed = useMemo(() => {
-    const base = seedOf();
+    const seed = seedOf();
+    const base: Working = live ?? seed;
+    const baseContent = live
+      ? { news: live.news, media: live.media, timeline: live.timeline }
+      : { news: (contentSeed as { news: unknown }).news, media: (contentSeed as { media: unknown }).media, timeline: (contentSeed as { timeline: unknown }).timeline };
     const out: typeof FILES = [];
     if (canon(work.players) !== canon(base.players)) out.push(FILES[0]);
     if (canon(work.teams) !== canon(base.teams)) out.push(FILES[1]);
     if (canon(work.matches) !== canon(base.matches)) out.push(FILES[2]);
     if (canon(work.tournaments) !== canon(base.tournaments)) out.push(FILES[3]);
-    if (canon(contentPayload(work)) !== canon({ news: (contentSeed as { news: unknown }).news, media: (contentSeed as { media: unknown }).media, timeline: (contentSeed as { timeline: unknown }).timeline })) out.push(FILES[4]);
+    if (canon(contentPayload(work)) !== canon(baseContent)) out.push(FILES[4]);
     return out;
-  }, [work]);
+  }, [work, live]);
 
   if (!authed) {
     return (
@@ -172,10 +215,8 @@ export function AdminApp() {
             e.preventDefault();
             if (code === ADMIN_CODE) {
               setAuthed(true);
-              setPasscode(code);
               try {
                 sessionStorage.setItem(PASSKEY, "1");
-                sessionStorage.setItem(CODEKEY, code);
               } catch { /* ignore */ }
             } else setCodeErr(true);
           }}
@@ -198,8 +239,8 @@ export function AdminApp() {
         </form>
         <p className="mt-6 text-[11px] leading-relaxed text-white/35">
           Default code is <span className="text-white/60">euphex2026</span> — change it with
-          NEXT_PUBLIC_ADMIN_CODE. Publishing uses this same login —
-          no second password, no GitHub token in the browser.
+          NEXT_PUBLIC_ADMIN_CODE. Publishing needs nothing extra —
+          no second password, no GitHub token.
         </p>
       </div>
     );
@@ -260,19 +301,17 @@ export function AdminApp() {
   };
 
   const publish = async () => {
-    if (!workerUrl || !passcode || changed.length === 0) return;
+    if (!workerUrl || changed.length === 0) return;
     setBusy(true);
     setLog([`Publishing ${changed.length} file(s) via worker…`]);
     try {
       sessionStorage.setItem(WORKERKEY, workerUrl);
-      sessionStorage.setItem(CODEKEY, passcode);
     } catch { /* ignore */ }
     try {
       const res = await fetch(`${workerUrl.replace(/\/$/, "")}/publish`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          passcode,
           branch,
           message,
           files: changed.map((f) => ({ path: f.path, content: fileBody(f.key, work) })),
@@ -287,6 +326,9 @@ export function AdminApp() {
         setBusy(false);
         return;
       }
+      // editor now matches live — clear the diff without a reload
+      setLive(structuredClone(work));
+      setLiveState("ready");
     } catch (e) {
       setLog((l) => [...l, `✗ publish: ${e instanceof Error ? e.message : "failed"}`]);
       setBusy(false);
@@ -401,7 +443,16 @@ export function AdminApp() {
             <label className="mt-4 block"><span className="label !text-[10px] text-white/40">Commit message</span>
               <input value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1.5 w-full border border-white/12 bg-black/40 px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--accent)]" /></label>
             <div className="mt-5">
-              <p className="label !text-[10px] text-white/40 mb-2">Changed files ({changed.length})</p>
+              <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+                <p className="label !text-[10px] text-white/40">Changed files ({changed.length})</p>
+                <p className="text-[11px] text-white/40">
+                  {liveState === "loading" ? "Comparing against live site…" : liveState === "ready" ? (
+                    <>vs live <span className="text-emerald-300">main ✓</span> · <button onClick={refreshFromLive} className="underline hover:text-white cursor-pointer">reload live</button></>
+                  ) : (
+                    <>offline — vs bundled data</>
+                  )}
+                </p>
+              </div>
               {changed.length === 0 ? (
                 <p className="text-sm text-white/45">Nothing to publish — everything matches the live site.</p>
               ) : (
@@ -416,11 +467,18 @@ export function AdminApp() {
             </div>
             <button
               onClick={publish}
-              disabled={busy || !workerUrl || !passcode || changed.length === 0}
+              disabled={busy || !workerUrl || changed.length === 0}
               className="mt-6 w-full bg-[var(--accent)] py-4 text-sm font-bold tracking-[0.2em] uppercase hover:brightness-110 disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
             >
               {busy ? "Publishing…" : "Publish to live site →"}
             </button>
+            {!busy && (!workerUrl || changed.length === 0) && (
+              <p className="mt-3 text-xs leading-relaxed text-amber-200/80" role="status">
+                {!workerUrl
+                  ? "Publish is off: paste the Worker URL above (deploy worker/publish.js once, then paste its workers.dev URL)."
+                  : "Publish is off: no differences vs the live site yet — edit something first."}
+              </p>
+            )}
             {log.length > 0 && (
               <div className="mt-4 border border-white/10 bg-black/50 p-4 font-mono text-xs leading-relaxed whitespace-pre-wrap" role="status">
                 {log.join("\n")}

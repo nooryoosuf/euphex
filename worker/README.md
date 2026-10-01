@@ -10,16 +10,18 @@ the passcode and commits via the GitHub API using `GITHUB_TOKEN` (secret).
    name it `euphex-publish` → **Deploy** (placeholder first).
 2. **Edit code** → delete everything → paste `publish.js` → **Save and deploy**.
 3. **Settings → Variables & Secrets** → add:
-   - `ADMIN_PASSCODE` (secret) — same value as the admin screen passcode
-     (`NEXT_PUBLIC_ADMIN_CODE`, default `euphex2026` — change both together)
    - `GITHUB_TOKEN` (secret) — classic PAT, `repo` scope. Content JSONs
      don't touch workflows, so `workflow` scope is NOT needed here.
+   - Optional: `ADMIN_PASSCODE` (secret) — leave UNSET for open publishing
+     (no password anywhere). Set it later to require a passcode.
    - Optional plain-text vars: `GITHUB_OWNER` (default `nooryoosuf`),
      `GITHUB_REPO` (default `euphex`), `GITHUB_BRANCH` (default `main`),
      `ALLOWED_ORIGIN` (default `https://euphex.mv`).
 4. Copy the Worker URL: `https://euphex-publish.<your-account>.workers.dev`
-5. Open `https://euphex.mv/admin` → **Publish** tab → paste URL + passcode →
-   **Publish**. (Or bake the URL in with `NEXT_PUBLIC_PUBLISH_WORKER_URL`.)
+5. Open `https://euphex.mv/admin` → **Publish** tab → paste URL once
+   (remembered per tab) → edit content → **Publish**. No passwords.
+   (Send the URL to your dev to bake in as `NEXT_PUBLIC_PUBLISH_WORKER_URL`
+   so the field comes prefilled after the next site deploy.)
 
 ## Test
 
