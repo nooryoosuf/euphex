@@ -28,7 +28,11 @@ type Registry = Record<string, MlbbHero>;
 
 const DB = registry as Registry;
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const withBase = (p: string) => (p ? `${BASE}/${p}` : p);
+const withBase = (p: string) => {
+  if (!p) return p;
+  if (/^https?:\/\//.test(p)) return p; // remote splash — use as-is
+  return `${BASE}/${p}`;
+};
 
 /** Normalize any hero spelling to its canonical registry id. */
 export function mlbbId(input: string): string {
@@ -49,19 +53,25 @@ export function mlbbHeroIds(): string[] {
 
 /**
  * Resolved artwork URL for a hero (optionally a specific skin id).
+ * Uses local downloads when present, remote upstream splashes otherwise.
  * Returns null when unavailable so callers render a graceful fallback.
  */
 export function mlbbHeroImage(id: string, skinId?: string): string | null {
   const hero = getMlbbHero(id);
   if (!hero) return null;
   if (skinId) {
-    const skin = hero.skins.find((s) => s.id === skinId && s.downloaded && s.image);
-    if (skin) return withBase(skin.image);
+    const skin = hero.skins.find((s) => s.id === skinId && s.image);
+    // local file (must be downloaded) or remote splash (usable as-is)
+    if (skin && (skin.downloaded || /^https?:\/\//.test(skin.image))) {
+      return withBase(skin.image);
+    }
   }
   return hero.image ? withBase(hero.image) : null;
 }
 
-/** Downloaded skins for a hero (for selectors / galleries). */
+/** Skins with usable artwork: downloaded locals + remote upstream splashes. */
 export function mlbbHeroSkins(id: string): MlbbSkin[] {
-  return (getMlbbHero(id)?.skins ?? []).filter((s) => s.downloaded && s.image);
+  return (getMlbbHero(id)?.skins ?? []).filter(
+    (s) => s.image && (s.downloaded || /^https?:\/\//.test(s.image)),
+  );
 }
