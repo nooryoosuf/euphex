@@ -34,6 +34,13 @@ export interface Achievement {
   kind: "Champion" | "Runner Up" | "MVP" | "Top 4" | "Award";
 }
 
+export interface PlayerArtRef {
+  /** MLBB hero id — splash resolves via mlbbHeroImage */
+  hero: string;
+  /** Optional downloaded skin id — omit = default splash */
+  skin?: string;
+}
+
 export interface Player {
   slug: string;
   gamertag: string;
@@ -53,6 +60,10 @@ export interface Player {
   favoriteHero: string;
   heroPool: HeroEntry[];
   achievements: Achievement[];
+  /** Custom page banner splash — omit = favorite-hero art */
+  banner?: PlayerArtRef;
+  /** Custom avatar splash (cards + page panel) — omit = generated monogram */
+  avatar?: PlayerArtRef;
   /** portrait placeholder hue */
   hue: number;
   number: number;

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import type {
   Achievement, GameDetail, LaneRole, Match, MediaItem, NewsArticle,
-  Player, PlayerStatLine, Team, TimelineEvent, Tournament,
+  Player, PlayerArtRef, PlayerStatLine, Team, TimelineEvent, Tournament,
 } from "@/data/types";
 import { F, T, N, Sel, TA, ListEditor } from "./ui";
 import { getMlbbHero, mlbbHeroIds, mlbbHeroSkins } from "@/data/mlbb";
@@ -93,6 +93,63 @@ function HeroSelect({ value, skin, onChange }: { value: string; skin?: string; o
   );
 }
 
+/* ── splash ref picker: hero + skin, stores {hero, skin?} ── */
+
+function ArtRefEditor({ label, hint, value, onChange }: {
+  label: string; hint?: string;
+  value: PlayerArtRef | undefined;
+  onChange: (v: PlayerArtRef | undefined) => void;
+}) {
+  const skins = value?.hero ? mlbbHeroSkins(value.hero) : [];
+  return (
+    <div className="border border-white/10 bg-black/20 p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <p className="label !text-[10px] text-white/40">{label}</p>
+        {value && (
+          <button
+            type="button"
+            onClick={() => onChange(undefined)}
+            className="text-[11px] font-bold tracking-[0.14em] uppercase text-white/40 hover:text-red-300 cursor-pointer"
+          >
+            Clear →
+          </button>
+        )}
+      </div>
+      {!value ? (
+        <button
+          type="button"
+          onClick={() => onChange({ hero: mlbbHeroIds()[0] ?? "fanny" })}
+          className="w-full border border-dashed border-white/20 px-4 py-3 text-xs font-bold tracking-[0.16em] uppercase text-white/50 hover:text-white hover:border-[var(--accent)] cursor-pointer"
+        >
+          + Pick splash
+        </button>
+      ) : (
+        <div className="space-y-3">
+          <F label="Hero">
+            <HeroSelect
+              value={value.hero}
+              skin={value.skin}
+              onChange={(hero) => onChange(hero === value.hero ? value : { hero, skin: undefined })}
+            />
+          </F>
+          <F
+            label="Skin splash"
+            hint={skins.length ? `${skins.length} downloaded — pick a splash` : "No skins downloaded — default splash used"}
+          >
+            <Sel value={value.skin ?? ""} onChange={(e) => onChange({ ...value, skin: e.target.value || undefined })}>
+              <option value="">Default splash</option>
+              {skins.map((s) => (
+                <option key={s.id} value={s.id}>{s.name}</option>
+              ))}
+            </Sel>
+          </F>
+          {hint && <p className="text-[11px] text-white/35">{hint}</p>}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ── players ── */
 
 export function PlayerEditor({ value: v, onChange: c, teamSlugs }: { value: Player; onChange: Patch<Player>; teamSlugs: string[] }) {
@@ -124,6 +181,20 @@ export function PlayerEditor({ value: v, onChange: c, teamSlugs }: { value: Play
         <F label="Playstyle"><T value={v.playstyle} onChange={(e) => c({ playstyle: e.target.value })} /></F>
         <F label="Signature move"><T value={v.signatureMove} onChange={(e) => c({ signatureMove: e.target.value })} /></F>
         <F label="Favorite hero"><T value={v.favoriteHero} onChange={(e) => c({ favoriteHero: e.target.value })} /></F>
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <ArtRefEditor
+          label="Page banner splash"
+          hint="Wide backdrop on the player page. Empty = favorite-hero art."
+          value={v.banner}
+          onChange={(banner) => c({ banner })}
+        />
+        <ArtRefEditor
+          label="Avatar splash"
+          hint="Square portrait on cards + page panel. Empty = monogram."
+          value={v.avatar}
+          onChange={(avatar) => c({ avatar })}
+        />
       </div>
       <div>
         <p className="label !text-[10px] text-white/40 mb-2">Hero pool</p>

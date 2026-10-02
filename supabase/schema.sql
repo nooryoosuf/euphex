@@ -28,6 +28,8 @@ create table if not exists players (
   number integer not null default 0,
   hero_pool jsonb not null default '[]',
   achievements jsonb not null default '[]',
+  banner jsonb,
+  avatar jsonb,
   updated_at timestamptz not null default now()
 );
 

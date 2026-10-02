@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/primitives";
 import { RoleBadge } from "@/components/ui/RoleIcon";
 import { Artwork } from "@/components/ui/Artwork";
 import { TeamLogo } from "@/components/ui/TeamLogos";
-import { TEAM_CARD_ART, NEWS_ART } from "@/data/imagery";
+import { TEAM_CARD_ART, NEWS_ART, imageForAvatar } from "@/data/imagery";
 import { SlidingName } from "@/components/ui/SlidingName";
 import { useContent } from "@/components/content";
 import { ArrowUpRight } from "lucide-react";
@@ -15,6 +15,7 @@ import { ArrowUpRight } from "lucide-react";
 export function PlayerCard({ player, index = 0 }: { player: Player; index?: number }) {
   const { getTeam } = useContent();
   const team = getTeam(player.teamSlug);
+  const avatar = imageForAvatar(player);
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -27,7 +28,11 @@ export function PlayerCard({ player, index = 0 }: { player: Player; index?: numb
         className="group relative block overflow-hidden border border-white/8 bg-[#0C0F16] hover:border-[var(--accent)]/50 transition-colors duration-300"
         aria-label={`${player.gamertag}, ${player.role} for ${team?.name}`}
       >
-        <Artwork hue={player.hue} label={player.gamertag.slice(0, 2)} className="aspect-[3/4] w-full transition-transform duration-500 group-hover:scale-[1.04]" />
+        {avatar ? (
+          <img src={avatar} alt="" aria-hidden="true" loading="lazy" className="aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+        ) : (
+          <Artwork hue={player.hue} label={player.gamertag.slice(0, 2)} className="aspect-[3/4] w-full transition-transform duration-500 group-hover:scale-[1.04]" />
+        )}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-5 pt-14">
           <RoleBadge role={player.role} />
           <SlidingName text={player.gamertag} className="font-display mt-2 text-3xl font-bold tracking-tight" />

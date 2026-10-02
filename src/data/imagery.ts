@@ -188,8 +188,20 @@ export function heroMeta(heroName: string): {
   return { difficulty: e.difficulty, ...e.meta };
 }
 
-/** Player heading backdrop — favorite hero art, else role-based art. */
-export function imageForPlayer(favoriteHero: string, role: string): string {
+/** Player heading backdrop — custom banner splash, else favorite hero art, else role-based art. */
+export function imageForBanner(p: { banner?: { hero: string; skin?: string }; favoriteHero: string; role: string }): string {
+  if (p.banner?.hero) {
+    const direct = mlbbHeroImage(p.banner.hero, p.banner.skin);
+    if (direct) return direct;
+  }
+  return imageForPlayer(p.favoriteHero, p.role);
+}
+
+/** Player avatar splash — custom pick, else null (caller renders monogram). */
+export function imageForAvatar(p: { avatar?: { hero: string; skin?: string } }): string | null {
+  if (!p.avatar?.hero) return null;
+  return mlbbHeroImage(p.avatar.hero, p.avatar.skin);
+}
   const direct = imageForHero(favoriteHero);
   if (direct) return direct;
   if (role === "Jungle") return IMAGES.aamon;

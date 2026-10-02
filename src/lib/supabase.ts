@@ -61,6 +61,8 @@ export function mapPlayer(r: Row): Player {
     signatureMove: r.signature_move ?? "", favoriteHero: r.favorite_hero ?? "",
     hue: r.hue ?? 220, number: r.number ?? 0,
     heroPool: arr(r.hero_pool), achievements: arr(r.achievements),
+    banner: (r.banner as Player["banner"]) ?? undefined,
+    avatar: (r.avatar as Player["avatar"]) ?? undefined,
   };
 }
 
@@ -126,6 +128,7 @@ export function playerToRow(p: Player): Row {
     win_rate: p.winRate, mvps: p.mvps, quote: p.quote, playstyle: p.playstyle,
     signature_move: p.signatureMove, favorite_hero: p.favoriteHero, hue: p.hue,
     number: p.number, hero_pool: p.heroPool, achievements: p.achievements,
+    banner: p.banner ?? null, avatar: p.avatar ?? null,
   };
 }
 

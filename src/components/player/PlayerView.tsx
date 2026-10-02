@@ -9,7 +9,7 @@ import { CountUp } from "@/components/ui/CountUp";
 import { PlayerCard } from "@/components/ui/cards";
 import { HeroPoolBlock } from "@/components/player/HeroPool";
 import { SlidingName } from "@/components/ui/SlidingName";
-import { imageForPlayer } from "@/data/imagery";
+import { imageForAvatar, imageForBanner } from "@/data/imagery";
 
 export function PlayerView({ slug }: { slug: string }) {
   const { getPlayer, getTeam, getTeamPlayers } = useContent();
@@ -19,12 +19,13 @@ export function PlayerView({ slug }: { slug: string }) {
   }
   const team = getTeam(player.teamSlug);
   const teammates = getTeamPlayers(player.teamSlug).filter((p) => p.slug !== player.slug);
+  const avatar = imageForAvatar(player);
 
   return (
     <>
       <div className="grain relative overflow-hidden border-b border-white/8">
         <img
-          src={imageForPlayer(player.favoriteHero, player.role)}
+          src={imageForBanner(player)}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
@@ -68,7 +69,15 @@ export function PlayerView({ slug }: { slug: string }) {
               ))}
             </div>
           </div>
-          <Artwork hue={player.hue} label={player.gamertag.slice(0, 2)} className="aspect-[3/4] w-full max-w-[380px] justify-self-end hidden sm:block" />
+          {avatar ? (
+            <img
+              src={avatar}
+              alt={`${player.gamertag} splash`}
+              className="aspect-[3/4] w-full max-w-[380px] justify-self-end object-cover hidden sm:block border border-white/8"
+            />
+          ) : (
+            <Artwork hue={player.hue} label={player.gamertag.slice(0, 2)} className="aspect-[3/4] w-full max-w-[380px] justify-self-end hidden sm:block" />
+          )}
         </div>
       </div>
 
