@@ -29,6 +29,9 @@ interface ContentValue extends ContentBundle {
 const byDateAsc = (a: Match, b: Match) => +new Date(a.date) - +new Date(b.date);
 const byDateDesc = (a: Match, b: Match) => +new Date(b.date) - +new Date(a.date);
 
+// Canonical lane order: EXP → Jungle → Mid → Gold → Roam
+const ROLE_ORDER = ["EXP Lane", "Jungle", "Mid Lane", "Gold Lane", "Roam"];
+
 const Ctx = createContext<ContentValue | null>(null);
 
 export function ContentProvider({ children }: { children: React.ReactNode }) {
@@ -49,18 +52,29 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<ContentValue>(() => {
     const upcomingMatches = () =>
       bundle.matches.filter((m) => m.status === "upcoming").sort(byDateAsc);
+    // Player order everywhere: Euphex squad first → Aurex last (team order),
+    // then lane order (EXP → Jungle → Mid → Gold → Roam), then name.
+    const teamIdx = new Map(bundle.teams.map((t, i) => [t.slug, i]));
+    const players = [...bundle.players].sort((a, b) => {
+      const dt = (teamIdx.get(a.teamSlug) ?? 99) - (teamIdx.get(b.teamSlug) ?? 99);
+      if (dt !== 0) return dt;
+      const dr = ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role);
+      if (dr !== 0) return dr;
+      return a.gamertag.localeCompare(b.gamertag);
+    });
+    const data: ContentBundle = { ...bundle, players };
     return {
-      ...bundle,
+      ...data,
       live,
-      getTeam: (slug) => bundle.teams.find((t) => t.slug === slug),
-      getPlayer: (slug) => bundle.players.find((p) => p.slug === slug),
-      getTeamPlayers: (teamSlug) => bundle.players.filter((p) => p.teamSlug === teamSlug),
-      getMatch: (id) => bundle.matches.find((m) => m.id === id),
-      getTournament: (slug) => bundle.tournaments.find((t) => t.slug === slug),
-      getArticle: (slug) => bundle.news.find((n) => n.slug === slug),
+      getTeam: (slug) => data.teams.find((t) => t.slug === slug),
+      getPlayer: (slug) => data.players.find((p) => p.slug === slug),
+      getTeamPlayers: (teamSlug) => data.players.filter((p) => p.teamSlug === teamSlug),
+      getMatch: (id) => data.matches.find((m) => m.id === id),
+      getTournament: (slug) => data.tournaments.find((t) => t.slug === slug),
+      getArticle: (slug) => data.news.find((n) => n.slug === slug),
       upcomingMatches,
       completedMatches: () =>
-        bundle.matches.filter((m) => m.status === "completed").sort(byDateDesc),
+        data.matches.filter((m) => m.status === "completed").sort(byDateDesc),
       nextMatch: () => upcomingMatches()[0],
     };
   }, [bundle, live]);
