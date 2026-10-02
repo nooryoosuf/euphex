@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AdminApp } from "@/components/admin/AdminApp";
 
 export const metadata: Metadata = {
-  title: "Dashboard — EUPHEX",
+  title: "Dashboard",
   description: "Content dashboard.",
   robots: { index: false, follow: false },
 };

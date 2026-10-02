@@ -17,8 +17,8 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.org.url),
   title: {
-    default: `${siteConfig.org.name} Esports — ${siteConfig.org.game}`,
-    template: `%s | ${siteConfig.org.name} Esports`,
+    default: "Euphex",
+    template: "%s | Euphex",
   },
   description: siteConfig.org.description,
   keywords: ["Euphex", "Aurex", "MLBB", "Mobile Legends", "esports", "Maldives", "euphex.mv"],
