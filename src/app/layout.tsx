@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "SportsOrganization",
     name: siteConfig.org.fullName,
     url: siteConfig.org.url,
-    logo: `${siteConfig.org.url}/favicon.svg`,
+    logo: `${siteConfig.org.url}/logos/ephx-cube.png`,
     description: siteConfig.org.description,
     sport: siteConfig.org.game,
     sameAs: [siteConfig.socials.instagram, siteConfig.socials.tiktok],
