@@ -202,6 +202,9 @@ export function imageForAvatar(p: { avatar?: { hero: string; skin?: string } }):
   if (!p.avatar?.hero) return null;
   return mlbbHeroImage(p.avatar.hero, p.avatar.skin);
 }
+
+/** Favorite-hero art with role-based fallback (legacy default). */
+export function imageForPlayer(favoriteHero: string, role: string): string {
   const direct = imageForHero(favoriteHero);
   if (direct) return direct;
   if (role === "Jungle") return IMAGES.aamon;
