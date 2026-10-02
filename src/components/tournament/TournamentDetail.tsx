@@ -21,7 +21,7 @@ export function TournamentDetail({ slug }: { slug: string }) {
 
   return (
     <>
-      <div className="grain relative overflow-hidden border-b border-white/8">
+      <div className="relative overflow-hidden border-b border-white/8">
         <img
           src={imageForSlug(t.slug)}
           alt=""

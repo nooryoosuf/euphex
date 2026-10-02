@@ -15,7 +15,7 @@ export function ArticleView({ slug }: { slug: string }) {
   const related = NEWS.filter((n) => n.slug !== slug).slice(0, 2);
   return (
     <>
-      <div className="grain relative overflow-hidden border-b border-white/8">
+      <div className="relative overflow-hidden border-b border-white/8">
         <img
           src={imageForSlug(a.slug)}
           alt=""

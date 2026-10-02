@@ -22,7 +22,7 @@ export function PageHero({
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
-    <div ref={ref} className="grain relative overflow-hidden border-b border-white/8">
+    <div ref={ref} className="relative overflow-hidden border-b border-white/8">
       {/* backdrop — photo with dark cinematic overlay, or gradient fallback */}
       <div className="absolute inset-0" aria-hidden="true">
         {image ? (
