@@ -41,10 +41,17 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-          scrolled ? "bg-[#07090D]/85 backdrop-blur-md border-b border-white/8" : "bg-transparent",
+          "fixed inset-x-0 top-0 z-50 transition-[background-color] duration-500",
+          scrolled ? "bg-[#07090D]/85 backdrop-blur-md" : "bg-transparent",
         )}
       >
+        <div
+          aria-hidden="true"
+          className={cn(
+            "absolute inset-x-0 bottom-0 h-px bg-white/8 transition-opacity duration-150",
+            scrolled ? "opacity-100" : "opacity-0",
+          )}
+        />
         <nav aria-label="Primary" className="mx-auto flex h-16 md:h-20 max-w-[1400px] items-center justify-between px-5 md:px-10">
           <Link href="/" className="flex items-center gap-3" aria-label="Euphex home">
             <EuphexLogo className="size-8 text-white" />
