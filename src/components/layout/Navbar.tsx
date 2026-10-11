@@ -35,7 +35,7 @@ export function Navbar() {
     };
   }, [open ]);
 
-  if (pathname?.startsWith("/admin")) return null;
+  if (pathname?.startsWith("/admin") || siteConfig.launch.enabled) return null;
 
   return (
     <>

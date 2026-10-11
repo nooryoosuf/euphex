@@ -31,6 +31,12 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/euphex.official",
     tiktok: "https://www.tiktok.com/@euphex.official",
   },
+  launch: {
+    /** Full-screen coming-soon takeover of the homepage. Set enabled:false
+     *  to restore the normal homepage. Date is Maldives time (GMT+05:00). */
+    enabled: true,
+    date: "2026-10-27T00:00:00+05:00",
+  },
   contact: {
     /** Public org email — shown in the footer, used for recruit + scrim mailto fallbacks. */
     email: "euphex.official@gmail.com",

@@ -8,7 +8,7 @@ const SECRET_KEY = "euphex-logo-taps";
 
 export function Footer() {
   const pathname = usePathname();
-  if (pathname?.startsWith("/admin")) return null;
+  if (pathname?.startsWith("/admin") || siteConfig.launch.enabled) return null;
   const onLogoClick = () => {
     try {
       const n = Number(sessionStorage.getItem(SECRET_KEY) ?? "0") + 1;

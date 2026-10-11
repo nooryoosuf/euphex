@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ContentProvider } from "@/components/content";
 import { CloudflareAnalytics } from "@/components/CloudflareAnalytics";
+import { LaunchGate } from "@/components/layout/LaunchGate";
 import { siteConfig } from "@/config/site";
 
 const display = Space_Grotesk({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <LaunchGate />
         <Navbar />
         <ContentProvider>
           <main id="main" className="flex-1">
