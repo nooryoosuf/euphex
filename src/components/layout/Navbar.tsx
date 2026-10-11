@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLaunched } from "./LaunchGate";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -18,6 +19,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const launched = useLaunched();
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 24);
@@ -35,7 +37,7 @@ export function Navbar() {
     };
   }, [open ]);
 
-  if (pathname?.startsWith("/admin") || siteConfig.launch.enabled) return null;
+  if (pathname?.startsWith("/admin") || launched) return null;
 
   return (
     <>

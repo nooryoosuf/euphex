@@ -1,7 +1,7 @@
 "use client";
 import { Hero, Ticker } from "@/components/home/Hero";
 import { ComingSoon } from "@/components/home/ComingSoon";
-import { siteConfig } from "@/config/site";
+import { useLaunched } from "@/components/layout/LaunchGate";
 import { Matchday } from "@/components/home/Matchday";
 import { CompetingNext, Results, Squads, History } from "@/components/home/Sections";
 import { SectionHeader, Button } from "@/components/ui/primitives";
@@ -12,7 +12,7 @@ import { CommunityMosaic } from "@/components/home/CommunityMosaic";
 
 export default function Home() {
   const { news: NEWS } = useContent();
-  if (siteConfig.launch.enabled) return <ComingSoon />;
+  if (useLaunched()) return <ComingSoon />;
   return (
     <>
       <Hero />
