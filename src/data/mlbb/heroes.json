@@ -9,10 +9,10 @@
       {
         "id": "bursting-yama",
         "name": "Bursting Yama",
-        "image": "assets/mlbb/skins/minotaur/bursting-yama.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/minotaur/default.webp",
+        "width": 3840,
+        "height": 2160,
+        "downloaded": true
       },
       {
         "id": "dreadnought",
@@ -74,10 +74,10 @@
       {
         "id": "avatar-of-time",
         "name": "Avatar of Time",
-        "image": "assets/mlbb/skins/angela/avatar-of-time.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/angela/default.webp",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "bunnylove",
@@ -150,6 +150,22 @@
         "width": 1920,
         "height": 1080,
         "downloaded": true
+      },
+      {
+        "id": "shanghai-maiden",
+        "name": "Shanghai Maiden",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/7/7b/Angela_%28Shanghai_Maiden%29.jpg",
+        "width": 1000,
+        "height": 561,
+        "downloaded": false
+      },
+      {
+        "id": "wind-up-courier",
+        "name": "Wind-up Courier",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/5/5a/Angela_%28Wind-up_Courier%29.jpg",
+        "width": 1780,
+        "height": 1001,
+        "downloaded": false
       }
     ]
   },
@@ -163,10 +179,10 @@
       {
         "id": "blitz-attack",
         "name": "Blitz Attack",
-        "image": "assets/mlbb/skins/beatrix/blitz-attack.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/beatrix/default.webp",
+        "width": 1080,
+        "height": 612,
+        "downloaded": true
       },
       {
         "id": "dawnbreak-soldier",
@@ -215,6 +231,22 @@
         "width": 1154,
         "height": 650,
         "downloaded": true
+      },
+      {
+        "id": "stellar-briliance",
+        "name": "Stellar Briliance",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/4/4a/Beatrix_%28Stellar_Briliance%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "light-seeker",
+        "name": "Light Seeker",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Beatrix_%28Light_Seeker%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
       }
     ]
   },
@@ -228,10 +260,10 @@
       {
         "id": "arbiter-of-stars",
         "name": "Arbiter of Stars",
-        "image": "assets/mlbb/skins/belerick/arbiter-of-stars.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/belerick/default.webp",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "emerald-guardian",
@@ -272,6 +304,22 @@
         "width": 1600,
         "height": 900,
         "downloaded": true
+      },
+      {
+        "id": "smouldering-fortress",
+        "name": "Smouldering Fortress",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/8/84/Belerick_%28Smouldering_Fortress%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "sundering-fortress",
+        "name": "Sundering Fortress",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/7/7d/Belerick_%28Sundering_Fortress%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
       }
     ]
   },
@@ -285,10 +333,10 @@
       {
         "id": "crimson-wings",
         "name": "Crimson Wings",
-        "image": "assets/mlbb/skins/cecilion/crimson-wings.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/cecilion/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "embrace-of-night",
@@ -358,10 +406,10 @@
       {
         "id": "bad-bro",
         "name": "Bad Bro",
-        "image": "assets/mlbb/skins/claude/bad-bro.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/claude/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "blazing-trace",
@@ -458,6 +506,14 @@
         "width": 1780,
         "height": 1000,
         "downloaded": true
+      },
+      {
+        "id": "summer-cool",
+        "name": "Summer Cool",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/e/e9/Claude_%28Summer_Cool%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
       }
     ]
   },
@@ -471,10 +527,10 @@
       {
         "id": "badminton-champion",
         "name": "Badminton Champion",
-        "image": "assets/mlbb/skins/clint/badminton-champion.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/clint/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "captain-of-the-reefs",
@@ -533,14 +589,6 @@
         "downloaded": true
       },
       {
-        "id": "summer-blast",
-        "name": "Summer Blast",
-        "image": "assets/mlbb/heroes/clint/summer-blast.webp",
-        "width": 739,
-        "height": 415,
-        "downloaded": true
-      },
-      {
         "id": "vessel-of-ruin",
         "name": "Vessel of Ruin",
         "image": "assets/mlbb/heroes/clint/vessel-of-ruin.webp",
@@ -563,6 +611,14 @@
         "width": 1920,
         "height": 1080,
         "downloaded": true
+      },
+      {
+        "id": "scarlet-musketeer",
+        "name": "Scarlet Musketeer",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/4/4c/Clint_%28Scarlet_Musketeer%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
       }
     ]
   },
@@ -576,10 +632,10 @@
       {
         "id": "arcane-magistrate",
         "name": "Arcane Magistrate",
-        "image": "assets/mlbb/skins/estes/arcane-magistrate.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/estes/default.webp",
+        "width": 4000,
+        "height": 2250,
+        "downloaded": true
       },
       {
         "id": "blacklist-international",
@@ -657,10 +713,10 @@
       {
         "id": "atomic-pop-eudora",
         "name": "Atomic Pop Eudora",
-        "image": "assets/mlbb/skins/eudora/atomic-pop-eudora.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/eudora/default.webp",
+        "width": 1778,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "christmas-carnival",
@@ -738,10 +794,10 @@
       {
         "id": "apocalypse",
         "name": "Apocalypse",
-        "image": "assets/mlbb/skins/franco/apocalypse.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/franco/default.webp",
+        "width": 2560,
+        "height": 1439,
+        "downloaded": true
       },
       {
         "id": "blazing-axe",
@@ -827,10 +883,10 @@
       {
         "id": "christmas-carnival",
         "name": "Christmas Carnival",
-        "image": "assets/mlbb/skins/gord/christmas-carnival.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/gord/default.webp",
+        "width": 1648,
+        "height": 928,
+        "downloaded": true
       },
       {
         "id": "conqueror",
@@ -908,10 +964,10 @@
       {
         "id": "ancient-golem",
         "name": "Ancient Golem",
-        "image": "assets/mlbb/skins/grock/ancient-golem.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/grock/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "castle-guard",
@@ -989,10 +1045,10 @@
       {
         "id": "biological-weapon",
         "name": "Biological Weapon",
-        "image": "assets/mlbb/skins/hayabusa/biological-weapon.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/hayabusa/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "crimson-shadow",
@@ -1073,6 +1129,30 @@
         "width": 4000,
         "height": 2250,
         "downloaded": true
+      },
+      {
+        "id": "kitsune-s-shadow",
+        "name": "Kitsune's Shadow",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/d/d6/Hayabusa_%28Kitsune%27s_Shadow%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "summer-festival",
+        "name": "Summer Festival",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Kagura_%28Summer_Festival%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "kitsune-s-phantom",
+        "name": "Kitsune's Phantom",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/11/Hayabusa_%28Kitsune%27s_Phantom%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
       }
     ]
   },
@@ -1086,10 +1166,10 @@
       {
         "id": "atlantean-princess",
         "name": "Atlantean Princess",
-        "image": "assets/mlbb/skins/kadita/atlantean-princess.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/kadita/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "heart-of-the-sea",
@@ -1143,10 +1223,10 @@
       {
         "id": "blade-of-devotion",
         "name": "Blade of Devotion",
-        "image": "assets/mlbb/skins/lancelot/blade-of-devotion.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/lancelot/default.webp",
+        "width": 1024,
+        "height": 576,
+        "downloaded": true
       },
       {
         "id": "blade-of-roses",
@@ -1256,10 +1336,10 @@
       {
         "id": "blazing-gun",
         "name": "Blazing Gun",
-        "image": "assets/mlbb/skins/layla/blazing-gun.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/layla/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "blue-spectre",
@@ -1356,6 +1436,22 @@
         "width": 4000,
         "height": 2250,
         "downloaded": true
+      },
+      {
+        "id": "prismatic-rhythm",
+        "name": "Prismatic Rhythm",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/a/ab/Layla_%28Prismatic_Rhythm%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "midnight-waltz",
+        "name": "Midnight Waltz",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/6/66/Layla_%28Midnight_Waltz%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
       }
     ]
   },
@@ -1369,10 +1465,10 @@
       {
         "id": "angelic-agent",
         "name": "Angelic Agent",
-        "image": "assets/mlbb/skins/lesley/angelic-agent.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/lesley/default.webp",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "cheergunner",
@@ -1482,10 +1578,10 @@
       {
         "id": "cosmo-guard",
         "name": "Cosmo Guard",
-        "image": "assets/mlbb/skins/ling/cosmo-guard.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/ling/default.webp",
+        "width": 2048,
+        "height": 1147,
+        "downloaded": true
       },
       {
         "id": "cyan-finch",
@@ -1571,10 +1667,10 @@
       {
         "id": "ash-blossom",
         "name": "Ash Blossom",
-        "image": "assets/mlbb/skins/lunox/ash-blossom.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/lunox/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "bloody-mary",
@@ -1668,10 +1764,10 @@
       {
         "id": "dream-groove",
         "name": "Dream Groove",
-        "image": "assets/mlbb/skins/mathilda/dream-groove.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/mathilda/default.webp",
+        "width": 4000,
+        "height": 2250,
+        "downloaded": true
       },
       {
         "id": "dreambound-pixie",
@@ -1717,10 +1813,10 @@
       {
         "id": "arrow-of-spring",
         "name": "Arrow of Spring",
-        "image": "assets/mlbb/skins/miya/arrow-of-spring.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/miya/default.webp",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "atomic-pop-miya",
@@ -1736,14 +1832,6 @@
         "image": "assets/mlbb/heroes/miya/burning-bow.webp",
         "width": 1920,
         "height": 1080,
-        "downloaded": true
-      },
-      {
-        "id": "captain-thorns",
-        "name": "Captain Thorns",
-        "image": "assets/mlbb/heroes/miya/captain-thorns.webp",
-        "width": 554,
-        "height": 334,
         "downloaded": true
       },
       {
@@ -1838,10 +1926,10 @@
       {
         "id": "aqua-pura",
         "name": "Aqua Pura",
-        "image": "assets/mlbb/skins/nana/aqua-pura.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/nana/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "clockwork-maid",
@@ -1914,6 +2002,14 @@
         "width": 1600,
         "height": 895,
         "downloaded": true
+      },
+      {
+        "id": "stardust-dreamer",
+        "name": "Stardust Dreamer",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/d/df/Nana_%28Stardust_Dreamer%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
       }
     ]
   },
@@ -1927,10 +2023,10 @@
       {
         "id": "bright-claw",
         "name": "Bright Claw",
-        "image": "assets/mlbb/skins/natalia/bright-claw.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/natalia/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "cyber-spectre",
@@ -2008,10 +2104,10 @@
       {
         "id": "magitech-wraith",
         "name": "Magitech Wraith",
-        "image": "assets/mlbb/skins/obsidia/magitech-wraith.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/obsidia/default.webp",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "sovereign-of-dark-s-end",
@@ -2028,6 +2124,22 @@
         "width": 1024,
         "height": 576,
         "downloaded": true
+      },
+      {
+        "id": "imperatrix-arashi",
+        "name": "Imperatrix Arashi",
+        "image": "assets/mlbb/heroes/obsidia/imperatrix-arashi.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
+      },
+      {
+        "id": "magitech-purger",
+        "name": "Magitech Purger",
+        "image": "assets/mlbb/heroes/obsidia/magitech-purger.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       }
     ]
   },
@@ -2041,10 +2153,10 @@
       {
         "id": "auspicious-charm",
         "name": "Auspicious Charm",
-        "image": "assets/mlbb/skins/odette/auspicious-charm.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/odette/default.webp",
+        "width": 5000,
+        "height": 2821,
+        "downloaded": true
       },
       {
         "id": "black-swan",
@@ -2146,10 +2258,10 @@
       {
         "id": "blazing-tiger",
         "name": "Blazing Tiger",
-        "image": "assets/mlbb/skins/paquito/blazing-tiger.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/paquito/default.webp",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "death-blow",
@@ -2227,10 +2339,10 @@
       {
         "id": "empress-phoenix",
         "name": "Empress Phoenix",
-        "image": "assets/mlbb/skins/pharsa/empress-phoenix.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/pharsa/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "enchanting-witch",
@@ -2289,14 +2401,6 @@
         "downloaded": true
       },
       {
-        "id": "samba-muse",
-        "name": "Samba Muse",
-        "image": "assets/mlbb/heroes/pharsa/samba-muse.webp",
-        "width": 719,
-        "height": 403,
-        "downloaded": true
-      },
-      {
         "id": "seasworn-oracle",
         "name": "Seasworn Oracle",
         "image": "assets/mlbb/heroes/pharsa/seasworn-oracle.webp",
@@ -2332,10 +2436,10 @@
       {
         "id": "angelic-sonata",
         "name": "Angelic Sonata",
-        "image": "assets/mlbb/skins/rafaela/angelic-sonata.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/rafaela/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "biomedic",
@@ -2413,10 +2517,10 @@
       {
         "id": "abyss-guard",
         "name": "Abyss Guard",
-        "image": "assets/mlbb/skins/terizla/abyss-guard.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/terizla/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "executioner",
@@ -2478,10 +2582,10 @@
       {
         "id": "celestial-general",
         "name": "Celestial General",
-        "image": "assets/mlbb/skins/tigreal/celestial-general.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/tigreal/default.webp",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       },
       {
         "id": "dark-guardian",
@@ -2567,10 +2671,10 @@
       {
         "id": "blizzard-storm",
         "name": "Blizzard Storm",
-        "image": "assets/mlbb/skins/vale/blizzard-storm.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/vale/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "cerulean-winds",
@@ -2635,6 +2739,14 @@
         "width": 1920,
         "height": 1080,
         "downloaded": true
+      },
+      {
+        "id": "windborne-waltz",
+        "name": "Windborne Waltz",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Vale_%28Windborne_Waltz%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
       }
     ]
   },
@@ -2648,10 +2760,10 @@
       {
         "id": "circus-magician",
         "name": "Circus Magician",
-        "image": "assets/mlbb/skins/vexana/circus-magician.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/vexana/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "cursed-shackle",
@@ -2716,6 +2828,14 @@
         "width": 1780,
         "height": 1000,
         "downloaded": true
+      },
+      {
+        "id": "daybreak-halo",
+        "name": "Daybreak Halo",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/5/58/Vexana_%28Daybreak_Halo%29.jpg",
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
       }
     ]
   },
@@ -2729,10 +2849,10 @@
       {
         "id": "beyond-the-clouds-xavier",
         "name": "Beyond the Clouds Xavier",
-        "image": "assets/mlbb/skins/xavier/beyond-the-clouds-xavier.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/xavier/default.webp",
+        "width": 3022,
+        "height": 1700,
+        "downloaded": true
       },
       {
         "id": "defier-of-light",
@@ -2786,10 +2906,10 @@
       {
         "id": "biohazard",
         "name": "Biohazard",
-        "image": "assets/mlbb/skins/yuzhong/biohazard.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/yuzhong/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "black-dragon",
@@ -2859,10 +2979,10 @@
       {
         "id": "astrowarden",
         "name": "Astrowarden",
-        "image": "assets/mlbb/skins/yve/astrowarden.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/yve/default.webp",
+        "width": 1640,
+        "height": 923,
+        "downloaded": true
       },
       {
         "id": "flame-lotus",
@@ -2900,10 +3020,10 @@
       {
         "id": "celestial-empress",
         "name": "Celestial Empress",
-        "image": "assets/mlbb/skins/zetian/celestial-empress.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/zetian/default.webp",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": true
       },
       {
         "id": "heavenly-splendor",
@@ -2933,10 +3053,10 @@
       {
         "id": "beacon-of-spirits",
         "name": "Beacon of Spirits",
-        "image": "assets/mlbb/skins/zhuxin/beacon-of-spirits.webp",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
+        "image": "assets/mlbb/heroes/zhuxin/default.webp",
+        "width": 1752,
+        "height": 986,
+        "downloaded": true
       },
       {
         "id": "emberwisp-mystic",
@@ -3461,8 +3581,8 @@
         "id": "catastrophe",
         "name": "Catastrophe",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Argus/Catastrophe.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1079,
         "downloaded": false
       },
       {
@@ -3477,32 +3597,48 @@
         "id": "dark-draconic",
         "name": "Dark Draconic",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Argus/Dark%20Draconic.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "darth-vader",
         "name": "Darth Vader",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Argus/Darth%20Vader.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "light-of-dawn",
         "name": "Light of Dawn",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Argus/Light%20of%20Dawn.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "winged-nightmare",
         "name": "Winged Nightmare",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Argus/Winged%20Nightmare.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "raiden-maru",
+        "name": "Raiden Maru",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Argus_%28Raiden_Maru%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "blade-of-rakshasha",
+        "name": "Blade of Rakshasha",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/19/Argus_%28Blade_of_Rakshasha%29.jpg",
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       }
     ]
@@ -3559,48 +3695,48 @@
         "id": "fuel-turbine",
         "name": "Fuel Turbine",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Atlas/Fuel%20Turbine.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "maelstrom-lurker",
         "name": "Maelstrom Lurker",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Atlas/Maelstrom%20Lurker.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "mecha-infernus",
         "name": "Mecha Infernus",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Atlas/Mecha%20Infernus.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "ocean-gladiator",
         "name": "Ocean Gladiator",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Atlas/Ocean%20Gladiator.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "reactor-core",
         "name": "Reactor Core",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Atlas/Reactor%20Core.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "rune-sentinel",
         "name": "Rune Sentinel",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Atlas/Rune%20Sentinel.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
@@ -3746,40 +3882,40 @@
         "id": "fist-of-zen",
         "name": "Fist of Zen",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Badang/Fist%20of%20Zen.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "ironfists",
         "name": "Ironfists",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Badang/Ironfists.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "leo",
         "name": "Leo",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Badang/Leo.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "pegasus-seiya",
         "name": "Pegasus Seiya",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Badang/Pegasus%20Seiya.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "sagittarius-seiya",
         "name": "Sagittarius Seiya",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Badang/Sagittarius%20Seiya.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
@@ -3794,16 +3930,24 @@
         "id": "susanoo",
         "name": "Susanoo",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Badang/Susanoo.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "tribal-warrior",
         "name": "Tribal Warrior",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Badang/Tribal%20Warrior.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "quantum-commando",
+        "name": "Quantum Commando",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Badang_%28Quantum_Commando%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -4241,64 +4385,64 @@
         "id": "best-dj",
         "name": "Best DJ",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/Best%20DJ.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "firebolt",
         "name": "Firebolt",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/Firebolt.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "halo-striker",
         "name": "Halo Striker",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/Halo%20Striker.png",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
-      },
-      {
-        "id": "neymar-jr",
-        "name": "Neymar Jr",
-        "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/Neymar%20Jr.png",
-        "width": 0,
-        "height": 0,
-        "downloaded": false
-      },
-      {
-        "id": "street-football",
-        "name": "Street Football",
-        "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/Street%20Football.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "street-hype",
         "name": "Street Hype",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/Street%20Hype.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "the-falcon",
         "name": "The Falcon",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/The%20Falcon.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "the-protector",
         "name": "The Protector",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Bruno/The%20Protector.png",
-        "width": 0,
-        "height": 0,
+        "width": 2560,
+        "height": 1440,
+        "downloaded": false
+      },
+      {
+        "id": "the-purifier",
+        "name": "The Purifier",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/4/48/Bruno_%28The_Purifier%29.jpg",
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "vanguard-elite",
+        "name": "Vanguard Elite",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/5/50/Bruno_%28Vanguard_Elite%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -4363,16 +4507,16 @@
         "id": "crimson-moon",
         "name": "Crimson Moon",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Crimson%20Moon.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "floral-elfo",
         "name": "Floral Elfo",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Floral%20Elfo.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
@@ -4387,56 +4531,64 @@
         "id": "moon-artist",
         "name": "Moon Artist",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Moon%20Artist.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "moon-palace-immortal",
         "name": "Moon Palace Immortal",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Moon%20Palace%20Immortal.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "moonstruck",
         "name": "Moonstruck",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Moonstruck.png",
-        "width": 0,
-        "height": 0,
+        "width": 1728,
+        "height": 972,
         "downloaded": false
       },
       {
         "id": "new-moon",
         "name": "New Moon",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/New%20Moon.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "strawberry-parfait",
         "name": "Strawberry Parfait",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Strawberry%20Parfait.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "tech-tensai",
         "name": "Tech Tensai",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Tech%20Tensai.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "vine-cradle",
         "name": "Vine Cradle",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chang'e/Vine%20Cradle.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "golden-osmanthus",
+        "name": "Golden Osmanthus",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/3/35/Chang%27e_%28Golden_Osmanthus%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -4493,96 +4645,120 @@
         "id": "dragon-boy",
         "name": "Dragon Boy",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Dragon%20Boy.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "dragon-shiryu",
         "name": "Dragon Shiryu",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Dragon%20Shiryu.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "echo",
         "name": "ECHO",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/ECHO.png",
-        "width": 0,
-        "height": 0,
+        "width": 3022,
+        "height": 1700,
         "downloaded": false
       },
       {
         "id": "furious-tiger",
         "name": "Furious Tiger",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Furious%20Tiger.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "go-ballistic",
         "name": "Go Ballistic",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Go%20Ballistic.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "hip-hop-boy",
         "name": "Hip-hop Boy",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Hip-hop%20Boy.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "iori-yagami",
         "name": "Iori Yagami",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Iori%20Yagami.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "king-of-muay-thai",
         "name": "King of Muay Thai",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/King%20of%20Muay%20Thai.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "kung-fu-boy",
         "name": "Kung Fu Boy",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Kung%20Fu%20Boy.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "libra-shiryu",
         "name": "Libra Shiryu",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Libra%20Shiryu.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "s-t-u-n-chou",
         "name": "S.T.U.N. Chou",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/S.T.U.N.%20Chou.png",
-        "width": 0,
-        "height": 0,
+        "width": 1782,
+        "height": 1001,
         "downloaded": false
       },
       {
         "id": "thunderfist",
         "name": "Thunderfist",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Chou/Thunderfist.png",
-        "width": 0,
-        "height": 0,
+        "width": 2800,
+        "height": 1575,
+        "downloaded": false
+      },
+      {
+        "id": "starforger-s-glory",
+        "name": "Starforger's Glory",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/c/cc/Chou_%28Starforger_s_Glory%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "ken-masters",
+        "name": "Ken Masters",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/7/75/Chou_%28Ken_Masters%29.png",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "ken-outfit-2",
+        "name": "Ken (Outfit 2)",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/8/87/Chou_%28Ken_%28Outfit_2%29%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -5004,112 +5180,112 @@
         "id": "blade-dancer",
         "name": "Blade Dancer",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Blade%20Dancer.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "blade-of-kibou",
         "name": "Blade of Kibou",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Blade%20of%20Kibou.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "campus-youth",
         "name": "Campus Youth",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Campus%20Youth.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "christmas-carnival",
         "name": "Christmas Carnival",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Christmas%20Carnival.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "galactic-starhawk",
         "name": "Galactic Starhawk",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Galactic%20Starhawk.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "heart-afloat",
         "name": "Heart Afloat",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Heart%20Afloat.png",
-        "width": 0,
-        "height": 0,
+        "width": 1080,
+        "height": 605,
         "downloaded": false
       },
       {
         "id": "imperial-warrior",
         "name": "Imperial Warrior",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Imperial%20Warrior.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "lightborn-ranger",
         "name": "Lightborn - Ranger",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Lightborn%20-%20Ranger.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "mikasa",
         "name": "Mikasa",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Mikasa.png",
-        "width": 0,
-        "height": 0,
+        "width": 2048,
+        "height": 1152,
         "downloaded": false
       },
       {
         "id": "p-ace-fanny",
         "name": "P.ACE Fanny",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/P.ACE%20Fanny.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "punk-princess",
         "name": "Punk Princess",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Punk%20Princess.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "royal-cavalry",
         "name": "Royal Cavalry",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Royal%20Cavalry.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "skylark",
         "name": "Skylark",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Skylark.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
-        "id": "summer-rescue",
-        "name": "Summer Rescue",
-        "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Fanny/Summer%20Rescue.png",
-        "width": 0,
-        "height": 0,
+        "id": "mikasa-ackerman",
+        "name": "Mikasa Ackerman",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Fanny_%28Mikasa%29.jpg",
+        "width": 2048,
+        "height": 1152,
         "downloaded": false
       }
     ]
@@ -5182,48 +5358,56 @@
         "id": "fluffy-dream",
         "name": "Fluffy Dream",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Floryn/Fluffy%20Dream.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "melody-of-light",
         "name": "Melody of Light",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Floryn/Melody%20of%20Light.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "paw-power",
         "name": "Paw Power",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Floryn/Paw%20Power.png",
-        "width": 0,
-        "height": 0,
+        "width": 3840,
+        "height": 2160,
         "downloaded": false
       },
       {
         "id": "springtide",
         "name": "Springtide",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Floryn/Springtide.png",
-        "width": 0,
-        "height": 0,
+        "width": 2400,
+        "height": 1350,
         "downloaded": false
       },
       {
         "id": "the-budding-hope",
         "name": "The Budding Hope",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Floryn/The%20Budding%20Hope.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "yatai-waitress",
         "name": "Yatai Waitress",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Floryn/Yatai%20Waitress.png",
-        "width": 0,
-        "height": 0,
+        "width": 7000,
+        "height": 3938,
+        "downloaded": false
+      },
+      {
+        "id": "herald-of-autumn",
+        "name": "Herald of Autumn",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Floryn_%28Herald_of_Autumn%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -5935,8 +6119,8 @@
         "id": "soulfire-netherlord",
         "name": "Soulfire Netherlord",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Hanzo/Soulfire%20Netherlord.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
@@ -5945,6 +6129,30 @@
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Hanzo/The%20Pale%20Phantom.png",
         "width": 0,
         "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "akuma-ninja",
+        "name": "Akuma Ninja",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Hanzo_%28Akuma_Ninja%29.jpg",
+        "width": 4000,
+        "height": 2251,
+        "downloaded": false
+      },
+      {
+        "id": "fangs-of-slaughter",
+        "name": "Fangs of Slaughter",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/8/84/Hanzo_%28Fangs_of_Slaughter%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "fangs-of-frenzy",
+        "name": "Fangs of Frenzy",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/c/c6/Hanzo_%28Fangs_of_Frenzy%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -6049,72 +6257,88 @@
         "id": "dream-caster",
         "name": "Dream Caster",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Dream%20Caster.png",
-        "width": 0,
-        "height": 0,
+        "width": 1344,
+        "height": 756,
         "downloaded": false
       },
       {
         "id": "great-inventor",
         "name": "Great Inventor",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Great%20Inventor.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "mage-genius",
         "name": "Mage Genius",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Mage%20Genius.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "naughty-joker",
         "name": "Naughty Joker",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Naughty%20Joker.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "pulsar-prodigy",
         "name": "Pulsar Prodigy",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Pulsar%20Prodigy.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "referee",
         "name": "Referee",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Referee.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "royal-magister",
         "name": "Royal Magister",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Royal%20Magister.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "star-magician",
         "name": "Star Magician",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/Star%20Magician.png",
-        "width": 0,
-        "height": 0,
+        "width": 6720,
+        "height": 3780,
         "downloaded": false
       },
       {
         "id": "v-e-n-o-m-octopus",
         "name": "V.E.N.O.M. Octopus",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Harley/V.E.N.O.M.%20Octopus.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "dreaming-koi",
+        "name": "Dreaming Koi",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Harley_%28Dreaming_Koi%29.png",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "morning-bloom",
+        "name": "Morning Bloom",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/b/b4/Harley_%28Morning_Bloom%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -6130,48 +6354,56 @@
         "id": "dream-prowler",
         "name": "Dream Prowler",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Helcurt/Dream%20Prowler.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "evolved-predator",
         "name": "Evolved Predator",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Helcurt/Evolved%20Predator.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "exoracial-executer",
         "name": "Exoracial Executer",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Helcurt/Exoracial%20Executer.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "ice-scythe",
         "name": "Ice Scythe",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Helcurt/Ice%20Scythe.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "scorpio",
         "name": "Scorpio",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Helcurt/Scorpio.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "shadowbringer",
         "name": "Shadowbringer",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Helcurt/Shadowbringer.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "kaju-of-the-deep",
+        "name": "Kaju of the Deep",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Helcurt_%28Kaju_of_the_Deep%29.jpg",
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       }
     ]
@@ -6415,24 +6647,40 @@
         "id": "dynamic-streak",
         "name": "Dynamic Streak",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Ixia/Dynamic%20Streak.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "invoker-s-command",
         "name": "Invoker's Command",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Ixia/Invoker's%20Command.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "shifting-sand",
         "name": "Shifting Sand",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Ixia/Shifting%20Sand.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "arclight-outlaw",
+        "name": "Arclight Outlaw",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/2/2c/Ixia_%28Arclight_Outlaw%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "dynamic-style",
+        "name": "Dynamic Style",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/e/eb/Ixia_%28Dynamic_Style%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -6821,32 +7069,56 @@
         "id": "horror-whiplash",
         "name": "Horror Whiplash",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Kaja/Horror%20Whiplash.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "inferno-taskmaster",
         "name": "Inferno Taskmaster",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Kaja/Inferno%20Taskmaster.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "kaminari",
         "name": "Kaminari",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Kaja/Kaminari.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "skyblocker",
         "name": "Skyblocker",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Kaja/Skyblocker.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "nazar-king",
+        "name": "Nazar King",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/c/c2/Kaja_%28Nazar_King%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "commandment",
+        "name": "Commandment",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/8/83/Kaja_%28Commandment%29.jpg",
+        "width": 1640,
+        "height": 1020,
+        "downloaded": false
+      },
+      {
+        "id": "crow-magician",
+        "name": "Crow Magician",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Kaja_%28Crow_Magician%29.jpg",
+        "width": 1080,
+        "height": 608,
         "downloaded": false
       }
     ]
@@ -6862,8 +7134,40 @@
         "id": "sakura-haruno",
         "name": "Sakura Haruno",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Kalea/Sakura%20Haruno.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "surging-wave",
+        "name": "Surging Wave",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/e/e9/Kalea_%28Surging_Wave%29.jpg",
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "shimmering-waves",
+        "name": "Shimmering Waves",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Kalea_%28Shimmering_Waves%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "tideborn-sailor",
+        "name": "Tideborn Sailor",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/1f/Kalea_%28Tideborn_Sailor%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "sunfin-sailor",
+        "name": "Sunfin Sailor",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/2/23/Kalea_%28Sunfin_Sailor%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -7519,8 +7823,24 @@
         "id": "naruto-uzumaki",
         "name": "Naruto Uzumaki",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Lukas/Naruto%20Uzumaki.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "beast-of-light",
+        "name": "Beast of Light",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Lukas_%28Beast_of_Light%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "ardent-roar",
+        "name": "Ardent Roar",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/d/d6/Lukas_%28Ardent_Roar%29.jpg",
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       }
     ]
@@ -7934,8 +8254,8 @@
         "id": "gilded-king",
         "name": "Gilded King",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Minsitthar/Gilded%20King.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1081,
         "downloaded": false
       },
       {
@@ -7958,16 +8278,16 @@
         "id": "sol-invictus",
         "name": "Sol Invictus",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Minsitthar/Sol%20Invictus.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "symbol-of-valor",
         "name": "Symbol of Valor",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Minsitthar/Symbol%20of%20Valor.png",
-        "width": 0,
-        "height": 0,
+        "width": 1919,
+        "height": 1080,
         "downloaded": false
       }
     ]
@@ -8194,32 +8514,32 @@
         "id": "dragonsworn",
         "name": "Dragonsworn",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Novaria/Dragonsworn.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "lunar-scion",
         "name": "Lunar Scion",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Novaria/Lunar%20Scion.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "star-rebel",
         "name": "Star Rebel",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Novaria/Star%20Rebel.png",
-        "width": 0,
-        "height": 0,
+        "width": 5262,
+        "height": 3000,
         "downloaded": false
       },
       {
         "id": "sugar-glaze",
         "name": "Sugar Glaze",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Novaria/Sugar%20Glaze.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
@@ -8228,6 +8548,22 @@
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Novaria/Void%20Star.png",
         "width": 0,
         "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "dark-star",
+        "name": "Dark Star",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/19/Novaria_%28Dark_Star%29.jpg",
+        "width": 4000,
+        "height": 2250,
+        "downloaded": false
+      },
+      {
+        "id": "aqua-glaze",
+        "name": "Aqua Glaze",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/4/4a/Novaria_%28Aqua_Glaze%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -8341,80 +8677,80 @@
         "id": "anubis",
         "name": "Anubis",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Anubis.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "ashbone-gunslinger",
         "name": "Ashbone Gunslinger",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Ashbone%20Gunslinger.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "cyborg-werewolf",
         "name": "Cyborg Werewolf",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Cyborg%20Werewolf.png",
-        "width": 0,
-        "height": 0,
+        "width": 1781,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "dark-gent",
         "name": "Dark Gent",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Dark%20Gent.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "dire-wolf-hunter",
         "name": "Dire Wolf Hunter",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Dire%20Wolf%20Hunter.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "dr-beast",
         "name": "Dr. Beast",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Dr.%20Beast.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "fiend-haunter",
         "name": "Fiend Haunter",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Fiend%20Haunter.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "grimlock",
         "name": "Grimlock",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Grimlock.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "invoker-s-restraint",
         "name": "Invoker's Restraint",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Invoker's%20Restraint.png",
-        "width": 0,
-        "height": 0,
+        "width": 960,
+        "height": 540,
         "downloaded": false
       },
       {
         "id": "phantom-hunter",
         "name": "Phantom Hunter",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Phantom%20Hunter.png",
-        "width": 0,
-        "height": 0,
+        "width": 1778,
+        "height": 1000,
         "downloaded": false
       },
       {
@@ -8423,6 +8759,14 @@
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Roger/Phantom%20Ranger.png",
         "width": 0,
         "height": 0,
+        "downloaded": false
+      },
+      {
+        "id": "phantom-pirate",
+        "name": "Phantom Pirate",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/8/8b/Roger_%28Phantom_Hunter%29.jpg",
+        "width": 1778,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -8624,81 +8968,89 @@
         "id": "abyssal-witch",
         "name": "Abyssal Witch",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Abyssal%20Witch.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "curse-of-cinder",
         "name": "Curse of Cinder",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Curse%20of%20Cinder.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "double-identity",
         "name": "Double Identity",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Double%20Identity.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "gemini-shadow",
         "name": "Gemini - Shadow",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Gemini%20-%20Shadow.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "gothic-curse",
         "name": "Gothic Curse",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Gothic%20Curse.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "lady-vengeance",
         "name": "Lady Vengeance",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Lady%20Vengeance.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "s-t-u-n-selena",
         "name": "S.T.U.N. Selena",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/S.T.U.N.%20Selena.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "thunder-flash",
         "name": "Thunder Flash",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Thunder%20Flash.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "virus",
         "name": "Virus",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Virus.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "wasp-queen",
         "name": "Wasp Queen",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Selena/Wasp%20Queen.png",
-        "width": 0,
-        "height": 0,
+        "width": 1080,
+        "height": 607,
         "downloaded": false
+      },
+      {
+        "id": "silverbolt-raiko",
+        "name": "Silverbolt Raiko",
+        "image": "assets/mlbb/heroes/selena/silverbolt-raiko.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": true
       }
     ]
   },
@@ -8827,8 +9179,8 @@
         "id": "battle-buddha",
         "name": "Battle Buddha",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Sun/Battle%20Buddha.png",
-        "width": 0,
-        "height": 0,
+        "width": 1000,
+        "height": 560,
         "downloaded": false
       },
       {
@@ -8843,48 +9195,56 @@
         "id": "monkey-king",
         "name": "Monkey King",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Sun/Monkey%20King.png",
-        "width": 0,
-        "height": 0,
+        "width": 1308,
+        "height": 736,
         "downloaded": false
       },
       {
         "id": "rock-star",
         "name": "Rock Star",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Sun/Rock%20Star.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "simian-curse",
         "name": "Simian Curse",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Sun/Simian%20Curse.png",
-        "width": 0,
-        "height": 0,
+        "width": 3643,
+        "height": 2048,
         "downloaded": false
       },
       {
         "id": "spring-blessings",
         "name": "Spring Blessings",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Sun/Spring%20Blessings.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "street-legend",
         "name": "Street Legend",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Sun/Street%20Legend.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "wicked-flames",
         "name": "Wicked Flames",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Sun/Wicked%20Flames.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      },
+      {
+        "id": "celestial-rebel",
+        "name": "Celestial Rebel",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Sun_%28Celestial_Rebel%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
@@ -9387,64 +9747,64 @@
         "id": "apocalypse-agent",
         "name": "Apocalypse Agent",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Apocalypse%20Agent.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "azure-sentry",
         "name": "Azure Sentry",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Azure%20Sentry.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "fleet-warden",
         "name": "Fleet Warden",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Fleet%20Warden.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "lone-destructor",
         "name": "Lone Destructor",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Lone%20Destructor.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "major-general",
         "name": "Major General",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Major%20General.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "paenlong-legend",
         "name": "Paenlong Legend",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Paenlong%20Legend.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1081,
         "downloaded": false
       },
       {
         "id": "roguish-ranger",
         "name": "Roguish Ranger",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Roguish%20Ranger.png",
-        "width": 0,
-        "height": 0,
+        "width": 1600,
+        "height": 898,
         "downloaded": false
       },
       {
         "id": "surging-torrent",
         "name": "Surging Torrent",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Yi%20Sun-shin/Surging%20Torrent.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
@@ -9582,64 +9942,64 @@
         "id": "blazing-lancer",
         "name": "Blazing Lancer",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Blazing%20Lancer.png",
-        "width": 0,
-        "height": 0,
+        "width": 1600,
+        "height": 901,
         "downloaded": false
       },
       {
         "id": "changbanpo-commander",
         "name": "Changbanpo Commander",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Changbanpo%20Commander.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1079,
         "downloaded": false
       },
       {
         "id": "christmas-carnival",
         "name": "Christmas Carnival",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Christmas%20Carnival.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "dragon-of-prosperity",
         "name": "Dragon of Prosperity",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Dragon%20of%20Prosperity.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       },
       {
         "id": "eastern-warrior",
         "name": "Eastern Warrior",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Eastern%20Warrior.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "elite-warrior",
         "name": "Elite Warrior",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Elite%20Warrior.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "empyrean-paladin",
         "name": "Empyrean Paladin",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Empyrean%20Paladin.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
         "id": "glorious-general",
         "name": "Glorious General",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Glorious%20General.png",
-        "width": 0,
-        "height": 0,
+        "width": 1920,
+        "height": 1080,
         "downloaded": false
       },
       {
@@ -9654,24 +10014,73 @@
         "id": "spear-of-dragon",
         "name": "Spear of Dragon",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Spear%20of%20Dragon.png",
-        "width": 0,
-        "height": 0,
+        "width": 2560,
+        "height": 1440,
         "downloaded": false
       },
       {
         "id": "storm-rider",
         "name": "Storm Rider",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Storm%20Rider.png",
-        "width": 0,
-        "height": 0,
+        "width": 4000,
+        "height": 2250,
         "downloaded": false
       },
       {
         "id": "summer-waves",
         "name": "Summer Waves",
         "image": "https://raw.githubusercontent.com/Sparkies01/Splash/main/Zilong/Summer%20Waves.png",
-        "width": 0,
-        "height": 0,
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "ascendant-of-flame",
+        "name": "Ascendant of Flame",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Zilong_%28Ascendant_of_Flame%29.jpg",
+        "width": 1780,
+        "height": 1000,
+        "downloaded": false
+      },
+      {
+        "id": "gloroius-general",
+        "name": "Gloroius General",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/a/ae/Zilong_%28Gloroius_General%29.jpg",
+        "width": 1920,
+        "height": 1080,
+        "downloaded": false
+      }
+    ]
+  },
+  "dori": {
+    "id": "dori",
+    "name": "Dori",
+    "image": "",
+    "width": 0,
+    "height": 0,
+    "skins": []
+  },
+  "hirara": {
+    "id": "hirara",
+    "name": "Hirara",
+    "image": "https://mlbbdex.com/visuels/heros/hirara/skins/1331-fallen-scarlet.webp",
+    "width": 0,
+    "height": 0,
+    "skins": [
+      {
+        "id": "fallen-scarlet",
+        "name": "Fallen Scarlet",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/0/0e/Hirara_%28Fallen_Scarlet%29.jpg",
+        "width": 5500,
+        "height": 3095,
+        "downloaded": false
+      },
+      {
+        "id": "gilded-embers",
+        "name": "Gilded Embers",
+        "image": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Hirara_%28Gilded_Embers%29.jpg",
+        "width": 1780,
+        "height": 1000,
         "downloaded": false
       }
     ]
