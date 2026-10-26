@@ -2,7 +2,6 @@
 import { Hero, Ticker } from "@/components/home/Hero";
 import { ComingSoon } from "@/components/home/ComingSoon";
 import { useLaunched } from "@/components/layout/LaunchGate";
-import { Matchday } from "@/components/home/Matchday";
 import { CompetingNext, Results, Squads, History } from "@/components/home/Sections";
 import { SectionHeader, Button } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
@@ -17,9 +16,6 @@ export default function Home() {
     <>
       <Hero />
       <Ticker items={["SEASON 2026", "7 CAMPAIGNS PLAYED", "TWO SQUADS", "ONE STANDARD", "PLAY HARD. PLAY TOGETHER."]} />
-      <div className="pt-14 md:pt-20">
-        <Matchday />
-      </div>
       <CompetingNext />
       <Results />
       <Squads />
