@@ -92,6 +92,12 @@ export function AdminApp() {
     try {
       const sb = supabase();
       if (sb) {
+        const { data: pRows } = await sb.from("players").select("slug");
+        const legacy = ["kairo", "fe", "drift", "onyx", "wisp"];
+        if ((pRows ?? []).some((r: { slug?: string }) => legacy.includes(String(r.slug)))) {
+          await sb.from("players").upsert(base.players.map(playerToRow), { onConflict: "slug" });
+          await sb.from("players").delete().in("slug", legacy);
+        }
         const { data } = await sb.from("timeline").select("*").order("id");
         if (data) timeline = data.map((r) => ({ ...(r as TLRow) }));
       }

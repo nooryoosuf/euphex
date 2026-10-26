@@ -37,7 +37,7 @@ const withBase = (p: string) => {
 /** Normalize any hero spelling to its canonical registry id. */
 export function mlbbId(input: string): string {
   const key = input.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const aliases: Record<string, string> = { popolandkupa: "popol" };
+  const aliases: Record<string, string> = { popolandkupa: "popol", leomard: "leomord" };
   return aliases[key] ?? key;
 }
 

@@ -198,7 +198,14 @@ export async function fetchLiveContent(): Promise<ContentBundle | null> {
     const parts = [players, teams, matches, tournaments, news, media, timeline];
     if (parts.some((p) => p.error)) return null;
     return {
-      players: (players.data as Row[]).map(mapPlayer),
+      players: (() => {
+        const legacy = new Set(["kairo", "fe", "drift", "onyx", "wisp"]);
+        const raw = (players.data as Row[]).map(mapPlayer);
+        if (!raw.some((p) => legacy.has(p.slug))) return raw;
+        const kept = raw.filter((p) => !legacy.has(p.slug));
+        const keptSlugs = new Set(kept.map((p) => p.slug));
+        return [...kept, ...(structuredClone(playersSeed) as Player[]).filter((p) => !keptSlugs.has(p.slug))];
+      })(),
       teams: (teams.data as Row[]).map(mapTeam),
       matches: (matches.data as Row[]).map(mapMatch),
       tournaments: (tournaments.data as Row[]).map(mapTournament),

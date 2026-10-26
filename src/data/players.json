@@ -188,7 +188,7 @@
         "title": "Maldives No.10 Miya",
         "event": "Maldives Leaderboard",
         "year": 2025,
-        "kind": "Champion"
+        "kind": "Award"
       }
     ]
   },
@@ -347,260 +347,268 @@
     ]
   },
   {
-    "slug": "kairo",
-    "gamertag": "Bakari",
-    "realName": "Yusuf Demir",
+    "slug": "zyrex",
+    "gamertag": "ZYREX",
+    "realName": "ZYREX",
     "role": "Jungle",
     "teamSlug": "aurex",
-    "country": "Turkey",
-    "countryCode": "TR",
-    "joined": "Feb 2025",
-    "matches": 74,
-    "winRate": 66,
-    "mvps": 7,
+    "country": "Maldives",
+    "countryCode": "MDV",
+    "joined": "2026",
+    "matches": 2617,
+    "winRate": 50.82,
+    "mvps": 292,
     "quote": "Retri is a promise, not a gamble.",
     "playstyle": "Calculated",
     "signatureMove": "Objective steals",
-    "favoriteHero": "Ling",
+    "favoriteHero": "Fredrinn",
     "hue": 190,
-    "number": 9,
+    "number": 7,
     "heroPool": [
       {
-        "hero": "ling",
-        "games": 68,
-        "winRate": 67,
+        "hero": "alucard",
+        "games": 610,
+        "winRate": 59.2,
         "category": "signature",
-        "kda": 7.2
+        "kda": 7.2,
+        "power": 4361
       },
       {
-        "hero": "hayabusa",
-        "games": 55,
-        "winRate": 64,
+        "hero": "fredrinn",
+        "games": 337,
+        "winRate": 54,
         "category": "comfort",
-        "kda": 6.3
+        "kda": 6.3,
+        "power": 3994
       },
       {
-        "hero": "lancelot",
-        "games": 42,
-        "winRate": 62,
+        "hero": "leomard",
+        "games": 133,
+        "winRate": 51.1,
         "category": "comfort",
-        "kda": 6.8
+        "kda": 6.8,
+        "power": 2734
       },
       {
-        "hero": "natalia",
-        "games": 21,
-        "winRate": 58,
+        "hero": "nolan",
+        "games": 118,
+        "winRate": 41.5,
         "category": "pocket",
-        "kda": 5.2
+        "kda": 5.2,
+        "power": 2268
       }
     ],
     "achievements": [
       {
-        "title": "Champion",
-        "event": "Rising Stars League",
-        "year": 2025,
-        "kind": "Champion"
+        "title": "Maldives No.2 Alucard",
+        "event": "Maldives Leaderboard ",
+        "year": 2026,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.1 Fredrinn",
+        "event": "Maldives Leaderboard ",
+        "year": 2026,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.5 Leomard",
+        "event": "Maldives Leaderboard ",
+        "year": 2026,
+        "kind": "Award"
       }
     ]
   },
   {
-    "slug": "fe",
-    "gamertag": "Balhindhu",
-    "realName": "Amara Diallo",
+    "slug": "ryn",
+    "gamertag": "RYN",
+    "realName": "RAYAN",
     "role": "Mid Lane",
     "teamSlug": "aurex",
-    "country": "Senegal",
-    "countryCode": "SN",
-    "joined": "Feb 2025",
-    "matches": 71,
-    "winRate": 64,
-    "mvps": 5,
+    "country": "Maldives",
+    "countryCode": "MV",
+    "joined": "2026",
+    "matches": 2346,
+    "winRate": 53.15,
+    "mvps": 273,
     "quote": "I scale. You regret.",
     "playstyle": "Patient",
     "signatureMove": "Late-game positioning",
-    "favoriteHero": "Pharsa",
+    "favoriteHero": "Xavier",
     "hue": 200,
-    "number": 3,
+    "number": 11,
     "heroPool": [
       {
-        "hero": "pharsa",
-        "games": 61,
-        "winRate": 65,
+        "hero": "xavier",
+        "games": 759,
+        "winRate": 60.9,
         "category": "signature",
-        "kda": 5.6
+        "kda": 5.6,
+        "power": 4089
       },
       {
-        "hero": "yve",
-        "games": 48,
-        "winRate": 62,
+        "hero": "zhuxin",
+        "games": 397,
+        "winRate": 49.1,
         "category": "comfort",
-        "kda": 5.1
+        "kda": 5.1,
+        "power": 2758
       },
       {
-        "hero": "nana",
-        "games": 30,
-        "winRate": 60,
+        "hero": "cecilion",
+        "games": 288,
+        "winRate": 53.8,
         "category": "pocket",
         "kda": 4.9
       }
     ],
     "achievements": [
       {
-        "title": "Champion",
-        "event": "Rising Stars League",
+        "title": "Maldives No.2 Xavier",
+        "event": "Maldives Leaderboard",
         "year": 2025,
-        "kind": "Champion"
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.1 Zhuxin",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
+      },
+      {
+        "title": "Maldives No.1 Cecilion",
+        "event": "Maldives Leaderboard",
+        "year": 2025,
+        "kind": "Award"
       }
     ]
   },
   {
-    "slug": "drift",
-    "gamertag": "DRIFT",
-    "realName": "Leo Martins",
+    "slug": "layah",
+    "gamertag": "FENRIR",
+    "realName": "FENRIR",
     "role": "Gold Lane",
+    "secondaryRole": "Jungle",
     "teamSlug": "aurex",
-    "country": "Brazil",
-    "countryCode": "BR",
-    "joined": "Apr 2025",
+    "country": "Maldives",
+    "countryCode": "MV",
+    "joined": "2026",
     "matches": 66,
     "winRate": 63,
     "mvps": 6,
     "quote": "Gold lane is a bank. I collect.",
     "playstyle": "Greedy",
     "signatureMove": "Split-push timing",
-    "favoriteHero": "Claude",
+    "favoriteHero": "Moskov",
     "hue": 40,
-    "number": 8,
+    "number": 10,
     "heroPool": [
       {
-        "hero": "claude",
-        "games": 58,
-        "winRate": 64,
+        "hero": "moskov",
+        "games": 183,
+        "winRate": 56.8,
         "category": "signature",
-        "kda": 6
+        "kda": 6,
+        "power": 2990
       },
       {
-        "hero": "beatrix",
-        "games": 44,
-        "winRate": 62,
+        "hero": "granger",
+        "games": 230,
+        "winRate": 53.9,
         "category": "comfort",
-        "kda": 5.8
+        "kda": 5.8,
+        "power": 1712
       },
       {
-        "hero": "layla",
-        "games": 28,
-        "winRate": 59,
+        "hero": "yisunshin",
+        "games": 99,
+        "winRate": 51.5,
         "category": "pocket",
-        "kda": 5
+        "kda": 5,
+        "power": 2916
       }
     ],
     "achievements": [
       {
-        "title": "Runner Up",
-        "event": "Aurex Clash",
-        "year": 2026,
-        "kind": "Runner Up"
-      }
-    ]
-  },
-  {
-    "slug": "onyx",
-    "gamertag": "ONYX",
-    "realName": "Petar Novak",
-    "role": "EXP Lane",
-    "teamSlug": "aurex",
-    "country": "Serbia",
-    "countryCode": "RS",
-    "joined": "Feb 2025",
-    "matches": 70,
-    "winRate": 62,
-    "mvps": 4,
-    "quote": "Trade? Only if I win it.",
-    "playstyle": "Brawler",
-    "signatureMove": "Cut-wave dives",
-    "favoriteHero": "Terizla",
-    "hue": 20,
-    "number": 5,
-    "heroPool": [
-      {
-        "hero": "terizla",
-        "games": 55,
-        "winRate": 63,
-        "category": "signature",
-        "kda": 4.7
-      },
-      {
-        "hero": "paquito",
-        "games": 40,
-        "winRate": 61,
-        "category": "comfort",
-        "kda": 5.3
-      },
-      {
-        "hero": "yuzhong",
-        "games": 32,
-        "winRate": 60,
-        "category": "pocket",
-        "kda": 4.9
-      }
-    ],
-    "achievements": [
-      {
-        "title": "Champion",
-        "event": "Rising Stars League",
+        "title": "Maldives No.8 Moskov",
+        "event": "Maldives Leaderboard",
         "year": 2025,
-        "kind": "Champion"
+        "kind": "Award"
       }
     ]
   },
   {
-    "slug": "wisp",
-    "gamertag": "WISP",
-    "realName": "Lina Haddad",
+    "slug": "kurozen",
+    "gamertag": "KUROZEN",
+    "realName": "KUROZEN",
     "role": "Roam",
     "teamSlug": "aurex",
-    "country": "UAE",
-    "countryCode": "AE",
-    "joined": "May 2025",
-    "matches": 62,
-    "winRate": 65,
-    "mvps": 5,
+    "country": "Maldives",
+    "countryCode": "MDV",
+    "joined": "2026",
+    "matches": 3104,
+    "winRate": 50.64,
+    "mvps": 364,
     "quote": "I roam. You follow. We win.",
     "playstyle": "Enabler",
     "signatureMove": "Early gank paths",
-    "favoriteHero": "Mathilda",
+    "favoriteHero": "Johnson",
     "hue": 300,
     "number": 2,
     "heroPool": [
       {
-        "hero": "mathilda",
-        "games": 52,
-        "winRate": 66,
+        "hero": "johnson",
+        "games": 820,
+        "winRate": 55,
         "category": "signature",
-        "kda": 5
+        "kda": 5,
+        "power": 5131
       },
       {
-        "hero": "estes",
-        "games": 38,
-        "winRate": 64,
+        "hero": "belerick",
+        "games": 99,
+        "winRate": 38.5,
         "category": "comfort",
-        "kda": 4.4
-      },
-      {
-        "hero": "franco",
-        "games": 30,
-        "winRate": 60,
-        "category": "pocket",
-        "kda": 4.1
+        "kda": 4.4,
+        "power": 2450
       }
     ],
     "achievements": [
       {
-        "title": "Runner Up",
-        "event": "Aurex Clash",
+        "title": "Maldives No.2 Johnson",
+        "event": "Maldives Leaderboard",
         "year": 2026,
-        "kind": "Runner Up"
+        "kind": "Award"
       }
     ]
+  },
+  {
+    "slug": "tiboo",
+    "gamertag": "TIBOO",
+    "realName": "TIBOO",
+    "role": "Jungle",
+    "teamSlug": "euphex",
+    "country": "Maldives",
+    "countryCode": "MDV",
+    "joined": "2025",
+    "matches": 2496,
+    "winRate": 53.29,
+    "mvps": 142,
+    "quote": "",
+    "playstyle": "",
+    "signatureMove": "",
+    "favoriteHero": "Paquito",
+    "hue": 220,
+    "number": 17,
+    "heroPool": [
+      {
+        "hero": "paquito",
+        "games": 258,
+        "winRate": 52.3,
+        "category": "signature",
+        "power": 2004
+      }
+    ],
+    "achievements": []
   }
 ]
