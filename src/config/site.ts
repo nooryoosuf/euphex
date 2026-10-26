@@ -34,7 +34,7 @@ export const siteConfig = {
   launch: {
     /** Full-screen coming-soon takeover of the homepage. Set enabled:false
      *  to restore the normal homepage. Date is Maldives time (GMT+05:00). */
-    enabled: true,
+    enabled: false,
     date: "2026-10-27T00:00:00+05:00",
   },
   contact: {
