@@ -99,10 +99,16 @@ export function mapTournament(r: Row): Tournament {
 }
 
 export function mapNews(r: Row): NewsArticle {
+  const body = arr<string>(r.body);
+  let image = (r.image as string | undefined) || undefined;
+  if (!image && body.length > 0 && body[0].startsWith("<!-- cover:") && body[0].endsWith("-->")) {
+    image = body[0].replace(/^<!--\s*cover:\s*/, "").replace(/\s*-->$/, "").trim();
+  }
   return {
     slug: r.slug, category: r.category ?? "TEAM", title: r.title ?? "",
     excerpt: r.excerpt ?? "", date: r.date ?? "", readMinutes: r.read_minutes ?? 3,
-    hue: r.hue ?? 220, body: arr<string>(r.body),
+    hue: r.hue ?? 220, body,
+    image,
   };
 }
 
@@ -162,10 +168,12 @@ export function tournamentToRow(t: Tournament): Row {
 }
 
 export function newsToRow(n: NewsArticle): Row {
-  return {
+  const row: Row = {
     slug: n.slug, category: n.category, title: n.title, excerpt: n.excerpt,
     date: n.date, read_minutes: n.readMinutes, hue: n.hue, body: n.body,
   };
+  if (n.image) row.image = n.image;
+  return row;
 }
 
 export function mediaToRow(m: MediaItem): Row {

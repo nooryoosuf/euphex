@@ -104,6 +104,7 @@ create table if not exists news (
   read_minutes integer not null default 3,
   hue integer not null default 220,
   body text[] not null default '{}',
+  image text,
   updated_at timestamptz not null default now()
 );
 

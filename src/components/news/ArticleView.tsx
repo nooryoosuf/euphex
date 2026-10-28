@@ -5,6 +5,7 @@ import { imageForSlug } from "@/data/imagery";
 import { Badge } from "@/components/ui/primitives";
 import { NewsCard } from "@/components/ui/cards";
 import { formatDate } from "@/lib/utils";
+import { RichArticleBody } from "@/components/news/RichArticleBody";
 
 export function ArticleView({ slug }: { slug: string }) {
   const { getArticle, news: NEWS, live } = useContent();
@@ -31,20 +32,20 @@ export function ArticleView({ slug }: { slug: string }) {
   }
 
   const related = NEWS.filter((n) => n.slug !== slug).slice(0, 2);
-  const paragraphs = Array.isArray(a.body) ? a.body : [];
+  const heroImg = a.image || imageForSlug(a.slug);
 
   return (
     <>
-      <div className="relative overflow-hidden border-b border-white/8">
+      <div className="relative overflow-hidden border-b border-white/8 min-h-[380px] md:min-h-[460px]">
         <img
-          src={imageForSlug(a.slug)}
+          src={heroImg}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
         />
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(180deg, rgba(7,9,13,0.62) 0%, rgba(7,9,13,0.45) 40%, #07090D 96%)" }}
+          style={{ background: "linear-gradient(180deg, rgba(7,9,13,0.65) 0%, rgba(7,9,13,0.50) 40%, #07090D 98%)" }}
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-[900px] px-5 pt-36 md:pt-52 pb-10">
@@ -53,15 +54,15 @@ export function ArticleView({ slug }: { slug: string }) {
             <span className="text-xs text-white/50">{formatDate(a.date)} · {a.readMinutes} min read</span>
           </div>
           <h1 className="font-display mt-4 text-4xl md:text-6xl font-bold leading-[1.0] tracking-tight">{a.title}</h1>
-          <p className="mt-4 text-lg text-white/65">{a.excerpt}</p>
+          {a.excerpt && <p className="mt-4 text-lg text-white/65 leading-relaxed">{a.excerpt}</p>}
         </div>
       </div>
       <article className="mx-auto max-w-[720px] px-5 py-12 md:py-16">
-        {paragraphs.map((p, i) => (
-          <p key={i} className={`leading-relaxed text-white/75 ${i === 0 ? "text-xl text-white/90" : "mt-6"}`}>{p}</p>
-        ))}
-        <p className="mt-10">
-          <Link href="/news" className="text-xs font-bold tracking-[0.16em] uppercase text-white/60 hover:text-white border-b border-white/20 pb-1">← All news</Link>
+        <RichArticleBody body={a.body} />
+        <p className="mt-14 border-t border-white/10 pt-6">
+          <Link href="/news" className="text-xs font-bold tracking-[0.16em] uppercase text-white/60 hover:text-white border-b border-white/20 pb-1">
+            ← All news
+          </Link>
         </p>
       </article>
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 pb-16 grid gap-5 md:grid-cols-2">

@@ -142,7 +142,7 @@ export function TournamentCard({ t, index = 0 }: { t: Tournament; index?: number
 }
 
 export function NewsCard({ a }: { a: NewsArticle }) {
-  const art = NEWS_ART[a.slug];
+  const art = a.image || NEWS_ART[a.slug];
   return (
     <Link href={`/news/${a.slug}`} className="group block border border-white/8 bg-[#0C0F16] hover:border-[var(--accent)]/50 transition-colors overflow-hidden">
       <div className="relative overflow-hidden">

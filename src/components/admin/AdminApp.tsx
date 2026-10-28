@@ -162,7 +162,7 @@ export function AdminApp() {
       teams: { slug: "new-team", name: "NEW TEAM", shortName: "NEW", tier: "SECOND", index: "03", verb: "PROVE", tagline: "", description: "", playstyle: [], hue: 220, founded: 2026, wins: 0, losses: 0, championships: 0, achievements: [] },
       matches: { id: "new-match", tournamentSlug: "", tournamentName: "", stage: "", teamSlug: teamSlugs[0] ?? "euphex", opponent: "", opponentShort: "", date: new Date().toISOString().slice(0, 16) + ":00", status: "upcoming" },
       tournaments: { slug: "new-tournament", name: "NEW TOURNAMENT", stage: "", status: "UPCOMING", date: "", hue: 220, description: "", teamSlugs: [] },
-      news: { slug: "new-article", category: "TEAM", title: "", excerpt: "", date: new Date().toISOString().slice(0, 10), readMinutes: 3, hue: 220, body: [] },
+      news: { slug: "new-article", category: "TEAM", title: "", excerpt: "", date: new Date().toISOString().slice(0, 10), readMinutes: 3, hue: 220, body: [], image: "" },
       media: { id: "m-new", category: "TEAM", title: "", hue: 220 },
       timeline: { year: "2026", title: "", text: "" },
     };
@@ -217,7 +217,16 @@ export function AdminApp() {
         setWork((w) => (w ? { ...w, timeline: w.timeline.map((x) => (x.id === id ? { ...(draft as unknown as TLRow), id } : x)) } : w));
       } else {
         const pk = PK_OF[t];
-        const { error } = await sb.from(TABLE_OF[t]).upsert(row, { onConflict: pk });
+        let { error } = await sb.from(TABLE_OF[t]).upsert(row, { onConflict: pk });
+        if (error && t === "news" && row.image && error.message?.includes("image")) {
+          const fallbackRow = { ...row };
+          delete fallbackRow.image;
+          const coverTag = `<!-- cover: ${row.image} -->`;
+          const rawBody = Array.isArray(fallbackRow.body) ? fallbackRow.body : [];
+          fallbackRow.body = [coverTag, ...rawBody.filter((b) => !b.startsWith("<!-- cover:"))];
+          const res = await sb.from("news").upsert(fallbackRow, { onConflict: "slug" });
+          error = res.error;
+        }
         if (error) throw error;
         setWork((w) => {
           if (!w) return w;

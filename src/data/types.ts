@@ -154,6 +154,7 @@ export interface NewsArticle {
   readMinutes: number;
   hue: number;
   body: string[];
+  image?: string;
 }
 
 export type MediaCategory = "MATCHDAY" | "TEAM" | "COMMUNITY" | "BEHIND THE SCENES";

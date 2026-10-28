@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { RichArticleBody } from "@/components/news/RichArticleBody";
 import type {
   Achievement, GameDetail, LaneRole, Match, MediaItem, NewsArticle,
   Player, PlayerArtRef, PlayerStatLine, Team, TimelineEvent, Tournament,
@@ -444,6 +445,38 @@ export function TournamentEditor({ value: v, onChange: c }: { value: Tournament;
 /* ── news / media / timeline ── */
 
 export function NewsEditor({ value: v, onChange: c }: { value: NewsArticle; onChange: Patch<NewsArticle> }) {
+  const [tab, setTab] = useState<"edit" | "preview">("edit");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const rawText = (v.body || []).filter((p) => !p.trim().startsWith("<!-- cover:")).join("\n\n");
+
+  const updateBody = (text: string) => {
+    const paragraphs = text.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
+    c({ body: paragraphs });
+  };
+
+  const insertSnippet = (prefix: string, suffix: string = "", placeholder: string = "") => {
+    const el = textareaRef.current;
+    if (!el) {
+      updateBody(rawText ? `${rawText}\n\n${prefix}${placeholder}${suffix}` : `${prefix}${placeholder}${suffix}`);
+      return;
+    }
+    const start = el.selectionStart;
+    const end = el.selectionEnd;
+    const selected = rawText.slice(start, end) || placeholder;
+    const before = rawText.slice(0, start);
+    const after = rawText.slice(end);
+
+    const replacement = `${prefix}${selected}${suffix}`;
+    const newText = before + replacement + after;
+    updateBody(newText);
+
+    setTimeout(() => {
+      el.focus();
+      el.setSelectionRange(start + prefix.length, start + prefix.length + selected.length);
+    }, 10);
+  };
+
   return (
     <div className="space-y-5">
       <div className="grid gap-4 sm:grid-cols-2">
@@ -455,7 +488,162 @@ export function NewsEditor({ value: v, onChange: c }: { value: NewsArticle; onCh
       </div>
       <F label="Title"><T value={v.title} onChange={(e) => c({ title: e.target.value })} /></F>
       <F label="Excerpt"><TA value={v.excerpt} onChange={(e) => c({ excerpt: e.target.value })} /></F>
-      <F label="Body (blank line = new paragraph)"><TA rows={8} value={v.body.join("\n\n")} onChange={(e) => c({ body: e.target.value.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean) })} /></F>
+
+      {/* Featured image / Banner URL */}
+      <div className="border border-white/10 bg-black/20 p-4 rounded">
+        <div className="flex items-center justify-between mb-2">
+          <p className="label !text-[11px] text-[var(--accent)] font-bold">Featured Image / Banner URL</p>
+          {v.image && (
+            <button
+              type="button"
+              onClick={() => c({ image: undefined })}
+              className="text-[11px] text-white/40 hover:text-red-300 font-bold uppercase cursor-pointer"
+            >
+              Clear Image ✕
+            </button>
+          )}
+        </div>
+        <T
+          placeholder="https://... or /images/... (leave empty for automatic hero backdrop)"
+          value={v.image ?? ""}
+          onChange={(e) => c({ image: e.target.value.trim() || undefined })}
+        />
+        {v.image && (
+          <div className="mt-3 relative overflow-hidden rounded border border-white/10 h-32 w-full max-w-md bg-[#0C0F16]">
+            <img src={v.image} alt="Banner preview" className="h-full w-full object-cover" />
+            <span className="absolute bottom-1 right-2 text-[10px] bg-black/70 px-2 py-0.5 text-white/70 rounded">
+              Banner preview
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Rich Text Body Editor */}
+      <div className="border border-white/10 bg-[#0C0F16] p-4 rounded space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3">
+          <div className="flex flex-wrap items-center gap-1.5 text-xs">
+            <span className="text-[11px] font-bold text-white/40 uppercase mr-1">Insert:</span>
+            <button
+              type="button"
+              onClick={() => insertSnippet("# ", "", "Main Heading")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white font-bold cursor-pointer transition-colors"
+              title="Heading 1"
+            >
+              H1
+            </button>
+            <button
+              type="button"
+              onClick={() => insertSnippet("## ", "", "Subheading")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white font-bold cursor-pointer transition-colors"
+              title="Heading 2"
+            >
+              H2
+            </button>
+            <button
+              type="button"
+              onClick={() => insertSnippet("### ", "", "Section Heading")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white font-bold cursor-pointer transition-colors"
+              title="Heading 3"
+            >
+              H3
+            </button>
+            <div className="w-[1px] h-4 bg-white/15 mx-1" />
+            <button
+              type="button"
+              onClick={() => insertSnippet("**", "**", "bold text")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white font-bold cursor-pointer transition-colors"
+              title="Bold"
+            >
+              B
+            </button>
+            <button
+              type="button"
+              onClick={() => insertSnippet("*", "*", "italic text")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white italic cursor-pointer transition-colors"
+              title="Italic"
+            >
+              I
+            </button>
+            <button
+              type="button"
+              onClick={() => insertSnippet("> ", "", "Quote statement")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-[var(--accent)] font-serif italic cursor-pointer transition-colors"
+              title="Blockquote"
+            >
+              “ ”
+            </button>
+            <div className="w-[1px] h-4 bg-white/15 mx-1" />
+            <button
+              type="button"
+              onClick={() => insertSnippet("[", "](https://example.com)", "Link text")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-[var(--accent)] cursor-pointer transition-colors"
+              title="Insert Link"
+            >
+              🔗 Link
+            </button>
+            <button
+              type="button"
+              onClick={() => insertSnippet("- First item\n- Second item\n- Third item\n", "", "")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white cursor-pointer transition-colors"
+              title="Bullet List"
+            >
+              • List
+            </button>
+            <button
+              type="button"
+              onClick={() => insertSnippet("![Image description](", ")", "https://image-url.com")}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white cursor-pointer transition-colors"
+              title="Inline Image"
+            >
+              🖼️ Image
+            </button>
+          </div>
+
+          <div className="flex items-center gap-1 bg-black/40 p-0.5 rounded border border-white/10 text-xs">
+            <button
+              type="button"
+              onClick={() => setTab("edit")}
+              className={`px-3 py-1 rounded font-bold cursor-pointer transition-colors ${
+                tab === "edit" ? "bg-[var(--accent)] text-white" : "text-white/50 hover:text-white"
+              }`}
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              onClick={() => setTab("preview")}
+              className={`px-3 py-1 rounded font-bold cursor-pointer transition-colors ${
+                tab === "preview" ? "bg-[var(--accent)] text-white" : "text-white/50 hover:text-white"
+              }`}
+            >
+              Live Preview
+            </button>
+          </div>
+        </div>
+
+        {tab === "edit" ? (
+          <div>
+            <textarea
+              ref={textareaRef}
+              rows={14}
+              value={rawText}
+              onChange={(e) => updateBody(e.target.value)}
+              placeholder="Write your article here... Blank line separates paragraphs. Use the toolbar above for headings, quotes, bold, links, and lists."
+              className="w-full rounded border border-white/10 bg-black/40 p-3 font-mono text-sm leading-relaxed text-white placeholder-white/20 focus:border-[var(--accent)] focus:outline-none"
+            />
+            <p className="mt-2 text-[11px] text-white/40">
+              💡 Tip: Blank lines create new paragraphs. Use <code className="text-white/70"># Header</code> for big headers, <code className="text-white/70">&gt; Quote</code> for pull quotes, and <code className="text-white/70">[Text](url)</code> for clickable links.
+            </p>
+          </div>
+        ) : (
+          <div className="rounded border border-white/10 bg-[#07090D] p-5 min-h-[300px]">
+            <p className="text-[11px] font-bold text-white/35 uppercase mb-4 tracking-wider border-b border-white/5 pb-2">
+              Article Body Preview
+            </p>
+            <RichArticleBody body={v.body} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
