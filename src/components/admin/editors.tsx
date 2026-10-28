@@ -575,9 +575,17 @@ export function NewsEditor({ value: v, onChange: c }: { value: NewsArticle; onCh
             <div className="w-[1px] h-4 bg-white/15 mx-1" />
             <button
               type="button"
-              onClick={() => insertSnippet("[", "](https://example.com)", "Link text")}
-              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-[var(--accent)] cursor-pointer transition-colors"
-              title="Insert Link"
+              onClick={() => {
+                const el = textareaRef.current;
+                const sel = el ? rawText.slice(el.selectionStart, el.selectionEnd) : "";
+                const linkText = sel || (typeof window !== "undefined" ? window.prompt("Enter link text:", "Click here") : "Link");
+                if (!linkText) return;
+                const url = typeof window !== "undefined" ? window.prompt(`Enter website URL for "${linkText}":`, "https://") : "";
+                if (!url) return;
+                insertSnippet(`[${linkText}](`, ")", url);
+              }}
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-[var(--accent)] font-semibold cursor-pointer transition-colors"
+              title="Insert Clickable Link"
             >
               🔗 Link
             </button>
@@ -591,7 +599,12 @@ export function NewsEditor({ value: v, onChange: c }: { value: NewsArticle; onCh
             </button>
             <button
               type="button"
-              onClick={() => insertSnippet("![Image description](", ")", "https://image-url.com")}
+              onClick={() => {
+                const url = typeof window !== "undefined" ? window.prompt("Enter image URL (https://...):", "https://") : "";
+                if (!url) return;
+                const caption = (typeof window !== "undefined" ? window.prompt("Enter image caption (optional):", "") : "") || "";
+                insertSnippet(`\n\n![${caption}](`, `)\n\n`, url);
+              }}
               className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white cursor-pointer transition-colors"
               title="Inline Image"
             >

@@ -1,34 +1,95 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+
+function normalizeUrl(url: string): string {
+  const trimmed = url.trim();
+  if (
+    trimmed.startsWith("/") ||
+    trimmed.startsWith("#") ||
+    trimmed.startsWith("mailto:") ||
+    trimmed.startsWith("tel:")
+  ) {
+    return trimmed;
+  }
+  if (!/^https?:\/\//i.test(trimmed)) {
+    return `https://${trimmed}`;
+  }
+  return trimmed;
+}
+
+function renderHyperlink(text: React.ReactNode, rawHref: string, key: string | number) {
+  const href = normalizeUrl(rawHref);
+  const isInternal = href.startsWith("/") || href.startsWith("#");
+
+  if (isInternal) {
+    return (
+      <Link
+        key={key}
+        href={href}
+        className="text-[var(--accent)] underline decoration-[var(--accent)]/60 underline-offset-4 hover:text-white hover:decoration-white font-medium transition-colors cursor-pointer"
+      >
+        {text}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      key={key}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[var(--accent)] underline decoration-[var(--accent)]/60 underline-offset-4 hover:text-white hover:decoration-white font-medium transition-colors cursor-pointer inline-flex items-baseline gap-0.5"
+    >
+      <span>{text}</span>
+      <span className="text-[10px] opacity-70 font-mono" aria-hidden="true">↗</span>
+    </a>
+  );
+}
 
 function renderInline(text: string): React.ReactNode {
-  // Regex to split on markdown inline syntax: links, bold, italic, code
-  const regex = /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_|`[^`]+`)/g;
-  const parts = text.split(regex);
+  // Regex to match:
+  // 1. HTML links: <a href="...">...</a>
+  // 2. Markdown links: [text](url)
+  // 3. Bold: **text**
+  // 4. Italic: *text* or _text_
+  // 5. Code: `code`
+  // 6. Raw URLs: https://... or http://... or www....
+  const TOKEN_REGEX = /(<a\s+[^>]*href=["'][^"']+["'][^>]*>[\s\S]*?<\/a>|\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_|`[^`]+`|https?:\/\/[^\s<>"']+|www\.[^\s<>"']+)/gi;
+  const parts = text.split(TOKEN_REGEX);
 
   return parts.map((part, index) => {
     if (!part) return null;
 
-    // Link: [text](url)
+    // 1. HTML link: <a href="url">text</a>
+    if (part.startsWith("<a ") && part.endsWith("</a>")) {
+      const href = part.match(/href=["']([^"']+)["']/i)?.[1] ?? "";
+      const innerText = part.replace(/<[^>]+>/g, "");
+      return renderHyperlink(innerText || href, href, index);
+    }
+
+    // 2. Markdown link: [text](url)
     const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (linkMatch) {
       const [, linkText, url] = linkMatch;
-      const isExternal = url.startsWith("http://") || url.startsWith("https://");
+      return renderHyperlink(linkText, url, index);
+    }
+
+    // 3. Raw URLs: https://... or www....
+    if (/^(https?:\/\/|www\.)/i.test(part)) {
+      const trailingPunctuation = part.match(/[.,!?:;)]+$/)?.[0] || "";
+      const cleanUrl = part.slice(0, part.length - trailingPunctuation.length);
       return (
-        <a
-          key={index}
-          href={url}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noopener noreferrer" : undefined}
-          className="text-[var(--accent)] underline decoration-[var(--accent)]/50 underline-offset-4 hover:text-white hover:decoration-white font-medium transition-colors"
-        >
-          {linkText}
-        </a>
+        <React.Fragment key={index}>
+          {renderHyperlink(cleanUrl, cleanUrl, `link-${index}`)}
+          {trailingPunctuation}
+        </React.Fragment>
       );
     }
 
-    // Bold: **text**
+    // 4. Bold: **text**
     if (part.startsWith("**") && part.endsWith("**") && part.length >= 4) {
       return (
         <strong key={index} className="font-bold text-white">
@@ -37,7 +98,7 @@ function renderInline(text: string): React.ReactNode {
       );
     }
 
-    // Italic: *text* or _text_
+    // 5. Italic: *text* or _text_
     if (
       (part.startsWith("*") && part.endsWith("*") && part.length >= 2) ||
       (part.startsWith("_") && part.endsWith("_") && part.length >= 2)
@@ -49,7 +110,7 @@ function renderInline(text: string): React.ReactNode {
       );
     }
 
-    // Code: `code`
+    // 6. Code: `code`
     if (part.startsWith("`") && part.endsWith("`") && part.length >= 2) {
       return (
         <code key={index} className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-[var(--accent)] font-mono">
@@ -69,7 +130,6 @@ export function RichArticleBody({
   body: string[];
   firstLead?: boolean;
 }) {
-  // Filter out any internal cover comment tags
   const visible = (body || []).filter((p) => typeof p === "string" && !p.trim().startsWith("<!-- cover:"));
 
   if (!visible.length) {
