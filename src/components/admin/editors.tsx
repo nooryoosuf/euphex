@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { RichArticleBody } from "@/components/news/RichArticleBody";
+import { supabase } from "@/lib/supabase";
 import type {
   Achievement, GameDetail, LaneRole, Match, MediaItem, NewsArticle,
   Player, PlayerArtRef, PlayerStatLine, Team, TimelineEvent, Tournament,
@@ -442,11 +443,75 @@ export function TournamentEditor({ value: v, onChange: c }: { value: Tournament;
   );
 }
 
+
+async function processImageFile(file: File, maxWidth = 1600, quality = 0.82): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        let { width, height } = img;
+        if (width > maxWidth) {
+          height = Math.round((height * maxWidth) / width);
+          width = maxWidth;
+        }
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          resolve(e.target?.result as string);
+          return;
+        }
+        ctx.drawImage(img, 0, 0, width, height);
+        try {
+          const webp = canvas.toDataURL("image/webp", quality);
+          if (webp.startsWith("data:image/webp")) {
+            resolve(webp);
+            return;
+          }
+        } catch {}
+        resolve(canvas.toDataURL("image/jpeg", quality));
+      };
+      img.onerror = reject;
+      img.src = e.target?.result as string;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function uploadImage(file: File, prefix = "news"): Promise<string> {
+  const dataUrl = await processImageFile(file);
+  const sb = supabase();
+  if (sb) {
+    try {
+      const ext = file.name.split(".").pop() || "webp";
+      const cleanName = `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}.${ext}`;
+      const res = await fetch(dataUrl);
+      const blob = await res.blob();
+      const { data, error } = await sb.storage.from("news").upload(cleanName, blob, {
+        cacheControl: "31536000",
+        upsert: true,
+      });
+      if (!error && data) {
+        const { data: pub } = sb.storage.from("news").getPublicUrl(cleanName);
+        if (pub?.publicUrl) return pub.publicUrl;
+      }
+    } catch {
+      // Fallback to dataUrl
+    }
+  }
+  return dataUrl;
+}
+
 /* ── news / media / timeline ── */
 
 export function NewsEditor({ value: v, onChange: c }: { value: NewsArticle; onChange: Patch<NewsArticle> }) {
   const [tab, setTab] = useState<"edit" | "preview">("edit");
+  const [uploading, setUploading] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const inlineFileRef = useRef<HTMLInputElement>(null);
 
   const rawText = (v.body || []).filter((p) => !p.trim().startsWith("<!-- cover:")).join("\n\n");
 
@@ -489,31 +554,71 @@ export function NewsEditor({ value: v, onChange: c }: { value: NewsArticle; onCh
       <F label="Title"><T value={v.title} onChange={(e) => c({ title: e.target.value })} /></F>
       <F label="Excerpt"><TA value={v.excerpt} onChange={(e) => c({ excerpt: e.target.value })} /></F>
 
-      {/* Featured image / Banner URL */}
-      <div className="border border-white/10 bg-black/20 p-4 rounded">
-        <div className="flex items-center justify-between mb-2">
-          <p className="label !text-[11px] text-[var(--accent)] font-bold">Featured Image / Banner URL</p>
+      {/* Featured image / Banner */}
+      <div className="border border-white/10 bg-black/20 p-4 rounded space-y-3">
+        <div className="flex items-center justify-between">
+          <p className="label !text-[11px] text-[var(--accent)] font-bold">Featured Image / Banner</p>
           {v.image && (
             <button
               type="button"
               onClick={() => c({ image: undefined })}
-              className="text-[11px] text-white/40 hover:text-red-300 font-bold uppercase cursor-pointer"
+              className="text-[11px] text-white/40 hover:text-red-300 font-bold uppercase cursor-pointer transition-colors"
             >
               Clear Image ✕
             </button>
           )}
         </div>
-        <T
-          placeholder="https://... or /images/... (leave empty for automatic hero backdrop)"
-          value={v.image ?? ""}
-          onChange={(e) => c({ image: e.target.value.trim() || undefined })}
-        />
+
+        <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+          <label className="flex items-center justify-center gap-2 px-4 py-2.5 rounded bg-[var(--accent)] text-black font-bold text-xs uppercase tracking-wider cursor-pointer hover:brightness-110 transition-all shadow-sm shrink-0">
+            <span>📷 {uploading ? "Processing..." : "Attach from PC / Phone"}</span>
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              disabled={uploading}
+              onChange={async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                setUploading(true);
+                try {
+                  const url = await uploadImage(file, v.slug || "news");
+                  c({ image: url });
+                } catch (err) {
+                  alert("Failed to process image: " + (err instanceof Error ? err.message : "error"));
+                } finally {
+                  setUploading(false);
+                }
+              }}
+            />
+          </label>
+          <span className="text-xs text-white/30 hidden sm:inline">or</span>
+          <div className="w-full flex-1">
+            <T
+              placeholder="Paste image URL (e.g. https://... or /images/...)"
+              value={v.image ?? ""}
+              onChange={(e) => c({ image: e.target.value.trim() || undefined })}
+            />
+          </div>
+        </div>
+
+        {uploading && (
+          <p className="text-xs text-[var(--accent)] animate-pulse flex items-center gap-2">
+            <span>⏳</span> Optimizing and attaching image...
+          </p>
+        )}
+
         {v.image && (
-          <div className="mt-3 relative overflow-hidden rounded border border-white/10 h-32 w-full max-w-md bg-[#0C0F16]">
+          <div className="relative overflow-hidden rounded border border-white/10 h-36 w-full max-w-md bg-[#0C0F16]">
             <img src={v.image} alt="Banner preview" className="h-full w-full object-cover" />
-            <span className="absolute bottom-1 right-2 text-[10px] bg-black/70 px-2 py-0.5 text-white/70 rounded">
-              Banner preview
-            </span>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2 justify-between">
+              <span className="text-[10px] text-white/80 font-mono truncate max-w-[240px]">
+                {v.image.startsWith("data:") ? "Local Image Attached" : v.image}
+              </span>
+              <span className="text-[10px] bg-[var(--accent)] text-black font-bold px-2 py-0.5 rounded">
+                Active Banner
+              </span>
+            </div>
           </div>
         )}
       </div>
@@ -597,19 +702,26 @@ export function NewsEditor({ value: v, onChange: c }: { value: NewsArticle; onCh
             >
               • List
             </button>
-            <button
-              type="button"
-              onClick={() => {
-                const url = typeof window !== "undefined" ? window.prompt("Enter image URL (https://...):", "https://") : "";
-                if (!url) return;
-                const caption = (typeof window !== "undefined" ? window.prompt("Enter image caption (optional):", "") : "") || "";
-                insertSnippet(`\n\n![${caption}](`, `)\n\n`, url);
-              }}
-              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white cursor-pointer transition-colors"
-              title="Inline Image"
+            <label
+              className="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-white cursor-pointer transition-colors inline-flex items-center gap-1"
+              title="Attach photo from PC / Phone"
             >
-              🖼️ Image
-            </button>
+              <span>🖼️ Attach Photo</span>
+              <input
+                ref={inlineFileRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={async (e) => {
+                  const file = e.target.files?.[0];
+                  if (!file) return;
+                  const caption = (typeof window !== "undefined" ? window.prompt("Enter photo caption (optional):", "") : "") || "";
+                  const url = await uploadImage(file, `${v.slug || "inline"}-img`);
+                  insertSnippet(`\n\n![${caption}](`, `)\n\n`, url);
+                  if (inlineFileRef.current) inlineFileRef.current.value = "";
+                }}
+              />
+            </label>
           </div>
 
           <div className="flex items-center gap-1 bg-black/40 p-0.5 rounded border border-white/10 text-xs">
