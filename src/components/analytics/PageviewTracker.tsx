@@ -20,7 +20,6 @@ function getCleanReferrer(): string {
   if (typeof document === "undefined" || !document.referrer) return "direct";
   try {
     const url = new URL(document.referrer);
-    // If internal referrer, mark as direct
     if (url.hostname === window.location.hostname) return "direct";
     if (url.hostname.includes("instagram")) return "Instagram";
     if (url.hostname.includes("tiktok")) return "TikTok";
@@ -70,10 +69,13 @@ export function PageviewTracker() {
     };
 
     // Fire and forget, completely silent on errors
-    sb.from("pageviews")
-      .insert(payload)
-      .then(() => {})
-      .catch(() => {});
+    void (async () => {
+      try {
+        await sb.from("pageviews").insert(payload);
+      } catch {
+        // Silently ignore if table doesn't exist or offline
+      }
+    })();
   }, [pathname]);
 
   return null;
