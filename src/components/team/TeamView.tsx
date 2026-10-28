@@ -11,10 +11,26 @@ import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
 
 export function TeamView({ slug }: { slug: string }) {
-  const { getTeam, getTeamPlayers, matches: MATCHES } = useContent();
+  const { getTeam, getTeamPlayers, matches: MATCHES, live } = useContent();
   const team = getTeam(slug);
   if (!team) {
-    return <div className="mx-auto max-w-[1400px] px-5 py-40 text-center text-white/50">Team not found.</div>;
+    if (!live) {
+      return (
+        <div className="mx-auto flex min-h-[60vh] max-w-[1400px] items-center justify-center px-5 text-center text-white/50 animate-pulse">
+          Loading team...
+        </div>
+      );
+    }
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-[1400px] flex-col items-center justify-center px-5 text-center">
+        <p className="label text-[var(--accent)]">Team not found</p>
+        <h1 className="font-display mt-4 text-4xl md:text-6xl font-bold tracking-tight">TEAM NOT FOUND.</h1>
+        <p className="mt-4 text-white/55">This team doesn&apos;t exist or may have been removed.</p>
+        <Link href="/teams" className="mt-8 bg-[var(--accent)] px-7 py-3.5 text-[13px] font-bold tracking-[0.14em] uppercase clip-slant">
+          ← Back to teams
+        </Link>
+      </div>
+    );
   }
   const roster = getTeamPlayers(slug);
   const teamMatches = MATCHES.filter((m) => m.teamSlug === slug);

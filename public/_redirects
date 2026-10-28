@@ -1,0 +1,7 @@
+# Cloudflare Pages rewrites — fallback dynamic routes to client routing
+# Static pre-rendered files take precedence over these rules.
+/news/* /404.html 200
+/players/* /404.html 200
+/teams/* /404.html 200
+/tournaments/* /404.html 200
+/matches/* /404.html 200

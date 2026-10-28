@@ -11,10 +11,30 @@ import Link from "next/link";
 const TABS = ["OVERVIEW", "SCHEDULE", "STANDINGS", "RESULTS"] as const;
 
 export function TournamentDetail({ slug }: { slug: string }) {
-  const { getTournament, matches: MATCHES } = useContent();
+  const { getTournament, matches: MATCHES, live } = useContent();
   const t = getTournament(slug);
   const [tab, setTab] = useState<(typeof TABS)[number]>("OVERVIEW");
-  if (!t) return <div className="mx-auto max-w-[1400px] px-5 py-40 text-center text-white/50">Tournament not found.</div>;
+
+  if (!t) {
+    if (!live) {
+      return (
+        <div className="mx-auto flex min-h-[60vh] max-w-[1400px] items-center justify-center px-5 text-center text-white/50 animate-pulse">
+          Loading tournament...
+        </div>
+      );
+    }
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-[1400px] flex-col items-center justify-center px-5 text-center">
+        <p className="label text-[var(--accent)]">Tournament not found</p>
+        <h1 className="font-display mt-4 text-4xl md:text-6xl font-bold tracking-tight">TOURNAMENT NOT FOUND.</h1>
+        <p className="mt-4 text-white/55">This tournament doesn&apos;t exist or may have been removed.</p>
+        <Link href="/tournaments" className="mt-8 bg-[var(--accent)] px-7 py-3.5 text-[13px] font-bold tracking-[0.14em] uppercase clip-slant">
+          ← Back to tournaments
+        </Link>
+      </div>
+    );
+  }
+
   const related = MATCHES.filter((m) => m.tournamentSlug === t.slug);
   const upcoming = related.filter((m) => m.status === "upcoming");
   const results = related.filter((m) => m.status === "completed");

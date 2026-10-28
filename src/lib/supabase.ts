@@ -4,7 +4,6 @@
 // so prerendered HTML and local dev always work.
 // Row shapes use snake_case; mappers below restore the TS model.
 // ─────────────────────────────────────────────────────────────
-"use client";
 
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import type {

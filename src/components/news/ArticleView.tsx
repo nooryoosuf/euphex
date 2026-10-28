@@ -7,12 +7,32 @@ import { NewsCard } from "@/components/ui/cards";
 import { formatDate } from "@/lib/utils";
 
 export function ArticleView({ slug }: { slug: string }) {
-  const { getArticle, news: NEWS } = useContent();
+  const { getArticle, news: NEWS, live } = useContent();
   const a = getArticle(slug);
+
   if (!a) {
-    return <div className="mx-auto max-w-[1400px] px-5 py-40 text-center text-white/50">Article not found.</div>;
+    if (!live) {
+      return (
+        <div className="mx-auto flex min-h-[60vh] max-w-[1400px] items-center justify-center px-5 text-center text-white/50 animate-pulse">
+          Loading article...
+        </div>
+      );
+    }
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-[1400px] flex-col items-center justify-center px-5 text-center">
+        <p className="label text-[var(--accent)]">Article not found</p>
+        <h1 className="font-display mt-4 text-4xl md:text-6xl font-bold tracking-tight">STORY NOT FOUND.</h1>
+        <p className="mt-4 text-white/55">This article doesn&apos;t exist or may have been removed.</p>
+        <Link href="/news" className="mt-8 bg-[var(--accent)] px-7 py-3.5 text-[13px] font-bold tracking-[0.14em] uppercase clip-slant">
+          ← Back to all news
+        </Link>
+      </div>
+    );
   }
+
   const related = NEWS.filter((n) => n.slug !== slug).slice(0, 2);
+  const paragraphs = Array.isArray(a.body) ? a.body : [];
+
   return (
     <>
       <div className="relative overflow-hidden border-b border-white/8">
@@ -37,7 +57,7 @@ export function ArticleView({ slug }: { slug: string }) {
         </div>
       </div>
       <article className="mx-auto max-w-[720px] px-5 py-12 md:py-16">
-        {a.body.map((p, i) => (
+        {paragraphs.map((p, i) => (
           <p key={i} className={`leading-relaxed text-white/75 ${i === 0 ? "text-xl text-white/90" : "mt-6"}`}>{p}</p>
         ))}
         <p className="mt-10">

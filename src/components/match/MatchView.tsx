@@ -8,10 +8,26 @@ import { Countdown } from "@/components/ui/Countdown";
 import { formatDate, formatTime, kda } from "@/lib/utils";
 
 export function MatchView({ id }: { id: string }) {
-  const { getMatch, getTeam, getPlayer, getTournament } = useContent();
+  const { getMatch, getTeam, getPlayer, getTournament, live } = useContent();
   const match = getMatch(id);
   if (!match) {
-    return <div className="mx-auto max-w-[1400px] px-5 py-40 text-center text-white/50">Match not found.</div>;
+    if (!live) {
+      return (
+        <div className="mx-auto flex min-h-[60vh] max-w-[1400px] items-center justify-center px-5 text-center text-white/50 animate-pulse">
+          Loading match...
+        </div>
+      );
+    }
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-[1400px] flex-col items-center justify-center px-5 text-center">
+        <p className="label text-[var(--accent)]">Match not found</p>
+        <h1 className="font-display mt-4 text-4xl md:text-6xl font-bold tracking-tight">MATCH NOT FOUND.</h1>
+        <p className="mt-4 text-white/55">This match doesn&apos;t exist or may have been removed.</p>
+        <Link href="/matches" className="mt-8 bg-[var(--accent)] px-7 py-3.5 text-[13px] font-bold tracking-[0.14em] uppercase clip-slant">
+          ← Back to matches
+        </Link>
+      </div>
+    );
   }
   const team = getTeam(match.teamSlug);
   const tournament = getTournament(match.tournamentSlug);
