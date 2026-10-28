@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ContentProvider } from "@/components/content";
 import { CloudflareAnalytics } from "@/components/CloudflareAnalytics";
+import { PageviewTracker } from "@/components/analytics/PageviewTracker";
 import { LaunchGate } from "@/components/layout/LaunchGate";
 import { siteConfig } from "@/config/site";
 
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
         <CloudflareAnalytics />
+        <PageviewTracker />
       </body>
     </html>
   );

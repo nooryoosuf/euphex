@@ -146,3 +146,23 @@ begin
     execute format('create policy "auth write" on %I for all using (auth.role() = ''authenticated'') with check (auth.role() = ''authenticated'')', t);
   end loop;
 end $$;
+
+
+-- ── PAGEVIEWS (Traffic & Insights) ──
+create table if not exists pageviews (
+  id bigint generated always as identity primary key,
+  path text not null,
+  referrer text,
+  device text default 'desktop',
+  session_id text,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists idx_pageviews_path on pageviews (path);
+create index if not exists idx_pageviews_created_at on pageviews (created_at);
+
+alter table pageviews enable row level security;
+drop policy if exists "pageviews insert" on pageviews;
+create policy "pageviews insert" on pageviews for insert with check (true);
+drop policy if exists "pageviews read" on pageviews;
+create policy "pageviews read" on pageviews for select using (true);

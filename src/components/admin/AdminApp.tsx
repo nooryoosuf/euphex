@@ -12,6 +12,7 @@ import {
 import { Sheet, useConfirm } from "./ui";
 import { ScrimsInbox } from "./ScrimsInbox";
 import { RecruitsInbox } from "./RecruitsInbox";
+import { InsightsTab } from "./InsightsTab";
 import {
   PlayerEditor, TeamEditor, MatchEditor, TournamentEditor,
   NewsEditor, MediaEditor, TimelineEditor,
@@ -19,9 +20,10 @@ import {
 import { EuphexLogo } from "@/components/ui/TeamLogos";
 import { cn } from "@/lib/utils";
 
-type Tab = "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "scrims" | "recruits";
+type Tab = "insights" | "players" | "teams" | "matches" | "tournaments" | "news" | "media" | "timeline" | "scrims" | "recruits";
 
 const TABS: { id: Tab; label: string }[] = [
+  { id: "insights", label: "Insights 📊" },
   { id: "players", label: "Players" },
   { id: "teams", label: "Teams" },
   { id: "matches", label: "Matches" },
@@ -349,6 +351,15 @@ export function AdminApp() {
 
       {loading || !work ? (
         <p className="py-20 text-center text-sm text-white/40">Loading live data…</p>
+      ) : tab === "insights" ? (
+        <section className="mt-6" aria-label="Website insights">
+          <InsightsTab
+            news={work.news}
+            players={work.players}
+            teams={work.teams}
+            tournaments={work.tournaments}
+          />
+        </section>
       ) : tab === "scrims" ? (
         <section className="mt-6" aria-label="Scrim requests">
           <ScrimsInbox />
